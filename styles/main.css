@@ -1,0 +1,22 @@
+body {
+    background: bisque
+}
+
+#main-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-left: solid;
+    border-right: solid;
+}
+
+header {
+    background-color: grey;
+}
+
+main {
+    background-color: red;
+}
+
+footer {
+    background-color: white;
+}
