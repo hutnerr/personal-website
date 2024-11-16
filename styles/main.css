@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
+/* i think my best bet for colors is to do a back / white similar with 1 accent color like red for pop */
+
 * {
     font-family: 'JetBrains Mono', monospace;
 }
