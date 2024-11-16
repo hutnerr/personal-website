@@ -11,16 +11,16 @@
 </head>
 
 <body>
+    <header>
+        <nav id="navbar">
+            <ul id="navbar-list">
+                <li class="navbar-item">Home</li>
+                <li class="navbar-item">Projects</li>
+                <li class="navbar-item">Experience</li>
+            </ul>
+        </nav>
+    </header>
     <div id="main-container">
-        <header>
-            <nav id="navbar">
-                <ul>
-                    <li>Home</li>
-                    <li>Projects</li>
-                    <li>Experience</li>
-                </ul>
-            </nav>
-        </header>
         <main>
             <section id="home">
                 <h1>Hunter Baker</h1>
@@ -32,27 +32,26 @@
             </section>
             <!-- each of these should be a link to the individual program page -->
             <section id="projects">
+                <!-- maybe at the bottom i can have a direct link to the repo here -->
+                 <!-- maybe i could also have these be cards and displayed ina grid -->
                 <h2>Projects</h2>
                 <div class="project">
-                    <h3>Project 1</h3>
-                    <p>Project 1 Description</p>
+                    <h3><a href="pages/project_lcbot.html">Leetcode Bot</a></h3>
+                    <p>Discord bot to facilitate active Leetcoding within servers.</p>
                 </div>
                 <div class="project">
-                    <h3>Project 2</h3>
-                    <p>Project 2 Description</p>
-                </div>
-                <div class="project">
-                    <h3>Project 3</h3>
-                    <p>Project 3 Description</p>
+                    <h3>Obsidian MD Plugin</h3>
+                    <p>Plugin that was created for the Obsidian MD note taking software.</p>
                 </div>
             </section>
             <section>
                 <h2>Contact</h2>
-                <p>Email:test</p>
+                <p>Email: <a href="mailto:hunter.baker.b@gmail.com">hunter.baker.b@gmail.com</a></p>
             </section>
         </main>
         <footer>
             <!-- make these list items so its easier for adaptiev screens -->
+             <!-- make these some of these icons as well  -->
             <p>&copy; 2024 Hunter Baker</p>
             <a href="https://github.com/hutnerr">Github</a>
             <a href="https://www.linkedin.com/in/hunter-b-baker/">LinkedIn</a>
