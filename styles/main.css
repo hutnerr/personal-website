@@ -1,74 +1,167 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
-/* i think my best bet for colors is to do a back / white similar with 1 accent color like red for pop */
+:root {
+    --font: 'JetBrains Mono', monospace;
+    --color-primary: white;
+    --color-secondary: black;
+    --color-tertiary: #fb4934;
+}
 
 * {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font)
 }
 
-body {
-    /* background: #3c3836; */
-    background-color: #a89984;
-    /* background-color: #ebdbb2; */
-    /* background-color: #7c6f64; */
-    /* background-color: #2e2e2e; */
-    background-color: #3f403f;
-    background-color: #f2e7c9;
-    background-color: #c19875;
-    background-color: #E4C0A0;
-
-
-    margin: 0px;
-    /* background-color: #282828; */
-}
-
-#main-container {
-    margin-left: 10%;
-    margin-right: 10%;
-    /* border-left: solid; */
-    /* border-right: solid; */
-}
-
-header {
-    /* background-color: grey; */
-    /* background-color: #fb4934; */
-    margin: 0;
-    height: 50px;
-    /* background-color: #8ec07c; */
-    /* background-color: #fabd2f; */
-    /* background-color: #d65d0e; */
-    /* background-color: #e87d3e; */
-    /* background-color: #475841; */
-    /* background-color: #6c99bb; */
-    /* background-color: #83a598; */
-    background-color: #c75146;
-}
-
-main {
-    /* background-color: red; */
-    margin: 0;
-}
-
-footer {
-    /* background-color: white; */
-    /* background-color: #a89984; */
-}
-
-#navbar-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.navbar {
     overflow: hidden;
     display: flex;
+    margin: 0px;
+    padding: 0px;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .navbar-item {
     display: inline;
     padding: 10px;
-    color: #ebddd2;
     text-decoration: none;
     font-size: 27px;
+    text-align: center;
+    width: 170px;
+    color: var(--color-tertiary);
+}
+
+.navbar-item:hover {
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+}
+
+.navbar-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-item a:hover {
+    color: var(--color-primary);
+}
+
+/* The dropdown container */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown-item {
+    font-size: 16px;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    /* Important for vertical align on mobile phones */
+    margin: 0;
+    /* Important for vertical align on mobile phones */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a, p {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .navbar-item {
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+}
+
+/* main heading and the headings for each section */
+h1,
+h2,
+p {
+    color: var(--color-secondary);
+}
+
+body {
+    margin: 0px;
+    background-color: var(--color-primary);
+}
+
+#main-container {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+header {
+    margin: 0;
+    margin-right: 10%;
+    margin-left: 10%;
+    height: 50px;
+}
+
+main {
+    margin: 0;
+}
+
+footer p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+}
+
+section {
+    margin: 0;
+    border: solid;
+    border-color: var(--color-secondary);
+    padding: 10px;
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-tertiary);
+}
+
+a:hover {
+    color: #dd908b;
 }

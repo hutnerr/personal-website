@@ -12,13 +12,18 @@
 
 <body>
     <header>
-        <nav id="navbar">
-            <ul id="navbar-list">
-                <li class="navbar-item">Home</li>
-                <li class="navbar-item">Projects</li>
-                <li class="navbar-item">Experience</li>
-            </ul>
-        </nav>
+        <div class="navbar">
+            <a class="navbar-item" href="#home">Home</a>
+            <div class="dropdown navbar-item">
+              <p class="navbar-item">Projects</p>
+              <div class="dropdown-content">
+                <a class="dropdown-item" href="leetcode-bot.html">LeetCode Discord Bot</a>
+                <!-- <a href="#">Link 2</a> -->
+                <!-- <a href="#">Link 3</a> -->
+              </div>
+            </div>
+            <a class="navbar-item" href="#news">Experience</a>
+          </div>
     </header>
     <div id="main-container">
         <main>
@@ -36,28 +41,30 @@
                  <!-- maybe i could also have these be cards and displayed ina grid -->
                 <h2>Projects</h2>
                 <div class="project">
-                    <h3><a href="pages/project_lcbot.html">Leetcode Bot</a></h3>
+                    <h3><a href="project_lcbot.html">Leetcode Bot</a></h3>
                     <p>Discord bot to facilitate active Leetcoding within servers.</p>
                 </div>
                 <div class="project">
-                    <h3>Obsidian MD Plugin</h3>
+                    <h3><a href="">Obsidian MD Plugin</a></h3>
                     <p>Plugin that was created for the Obsidian MD note taking software.</p>
                 </div>
             </section>
-            <section>
-                <h2>Contact</h2>
-                <p>Email: <a href="mailto:hunter.baker.b@gmail.com">hunter.baker.b@gmail.com</a></p>
-            </section>
         </main>
         <footer>
-            <!-- make these list items so its easier for adaptiev screens -->
              <!-- make these some of these icons as well  -->
             <p>&copy; 2024 Hunter Baker</p>
-            <a href="https://github.com/hutnerr">Github</a>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/">LinkedIn</a>
-            <a href="">Leetcode</a>
-            <a href="">Resume</a>
-            <a href="">Email</a>
+            <ul>
+                <li><a href="">Resume</a></li>
+                <li> | </li>
+                <li><a href="mailto:hunter.baker.b@gmail.com">hunter.baker.b@gmail.com</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://github.com/hutnerr">Github</a></li>
+                <li> | </li>
+                <li><a href="https://www.linkedin.com/in/hunter-b-baker/">LinkedIn</a></li>
+                <li> | </li>
+                <li><a href="">Leetcode</a></li>
+            </ul>
         </footer>
     </div>
 </body>
