@@ -2,13 +2,21 @@
 
 :root {
     --font: 'JetBrains Mono', monospace;
-    --color-primary: white;
-    --color-secondary: black;
-    --color-tertiary: #fb4934;
+    /* --color-primary: white; */
+    --color-primary: #282828;
+    --color-secondary: #ebdbb2;
+    /* --color-secondary: black; */
+    /* --color-tertiary: #fb4934; */
+    --color-tertiary: #37c07e;
+    --color-tertiary: #ffbf00;
 }
 
 * {
     font-family: var(--font)
+}
+
+#main-header {
+    text-align: center;
 }
 
 .navbar {
@@ -51,17 +59,20 @@
 .dropdown {
     float: left;
     overflow: hidden;
+    width: 170px;
+    padding: 10px;
 }
+
 
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-    /* display: none; */
-    border: solid;
+    display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-tertiary);
+    min-width: 170px;
+    margin: 10px;
+    margin-left: 0px;
     z-index: 1;
 }
 
@@ -74,11 +85,6 @@
     text-align: left;
     font-size: 16px;
     padding: 6px;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #ddd;
 }
 
 /* Show the dropdown menu on hover */
@@ -134,12 +140,15 @@ footer ul {
     list-style-type: none;
 }
 
+footer ul li {
+    color: var(--color-secondary)
+}
+
 section {
-    margin: 0;
     border: solid;
     border-color: var(--color-secondary);
     padding: 10px;
-    margin: 10px;
+    margin: 15px;
 }
 
 a {
