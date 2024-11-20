@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hunter Baker</title>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 
 <body>
@@ -16,18 +16,22 @@
         <div class="navbar">
             <a class="navbar-item" href="#home">Home</a>
             <div class="dropdown">
-                <p class="navbar-item">Projects</p>
+                <p class="navbar-item dropdown-title">Projects</p>
                 <div class="dropdown-content">
-                    <a class="dropdown-item" href="leetcode-bot.html">LeetCode Discord Bot</a>
-                    <!-- <a href="#"></a> -->
-                    <!-- <a href="#">Link 3</a> -->
+                    <a class="dropdown-item" href="wip.html">LeetCode Discord Bot</a>
+                    <a class="dropdown-item" href="wip.html">UnitED Calculator</a>
+                    <a class="dropdown-item" href="wip.html">Pantry Panic Website</a>
+                    <a class="dropdown-item" href="index.html">Portfolio Website</a>
+                    <a class="dropdown-item" href="wip.html">Intel Data Analysis</a>
+                    <a class="dropdown-item" href="wip.html">Y86-64 Assembler</a>
+                    <a class="dropdown-item" href="wip.html">Mad Zip File Utility</a>
                 </div>
             </div>
             <div class="dropdown">
-                <p class="navbar-item">Contact</p>
+                <p class="navbar-item dropdown-title">Contact</p>
                 <div class="dropdown-content">
                     <a class="dropdown-item" href="https://github.com/hutnerr">GitHub</a>
-                    <a class="dropdown-item" href="leetcode-bot.html">Email</a>
+                    <a class="dropdown-item" href="mailto:hunter.baker.b@gmail.com">Email</a>
                     <a class="dropdown-item" href="https://www.linkedin.com/in/hunter-b-baker/">LinkedIn</a>
                     <a class="dropdown-item" href="https://leetcode.com/u/hutnerr/">LeetCode</a>
                     <a class="dropdown-item" href="resources/pdf/resume_hunter-baker.pdf">Resume</a>
@@ -42,8 +46,10 @@
             <section id="about">
                 <h2>About Me</h2>
                 <p>I am a currently student at <a href="https://www.jmu.edu/index.shtml">James Madison University</a> pursuing my bachelor's in Computer Science. Here I am a member of the computing honors society <a href="https://upe.acm.org/">Upsilon Pi Epsilon</a>. I fell in love with programming when I started in January 2022. Since then, I've been actively pursuing my goal of becomming a Software Engineer.</p>
-                <p>Recently, I was fortunate enough to participate in the wonderful <a href="https://www.globaltech.jmu.edu/">Global Career Accelerator.</a> During my time here, I was able to pick up some certifications; namely <a href="https://www.credential.net/1d8168a8-df4c-4180-a412-9d36ece8aa6a#gs.htdap8">Python Specialist</a>, <a href="https://www.credential.net/4f3405bd-57d1-445b-9e19-167647d2b420?record_view=true#gs.htdapa">SQL Specialist</a>, and <a href="https://www.credential.net/c66cab81-87c3-44e4-98da-2489798c9ea8#acc.YHpXs8rg">Intercultural Skills</a>.</p>
                 <p>My programming interests lie primarily with software development, game development, and web development. Some of my other interests include reading as well as writing.</p>
+                <p>I am currently working on two primary projects. The first one is finishing up this website. The other is finishing up and publishing my <a href="wip.html">LeetCode Bot Project</a>. Some of my future projects include a command line utility related to easy delimeter printing and an Obsidian MD plugin.</p>
+                <h3>Experience</h3>
+                <p>Recently, I was fortunate enough to participate in the wonderful <a href="https://www.globaltech.jmu.edu/">Global Career Accelerator.</a> During my time here, I was able to pick up some certifications; namely <a href="https://www.credential.net/1d8168a8-df4c-4180-a412-9d36ece8aa6a#gs.htdap8">Python Specialist</a>, <a href="https://www.credential.net/4f3405bd-57d1-445b-9e19-167647d2b420?record_view=true#gs.htdapa">SQL Specialist</a>, and <a href="https://www.credential.net/c66cab81-87c3-44e4-98da-2489798c9ea8#acc.YHpXs8rg">Intercultural Skills</a>.</p>
             </section>
             <section id="skills">
                 <h2>Skills</h2>
@@ -54,7 +60,7 @@
                             <li>Python</li>
                             <li>Java</li>
                             <li>C</li>
-                            <li>JS & HTML & CSS</li> 
+                            <li>JS &amp; HTML &amp; CSS</li>
                         </ul>
                     </div>
                     <div class="skill">
@@ -80,8 +86,14 @@
             <section id="projects">
                 <h2>Featured Projects</h2>
                 <div class="project">
-                    <h3><a href="leetcode-bot.html">LeetCode Discord Bot</a> <a href="https://github.com/hutnerr/leetcode-bot"><i class="devicon-github-original"></i></a></h3>
-                    <p>TODO: Couple sentences blurb about the project</p>
+                    <h3><a href="wip.html">LeetCode Discord Bot</a> <a href="https://github.com/hutnerr/leetcode-bot"><i class="devicon-github-original"></i></a> <a href=""><img src="link.svg" alt="GitHub Logo" width="20" height="20"></a></h3>
+                    <p>Discord bot that facilitates active LeetCoding and contest participation.</p>
+                    <ul>
+                        <li>Designed, implemented, and used a Database using SQLite for efficient storage and quick lookups.</li>
+                        <li>Used the LeetCode API to get related information</li>
+                        <li>Utilized software design patterns such as the observer pattern as well as the singleton pattern</li>
+                        <li>Self-hosted the bot 24/7 on a Raspberry Pi</li>
+                    </ul>
                     <div class="project-icons">
                         <i class="devicon-python-plain" title="Python"></i>
                         <i class="devicon-sqlite-plain" title="SQLite"></i>
@@ -89,26 +101,41 @@
                     </div>
                 </div>
                 <div class="project">
-                    <h3><a href="">Pantry Panic Website</a> <a href="https://343f24.github.io/343f24-final-project-pantry-panic/"><img src="link.svg" alt="GitHub Logo" width="20" height="20"></a></h3>
-                    <p>Website that was created to showcase my projects and skills.</p>
-                    <div class="project-icons">
-                        <i class="devicon-html5-plain" title="HTML"></i>
-                        <i class="devicon-css3-plain" title="CSS"></i>
-                        <i class="devicon-javascript-plain" title="JavaScript"></i>
-                        <i class="devicon-git-plain" title="Git"></i>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3><a href="">UnitED Caclulator</a></h3>
-                    <p>Calculator that was created to help students calculate their grades.</p>
+                    <h3><a href="wip.html">UnitED Caclulator</a></h3>
+                    <p>Calculator that performs calculations across different unit types.</p>
+                    <ul>
+                        <li>Followed an agile (Scrum) process to create a complete software product</li>
+                        <li>Worked with a team of 5 using Git and GitHub</li>
+                        <li>Utilized software design principles and worked to maximize cohesion and minimize coupling</li>
+                        <li>Worked with a stakeholder to refine requirements</li>
+                    </ul>
                     <div class="project-icons">
                         <i class="devicon-java-plain" title="Java"></i>
                         <i class="devicon-git-plain" title="Git"></i>
                     </div>
                 </div>
                 <div class="project">
-                    <h3><a href="">Portfolio Website</a> <a href="https://github.com/hutnerr/personal-website"><i class="devicon-github-original"></i></a> <a href="index.html"><img src="link.svg" alt="GitHub Logo" width="20" height="20"></a></h3>
+                    <h3><a href="wip.html">Pantry Panic Website</a> <a href="https://343f24.github.io/343f24-final-project-pantry-panic/"><img src="link.svg" alt="GitHub Logo" width="20" height="20"></a></h3>
+                    <p>Website that provides you recipes based on the ingredients available.</p>
+                    <ul>
+                        <li>Worked with a partner using Git</li>
+                        <li>Created a responsive design</li>
+                        <li>Leveraged API calls to display data</li>
+                    </ul>
+                    <div class="project-icons">
+                        <i class="devicon-html5-plain" title="HTML"></i>
+                        <i class="devicon-css3-plain" title="CSS"></i>
+                        <i class="devicon-javascript-plain" title="JavaScript"></i>
+                        <i class="devicon-git-plain" title="Git"></i>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3><a href="wip.html">Portfolio Website</a> <a href="https://github.com/hutnerr/personal-website"><i class="devicon-github-original"></i></a> <a href="index.html"><img src="link.svg" alt="GitHub Logo" width="20" height="20"></a></h3>
                     <p>Website that was created to showcase my projects and skills.</p>
+                    <ul>
+                        <li>Created a sleek and modern design focused on simplicity</li>
+                        <li>Created a responsive design</li>
+                    </ul>
                     <div class="project-icons">
                         <i class="devicon-html5-plain" title="HTML"></i>
                         <i class="devicon-css3-plain" title="CSS"></i>
@@ -116,8 +143,12 @@
                     </div>
                 </div>
                 <div class="project">
-                    <h3><a href="">Intel Data Analysis</a> <a href="https://www.credential.net/4dea0336-916c-49e5-8417-3bf571bbefd4#gs.htdjzi"><img src="link.svg" alt="GitHub Logo" width="20" height="20"></a></h3>
+                    <h3><a href="wip.html">Intel Data Analysis</a> <a href="https://www.credential.net/4dea0336-916c-49e5-8417-3bf571bbefd4#gs.htdjzi"><img src="link.svg" alt="GitHub Logo" width="20" height="20"></a></h3>
                     <p>Analysis of data using the Pandas library in Python.</p>
+                    <ul>
+                        <li>Used PostgreSQL and Pandas to analyze data</li>
+                        <li>Created visualizations using Tableau to present results</li>
+                    </ul>
                     <div class="project-icons">
                         <i class="devicon-python-plain" title="Python"></i>
                         <i class="devicon-pandas-plain" title="Pandas"></i>

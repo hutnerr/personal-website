@@ -67,8 +67,6 @@
     color: white;
 }
 
-
-
 /* Dropdown content (hidden by default) */
 .dropdown-content {
     display: none;
@@ -81,7 +79,8 @@
 }
 
 /* Links inside the dropdown */
-.dropdown-content a, p {
+.dropdown-content a,
+p {
     float: none;
     color: black;
     text-decoration: none;
@@ -96,6 +95,10 @@
     display: block;
 }
 
+.dropdown-title:hover {
+    cursor: default;
+}
+
 .dropdown:hover .navbar-item {
     background-color: var(--color-tertiary);
     color: var(--color-primary);
@@ -104,7 +107,7 @@
 /* main heading and the headings for each section */
 h1,
 h2,
-p {
+p, h3 {
     color: var(--color-secondary);
 }
 
@@ -164,6 +167,10 @@ section h2 {
     margin-bottom: 0px;
 }
 
+.project ul {
+    color: var(--color-secondary)
+}
+
 a {
     text-decoration: none;
     color: var(--color-tertiary);
@@ -201,9 +208,12 @@ a:hover {
 
 .skill ul {
     margin: 5px;
-    list-style: lower-greek
-    /* list-style: georgian; */
-    /* list-style: armenian; */
-    /* list-style:upper-roman */
-    /* list-style:  */
+    /* list-style: lower-greek */
+    list-style: none;
+}
+
+#wip {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
