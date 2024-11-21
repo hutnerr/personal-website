@@ -1,245 +1,286 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap");
 
+/* 
+-------------------------
+===== CSS Variables =====
+------------------------- 
+*/
 :root {
-    --font: 'JetBrains Mono', monospace;
-    /* --color-primary: white; */
-    --color-primary: #282828;
-    --color-secondary: #ebdbb2;
-    /* --color-secondary: black; */
-    /* --color-tertiary: #fb4934; */
-    --color-tertiary: #37c07e;
-    --color-tertiary: #ffbf00;
+  --font: "JetBrains Mono", monospace;
+  --color-primary: #282828;
+  --color-secondary: #ebdbb2;
+  --color-tertiary: #ffbf00;
 }
 
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: var(--color-secondary) var(--color-primary);
-  }
-
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: var(--color-primary);
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: #8f54a0;
-    border-radius: 36px;
-    border: 6px solid var(--color-primary);
-  }
-
-html {
-    overflow-y: scroll;
-}
-
+/* 
+---------------------------
+===== Baseline Styles =====
+--------------------------- 
+*/
 * {
-    font-family: var(--font)
-}
-
-#main-header {
-    text-align: center;
-}
-
-.navbar {
-    overflow: hidden;
-    display: flex;
-    margin: 0px;
-    padding: 0px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.navbar-item {
-    display: inline;
-    padding: 10px;
-    text-decoration: none;
-    font-size: 27px;
-    text-align: center;
-    width: 170px;
-    color: var(--color-tertiary);
-}
-
-.navbar-item:hover {
-    background-color: var(--color-tertiary);
-    color: var(--color-primary);
-}
-
-.navbar-item a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.navbar-item a:hover {
-    color: var(--color-primary);
-}
-
-/* The dropdown container */
-.dropdown {
-    float: left;
-    overflow: hidden;
-    width: 170px;
-    padding: 10px;
-}
-
-.dropdown-item:hover {
-    color: white;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--color-tertiary);
-    min-width: 170px;
-    margin: 10px;
-    margin-left: 0px;
-    z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a,
-p {
-    float: none;
-    color: black;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    font-size: 16px;
-    padding: 6px;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-title:hover {
-    cursor: default;
-}
-
-.dropdown:hover .navbar-item {
-    background-color: var(--color-tertiary);
-    color: var(--color-primary);
-}
-
-/* main heading and the headings for each section */
-h1,
-h2,
-p, h3 {
-    color: var(--color-secondary);
-}
-
-body {
-    margin: 0px;
-    background-color: var(--color-primary);
-}
-
-#main-container {
-    margin-left: 15%;
-    margin-right: 15%;
-}
-
-header {
-    margin: 0;
-    margin-right: 10%;
-    margin-left: 10%;
-    height: 50px;
-}
-
-main {
-    margin: 0;
-}
-
-footer p {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-footer ul {
-    margin-top: 0px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    gap: 10px;
-    list-style-type: none;
-}
-
-footer ul li {
-    color: var(--color-secondary)
-}
-
-section {
-    border: solid;
-    border-color: var(--color-secondary);
-    padding: 10px;
-    margin: 35px;
-}
-
-section p {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-section h2 {
-    margin-bottom: 0px;
-}
-
-.project ul {
-    color: var(--color-secondary)
+  font-family: var(--font);
 }
 
 a {
-    text-decoration: none;
-    color: var(--color-tertiary);
+  text-decoration: none;
+  color: var(--color-tertiary);
 }
 
 a:hover {
     color: #dd908b;
 }
 
+h1,
+h2,
+h3,
+p {
+  color: var(--color-secondary);
+}
+
+body {
+  margin: 0px;
+  background-color: var(--color-primary);
+}
+
+/* 
+----------------------------
+===== Custom Scrollbar =====
+----------------------------
+*/
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-secondary) var(--color-primary);
+}
+
+/* make the scrollbar always present */
+html {
+  overflow-y: scroll;
+}
+
+/* 
+-----------------------------------
+===== Navigation Bar / Navbar =====
+-----------------------------------
+*/
+
+/* the base navbar container div */
+.navbar {
+  overflow: hidden;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* for each item inside of the navbar */
+.navbar-item {
+  display: inline;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 27px;
+  text-align: center;
+  width: 170px;
+  color: var(--color-tertiary);
+}
+
+.navbar-item:hover {
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
+}
+
+.navbar-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-item a:hover {
+  color: var(--color-primary);
+}
+
+/* 
+---------------------------
+===== Navbar Dropdown =====
+---------------------------
+*/
+.dropdown {
+  float: left;
+  overflow: hidden;
+  width: 170px;
+  padding: 10px;
+}
+
+.dropdown-item:hover {
+  color: white;
+}
+
+.dropdown-content {
+  display: none; /* hide the dropdown content by default */
+  position: absolute;
+  background-color: var(--color-tertiary);
+  min-width: 170px; /* can change this to make the dropdown shrink to element size? */
+  margin: 10px;
+  margin-left: 0px;
+  z-index: 1; /* make sure the dropdown is on top of everything */
+}
+
+.dropdown-content a {
+  float: none;
+  color: var(--color-primary);
+  display: block;
+  text-align: left;
+  font-size: 16px;
+  padding: 6px;
+}
+
+/* show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* make the cursor just be a pointer instead of a bar */
+.dropdown-title:hover {
+  cursor: default;
+}
+
+/* while we're hovering within the dropdown, 
+make sure the navbar item keeps its styling */
+.dropdown:hover .navbar-item {
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
+}
+
+/* 
+---------------------------
+===== Header =====
+---------------------------
+*/
+header {
+  margin: 0;
+  margin-right: 10%;
+  margin-left: 10%;
+  height: 50px;
+}
+
+/* 
+---------------------------
+===== Main =====
+---------------------------
+*/
+
+#main-container {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+main {
+  margin: 0;
+}
+
+/* 
+---------------------------
+===== Footer =====
+---------------------------
+*/
+footer p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+footer ul {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
+  list-style-type: none;
+}
+
+footer ul li {
+  color: var(--color-secondary);
+}
+
+/* 
+---------------------------
+===== Sections =====
+---------------------------
+*/
+section {
+  border: solid;
+  border-color: var(--color-secondary);
+  padding: 10px;
+  margin: 35px;
+}
+
+section p {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+section h2 {
+  margin-bottom: 0px;
+}
+
+/* 
+---------------------------
+===== Individual Project =====
+---------------------------
+*/
+.project ul {
+  color: var(--color-secondary);
+}
 
 .project-icons {
-    color: var(--color-secondary);
-    font-size: 25px;
-    margin-left: 25px;
+  color: var(--color-secondary);
+  font-size: 25px;
+  margin-left: 25px;
 }
 
 #skill-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+/* 
+---------------------------
+===== Skills Section =====
+---------------------------
+*/
 .skill {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-secondary);
-    margin: 0px;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-secondary);
+  margin: 0px;
+  text-align: left;
 }
 
 .skill h3 {
-    margin: 0px;
+  margin: 0px;
 }
 
 .skill ul {
-    margin: 5px;
-    /* list-style: lower-greek */
-    list-style: none;
+  margin: 5px;
+  /* list-style: lower-greek */
+  list-style: none;
+}
+
+/* 
+----------------------------
+===== Misc  =====
+----------------------------
+*/
+#main-header {
+  text-align: center;
 }
 
 #wip {
     font-size: 20px;
     text-align: center;
     margin-top: 20px;
-}
+  }
