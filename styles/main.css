@@ -11,13 +11,30 @@
     --color-tertiary: #ffbf00;
 }
 
-body {
-    overflow-y: auto;
-    scrollbar-width: 0px;
-}
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-secondary) var(--color-primary);
+  }
 
-body::-webkit-scrollbar {
-    width: 0px;
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--color-primary);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #8f54a0;
+    border-radius: 36px;
+    border: 6px solid var(--color-primary);
+  }
+
+html {
+    overflow-y: scroll;
 }
 
 * {
