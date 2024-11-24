@@ -27,7 +27,7 @@ a {
 }
 
 a:hover {
-    color: #dd908b;
+  color: #dd908b;
 }
 
 h1,
@@ -62,18 +62,50 @@ html {
 ===== Navigation Bar / Navbar =====
 -----------------------------------
 */
-
 /* the base navbar container div */
 .navbar {
   overflow: hidden;
   display: flex;
-  margin: 0px;
   padding: 0px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-left: 10%;
-  margin-right: 10%;
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    margin: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .navbar-item {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 600px) {
+  .navbar {
+    margin: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .navbar-item {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 900px) {
+  .navbar {
+    margin: 0px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .navbar-item {
+    font-size: 32px;
+  }
 }
 
 /* for each item inside of the navbar */
@@ -81,7 +113,6 @@ html {
   display: inline;
   padding: 10px;
   text-decoration: none;
-  font-size: 27px;
   text-align: center;
   width: 170px;
   color: var(--color-tertiary);
@@ -158,12 +189,34 @@ make sure the navbar item keeps its styling */
 ===== Header =====
 ---------------------------
 */
-header {
-  margin: 0;
-  margin-right: 10%;
-  margin-left: 10%;
-  height: 50px;
+
+@media (max-width: 400px) {
+  header {
+    margin: 0;
+    height: 50px;
+  }
 }
+
+@media (min-width: 600px) {
+  header {
+    margin: 0;
+    margin-right: 5%;
+    margin-left: 5%;
+    height: 50px;
+  }
+}
+
+@media (min-width: 900px) {
+  header {
+    margin: 0;
+    margin-right: 10%;
+    margin-left: 10%;
+    height: 50px;
+  }
+}
+
+
+
 
 /* 
 ---------------------------
@@ -171,9 +224,25 @@ header {
 ---------------------------
 */
 
-#main-container {
-  margin-left: 15%;
-  margin-right: 15%;
+@media (max-width: 600px) {
+  #main-container {
+    /* margin-left: 2%; */
+    /* margin-right: 5%; */
+  }
+}
+
+@media (min-width: 900px) {
+  #main-container {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #main-container {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
 }
 
 main {
@@ -198,6 +267,7 @@ footer ul {
   align-items: center;
   gap: 10px;
   list-style-type: none;
+  padding: 0px;
 }
 
 footer ul li {
@@ -214,6 +284,13 @@ section {
   border-color: var(--color-secondary);
   padding: 10px;
   margin: 35px;
+}
+
+@media (max-width: 450px) {
+  section {
+    margin: 18px;
+    margin-bottom: 35px;
+  }
 }
 
 section p {
@@ -240,33 +317,52 @@ section h2 {
   margin-left: 25px;
 }
 
-#skill-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
 /* 
 ---------------------------
 ===== Skills Section =====
 ---------------------------
 */
-.skill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-secondary);
-  margin: 0px;
-  text-align: left;
+#skill-container {
+  display: grid;
 }
 
-.skill h3 {
-  margin: 0px;
+@media (min-width: 700px) {
+  #skill-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 700px) {
+  .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary);
+    margin: 0px;
+    text-align: left;
+  }
+  
+  .skill h3 {
+    margin: 0px;
+  }
+}
+
+@media (max-width: 700px) {
+  .skill {
+    color: var(--color-secondary);
+    margin: 0px;
+  }
+
+  .skill h3 {
+    margin: 0px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
 }
 
 .skill ul {
   margin: 5px;
-  /* list-style: lower-greek */
   list-style: none;
 }
 
@@ -280,7 +376,7 @@ section h2 {
 }
 
 #wip {
-    font-size: 20px;
-    text-align: center;
-    margin-top: 20px;
-  }
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
