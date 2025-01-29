@@ -42,6 +42,10 @@ body {
   background-color: var(--color-primary);
 }
 
+li {
+  color: var(--color-secondary);
+}
+
 /* 
 ----------------------------
 ===== Custom Scrollbar =====
@@ -366,7 +370,7 @@ section h2 {
 
 .skill ul {
   margin: 5px;
-  list-style: none;
+  /* list-style: none; */
 }
 
 /* 
