@@ -140,8 +140,10 @@ html {
 .dropdown {
   float: left;
   overflow: hidden;
-  width: 170px;
-  padding: 10px;
+  width: 150px;
+  padding: 10px;;
+  padding-left: 0px;
+  text-align: center;
 }
 
 .dropdown-item:hover {
@@ -151,10 +153,9 @@ html {
 .dropdown-content {
   display: none; /* hide the dropdown content by default */
   position: absolute;
+  width: inherit;
+  padding-right: 10px;
   background-color: var(--color-tertiary);
-  min-width: 170px; /* can change this to make the dropdown shrink to element size? */
-  margin: 10px;
-  margin-left: 0px;
   z-index: 1; /* make sure the dropdown is on top of everything */
 }
 
@@ -165,6 +166,11 @@ html {
   text-align: left;
   font-size: 16px;
   padding: 6px;
+}
+
+.dropdown:hover {
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
 }
 
 /* show the dropdown menu on hover */
@@ -214,9 +220,6 @@ make sure the navbar item keeps its styling */
     height: 50px;
   }
 }
-
-
-
 
 /* 
 ---------------------------
