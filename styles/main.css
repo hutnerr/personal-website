@@ -397,3 +397,31 @@ section h2 {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+
+/* 
+----------------------------
+===== Tables  =====
+----------------------------
+*/
+table {
+  color: var(--color-secondary);
+  font-family: sans-serif;
+}
+
+td {
+  padding-left: 25px
+}
+
+.code-col {
+  width: 120px; /* so cs and csc ustd etc align in the class table */
+}
+
+/* 
+----------------------------
+===== Tables  =====
+----------------------------
+*/
+a img:hover
+{
+  color: red;
+}
