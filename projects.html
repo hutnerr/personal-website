@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="icon" href="resources/images/my_rat_pfp_nobg.png">
+    <script src="scripts/hoverlink.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="navbar">
@@ -36,9 +40,13 @@
         <h1 id="main-header">Projects</h1>
         <section>
             <h2>Overview</h2>
-            <p>These are some of the projects that I have worked on in the past. Some of these are personal projects, while others were done for <a href="classhistory.html">classes</a> or <a href="experience.html">internships</a>.</p>
-            <p>While the <a href="index.html">home page</a> has a recent and relevant project showcase, this is a comprehensive collection of my projects.</p>
-            <p>Each project has it's own page as well that goes into more depth about it's purpose, what I learned, as well as personal challenges and experiences.</p>
+            <p>These are some of the projects that I have worked on in the past. Some of these are personal projects,
+                while others were done for <a href="classhistory.html">classes</a> or <a
+                    href="experience.html">internships</a>.</p>
+            <p>While the <a href="index.html">home page</a> has a recent and relevant project showcase, this is a
+                comprehensive collection of my projects.</p>
+            <p>Each project has it's own page as well that goes into more depth about it's purpose, what I learned, as
+                well as personal challenges and experiences.</p>
             <h3>Current Projects</h3>
             <ul>
                 <li><a href="projectpages/leetcode-bot.html">LeetCode Discord Bot</a></li>
@@ -51,22 +59,79 @@
         </section>
         <section>
             <h2>Software Development</h2>
-            <h3><a href="projectpages/united-calculator.html">UnitED Calculator</a></h3>
-            <p>WIP</p>
-            <h3><a href="projectpages/navsystem.html">Personal GPS Application</a></h3>
+            <div class="project">
+                <h3><a href="projectpages/united-calculator.html">UnitED Caclulator</a></h3>
+                <p>Calculator that performs calculations across different unit types.</p>
+                <ul>
+                    <li>Followed an agile (Scrum) process to create a complete software product</li>
+                    <li>Worked with a team of 5 using Git and GitHub</li>
+                    <li>Utilized software design principles and worked to maximize cohesion and minimize coupling</li>
+                    <li>Worked with a stakeholder to refine requirements</li>
+                </ul>
+                <div class="project-icons">
+                    <i class="devicon-java-plain" title="Java"></i>
+                    <i class="devicon-git-plain" title="Git"></i>
+                </div>
+            </div>
+            <h3><a href="projectpages/navsystem.html">Navigation Application</a></h3>
             <p>WIP</p>
         </section>
         <section>
             <h2>Web Development</h2>
-            <h3><a href="projectpages/portfolio-website.html">Personal Website</a></h3>
-            <p>WIP</p>
-            <h3><a href="projectpages/pantry-panic.html">Pantry Panic Website</a></h3>
-            <p>WIP</p>
+            <div class="project">
+                <h3><a href="/projectpages/portfolio-website.html">Portfolio Website</a> <a
+                        href="https://github.com/hutnerr/personal-website"><i class="devicon-github-original"></i></a>
+                    <a href="index.html"><img src="/resources/images/link.svg" alt="Link" width="20" height="20"></a>
+                </h3>
+                <p>Website that was created to showcase my projects and skills.</p>
+                <ul>
+                    <li>Created a sleek and modern design focused on simplicity</li>
+                    <li>Created a responsive design</li>
+                </ul>
+                <div class="project-icons">
+                    <i class="devicon-html5-plain" title="HTML"></i>
+                    <i class="devicon-css3-plain" title="CSS"></i>
+                    <i class="devicon-javascript-plain" title="JavaScript"></i>
+                </div>
+            </div>
+            <div class="project">
+                <h3><a href="projectpages/pantry-panic.html">Pantry Panic Website</a> <a
+                        href="https://343f24.github.io/343f24-final-project-pantry-panic/"><img
+                            src="resources/images/link.svg" alt="Link" width="20" height="20"></a></h3>
+                <p>Website that provides you recipes based on the ingredients available.</p>
+                <ul>
+                    <li>Worked with a partner using Git</li>
+                    <li>Created a responsive design</li>
+                    <li>Leveraged API calls to display data</li>
+                </ul>
+                <div class="project-icons">
+                    <i class="devicon-html5-plain" title="HTML"></i>
+                    <i class="devicon-css3-plain" title="CSS"></i>
+                    <i class="devicon-javascript-plain" title="JavaScript"></i>
+                    <i class="devicon-git-plain" title="Git"></i>
+                </div>
+            </div>
         </section>
         <section>
             <h2>Bots</h2>
-            <h3><a href="projectpages/leetcode-bot.html">LeetCode Discord Bot</a></h3>
-            <p>WIP</p>
+            <div class="project">
+                <h3><a href="projectpages/leetcode-bot.html">LeetCode Discord Bot</a> <a
+                        href="https://github.com/hutnerr/leetcode-bot"><i class="devicon-github-original"></i></a> <a
+                        href=""><img src="resources/images/link.svg" alt="Link" width="20" height="20"></a></h3>
+                <p>Discord bot that facilitates active LeetCoding and contest participation.</p>
+                <ul>
+                    <li>Designed, implemented, and used a Database using SQLite for efficient storage and quick lookups.
+                    </li>
+                    <li>Used the LeetCode API to get related information</li>
+                    <li>Utilized software design patterns such as the Observer pattern</li>
+                    <li>Self-hosted the bot 24/7 on a Raspberry Pi</li>
+                </ul>
+                <div class="project-icons">
+                    <i class="devicon-python-plain" title="Python"></i>
+                    <i class="devicon-sqlite-plain" title="SQLite"></i>
+                    <i class="devicon-raspberrypi-plain"></i>
+                </div>
+            </div>
         </section>
         <section>
             <h2>Systems Programming</h2>
@@ -81,9 +146,42 @@
             <h2>Utilities</h2>
             <h3><a href="projectpages/madzip.html">Mad Zip File Utility</a></h3>
             <p>WIP</p>
-            <h3><a href="projectpages/txtmet.html">Text Metrics</a></h3>
-            <p>WIP</p>
+            <div class="project">
+                <h3><a href="/projectpages/txtmet.html">TXTMET Utility</a> <a
+                        href="https://github.com/hutnerr/txtmet"><i class="devicon-github-original"></i></a></h3>
+                <p>Command line utility to provide certain metrics of a TXT file.</p>
+                <ul>
+                    <li>Used <code>getopt</code> to implement command line functionality</li>
+                    <li>Implemented appropriate error handling based on input</li>
+                </ul>
+                <div class="project-icons">
+                    <i class="devicon-c-plain" title="C"></i>
+                    <i class="devicon-linux-plain" title="Linux"></i>
+                </div>
+            </div>
         </section>
+        <section>
+            <h2>Data</h2>
+            <div class="project">
+                <h3><a href="wip.html">Intel Data Analysis</a> <a
+                        href="https://www.credential.net/4dea0336-916c-49e5-8417-3bf571bbefd4#gs.htdjzi"><img
+                            src="/resources/images/link.svg" alt="Link" width="20" height="20"></a></h3>
+                <p>Analysis of data using the Pandas library in Python.</p>
+                <ul>
+                    <li>Used PostgreSQL and Pandas to analyze data</li>
+                    <li>Created visualizations using Tableau to present results</li>
+                </ul>
+                <div class="project-icons">
+                    <i class="devicon-python-plain" title="Python"></i>
+                    <i class="devicon-pandas-plain" title="Pandas"></i>
+                    <i class="devicon-postgresql-plain" title="PostgreSQL"></i>
+                </div>
+            </div>
+        </section>
+        <!-- <section>
+            <h2>Archives</h2>
+            Outdated projects should go here. Ones that aren't important but can keep around because why not
+        </section> -->
     </main>
     <footer>
         <!-- make these some of these icons as well  -->
@@ -102,4 +200,5 @@
         </ul>
     </footer>
 </body>
+
 </html>
