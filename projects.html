@@ -77,11 +77,13 @@
                 <h3><a href="projectpages/navsystem.html">Navigation Application</a></h3>
                 <p>Navigation Application with real-time updates, map matching, and route relocation</p>
                 <ul>
-                    <li>Used object-oriented principles to model geographic shapes, street segments, and intersections</li>
+                    <li>Used object-oriented principles to model geographic shapes, street segments, and intersections
+                    </li>
                     <li>Applied design patterns such as the Observer and Model-View-Controller</li>
-                    <li>Developed interactive visualizations using Java Swing and Java 2D graphics</li>
+                    <li>Developed visualizations using Java Swing and Java 2D graphics</li>
                     <li>Utilized pathfinding algorithms and GPS data parsing for dynamic routing</li>
-                    <li>Developed map matching and route relocation features to adjust routes based on real-time data</li>
+                    <li>Developed map matching and route relocation features to adjust routes based on real-time data
+                    </li>
                 </ul>
                 <div class="project-icons">
                     <i class="devicon-java-plain" title="Java"></i>
@@ -148,17 +150,67 @@
         </section>
         <section>
             <h2>Systems Programming</h2>
-            <h3><a href="projectpages/miniy86cpu.html">Mini-Y86 CPU</a></h3>
-            <p>WIP</p>
-            <h3><a href="projectpages/dukesh.html">Duke Shell</a></h3>
-            <p>WIP</p>
-            <h3><a href="projectpages/dhcpclientserver.html">DHCP Client &amp; Sever Simulation</a></h3>
-            <p>WIP</p>
+            <div class="project">
+                <h3><a href="projectpages/miniy86cpu.html">Mini-Y86 CPU Simulator</a></h3>
+                <p>A Mini CPU Simulator for the Y86 architecture.</p>
+                <ul>
+                    <li>Implemented Mini-ELF file validation and segment loading</li>
+                    <li>Created a disassembler for variable-length Y86 instructions</li>
+                    <li>Developed full CPU simulation implementing all stages of the von Neumann cycle</li>
+                </ul>
+                <div class="project-icons">
+                    <i class="devicon-c-plain" title="C"></i>
+                    <i class="devicon-linux-plain" title="Linux"></i>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3><a href="projectpages/dukesh.html">Duke Shell</a></h3>
+                <p>Unix-style shell with custom utilities, piping, and environment variable management.</p>
+                <ul>
+                    <li>Built interactive + batch shell modes using fork(), exec*(), and dup2()</li>
+                    <li>Created custom versions of ls, chmod, head, cat, env, and more</li>
+                    <li>Implemented piping, variable parsing, and command chaining</li>
+                    <li>Wrote scripts to test shell behavior and validate output</li>
+                </ul>
+                <div class="project-icons">
+                    <i class="devicon-c-plain" title="C"></i>
+                    <i class="devicon-linux-plain" title="Linux"></i>
+                    <i class="devicon-bash-plain" title="Bash"></i>
+                </div>
+            </div>
+            <div class="project">
+                <h3><a href="projectpages/dhcpclientserver.html">DHCP Client &amp; BOOTP Packet Parser</a></h3>
+                <p>Simulates DHCP client behavior with custom BOOTP packet encoding, option parsing, and raw UDP
+                    communication.</p>
+                <ul>
+                    <li>Built full DHCP discovery process using raw socket programming and UDP messaging</li>
+                    <li>Parsed and constructed BOOTP packets with custom struct handling and byte-level manipulation
+                    </li>
+                    <li>Implemented option field parsing for key DHCP fields (subnet mask, router, lease time, etc.)
+                    </li>
+                    <li>Simulated client-server interaction for IP address negotiation and configuration</li>
+                </ul>
+                <div class="project-icons">
+                    <i class="devicon-c-plain" title="C"></i>
+                    <i class="devicon-linux-plain" title="Linux"></i>
+                    <i class="devicon-bash-plain" title="Bash"></i>
+                </div>
+            </div>
         </section>
         <section>
             <h2>Utilities</h2>
-            <h3><a href="projectpages/madzip.html">Mad Zip File Utility</a></h3>
-            <p>WIP</p>
+            <h3><a href="projectpages/madzip.html">Mad Zip File Compression Utility</a></h3>
+            <p>Custom file compression utility using Huffman Coding, comparable to 7-Zip and gzip.</p>
+            <ul>
+                <li>Built Huffman Trees using a deterministic Min-Heap for consistent encoding/decoding</li>
+                <li>Wrote comprehensive unit tests to ensure accurate compression and decompression</li>
+                <li>Serialized compressed data into custom objects storing frequency maps and encoded bitstreams</li>
+            </ul>
+            <div class="project-icons">
+                <i class="devicon-java-plain" title="Java"></i>
+                <i class="devicon-eclipse-plain" title="Eclipse"></i>
+            </div>
             <div class="project">
                 <h3><a href="/projectpages/txtmet.html">TXTMET Utility</a> <a
                         href="https://github.com/hutnerr/txtmet"><i class="devicon-github-original"></i></a></h3>
