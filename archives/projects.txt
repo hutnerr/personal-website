@@ -1,0 +1,33 @@
+<section>
+    <h2>Data</h2>
+    <div class="project">
+        <h3><a href="wip.html">Intel Data Analysis</a> <a
+                href="https://www.credential.net/4dea0336-916c-49e5-8417-3bf571bbefd4#gs.htdjzi"><img
+                    src="/resources/images/link.svg" alt="Link" width="20" height="20"></a></h3>
+        <p>Analysis of data using the Pandas library in Python.</p>
+        <ul>
+            <li>Used PostgreSQL and Pandas to analyze data</li>
+            <li>Created visualizations using Tableau to present results</li>
+        </ul>
+        <div class="project-icons">
+            <i class="devicon-python-plain" title="Python"></i>
+            <i class="devicon-pandas-plain" title="Pandas"></i>
+            <i class="devicon-postgresql-plain" title="PostgreSQL"></i>
+        </div>
+    </div>
+</section>
+
+
+    <div class="project">
+        <h3><a href="projectpages/miniy86cpu.html">Mini-Y86 CPU Simulator</a></h3>
+        <p>A Mini CPU Simulator for the Y86 architecture.</p>
+        <ul>
+            <li>Implemented Mini-ELF file validation and segment loading</li>
+            <li>Created a disassembler for variable-length Y86 instructions</li>
+            <li>Developed full CPU simulation implementing all stages of the von Neumann cycle</li>
+        </ul>
+        <div class="project-icons">
+            <i class="devicon-c-plain" title="C"></i>
+            <i class="devicon-linux-plain" title="Linux"></i>
+        </div>
+    </div>
