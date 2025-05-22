@@ -10,6 +10,8 @@
   --color-primary: #282828;
   --color-secondary: #ebdbb2;
   --color-tertiary: #ffbf00;
+  --color-fourth: #fb4935;
+  --color-fifth: #8ec07c;
 }
 
 /* 
@@ -31,9 +33,21 @@ a:hover {
   /* text-decoration: underline; */
 }
 
-h1,
-h2,
-h3,
+/* might change this bc it ruins my convention that everything yellow is interactable */
+strong {
+  color: var(--color-fourth);
+}
+
+h1, h2 {
+  color: var(--color-fourth);
+}
+
+h3 {
+  /* color: var(--color-tertiary); */
+  color: var(--color-fourth);
+  /* color: var(--color-fifth); */
+}
+
 p {
   color: var(--color-secondary);
 }
@@ -125,6 +139,9 @@ html {
 
 .navbar-item:hover {
   background-color: var(--color-tertiary);
+  /* border-radius: 12px; */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;;
   color: var(--color-primary);
 }
 
@@ -181,6 +198,7 @@ html {
 /* show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+  border-radius: 12px;
 }
 
 /* make the cursor just be a pointer instead of a bar */
@@ -393,12 +411,7 @@ section h2 {
 ----------------------------
 ===== Project Page  =====
 ----------------------------
-*/
-.grid2x1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
+
 
 /* 
 ----------------------------
@@ -531,3 +544,4 @@ a img:hover
         min-width: 200px;
     }
 }
+
