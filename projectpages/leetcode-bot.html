@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
 </head>
+
 <body>
     <header>
         <div class="navbar">
@@ -37,22 +39,61 @@
         <h1 id="main-header">LeetCode Bot</h1>
         <section>
             <h2>Overview</h2>
+            <p>This is a Discord Bot created using <a href="https://discordpy.readthedocs.io/en/stable/">Discord.py.</a>
+                Its purpose is to facilitate LeetCoding within a Discord server. It achieves this goal through the usage
+                of custom settings, customizable daily problems, notifications for upcoming contests, and other
+                features.</p>
+            <p>As a live service product, it is a constant work in progress and always changing. The source code is
+                available on <a href="https://github.com/hutnerr/leetcode-bot">GitHub</a>. There you can also find an
+                invite link and documentation for setting it up on your own server.</p>
             <h3>Technologies Used</h3>
             <ul>
-                <li></li>
+                <li><strong>Python:</strong> Discord.py, Requests</li>
+                <li><strong>APIs:</strong> RESTful APIs, JSON</li>
             </ul>
         </section>
         <section>
             <h2>The Product</h2>
+            <div class="grid-container">
+                <div class="content-left">
+                    <p>The final product was a Discord bot that helps users with LeetCode problems by providing
+                        customizable daily challenges, tracking progress, and other things.</p>
+                    <p>The bot is designed to be easily configurable, allowing server administrators to set their own
+                        preferences for problem difficulty, frequency of these problems, and more.</p>
+                    <p>The bot uses the LeetCode API to fetch problems and user data, ensuring that users receive relevant
+                        content.</p>
+                    <p>It also includes features such as reminders for upcoming contests, a leaderboard to track user
+                        progress, and a help command to assist users in navigating the bot's features.</p>
+                    <p>The image shows an example of a problem being sent to a user.</p>
+                    <p>For more examples, check out the <a href="https://github.com/hutnerr/leetcode-bot">GitHub repository</a>.</p>
+                </div>
+                <div class="content-right image-container">
+                    <img class="image-section" src="/resources/images/leetcode-bot.png" alt="LeetCode Bot Screenshot">
+                </div>
+            </div>
         </section>
         <section>
             <h2>Challenges & Solutions</h2>
+            <p>At the time of making this, it was the biggest project I've ever worked on and designed on my own. This
+                naturally came with a lot of unique challenges that I had not encountered yet.</p>
+            <p>One of the main challenges was designing a bot that could scale with the needs of the users. I had to
+                ensure that the bot could handle multiple servers and users without performance issues.</p>
+            <p>Another challenge was managing the custom settings and demands of each server. I used a combination of
+                in-memory data structures and persistent storage to achieve this.</p>
+            <p>Additionally, a major challenge was getting the notification and problem delivery system to work. Ultimately through the usage of the Observer pattern, namely a Time Observer, I was able to notify relevant users.</p>
+            <p>Finally, I had to ensure that the bot was user-friendly and easy to use. I spent a lot of time designing
+                the commands and interactions to be intuitive and straightforward. This included creating a help command
+                that provided users with information on how to use the bot and its features.</p>
         </section>
         <section>
             <h2>Takeaways</h2>
+            <p>This was an incredibly useful project for my development. Building this product allowed me to put together everything I know and learned in a way that allowed me to apply my skills effectively. I learned an enormous amount about building and maintaining a live service product.</p>
+            <p>I realized how useful it is to have a solid understanding of the underlying technologies and frameworks when building a complex system. Also how important it is to read the documentation of the libraries and tools I am using.</p>
             <p>Some key takeaways include:</p>
             <ul>
-                <li></li>
+                <li>Documentation is an amazing resource to use</li>
+                <li>Designing a scalable system</li>
+                <li>Maintaining a live service product</li>
             </ul>
         </section>
     </main>
@@ -73,4 +114,5 @@
         </ul>
     </footer>
 </body>
+
 </html>
