@@ -11,7 +11,6 @@
   --color-secondary: #ebdbb2;
   --color-tertiary: #ffbf00;
   --color-fourth: #fb4935;
-  --color-fifth: #8ec07c;
 }
 
 /* 
@@ -38,7 +37,12 @@ strong {
   color: var(--color-fourth);
 }
 
-h1, h2 {
+h1 {
+  padding-top: 30px;
+  color: var(--color-fourth);
+}
+
+h2 {
   color: var(--color-fourth);
 }
 
@@ -134,7 +138,7 @@ html {
   text-decoration: none;
   text-align: center;
   width: 170px;
-  color: var(--color-tertiary);
+  color: var(--color-tertiary); 
 }
 
 .navbar-item:hover {
