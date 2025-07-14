@@ -317,6 +317,7 @@ section {
   border-color: var(--color-secondary);
   padding: 10px;
   margin: 35px;
+  background-color: var(--color-primary);
 }
 
 @media (max-width: 450px) {
@@ -555,3 +556,14 @@ a img:hover
     }
 }
 
+
+#background-image {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0.15;
+  pointer-events: none;
+}
