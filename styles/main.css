@@ -349,6 +349,7 @@ section h2 {
   color: var(--color-secondary);
   font-size: 25px;
   margin-left: 25px;
+  cursor: default;
 }
 
 /* 
