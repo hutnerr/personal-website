@@ -586,3 +586,11 @@ hr {
   /* margin-top: 10px; */
   /* margin-bottom: 10px; */
 }
+
+.svg-icon {
+  filter: brightness(0) saturate(100%) invert(71%) sepia(95%) saturate(1739%) hue-rotate(5deg) brightness(104%) contrast(101%);
+}
+
+a .svg-icon:hover {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(35%) saturate(548%) hue-rotate(315deg) brightness(96%) contrast(89%);
+}
