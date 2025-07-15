@@ -49,18 +49,14 @@
         <h1 id="main-header">beast[code] Help</h1>
         <section>
             <h2>Getting Started</h2>
-            <p>beast[code] is a discord bot whose purpose is to facilitate coding practice within a Discord Server. It does this through a reoccurring system of configurable problems. This page is to help you get started with using the bot effectively. If you'd prefer a video walkthrough/explanation, you can watch that here.</p>
+            <p>beast[code] is a discord bot whose purpose is to facilitate coding practice within a Discord Server. It does this through a reoccurring system of configurable problems. This page is to help you get started with using the bot effectively.</p>
             <p>There are three groups of server settings that can be configured using <code>/serverconfig</code>. <i>Upcoming Contest Alerts</i>, <i>Static Time Alerts</i>, and <i>Other Settings</i>.<i>Upcoming Contest Alerts</i> can be configured to send alert notifications at time away intervals for upcoming <a href="https://leetcode.com/contest/">LeetCode Contests</a>. <i>Static Time Alerts</i> can be configured to send alert notifications for specific events such as when a contest becomes active or the official daily LeetCode problem. <i>Other Settings</i> include various other configuration options such as the server's timezone, to allow duplicate problems to be sent, to use @mentions on the notifications, and more. You can view a server's settings using the <code>/serverinfo</code> command.</p>
-            <p>There also exists "problem" settings. These settings are what determine when the reocurring problem will be sent, alongside other settings such as difficulty and premium problems. Each problem is uniquely identified by it's problemID. To configure use the command <code>/problemconfig</code>. Once configured, the problem will be sent to the server at the time set using the parameters chosen. You can view all currently configured problems using <code>/probleminfo</code>.</p>
+            <p>There also exists "problem" settings. These settings are what determine when the reocurring problem will be sent alongside other settings such as difficulty and premium problems. Each problem is uniquely identified by it's problemID. To configure use the command <code>/problemconfig</code>. Once configured, the problem will be sent to the server at the time set using the parameters chosen. You can view all currently configured problems using <code>/probleminfo</code>.</p>
             <p>Lastly, there exists minimal configuration of a user's settings. Limited only to providing their LeetCode username. This is used only for submitting problems, if there is no plan to use this feature, then it is not necessary for the user to provide. Submissions work by checking the server's "active problems" to the user's recently completed problems. If there is a match, points will be awared. Active problems are set when a problem is sent to the server. The active problems can be checked using <code>/problemactive</code>.</p>
             <p>A list of all of the commands is provided below. For further usage information on these, use the <code>/help</code> command on the bot directly.</p>
             <p></p>
             <h3>Commands List</h3>
             <table>
-                <colgroup>
-                    <col class="code-col">
-                    <col>
-                </colgroup>
                 <tr><td><code>lcproblem</code></td><td>Posts a problem for users to solve.</td></tr>
                 <tr><td><code>dailylcproblem</code></td><td>Posts the LeetCode daily problem.</td></tr>
                 <tr><td><code>contests</code></td><td>Displays upcoming contest times</td></tr>
@@ -85,8 +81,89 @@
         </section>
         <section>
             <h2>Walkthrough &amp; Setup</h2>
-            <p>Before we can do anything, the bot must first be invited to the server. You can do that by using this <a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot">link</a>. The bot does not need any permissions besides being able to @mention users, use slash commands, and send/read messages. </p>
-            <p>Once the bot is in the server, we can begin to configure the bot's settings. This is done through the slash command <code>/serverconfig</code>.</p>
+            <div class="content-right text-container">
+               <p>Before we can do anything, the bot must first be invited to the server. You can do that by using this <a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot">link</a>. The bot does not need any permissions besides being able to @mention users, use slash commands, and send/read messages. </p>
+            </div>
+            <hr>
+            <div class="grid-container">
+                <div class="content-right image-container">
+                    <img class="image-section" src="/resources/images/beastcode-walkthrough/1.png" style="width: 80%;">
+                </div>
+                <div class="content-left text-container">
+                    <p>Once the bot is in the server, we can begin to configure the bot's settings. This is done through the slash command <code>/serverconfig</code>.</p>
+                    <p><i>Upcoming Contest Alerts</i> handles settings for alerts based on how far away contests are. <i>Static Time Alerts</i> handles settings for when contests open and the official daily. <i>Other Settings</i> handles all other settings. A more thorough explanation of these settings is above. For now we're going to select the <i>Other Settings</i> and begin our sample configuration.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="grid-container">
+                <div class="content-left image-container">
+                    <img class="image-section" src="/resources/images/beastcode-walkthrough/2.png" style="width: 70%;">
+                </div>
+                <div class="content-right text-container">
+                    <p>The selection of a setting group provides a dropdown for the user to select the setting they would like. The current setting is provided in parentheses besides the prompt.</p>
+                    <p>Now that we have the dropdown, we can make our setting selection. Similarly, if you're confused about what a setting does, a more detailed explanation can be found above.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="grid-container">
+                <div class="content-right image-container">
+                    <img class="image-section" src="/resources/images/beastcode-walkthrough/3.png" style="width: 70%;">
+                </div>
+                <div class="content-left text-container">
+                    <p>Once we are done with our <i>Other Setting</i> selection, it is time to move onto the other two groups of settings. Do this by once again calling the <code>/serverconfig</code> command and using the dropdowns to select the settings you want.</p>
+                    <p>At this point, all of the server settings should be configured. Before we move on, use the <code>/serverinfo</code> command to review the current settings and ensure it all looks good.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="grid-container">
+                <div class="content-left image-container">
+                    <img class="image-section" src="/resources/images/beastcode-walkthrough/5.png" style="width: 85%;">
+                </div>
+                <div class="content-right text-container">
+                    <p>Now that the server settings are configured, we can move onto configuring a problem. This is done using the command <code>/problemconfig</code>. This will bring up a similar dropdown menu to the one used for the server settings.</p>
+                    <p>When using the <code>/problemconfig</code> command on a problemID (unique identifier) that has not been created yet, it will prompt the user to create a new problem. It is important to note that when a problem is created, it will be added to the pool of problems to be handled. This means that these problems will be sent to the server based on their configuration. To remove a problem from this pool, the user must use the <code>/deleteproblem</code> command.</p>
+                    <p>Once again, select the setting group you want to configure and make your selections. Once you are done, use the <code>/probleminfo</code> command to review the current problems. The times and parameters you see are what will be used to send problems.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="grid-container">
+                <div class="content-right image-container">
+                    <img class="image-section" src="/resources/images/beastcode-walkthrough/6.png" style="width: 70%;">
+                </div>
+                <div class="content-left text-container">
+                    <p>At this point, we have our single problem configured. Looking at it using <code>/probleminfo</code>, we can determine that it will send us an easy problem that is free only on weekdays at 4:30 PM.</p>
+                    <p>Let's skip to when our problem activates and we receive the notification.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="grid-container">
+                <div class="content-left image-container">
+                    <img class="image-section" src="/resources/images/beastcode-walkthrough/8.png" style="width: 70%;">
+                </div>
+                <div class="content-right text-container">
+                    <p>As you can see, at 4:30 PM, we were sent a free and easy problem.</p>
+                    <p>The next step to this is solving the problem that was sent to the server. When a problem is sent to a server as such, it is kept within the server as an <i>"Active Problem"</i>. What this simply means is that it can be submitted for points. You can check active problems with the command <code>/problemactive</code>.</p>
+                    <div class="image-container"><img class="image-section" src="/resources/images/beastcode-walkthrough/9.png" style="width: 100%;"></div>
+                </div>
+            </div>
+            <hr>
+            <div class="grid-container">
+                <div class="content-right">
+                    <div class="image-container"><img class="image-section" src="/resources/images/beastcode-walkthrough/7.png" style="width: 70%;"></div>
+                    <div class="image-container"><img class="image-section" src="/resources/images/beastcode-walkthrough/10.png" style="width: 70%;"></div>
+                </div>
+                <div class="content-left text-container">
+                    <p>Before solving the problem, the user needs to connect their LeetCode account. This is done by simply using <code>/setusername</code>.</p>
+                    <p>Once linked and you have solved the problem, you can submit it using the command <code>/submitproblems</code>. This will check your recently completed problems against the active problems and award points if there is a match. And if such a match exists, you will gain points based on the problem difficulty.</p>
+                    <p>At any time, you can check your points using the command <code>/leaderboard</code> or <code>/rank</code>.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-container">
+                <p>And that's it! You have successfully configured the bot and can now use it to practice coding problems. To add more problems, just follow the same steps with a different problemID.</p>
+                <p>Any feedback would be much appreciated! This is one of the first projects that I am showing to the world so I still have a lot to learn.</p>
+                <p>For any further questions, please use the <code>/help</code> command on the bot or visit the <a href="https://github.com/hutnerr/beastcode">GitHub repository</a>. If you need more direct help, feel free to directly send me an <a href="mailto:hunter.baker.b@gmail.com">email</a>. Thank you very much and I hope you enjoy using my bot.</p>
+            </div>
         </section>
     </main>
     <footer>
