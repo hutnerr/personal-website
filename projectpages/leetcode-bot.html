@@ -55,16 +55,20 @@
                 of custom settings, customizable daily problems, notifications for upcoming contests, and other
                 features.</p>
             <p>As a live service product, it is a constant work in progress and always changing. The source code is
-                available on <a href="https://github.com/hutnerr/leetcode-bot">GitHub</a>. There you can also find an
-                invite link and documentation for setting it up on your own server.</p>
+                available on <a href="https://github.com/hutnerr/leetcode-bot">GitHub</a>. If interested in setting it up in your own server, you can follow the instructions <a href="/beastcode-help.html">here.</a></p>
             <h3>Technologies Used</h3>
             <ul>
                 <li><strong>Python:</strong> Discord.py, Requests</li>
-                <li><strong>APIs:</strong> RESTful APIs, JSON</li>
+                <li><strong>APIs:</strong> GraphQL, JSON</li>
             </ul>
             <h3>Links</h3>
             <ul>
-                <li><a href="https://github.com/hutnerr/leetcode-bot">GitHub</a></li>
+                <li><a href="https://github.com/hutnerr/leetcode-bot">GitHub Repository</a></li>
+                <li><a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot">Server Invite</a></li>
+                <li><a href="https://top.gg/bot/1392738606120173719">Top.gg Page</a></li>
+                <li><a href="/beastcode-help.html">Bot Setup & Help Page</a></li>
+                <li><a href="/projectpages/leetcode-bot.html">Project Page</a></li>
+                <li><a href="/blog/blog-07-14-2025.html">Blog Post</a></li>
             </ul>
         </section>
         <section>
@@ -72,7 +76,7 @@
             <div class="grid-container">
                 <div class="content-left">
                     <p>The final product was a Discord bot that helps users with LeetCode problems by providing
-                        customizable daily challenges, tracking progress, and other things.</p>
+                        a system of customizable reoccurring problems, contest reminders, and other various alerts.</p>
                     <p>The bot is designed to be easily configurable, allowing server administrators to set their own
                         preferences for problem difficulty, frequency of these problems, and more.</p>
                     <p>The bot uses the LeetCode API to fetch problems and user data, ensuring that users receive relevant
@@ -80,7 +84,7 @@
                     <p>It also includes features such as reminders for upcoming contests, a leaderboard to track user
                         progress, and a help command to assist users in navigating the bot's features.</p>
                     <p>The image shows an example of a problem being sent to a user.</p>
-                    <p>For more examples, check out the <a href="https://github.com/hutnerr/leetcode-bot">GitHub repository</a>.</p>
+                    <p>For a more in depth look about the product itself, I highly recommend checking it out for yourself! Otherwise, take a look at the <a href="/beastcode-help.html">Help & Setup Page</a>.</p>
                 </div>
                 <div class="content-right image-container">
                     <img class="image-section" src="/resources/images/leetcode-bot.png" alt="LeetCode Bot Screenshot">
@@ -90,24 +94,23 @@
         <section>
             <h2>Challenges & Solutions</h2>
             <p>At the time of making this, it was the biggest project I've ever worked on and designed on my own. This
-                naturally came with a lot of unique challenges that I had not encountered yet.</p>
+                naturally came with a lot of unique challenges that I had not encountered yet. This project required a lot of foresight into not only what I knew I wanted to build, but to try and make it easier to adapt to new and different ideas that I could come up with. The way I designed this project was in two stages. First I built the backend and the core. Once that was complete, I moved onto the integration using Discord.py. Despite my best efforts, I still had issues where I was missing something in my backend that I should've had implemented already. Many instances like this let me value the planning that I did. While I encounted many issues of this kind, I am very very sure it would've been a much bigger problem if I did not take the original efforts that I did to try and plan ahead.</p>
             <p>One of the main challenges was designing a bot that could scale with the needs of the users. I had to
-                ensure that the bot could handle multiple servers and users without performance issues.</p>
-            <p>Another challenge was managing the custom settings and demands of each server. I used a combination of
-                in-memory data structures and persistent storage to achieve this.</p>
-            <p>Additionally, a major challenge was getting the notification and problem delivery system to work. Ultimately through the usage of the Observer pattern, namely a Time Observer, I was able to notify relevant users.</p>
+                ensure that the bot could handle multiple servers and users without performance issues. One particular performance struggle I was dealing with was originally I would save to a file and read on every access, later I switched to having both saved to a JSON file as well as being cached in memory. However, this led to it's own problems with there being mismatches between the cached data and the saved data. This problem occurred when I would update the saved data but failed to properly reflect that change in the cached data, leading to inconsistencies. I fixed this problem through the use of a "Synchronizer" that ensured both the cached data and saved data were updated together.</p>
+            <p>Additionally, a major challenge was getting the notification and problem delivery system to work. Ultimately through the usage of the Observer pattern and some custom made buckets, I was able to accurately notify users. The way I implemented this was adding to the buckets based on settings and other parameters. Then I have a loop running that is constantly checking the time. On specific times, I would search through the buckets and essentially notify each server with the type of notification.</p>
             <p>Finally, I had to ensure that the bot was user-friendly and easy to use. I spent a lot of time designing
                 the commands and interactions to be intuitive and straightforward. This included creating a help command
-                that provided users with information on how to use the bot and its features.</p>
+                that provided users with information on how to use the bot and its features. I also spent some time developing a <a href="/beastcode-help.html">Help & Setup Page</a>.</p>
         </section>
         <section>
             <h2>Takeaways</h2>
-            <p>This was an incredibly useful project for my development. Building this product allowed me to put together everything I know and learned in a way that allowed me to apply my skills effectively. I learned an enormous amount about building and maintaining a live service product.</p>
-            <p>I realized how useful it is to have a solid understanding of the underlying technologies and frameworks when building a complex system. Also how important it is to read the documentation of the libraries and tools I am using.</p>
+            <p>This was an incredibly useful project for my development. Building this product allowed me to put together everything I know and learned in a way that allowed me to apply my skills effectively. Not only did I learn an enormous amount about building and maintaining a live service product, but I also gained valuable experience in project management and design.</p>
+            <p>I also realized how useful it is to have a solid understanding of the underlying technologies and frameworks when building a complex system. Whenever I would have a problem, I would go refer to the documentation.</p>
             <p>Some key takeaways include:</p>
             <ul>
+                <li>Designing and programming a complete live service product</li>
+                <li>Understanding the value of planning and foresight</li>
                 <li>Documentation is an amazing resource to use</li>
-                <li>Designing a scalable system</li>
                 <li>Maintaining a live service product</li>
             </ul>
         </section>
