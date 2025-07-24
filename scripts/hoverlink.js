@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // keep track of the sources
     const originalSrc = img.src;
-    const hoverSrc = "/resources/images/link2.svg"; // our "colored" link is link2.svg
+    const hoverSrc = "/resources/images/icons/link2.svg"; // our "colored" link is link2.svg
 
     // on hover change to the hover color
     img.addEventListener("mouseenter", () => {

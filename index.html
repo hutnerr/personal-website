@@ -7,50 +7,23 @@
     <meta name="description" content="My Personal Portfolio Website">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hunter Baker</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="icon" href="resources/images/my_rat_pfp_nobg.png">
-    <script src="scripts/hoverlink.js" defer></script>
+    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <script src="/scripts/hoverlink.js" defer></script>
 </head>
-<!-- Google tag (gtag.js) -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-4J8LXCJ31S');
 </script>
 
 <body>
-    <div style="position: fixed; inset: 0; z-index: -1; width: 100vw; height: 100vh; overflow: hidden;">
-        <img id="background-image" src="resources/images/topography.svg" alt="Background" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-    </div>
-    <header>
-        <div class="navbar">
-            <a class="navbar-item" href="index.html">Home</a>
-            <a class="navbar-item" href="projects.html">Projects</a>
-            <a class="navbar-item" href="blog.html">Blog</a>
-            <div class="dropdown">
-                <p class="navbar-item dropdown-title">Contact</p>
-                <div class="dropdown-content">
-                    <a class="dropdown-item" href="https://github.com/hutnerr">GitHub</a>
-                    <a class="dropdown-item" href="mailto:hunter.baker.b@gmail.com">Email</a>
-                    <a class="dropdown-item" href="https://www.linkedin.com/in/hunter-b-baker/">LinkedIn</a>
-                    <a class="dropdown-item" href="https://leetcode.com/u/hutnerr/">LeetCode</a>
-                    <a class="dropdown-item" href="resources/pdf/resume_hunter-baker.pdf">Resume</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <p class="navbar-item dropdown-title">Other</p>
-                <div class="dropdown-content">
-                    <a class="dropdown-item" href="experience.html">Experience</a>
-                    <a class="dropdown-item" href="classhistory.html">Class History</a>
-                    <a class="dropdown-item" href="certificates.html">Badges &amp; Certs</a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div id="background"></div>
+    <div id="header"></div>
     <main id="main-container">
         <h1 id="main-header">Hunter Baker</h1>
         <section id="about">
@@ -65,12 +38,12 @@
                     </p>
                     <p>I am a currently student at <a href="https://www.jmu.edu/index.shtml">James Madison University</a>
                         pursuing my bachelor's in Computer Science. Here I am a member of the computing honors society
-                        <a href="https://upe.acm.org/">Upsilon Pi Epsilon</a>. You can view my class history <a href="classhistory.html">here!</a>
+                        <a href="https://upe.acm.org/">Upsilon Pi Epsilon</a>. You can view my class history <a href="/pages/core/classhistory.html">here!</a>
                     </p>
                     <p>My current primary project is creating ObsidianMD plugins as well as a Game in Godot. Recently I just completed my biggest project, my <a
-                            href="projectpages/leetcode-bot.html">LeetCode Bot Project</a> <a
+                            href="/pages/projects/leetcode-bot.html">LeetCode Bot Project</a> <a
                             href="https://github.com/hutnerr/leetcode-bot"><i class="devicon-github-original"></i></a>. You can view my other projects
-                        <a href="projects.html">here!</a>
+                        <a href="/pages/core/projects.html">here!</a>
                     </p>
                     <p>Recently, I was fortunate enough to participate in the wonderful <a
                             href="https://www.globaltech.jmu.edu/">Global Career Accelerator.</a> During my time here, I
@@ -81,11 +54,11 @@
                             href="https://www.credential.net/4f3405bd-57d1-445b-9e19-167647d2b420?record_view=true#gs.htdapa">SQL
                             Specialist</a>, and <a
                             href="https://www.credential.net/c66cab81-87c3-44e4-98da-2489798c9ea8#acc.YHpXs8rg">Intercultural
-                            Skills</a>. You can view all of my previous experience <a href="experience.html">here!</a>
+                            Skills</a>. You can view all of my previous experience <a href="/pages/core/experience.html">here!</a>
                     </p>
                     <p>
                         To learn more about me and what I'm doing check out my blog <a id="blog-link"
-                            href="blog.html">here!</a>
+                            href="/pages/core/blog.html">here!</a>
                     </p>
                 </div>
             </div>
@@ -134,10 +107,10 @@
         <section id="projects">
             <h2>Featured Projects</h2>
             <div class="project">
-                <h3><a href="projectpages/leetcode-bot.html">LeetCode Discord Bot</a> 
+                <h3><a href="/pages/projects/leetcode-bot.html">LeetCode Discord Bot</a> 
                     <a href="https://github.com/hutnerr/leetcode-bot"><i class="devicon-github-original"></i></a> 
-                    <a href="beastcode-help.html"><img src="resources/images/link.svg" alt="Link" width="20" height="20"></a>
-                    <a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot"><img class="svg-icon" src="resources/images/discord.svg" alt="Invite" width="20" height="20"></a></h3>
+                    <a href="/pages/core/beastcode-help.html"><img src="/resources/images/icons/link.svg" alt="Link" width="20" height="20"></a>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot"><img class="svg-icon" src="/resources/images/icons/discord.svg" alt="Invite" width="20" height="20"></a></h3>
                 <p>Discord bot that facilitates active LeetCoding and contest participation.</p>
                 <ul>
                     <li>Designed, created, and maintained a live service product used in various discord servers</li>
@@ -152,7 +125,7 @@
                 </div>
             </div>
             <div class="project">
-                <h3><a href="projectpages/navsystem.html">Navigation Application</a></h3>
+                <h3><a href="/pages/projects/navsystem.html">Navigation Application</a></h3>
                 <p>Navigation Application with real-time updates, map matching, and route relocation</p>
                 <ul>
                     <li>Used object-oriented principles to model geographic shapes, street segments, and intersections
@@ -170,7 +143,7 @@
                 </div>
             </div>
             <div class="project">
-                <h3><a href="projectpages/united-calculator.html">UnitED Caclulator</a></h3>
+                <h3><a href="/pages/projects/united-calculator.html">UnitED Calculator</a></h3>
                 <p>Calculator that performs calculations across different unit types.</p>
                 <ul>
                     <li>Followed an agile (Scrum) process to create a complete software product</li>
@@ -183,24 +156,12 @@
                     <i class="devicon-git-plain" title="Git"></i>
                 </div>
             </div>
-            <p>More on the <a href="projects.html">Projects Page!</a></p>
+            <p>More on the <a href="/pages/core/projects.html">Projects Page!</a></p>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 - 2025 Hunter Baker</p>
-        <ul>
-            <li><a href="resources/pdf/resume_hunter-baker.pdf">Resume</a></li>
-            <li> | </li>
-            <li><a href="mailto:hunter.baker.b@gmail.com">hunter.baker.b@gmail.com</a></li>
-        </ul>
-        <ul>
-            <li><a href="https://github.com/hutnerr">GitHub</a></li>
-            <li> | </li>
-            <li><a href="https://www.linkedin.com/in/hunter-b-baker/">LinkedIn</a></li>
-            <li> | </li>
-            <li><a href="https://leetcode.com/u/hutnerr/">LeetCode</a></li>
-        </ul>
-    </footer>
+    
+    <div id="footer"></div>
+    <script src="/scripts/components.js"></script>
 </body>
 
 </html>
