@@ -22,6 +22,7 @@ async function loadAllComponents() {
     await loadComponent(BACKGROUND, BACKGROUND_PATH);
     await loadComponent(HEADER, HEADER_PATH);
     await loadComponent(FOOTER, FOOTER_PATH);
+    document.body.classList.add('components-loaded');
 }
 
 document.addEventListener('DOMContentLoaded', loadAllComponents);
