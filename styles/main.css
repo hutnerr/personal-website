@@ -753,3 +753,16 @@ body.components-loaded {
   border: none;
   border-radius: 15px;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.jam-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
