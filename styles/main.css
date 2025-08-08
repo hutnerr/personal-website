@@ -766,3 +766,14 @@ body.components-loaded {
   height: auto;
   display: block;
 }
+
+details {
+  margin-bottom: 1rem;
+  padding-left: 30px;
+}
+
+details summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--color-tertiary);
+}
