@@ -148,11 +148,11 @@ html {
 
 /* for each item inside of the navbar */
 .navbar-item {
-  display: inline;
+  display: inline-block;
   padding: 10px;
   text-decoration: none;
+  width: 15%;
   text-align: center;
-  width: 170px;
   color: var(--color-tertiary); 
 }
 
@@ -164,12 +164,17 @@ html {
   color: var(--color-primary);
 }
 
+.navbar-item.dropdown:hover {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 .navbar-item a {
   text-decoration: none;
   color: inherit;
 }
 
-.navbar-item a:hover {
+.navbar-item p:hover {
   color: var(--color-primary);
 }
 
@@ -179,43 +184,14 @@ html {
 ---------------------------
 */
 
-
-
 .dropdown {
-  float: left;
+  /* float: left; */
   /* overflow: hidden; */
-  width: 150px;
-  padding: 10px;
-  padding-left: 0px;
+  /* width: 7.5%; */
+  /* padding: 10px; */
+  /* padding-left: 0px; */
   text-align: center;
-}
-
-/* Tablet and smaller desktop screens */
-@media (max-width: 768px) {
-  .dropdown {
-    width: 120px;
-  }
-}
-
-/* Mobile landscape */
-@media (max-width: 600px) {
-  .dropdown {
-    width: 100px;
-  }
-}
-
-/* Mobile portrait */
-@media (max-width: 480px) {
-  .dropdown {
-    width: 80px;
-  }
-}
-
-/* Very small screens */
-@media (max-width: 320px) {
-  .dropdown {
-    width: 60px;
-  }
+  margin: 0px;
 }
 
 .dropdown-item:hover {
@@ -223,9 +199,9 @@ html {
 }
 
 .dropdown-content {
-  display: none; /* hide the dropdown content by default */
+   /* hide the dropdown content by default */
+  /* display: none; */
   position: absolute;
-  width: inherit;
   padding-right: 10px;
   background-color: var(--color-tertiary);
   z-index: 1; /* make sure the dropdown is on top of everything */
@@ -240,46 +216,23 @@ html {
   padding: 6px;
 }
 
+
 .dropdown {
   float: left;
   /* overflow: hidden; */
-  width: 150px;
   padding: 10px;
   padding-left: 0px;
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .dropdown {
-    width: 80px;
-  }
-}
-
-@media (max-width: 600px) {
-  .dropdown {
-    width: 80px;
-  }
-}
-
-@media (max-width: 480px) {
-  .dropdown {
-    width: 60px;
-  }
-}
-
-@media (max-width: 320px) {
-  .dropdown {
-    width: 60px;
-  }
-}
 
 .dropdown-content a {
   float: none;
   color: var(--color-primary);
-  display: block;
+  /* display: block; */
   text-align: left;
   font-size: 16px;
-  padding: 6px;
+  /* padding: 6px; */
 }
 
 @media (max-width: 768px) {
@@ -319,9 +272,19 @@ html {
   border-radius: 12px;
 }
 
+.dropdown:hover .dropdown-title {
+  color: var(--color-primary);
+}
+
+.dropdown-title {
+  margin: 0px;
+  color: var(--color-tertiary);
+}
+
 /* make the cursor just be a pointer instead of a bar */
 .dropdown-title:hover {
   cursor: default;
+  color: var(--color-primary);
 }
 
 /* while we're hovering within the dropdown, 
@@ -370,8 +333,8 @@ make sure the navbar item keeps its styling */
 
 @media (max-width: 600px) {
   #main-container {
-    /* margin-left: 2%; */
-    /* margin-right: 5%; */
+    margin-left: 2%;
+    margin-right: 5%;
   }
 }
 
@@ -761,6 +724,12 @@ body.components-loaded {
   padding: 1rem;
 }
 
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .jam-img {
   max-width: 100%;
   height: auto;
@@ -777,3 +746,4 @@ details summary {
   cursor: pointer;
   color: var(--color-tertiary);
 }
+
