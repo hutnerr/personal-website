@@ -89,7 +89,7 @@ html {
 */
 /* the base navbar container div */
 .navbar {
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   padding: 0px;
   flex-direction: row;
@@ -97,68 +97,42 @@ html {
   align-items: center;
 }
 
-
-@media (max-width: 400px) {
-  .navbar {
-    margin: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  .navbar-item {
-    font-size: 13px;
-  }
-}
-
-@media (min-width: 750px) {
-  .navbar {
-    margin: 0px;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-
-  .navbar-item {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 900px) {
-  .navbar {
-    margin: 0px;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-
-  .navbar-item {
-    font-size: 26px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .navbar {
-    margin: 0px;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-
-  .navbar-item {
-    font-size: 32px;
-  }
-}
-
-/* for each item inside of the navbar */
+/* default: 15% width */
 .navbar-item {
   display: inline-block;
   padding: 10px;
   text-decoration: none;
   width: 15%;
   text-align: center;
-  color: var(--color-tertiary); 
+  color: var(--color-tertiary);
+}
+
+@media (max-width: 400px) {
+  .navbar-item {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 750px) {
+  .navbar-item {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 900px) {
+  .navbar-item {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .navbar-item {
+    font-size: 32px;
+  }
 }
 
 .navbar-item:hover {
   background-color: var(--color-tertiary);
-  /* border-radius: 12px; */
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;;
   color: var(--color-primary);
@@ -185,11 +159,6 @@ html {
 */
 
 .dropdown {
-  /* float: left; */
-  /* overflow: hidden; */
-  /* width: 7.5%; */
-  /* padding: 10px; */
-  /* padding-left: 0px; */
   text-align: center;
   margin: 0px;
 }
@@ -198,28 +167,37 @@ html {
   color: white;
 }
 
+.navbar-item.dropdown {
+  position: relative;
+}
+
 .dropdown-content {
-   /* hide the dropdown content by default */
-  /* display: none; */
+  display: none;
   position: absolute;
-  padding-right: 10px;
+  top: calc(100% - 1px);
+  left: 0;
+  width: 100%;
   background-color: var(--color-tertiary);
-  z-index: 1; /* make sure the dropdown is on top of everything */
+  z-index: 3;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.navbar-item.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .dropdown-content a {
   float: none;
   color: var(--color-primary);
   display: block;
-  text-align: left;
+  text-align: center;
   font-size: 16px;
   padding: 6px;
 }
 
-
 .dropdown {
   float: left;
-  /* overflow: hidden; */
   padding: 10px;
   padding-left: 0px;
   text-align: center;
@@ -269,7 +247,6 @@ html {
 /* show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
-  border-radius: 12px;
 }
 
 .dropdown:hover .dropdown-title {
