@@ -27,7 +27,6 @@ async function loadAllComponents() {
 }
 
 document.addEventListener('DOMContentLoaded', loadAllComponents);
-// document.addEventListener("DOMContentLoaded", setupDropdowns);
 
 // bandaid for header links lol
 function setupDropdowns() {
@@ -38,9 +37,12 @@ function setupDropdowns() {
 }
 
 function handleDropdownClick(event) {
-    event.preventDefault();
-    const link = this.querySelector('a');
-    if (link) {
-        window.location.href = link.href;
+    const dropdownContent = this.querySelector('.dropdown-content');
+    if (dropdownContent && dropdownContent.matches(':hover')) {
+        return;
     }
+    event.preventDefault();
+    const link = this.querySelector('a.dropdown-dir');
+    const dest = link.href;
+    window.location.href = dest;
 }
