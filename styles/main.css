@@ -136,6 +136,7 @@ html {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;;
   color: var(--color-primary);
+  cursor: pointer;
 }
 
 .navbar-item.dropdown:hover {
