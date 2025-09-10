@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jordan Smith - Developer</title>
+    <title>Hunter Baker</title>
     <link rel="stylesheet" href="/redo/styles.css">
     <script src="/redo/anims.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
+
+    <!-- topographic background, should be inserted as component -->
+    <div style="position: fixed; inset: 0; z-index: -1; width: 100vw; height: 100vh; overflow: hidden;">
+        <img id="background-image" src="/resources/images/backgrounds/topography.svg" alt="Background" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+    </div>
+
+    <!-- the dot nav progress menu -->
     <nav>
+        <!-- <div class="nav-bar">
+            <p>navbar here</p>
+        </div> -->
         <div class="nav-menu">
             <div class="nav-dot active" data-section="hero"></div>
             <div class="nav-dot" data-section="about"></div>
@@ -18,60 +27,31 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- about me section (hero) -->
     <section id="hero" class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>jordan.dev<span class="cursor"></span></h1>
-                    <p class="subtitle">$ whoami → full-stack developer</p>
+                    <h1>hunter baker<span class="cursor"></span></h1>
+                    <p class="subtitle">$ aspiring software developer</p>
                     <p class="hero-description">
-                        Computer Science student passionate about building efficient, 
-                        scalable solutions. I write clean code, solve complex problems, 
-                        and continuously learn new technologies.
+                        computer science student passionate about building useful products. I write clean code, solve complex problems, and 
+                        am constantly learning.
                     </p>
                     <div class="hero-cta">
-                        <a href="#work" class="btn">view_projects()</a>
-                        <a href="#contact" class="btn">contact_me()</a>
+                        <a href="#work" class="btn">view projects</a>
+                        <a href="#contact" class="btn">contact</a>
                     </div>
                 </div>
-                <div class="terminal">
-                    <div class="terminal-header">
-                        <div class="terminal-dot"></div>
-                        <div class="terminal-dot"></div>
-                        <div class="terminal-dot"></div>
-                    </div>
-                    <div class="terminal-body">
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">jordan@dev:~$</span>
-                            <span class="terminal-command">cat about.txt</span>
-                        </div>
-                        <div class="terminal-output">Name: Jordan Smith</div>
-                        <div class="terminal-output">Role: CS Student & Developer</div>
-                        <div class="terminal-output">Location: San Francisco, CA</div>
-                        <div class="terminal-output">Languages: JavaScript, Python, Java</div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">jordan@dev:~$</span>
-                            <span class="terminal-command">ls skills/</span>
-                        </div>
-                        <div class="terminal-output">React/ Node.js/ MongoDB/</div>
-                        <div class="terminal-output">Express/ PostgreSQL/ Git/</div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">jordan@dev:~$</span>
-                            <span class="terminal-command">echo $STATUS</span>
-                        </div>
-                        <div class="terminal-output">Available for opportunities<span class="cursor"></span></div>
-                    </div>
-                </div>
+                <img class="circle-img" src="/resources/images/headshot.png">
+                <!-- name, role, location, languages -->
+                <!-- skills -->
+                <!-- job status -->
             </div>
         </div>
     </section>
 
-    <div style="position: fixed; inset: 0; z-index: -1; width: 100vw; height: 100vh; overflow: hidden;">
-        <img id="background-image" src="/resources/images/backgrounds/topography.svg" alt="Background" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-    </div>
-
-    <!-- About Section -->
+    <!-- about section -->
     <section id="about">
         <div class="container">
             <div class="section-header">
@@ -118,7 +98,7 @@
         </div>
     </section>
 
-    <!-- Work Section -->
+    <!-- projects section -->
     <section id="work">
         <div class="container">
             <div class="section-header">
@@ -225,7 +205,21 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2025 Jordan Smith. Built with curiosity and caffeine.</p>
+            <p>© 2025 Hunter Baker.</p>
+            <ul>
+                <li><a href="/resources/pdf/resume_hunter-baker.pdf">Resume</a></li>
+                <li> | </li>
+                <li><a href="mailto:hunter.baker.b@gmail.com">hunter.baker.b@gmail.com</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://github.com/hutnerr">GitHub</a></li>
+                <li> | </li>
+                <li><a href="https://www.linkedin.com/in/hunter-b-baker/">LinkedIn</a></li>
+                <li> | </li>
+                <li><a href="https://leetcode.com/u/hutnerr/">LeetCode</a></li>
+                <li> | </li>
+                <li><a href="https://hutnerr.itch.io/">itch.io</a></li>
+            </ul>
         </div>
     </footer>
 </body>

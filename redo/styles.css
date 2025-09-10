@@ -461,3 +461,25 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+footer ul {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
+  list-style-type: none;
+  padding: 0px;
+}
+
+.circle-img {
+    border-radius: 256px;
+    width: 548px;
+    height: 548px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.circle-img:hover {
+    transform: scale(1.02);
+}
