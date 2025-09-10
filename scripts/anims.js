@@ -47,13 +47,4 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('fade-up');
         observer.observe(el);
     });
-
-    // Terminal typing effect (optional enhancement)
-    const terminalLines = document.querySelectorAll('.terminal-output, .terminal-command');
-    terminalLines.forEach((line, index) => {
-        line.style.opacity = '0';
-        setTimeout(() => {
-            line.style.opacity = '1';
-        }, index * 200);
-    });
 });

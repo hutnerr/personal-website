@@ -1,3 +1,0 @@
-1. put picture at the top
-2. have the dots to show where you are in the page
-3. have a separate nav bar to navigate pages
