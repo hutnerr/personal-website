@@ -3,3 +3,4 @@
     - have more specific links inside. like the github etc. 
 3. text should have a background that makes it clearer
 4. maybe get rid of the headshot image? make smaller?
+5. https://formsubmit.co/
