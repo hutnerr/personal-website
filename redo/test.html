@@ -16,9 +16,14 @@
 
     <!-- the dot nav progress menu -->
     <nav>
-        <!-- <div class="nav-bar">
-            <p>navbar here</p>
-        </div> -->
+        <div class="nav-bar">
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">Blog</a></li>
+                <li><a href="#work">Projects</a></li>
+                <li><a href="#other">Other</a></li>
+            </ul>
+        </div>
         <div class="nav-menu">
             <div class="nav-dot active" data-section="hero"></div>
             <div class="nav-dot" data-section="about"></div>
@@ -193,12 +198,34 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Let's build something together</h2>
-            <p>
-                I'm currently looking for new opportunities and interesting projects. 
-                Whether you have a question or just want to say hi, I'll do my best to get back to you!
-            </p>
-            <a href="mailto:jordan@example.com" class="contact-email">jordan@example.com</a>
+            <div class="section-header">
+                <span class="section-number">03.</span>
+                <h2 class="section-title">Contact</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="card-container">
+                <div class="contact-card">
+                    <p>GitHub</p>
+                    <img class="contact-icon" src="https://www.svgrepo.com/show/475654/github-color.svg">
+                </div>
+                <div class="contact-card">
+                    <p>LinkedIn</p>
+                    <img class="contact-icon" src="https://www.svgrepo.com/show/157006/linkedin.svg">
+                </div>
+                <div class="contact-card">
+                    <p>LeetCode</p>
+                    <img class="contact-icon" src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png">
+                </div>
+                <div class="contact-card">
+                    <p>itch.io</p>
+                    <img class="contact-icon" src="https://static.itch.io/images/app-icon.svg">
+                </div>
+            </div>
+            <br>
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; font-size: 1.2rem;">
+                <a class="contact-email" href="mailto:hunter.baker.b@gmail.com">hunter.baker.b@gmail.com</a>
+                <a class="contact-email" href="/resources/pdf/resume_hunter-baker.pdf">resume</a>
+            </div>
         </div>
     </section>
 
