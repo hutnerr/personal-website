@@ -59,6 +59,15 @@ body {
     justify-content: center;
 }
 
+.nav-bar ul li a:hover {
+    transform: uppercase;
+    color: var(--text-accent);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    transform: translateY(-1px); /* Subtle lift instead of scale */
+
+}
+
 .nav-bar a {
     color: var(--text-primary);
     text-decoration: none;
@@ -451,6 +460,26 @@ footer ul {
   gap: 10px;
   list-style-type: none;
   padding: 0px;
+  font-size: 1.2rem;
+}
+
+footer ul li {
+    display: inline;
+    color: var(--text-secondary);
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: var(--text-accent);
+    transition: color 0.3s ease;
+}
+
+footer ul li {
+    color: var(--text-secondary);
+}
+
+footer ul li a:hover {
+    color: var(--text-primary);
 }
 
 .circle-img {
@@ -491,6 +520,9 @@ footer ul {
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
+
+    text-decoration: none; /* Remove underline for links */
+
 }
 
 .contact-card p {
