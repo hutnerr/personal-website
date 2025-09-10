@@ -1,3 +1,5 @@
 1. make the navigation dots dynamic for the amount of sections i have in the page itself
-2. maybe remove the lines between each section and use the header line instead again?
+2. make the project cards a link so i can click on it and it takes me to the page
+    - have more specific links inside. like the github etc. 
 3. text should have a background that makes it clearer
+4. maybe get rid of the headshot image? make smaller?

@@ -198,8 +198,9 @@ body {
 
 /* Sections */
 section {
-    padding: 6rem 0;
-    border-bottom: 1px solid var(--border);
+    padding: 3rem 0;
+    padding-bottom: 2rem 0;
+    /* border-bottom: 1px solid var(--border); */
 }
 
 .section-header {
@@ -278,6 +279,8 @@ section {
 
 .work-item:hover {
     border-color: var(--text-accent);
+    box-shadow: 0 8px 16px rgba(0, 102, 204, 0.15);
+    transform: scale(1.02);
 }
 
 .work-item::before {
@@ -324,6 +327,7 @@ section {
 
 .work-content {
     padding: 1.5rem;
+    background-color: var(--bg-primary);
 }
 
 .work-description {
@@ -366,11 +370,6 @@ section {
 }
 
 /* Contact Section */
-.contact {
-    text-align: center;
-    padding: 8rem 0;
-}
-
 .contact p {
     color: var(--text-secondary);
     font-size: 1.1rem;
@@ -393,7 +392,9 @@ section {
 
 .contact-email:hover {
     border-color: var(--text-accent);
-    transform: translateY(-2px); /* Subtle lift instead of scale */}
+    transform: translateY(-2px); /* Subtle lift instead of scale */
+    box-shadow: 0 8px 16px rgba(0, 102, 204, 0.15);
+}
 
 /* Footer */
 footer {
@@ -401,7 +402,7 @@ footer {
     text-align: center;
     font-family: 'JetBrains Mono', monospace;
     color: var(--text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.3rem;
 }
 
 /* Mobile Responsive */
@@ -460,7 +461,7 @@ footer ul {
   gap: 10px;
   list-style-type: none;
   padding: 0px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 footer ul li {
@@ -577,4 +578,40 @@ footer ul li a:hover {
   overflow: hidden;
   opacity: 0.35;
   pointer-events: none;
+}
+
+.btn-focus {
+  position: relative;
+  background: linear-gradient(45deg, var(--text-accent), #fe8019, var(--text-accent));
+  background-size: 300% 300%;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: gradientShift 3s ease infinite, pulse 2s ease-in-out infinite alternate;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-focus:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
