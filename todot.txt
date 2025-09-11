@@ -4,3 +4,8 @@
 3. text should have a background that makes it clearer
 4. maybe get rid of the headshot image? make smaller?
 5. https://formsubmit.co/
+6. generalize the styles
+7. make the js for the dots so that it scrapes the html and adds a dot and connects it 
+    when it finds that specific class or type or whatever. 
+8. clean up the css in general 
+9. might still be worth adding in a contact page? maybe under other. add the form submit.
