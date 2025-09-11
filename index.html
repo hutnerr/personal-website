@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hunter Baker</title>
     <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <script src="/scripts/components.js"></script>
     <script src="/scripts/anims.js"></script>
 </head>
@@ -29,7 +30,7 @@
                         <a href="#contact" class="btn">contact</a>
                     </div>
                 </div>
-                <!-- <img class="circle-img" src="/resources/images/headshot.png"> -->
+                <img class="circle-img" src="/resources/images/headshot.png">
                 <!-- name, role, location, languages -->
                 <!-- skills -->
                 <!-- job status -->
@@ -47,38 +48,63 @@
             </div>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>
-                        I'm a Computer Science student at UC Berkeley with a passion for creating 
-                        digital experiences that make a difference. My journey started with curiosity 
-                        about how things work under the hood, and has evolved into a love for 
-                        building full-stack applications.
+                    <p>I began programming in January 2022. I've grown and developed a lot since then and I am now actively pursuing my goal of becoming a Software
+                        Engineer. My other programming interests lie primarily with game and web development.
+                    </p>
+                    <p>I am a currently a senior at <a href="https://www.jmu.edu/index.shtml">James Madison University</a>
+                        pursuing my bachelor's in Computer Science. Here I am a member of the computing honors society
+                        <a href="https://upe.acm.org/">Upsilon Pi Epsilon</a>. You can view my class history <a href="/pages/core/classhistory.html">here!</a>
+                    </p>
+                    <p>My current primary project is creating ObsidianMD plugins as well as a Game in Godot. Recently I just completed my biggest project, my <a
+                            href="/pages/projects/leetcode-bot.html">LeetCode Bot Project</a> <a
+                            href="https://github.com/hutnerr/leetcode-bot"><i class="devicon-github-original"></i></a>. You can view my other projects
+                        <a href="/pages/core/projects.html">here!</a>
+                    </p>
+                    <p>Recently, I was fortunate enough to participate in the wonderful <a
+                            href="https://www.globaltech.jmu.edu/">Global Career Accelerator.</a> During my time here, I
+                        was
+                        able to pick up some certifications; namely <a
+                            href="https://www.credential.net/1d8168a8-df4c-4180-a412-9d36ece8aa6a#gs.htdap8">Python
+                            Specialist</a>, <a
+                            href="https://www.credential.net/4f3405bd-57d1-445b-9e19-167647d2b420?record_view=true#gs.htdapa">SQL
+                            Specialist</a>, and <a
+                            href="https://www.credential.net/c66cab81-87c3-44e4-98da-2489798c9ea8#acc.YHpXs8rg">Intercultural
+                            Skills</a>. You can view all of my previous experience <a href="/pages/core/experience.html">here!</a>
                     </p>
                     <p>
-                        I enjoy the challenge of turning complex problems into simple, elegant solutions. 
-                        Whether it's optimizing database queries or crafting intuitive user interfaces, 
-                        I believe in writing code that's not only functional but maintainable and scalable.
-                    </p>
-                    <p>
-                        Currently, I'm focused on modern web technologies and always excited to learn 
-                        about emerging trends in software development.
+                        To learn more about me and what I'm doing check out my blog <a id="blog-link"
+                            href="/pages/core/blog.html">here!</a>
                     </p>
                 </div>
                 <div>
                     <h3 style="margin-bottom: 1rem; color: var(--text-accent);">Technologies I work with:</h3>
-                    <ul class="skills-list">
-                        <li>JavaScript (ES6+)</li>
-                        <li>Python</li>
-                        <li>React</li>
-                        <li>Node.js</li>
-                        <li>Express.js</li>
-                        <li>MongoDB</li>
-                        <li>PostgreSQL</li>
-                        <li>Git & GitHub</li>
-                        <li>HTML & CSS</li>
-                        <li>TypeScript</li>
-                        <li>Docker</li>
-                        <li>AWS</li>
-                    </ul>
+                    <div class="skills-list-container">
+                        <ul class="skills-list">
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>C</li>
+                            <li>C#</li>
+                            <li>JavaScript</li>
+                            <li>HTML &amp; CSS</li>
+                            <li>PostgreSQL</li>
+                            <!-- <li>Ruby</li> -->
+                            <!-- <li>Rust</li> -->
+                            <!-- <li>GDscript</li> -->
+                        </ul>
+                        <ul class="skills-list">
+                            <li>Git</li>
+                            <li>GitHub</li>
+                            <li>VS Code</li>
+                            <li>Eclipse IDE</li>
+                            <!-- <li>Android Studio</li> -->
+                        </ul>
+                        <ul class="skills-list">
+                            <li>Design Patterns</li>
+                            <li>Agile Development</li>
+                            <li>Unit Testing</li>
+                            <li>Object Oriented Programming</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,86 +119,100 @@
                 <div class="section-line"></div>
             </div>
 
+            <!-- BEAST CODE -->
             <div class="work-item">
                 <div class="work-header">
                     <div>
-                        <h3 class="work-title">CodeShare Platform</h3>
-                        <p class="work-subtitle">Real-time collaborative coding environment</p>
+                        <h3 class="work-title">beast[code]</h3>
+                        <p class="work-subtitle">LeetCode Discord Bot</p>
+                    </div>
+                    <span class="work-date">2025</span>
+                </div>
+                <div class="work-content">
+                    <p class="work-description">
+                        Discord bot that facilitates coding practice within a discord server. It supplies reoccuring and configurable problems, as well as alerts for contests and other events. 
+                    </p>
+                    <ul class="work-list">
+                        <li>Designed, created, and maintained a live service product used in various discord servers</li>
+                        <li>Used the LeetCode API to get related information</li>
+                        <li>Utilized software design patterns such as the Observer pattern to manage events and notifications</li>
+                        <li>Self-hosted the bot 24/7 on a Raspberry Pi</li>
+                    </ul>
+                    <div class="work-tech">
+                        <span class="tech-tag"><i class="devicon-python-plain" title="Python"> </i>Python</span>
+                        <span class="tech-tag"><i class="devicon-graphql-plain" title="GraphQL"> </i>GraphQL</span>
+                        <span class="tech-tag"><i class="devicon-sqlite-plain" title="SQLite"> </i>SQLite</span>
+                        <span class="tech-tag"><i class="devicon-raspberrypi-plain" title="Raspberry Pi"> </i>Raspberry Pi</span>
+                    </div>
+                    <div class="work-links">
+                        <a href="#" class="work-link">[project page]</a>
+                        <a href="#" class="work-link">[github]</a>
+                        <a href="#" class="work-link">[top.gg]</a>
+                        <a href="#" class="work-link">[invite link]</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- NAVIGATION APPLICATION -->
+            <div class="work-item">
+                <div class="work-header">
+                    <div>
+                        <h3 class="work-title">NavSys</h3>
+                        <p class="work-subtitle">Personal Navigation System</p>
+                    </div>
+                    <span class="work-date">2025</span>
+                </div>
+                <div class="work-content">
+                    <p class="work-description">
+                        Navigation Application with real-time updates, map matching, and route relocation.
+                    </p>
+                    <ul class="work-list">
+                        <li>Used object-oriented principles to model geographic shapes, street segments, and intersections</li>
+                        <li>Applied design patterns such as the Observer, Model-View-Controller, and Strategy</li>
+                        <li>Developed interactive visualizations using Java Swing and Java 2D graphics</li>
+                        <li>Utilized pathfinding algorithms (Djikstra's and Bellman Ford) and GPS data parsing for dynamic routing</li>
+                        <li>Developed map matching and route relocation features to adjust routes based on real-time data</li>
+                    </ul>
+                    <div class="work-tech">
+                        <span class="tech-tag"><i class="devicon-java-plain" title="Java"> </i>Java</span>
+                    </div>
+                    <div class="work-links">
+                        <a href="#" class="work-link">[project page]</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- UNITED CALCULATOR -->
+            <div class="work-item">
+                <div class="work-header">
+                    <div>
+                        <h3 class="work-title">unitED</h3>
+                        <p class="work-subtitle">Unit Calculator</p>
                     </div>
                     <span class="work-date">2024</span>
                 </div>
                 <div class="work-content">
                     <p class="work-description">
-                        A web-based platform that allows developers to share and collaborate on code in real-time. 
-                        Features include syntax highlighting, live cursors, voice chat integration, and project management tools.
+                        Calculator that performs calculations across different unit types.
                     </p>
+                    <ul class="work-list">
+                        <li>Followed an agile (Scrum) process to create a complete software product</li>
+                        <li>Worked with a team of 5 using Git and GitHub</li>
+                        <li>Utilized software design principles and worked to maximize cohesion and minimize coupling</li>
+                        <li>Worked with a stakeholder to refine requirements</li>
+                    </ul>
                     <div class="work-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Socket.io</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">WebRTC</span>
+                        <span class="tech-tag"><i class="devicon-java-plain" title="Java"> </i>Java</span>
+                        <span class="tech-tag"><i class="devicon-git-plain" title="Git"> </i>Git</span>
                     </div>
                     <div class="work-links">
-                        <a href="#" class="work-link">[live demo]</a>
-                        <a href="#" class="work-link">[source code]</a>
+                        <a href="#" class="work-link">[project page]</a>
                     </div>
                 </div>
             </div>
-
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">Neural Network Visualizer</h3>
-                        <p class="work-subtitle">Interactive machine learning education tool</p>
-                    </div>
-                    <span class="work-date">2024</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Educational web application that visualizes how neural networks learn and make decisions. 
-                        Users can adjust parameters, upload datasets, and watch the training process in real-time.
-                    </p>
-                    <div class="work-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">D3.js</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">WebGL</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="#" class="work-link">[live demo]</a>
-                        <a href="#" class="work-link">[source code]</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">Distributed Task Queue</h3>
-                        <p class="work-subtitle">Scalable background job processing system</p>
-                    </div>
-                    <span class="work-date">2023</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        A distributed system for processing background tasks across multiple worker nodes. 
-                        Includes job scheduling, retry mechanisms, progress tracking, and a monitoring dashboard.
-                    </p>
-                    <div class="work-tech">
-                        <span class="tech-tag">Go</span>
-                        <span class="tech-tag">Redis</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">Prometheus</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="#" class="work-link">[documentation]</a>
-                        <a href="#" class="work-link">[source code]</a>
-                    </div>
-                </div>
-            </div>
+            
             <div class="hero-cta">
                 <a href="#" class="btn btn-focus">view all projects</a>
             </div>

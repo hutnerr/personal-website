@@ -115,6 +115,7 @@ body {
 
 /* Hero Section */
 .hero {
+    padding-top: 6rem;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -179,6 +180,7 @@ body {
     border-color: var(--text-accent);
     color: var(--text-accent);
     transform: translateY(-2px); /* Subtle lift instead of scale */
+    text-decoration: none;
 }
 
 .btn::before {
@@ -245,9 +247,14 @@ section {
     margin-bottom: 1.5rem;
 }
 
-.skills-list {
+.skills-list-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.skills-list {
+    /* display: grid; */
+    /* grid-template-columns: repeat(2, 1fr); */
     gap: 0.5rem;
     list-style: none;
 }
@@ -357,8 +364,24 @@ section {
     margin-top: 1rem;
 }
 
-.work-link {
+.work-list {
+    margin-bottom: 1rem;
     color: var(--text-secondary);
+    font-size: 0.95rem;
+    list-style-type: none;
+}
+
+
+.work-list li::before {
+    padding-left: 20px;
+    content: '▸';
+    /* position: absolute; */
+    left: 0;
+    color: var(--text-accent);
+}
+
+.work-link {
+    color: var(--text-accent);
     text-decoration: none;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.9rem;
@@ -484,10 +507,12 @@ footer ul li a:hover {
 }
 
 .circle-img {
-    border-radius: 256px;
-    width: 548px;
-    height: 548px;
+    border-radius: 50%;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 90%;
+    width: 80%;
+    object-fit: cover;
+    justify-self: center;
 }
 
 .circle-img:hover {
@@ -544,6 +569,7 @@ footer ul li a:hover {
     border-color: var(--text-accent);
     transform: translateY(-2px); /* Subtle lift instead of scale */
     box-shadow: 0 8px 16px rgba(0, 102, 204, 0.15); /* Enhanced shadow on hover */
+    text-decoration: none;
     /* background-color: var(--hover-bg); */
 }
 
@@ -614,4 +640,14 @@ footer ul li a:hover {
   100% {
     background-position: 0% 50%;
   }
+}
+
+a {
+    color: var(--text-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    transform: translateY(-2px); /* Subtle lift instead of scale */
 }
