@@ -95,3 +95,16 @@ section {
         font-size: 2.5rem;
     }
 }
+
+/* ==================================== */
+/* ========= HERO SIMPLE SECTION =============== */
+/* ==================================== */
+/* this is the same as above, but has less */
+/* of a gap at the top and is less strict */
+
+.hero-simple {
+    padding-top: 6rem;
+    min-height: 70vh;
+    position: relative;
+}
+

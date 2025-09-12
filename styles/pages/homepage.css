@@ -1,22 +1,4 @@
 /* ==================================== */
-/* ========= LANDING STYLES ============ */
-/* ==================================== */
-
-/* the blinking cursor */
-.cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1em;
-    background: var(--text-accent);
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-}
-
-/* ==================================== */
 /* ========= ABOUT SECTION =============== */
 /* ==================================== */
 .about-grid {
