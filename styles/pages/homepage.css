@@ -1,0 +1,177 @@
+/* ==================================== */
+/* ========= LANDING STYLES ============ */
+/* ==================================== */
+
+/* the blinking cursor */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: var(--text-accent);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* ==================================== */
+/* ========= ABOUT SECTION =============== */
+/* ==================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.about-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+
+.skills-list-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.skills-list {
+    /* display: grid; */
+    /* grid-template-columns: repeat(2, 1fr); */
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.skills-list li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1rem;
+}
+
+.skills-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--text-accent);
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================================== */
+/* ========= CONTACT SECTION =============== */
+/* ==================================== */
+.contact p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.contact-email {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    color: var(--text-accent);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border-radius: 16px;
+    background-color: var(--bg-primary);
+}
+
+.contact-email:hover {
+    border-color: var(--text-accent);
+    transform: translateY(-2px); /* Subtle lift instead of scale */
+    box-shadow: 0 8px 16px rgba(0, 102, 204, 0.15);
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Changed to stretch for equal heights */
+    gap: 1.5rem; /* Reduced gap for better spacing */
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    border: 1px solid var(--border);
+    border-radius: 16px; /* Added border radius for modern look */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 1rem; /* Adjusted padding */
+    width: 160px; /* Fixed width instead of max-width */
+    height: 120px; /* Fixed height for consistency */
+    cursor: pointer;
+    background-color: var(--bg-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    
+    /* Flexbox for perfect centering */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+
+    text-decoration: none; /* Remove underline for links */
+}
+
+.contact-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.contact-icon {
+    width: 36px; /* Slightly larger for better visibility */
+    height: 36px;
+    object-fit: contain; /* Ensures proper image scaling */
+}
+
+.contact-card:hover {
+    border-color: var(--text-accent);
+    transform: translateY(-2px); /* Subtle lift instead of scale */
+    box-shadow: 0 8px 16px rgba(0, 102, 204, 0.15); /* Enhanced shadow on hover */
+    text-decoration: none;
+    /* background-color: var(--hover-bg); */
+}
+
+.contact-card:hover p {
+    color: var(--text-accent);
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        gap: 1rem;
+    }
+    
+    .contact-card {
+        width: 140px;
+        height: 100px;
+        padding: 1rem;
+    }
+    
+    .contact-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
