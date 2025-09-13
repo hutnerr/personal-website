@@ -17,6 +17,59 @@
 }
 
 /* ==================================== */
+/* ========= RANDOM =============== */
+/* ==================================== */
+
+.pspacing p {
+    padding-bottom: 1.2rem;
+}
+
+.panelspacing {
+    margin-top: 2rem;
+}
+
+.sized-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+    /* border: 1px solid var(--border); */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hover-img {
+    transition: transform 0.3s ease;
+}
+
+.hover-img:hover {
+    transform: scale(1.05);
+}
+
+.arrowed-list {
+    display: flex;
+    flex-direction: column;
+    /* gap: 0.2rem; */
+    list-style: none;
+}
+
+.arrowed-list li {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.arrowed-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--text-accent);
+}
+
+/* ==================================== */
 /* ========= BLINKING CURSOR =============== */
 /* ==================================== */
 .cursor {
@@ -107,6 +160,24 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+    /* margin-left: 10%; */
+    /* margin-right: 10%; */
+}
+
+.btn-grid .btn {
+    justify-self: center;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    min-width: 180px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 /* ==================================== */

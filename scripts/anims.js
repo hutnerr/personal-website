@@ -73,7 +73,7 @@ document.addEventListener('componentsLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.work-item, .about-text, .skills-list').forEach(el => {
+    document.querySelectorAll('.work-item, .about-text, .skills-list, .panelbg').forEach(el => {
         el.classList.add('fade-up');
         observer.observe(el);
     });

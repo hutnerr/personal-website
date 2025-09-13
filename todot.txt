@@ -1,16 +1,10 @@
-3. text should have a background that makes it clearer
 5. https://formsubmit.co/
-6. generalize the styles
-8. clean up the css in general 
 9. might still be worth adding in a contact page? maybe under other. add the form submit.
-- make the navdots position not influence the rest of the header. right now it makes it move to the left a little the more there are
-    - at least blog is different than the other 2. maybe its not different and thats happening because of the navbar on the right
-    not existing. 
-- make the Other nav page
-- start making the blog pages
+
 - start making the project pages 
+
 - maybe add a contact page on the navbar as well? have the email form?
-- check EVERY link and make sure it isnt broken. 
+
 - add the pages for "Other"
     - the contact page if i don't make it a core page
     - experience
@@ -22,3 +16,14 @@
     - beast[code] help for example
 
 - maybe change "core" folder to navpages or something
+
+- add in the metadata header stuff
+
+- make the 404 page
+
+- navbar/scrollbar styling
+
+DOUBLE CHECKING
+- ALL links work
+- Each has the proper title at the top
+- Has an icon at the top
