@@ -14,7 +14,12 @@ document.addEventListener('componentsLoaded', () => {
                 navDots.forEach(d => d.classList.remove('active'));
                 dot.classList.add('active');
                 const targetSection = document.getElementById(dot.getAttribute('data-section'));
-                targetSection.scrollIntoView({ behavior: 'smooth' });
+                const navbarHeight = 80; // Adjust this value to match your navbar height
+                const targetPosition = targetSection.offsetTop - navbarHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             });
         });
     }
