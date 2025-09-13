@@ -27,3 +27,19 @@
     left: 0;
     color: var(--text-accent);
 }
+
+.project-grid-item h3 {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.project-grid-item h3:hover {
+    color: var(--text-accent);
+    text-decoration: underline;
+}
+
+

@@ -8,6 +8,14 @@
     padding: 0 2rem;
 }
 
+.panelbg {
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+}
+
 /* ==================================== */
 /* ========= BLINKING CURSOR =============== */
 /* ==================================== */
@@ -59,14 +67,6 @@
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.1), transparent);
     transition: left 0.5s ease;
-}
-
-.panelbg {
-    background: var(--bg-primary);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--border);
 }
 
 .btn:hover::before {
@@ -141,7 +141,7 @@
 .work-item:hover {
     border-color: var(--text-accent);
     box-shadow: 0 8px 16px rgba(0, 102, 204, 0.15);
-    transform: scale(1.02);
+    /* transform: scale(1.02); */
 }
 
 .work-item::before {
