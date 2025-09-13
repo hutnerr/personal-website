@@ -20,3 +20,5 @@
 
 - need other pages that exist but aren't linked as much. 
     - beast[code] help for example
+
+- maybe change "core" folder to navpages or something
