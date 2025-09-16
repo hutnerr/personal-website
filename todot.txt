@@ -15,15 +15,15 @@
 - need other pages that exist but aren't linked as much. 
     - beast[code] help for example
 
-- maybe change "core" folder to navpages or something
-
 - add in the metadata header stuff
-
-- make the 404 page
-
-- navbar/scrollbar styling
 
 DOUBLE CHECKING
 - ALL links work
 - Each has the proper title at the top
 - Has an icon at the top
+
+Update links to the website from outside sources
+- linkedin
+- beast[code] /help command
+- top.gg
+- itch.io profile 

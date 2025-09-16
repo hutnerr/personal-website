@@ -322,3 +322,20 @@
         gap: 0.5rem;
     }
 }
+
+
+
+/* 
+----------------------------
+===== Custom Scrollbar =====
+----------------------------
+*/
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--bg-secondary) var(--bg-primary);
+}
+
+/* make the scrollbar always present */
+html {
+  overflow-y: scroll;
+}
