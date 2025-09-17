@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="stylesheet" href="/styles/pages/contact.css">
+    <link rel="stylesheet" href="/styles/pages/homepage.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/navigation.css">
+    <link rel="stylesheet" href="/styles/sections.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <script src="/scripts/components.js"></script>
+    <script src="/scripts/anims.js"></script>
+</head>
+<body>
+    <div id="background"></div>
+    <div id="header"></div>
+
+    <section id="hero" class="hero-simple">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>contact<span class="cursor"></span></h1>
+                    <p class="subtitle">$ contact me!</p>
+                </div>
+            </div>
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h2 class="section-title">Socials &amp; Contact</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="hero-content">
+                <div>
+                    <div class="card-container">
+                        <a href="https://github.com/hutnerr" class="contact-card">
+                            <p>GitHub</p>
+                            <img class="contact-icon" src="https://www.svgrepo.com/show/475654/github-color.svg">
+                        </a>
+                        <a href="https://www.linkedin.com/in/hunter-b-baker/" class="contact-card">
+                            <p>LinkedIn</p>
+                            <img class="contact-icon" src="https://www.svgrepo.com/show/157006/linkedin.svg">
+                        </a>
+                        <a href="https://leetcode.com/hutnerr/" class="contact-card">
+                            <p>LeetCode</p>
+                            <img class="contact-icon" src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png">
+                        </a>
+                        <a href="https://itch.io/profile/hutnerr" class="contact-card">
+                            <p>itch.io</p>
+                            <img class="contact-icon" src="https://static.itch.io/images/app-icon.svg">
+                        </a>
+                        <a href="mailto:hunter.b.baker@gmail.com" class="contact-card">
+                            <p>Email</p>
+                            <img class="contact-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg">
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <form class="contact-form" action="https://formsubmit.co/hunter.baker.b@gmail.com" method="POST">
+                        
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+</body>
+</html>
