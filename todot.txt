@@ -1,19 +1,10 @@
-5. https://formsubmit.co/
-9. might still be worth adding in a contact page? maybe under other. add the form submit.
-
-- start making the project pages 
-
-- maybe add a contact page on the navbar as well? have the email form?
-
 - add the pages for "Other"
-    - the contact page if i don't make it a core page
     - experience
     - class history
-    - badges & certs
     - game jam
-
-- need other pages that exist but aren't linked as much. 
     - beast[code] help for example
+
+- start making the project pages 
 
 - add in the metadata header stuff
 
@@ -22,8 +13,13 @@ DOUBLE CHECKING
 - Each has the proper title at the top
 - Has an icon at the top
 
+- merge the branch and let this one be active
+
 Update links to the website from outside sources
 - linkedin
 - beast[code] /help command
 - top.gg
 - itch.io profile 
+
+
+
