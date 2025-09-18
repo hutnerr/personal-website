@@ -26,6 +26,20 @@
     align-items: center;
 }
 
+.svg-icon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) saturate(100%) invert(71%) sepia(95%) saturate(1739%) hue-rotate(5deg) brightness(104%) contrast(101%);
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+
+}
+
+.svg-icon:hover {
+    transform: translateY(-2px); /* Subtle lift instead of scale */
+}
+
 /* ==================================== */
 /* ========= RANDOM =============== */
 /* ==================================== */

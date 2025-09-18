@@ -1,13 +1,19 @@
 - start making the project pages 
 
+- add the itch.io icons that link to the game to the game jams pages next to the header
+
 - add in the metadata header stuff
 
-- add the itch.io icons that link to the game to the game jams pages next to the header
+- make all the hovers go back gently with something like below
+    - transition: transform 0.3s ease;
 
 DOUBLE CHECKING
 - ALL links work
 - Each has the proper title at the top
 - Has an icon at the top
+- things have all the links they want
+    - links to their github
+    - links to their outsourced page (ie pantry panic)
 
 - merge the branch and let this one be active
 
@@ -16,4 +22,5 @@ Update links to the website from outside sources
 - beast[code] /help command (the actual code)
 - top.gg
 - itch.io profile 
+- all github repos of the projects
 
