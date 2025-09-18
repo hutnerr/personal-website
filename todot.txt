@@ -1,9 +1,3 @@
-- add the pages for "Other"
-    - experience
-    - class history
-    - game jam
-    - beast[code] help for example
-
 - start making the project pages 
 
 - add in the metadata header stuff
@@ -16,10 +10,8 @@ DOUBLE CHECKING
 - merge the branch and let this one be active
 
 Update links to the website from outside sources
-- linkedin
-- beast[code] /help command
+- linkedin posts
+- beast[code] /help command (the actual code)
 - top.gg
 - itch.io profile 
-
-
 

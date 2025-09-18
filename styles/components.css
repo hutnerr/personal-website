@@ -83,7 +83,10 @@
     padding-right: 1rem;
 }
 
-
+.table-centered {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* ==================================== */
 /* ========= BLINKING CURSOR =============== */
