@@ -2,6 +2,8 @@
 
 - add in the metadata header stuff
 
+- add the itch.io icons that link to the game to the game jams pages next to the header
+
 DOUBLE CHECKING
 - ALL links work
 - Each has the proper title at the top
