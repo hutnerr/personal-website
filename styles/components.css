@@ -79,6 +79,12 @@
     color: var(--text-accent);
 }
 
+.table-gap td:not(:last-child) {
+    padding-right: 1rem;
+}
+
+
+
 /* ==================================== */
 /* ========= BLINKING CURSOR =============== */
 /* ==================================== */
