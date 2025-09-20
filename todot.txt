@@ -1,5 +1,3 @@
-- add in the metadata header stuff
-
 - make all the hovers go back gently with something like below
     - transition: transform 0.3s ease;
 
@@ -25,4 +23,6 @@ Update links to the website from outside sources
 - top.gg
 - itch.io profile 
 - all github repos of the projects
+
+- text the metadata stuff my posting it in discord.
 
