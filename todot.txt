@@ -1,5 +1,11 @@
-- make all the hovers go back gently with something like below
-    - transition: transform 0.3s ease;
+Double Checking Progress
+- [ ] Blog
+- [ ] Games
+- [X] Nav
+- [ ] Projects
+- [ ] Other
+- [X] Index & 404
+
 
 DOUBLE CHECKING
 - ALL links work
@@ -8,17 +14,19 @@ DOUBLE CHECKING
 - things have all the links they want
     - links to their github
     - links to their outsourced page (ie pantry panic)
+- The styles are proper. If it hovers, then it isn't jarring going back down. 
 
+
+MERGING & POST MERGE
 - merge the branch and let this one be active
-
 - setup the email form thing
-
-Update links to the website from outside sources
-- linkedin posts
-- beast[code] /help command (the actual code)
-- top.gg
-- itch.io profile 
-- all github repos of the projects
-
 - text the metadata stuff my posting it in discord.
 
+
+FINAL UPDATES
+- Fix all external links pointing to the website
+    - linkedin posts
+    - beast[code] /help command (the actual code)
+    - top.gg
+    - itch.io profile 
+    - all github repos of the projects
