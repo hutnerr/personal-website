@@ -1,5 +1,3 @@
-- add the itch.io icons that link to the game to the game jams pages next to the header
-
 - add in the metadata header stuff
 
 - make all the hovers go back gently with something like below
