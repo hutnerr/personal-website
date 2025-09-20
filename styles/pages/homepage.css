@@ -81,7 +81,7 @@
 .contact-email:hover {
     border-color: var(--text-accent);
     transform: translateY(-2px); /* Subtle lift instead of scale */
-    box-shadow: 0 8px 16px rgba(0, 102, 204, 0.15);
+    /* box-shadow: 0 8px 16px rgba(0, 102, 204, 0.15); */
 }
 
 .card-container {
@@ -103,7 +103,7 @@
     height: 120px; /* Fixed height for consistency */
     cursor: pointer;
     background-color: var(--bg-primary);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);  */
     
     /* Flexbox for perfect centering */
     display: flex;
@@ -132,7 +132,7 @@
 .contact-card:hover {
     border-color: var(--text-accent);
     transform: translateY(-2px); /* Subtle lift instead of scale */
-    box-shadow: 0 8px 16px rgba(0, 102, 204, 0.15); /* Enhanced shadow on hover */
+    /* box-shadow: 0 8px 16px rgba(0, 102, 204, 0.15);  */
     text-decoration: none;
     /* background-color: var(--hover-bg); */
 }

@@ -244,7 +244,7 @@
 
 .work-item:hover {
     border-color: var(--text-accent);
-    box-shadow: 0 8px 16px rgba(0, 102, 204, 0.15);
+    /* box-shadow: 0 8px 16px var(--text-accent, rgba(100,255,218,0.15)); */
     /* transform: scale(1.02); */
 }
 

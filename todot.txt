@@ -1,11 +1,9 @@
-- make all the hovers go back gently with something like below
-    - transition: transform 0.3s ease;
-
 - all images have the right alt text
 
-- decide if i want the blue shadow blur on the element?
-
 - hide the dots when the page gets small enough bc they conflict with the header
+
+- make all the hovers go back gently with something like below
+    - transition: transform 0.3s ease;
 
 DOUBLE CHECKING
 - ALL links work
@@ -16,6 +14,8 @@ DOUBLE CHECKING
     - links to their outsourced page (ie pantry panic)
 
 - merge the branch and let this one be active
+
+- setup the email form thing
 
 Update links to the website from outside sources
 - linkedin posts
