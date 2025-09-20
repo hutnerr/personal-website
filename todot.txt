@@ -1,5 +1,3 @@
-- all images have the right alt text
-
 - hide the dots when the page gets small enough bc they conflict with the header
 
 - make all the hovers go back gently with something like below
