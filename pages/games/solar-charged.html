@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Charged</title>
+    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="stylesheet" href="/styles/pages/games.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/navigation.css">
+    <link rel="stylesheet" href="/styles/sections.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <script src="/scripts/components.js"></script>
+    <script src="/scripts/anims.js"></script>
+</head>
+<body>
+    <div id="background"></div>
+    <div id="header"></div>
+
+    <section id="hero" class="hero-simple">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>solar charged<span class="cursor"></span></h1>
+                    <p class="subtitle">$ a resource management tower defense game</p>
+                </div>
+            </div>
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h2 class="section-title">Play</h2>
+                <div class="section-line"></div>
+            </div>
+            <iframe class="itch-embed" frameborder="0" src="https://itch.io/embed-upload/14352782?color=282828" allowfullscreen=""><a href="https://hutnerr.itch.io/solarcharged">Play Solar Charged on itch.io</a></iframe>
+        </div>
+    </section>
+
+    <section id="second">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">Overview</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="hero-content">
+                <div class="panelbg pspacing">
+                    <p>Solar Charged is a game that I made alongside a <a href="https://github.com/Koborooski">friend</a> for the <a href="https://itch.io/jam/kenney-jam-2025">2025 Kenny Game Jam</a>. The theme for this jam was "Power". Our take on this theme was a resource management tower defense game. Your "Power" acts both as your health as well as your currency. You can play the game directly though the embed below, or you can visit the <a href="https://hutnerr.itch.io/solarcharged">itch.io page</a>.</p>            
+                    <p>I learned a lot about Game Developement through the creation of this game. Namely component-based design, state machines, and the benefits of clean and modular code. One of the things I wish that we had done better was manage our time a bit better so we had more time for balance and playtesting.</p>
+                    <p style="padding-bottom: 0px"><strong>Links</strong></p>
+                    <ul class="arrowed-list">
+                        <li><a href="https://itch.io/jam/kenney-jam-2025/rate/3734468">Game Jam Page</a></li>
+                        <li><a href="https://hutnerr.itch.io/solarcharged">itch.io</a></li>
+                        <li><a href="https://github.com/hutnerr/kenny-jam-2025">GitHub</a></li>
+                        <li><a href="https://itchanalytics.vercel.app/jam/gmtk-2025/3778927">Statistics</a></li>
+                        <li><a href="/pages/blog/blog-07-24-2025.html">Blog Post</a></li>
+                    </ul>            
+                </div>
+                <img class="sized-img hover-img" src="/resources/gifs/game-jams/solar-charged-clouds.gif" alt="Solar Charged Screenshot 1"/>
+            </div>
+        </div>
+    </section>
+
+    <section id="third">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03.</span>
+                <h2 class="section-title">How To Play</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="hero-content">
+                <div class="panelbg pspacing">
+                    <p>The goal is to manage your power effectively while defending against waves of enemies. You must strategically place your towers and upgrade them to survive. However, the more you upgrade them, and the more you have, the more power they will use. If you run out of power, you lose.</p>
+                    <p>The game has a weather cycle that must be taken into account as well. Your power is recharged through solar energy, which is affected by the weather. Make sure to keep an eye on the forecast!</p>
+                    <p>To bring up the upgrade menu, simply select a tower that has been placed. You can also delete towers this way.</p>
+                    <p>Upkeep is the cost of having the tower on the field. This cost switches to active when the tower starts shooting.</p>
+                </div>
+                <div class="panelbg">
+                    <h3>Tower Types</h3>
+                    <ul class="arrowed-list">
+                        <li><strong>Orange Tower:</strong> Simple shooter</li>
+                        <li><strong>Red Tower:</strong> Piercing lazer</li>
+                        <li><strong>Green Tower:</strong> Increases power of towers in radius</li>
+                        <li><strong>Blue Tower:</strong> Slows down enemies by at percent</li>
+                        <li><strong>Grey Tower:</strong> Deals constant damage in it's radius</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <div id="footer"></div>
+</body>
+</html>

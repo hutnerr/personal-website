@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation System</title>
+    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/navigation.css">
+    <link rel="stylesheet" href="/styles/sections.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <script src="/scripts/components.js"></script>
+    <script src="/scripts/anims.js"></script>
+</head>
+<body>
+    <div id="background"></div>
+    <div id="header"></div>
+
+    <section id="hero" class="hero-simple">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>navsys<span class="cursor"></span></h1>
+                    <p class="subtitle">$ a simple navigation system</p>
+                </div>
+            </div>
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h2 class="section-title">Overview</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="hero-content">
+                <div class="panelbg">
+                    <p>This personal navigation system utilizes GPS technology to provide real-time location tracking and
+                    navigation assistance. It has USB satellite receiver support for real time updates. You can view the
+                    design document <a href="/resources/images/projects/navsystemdesign.svg">here</a>.</p>
+                </div>
+                <div class="panelbg">
+                    <h3>Technologies Used</h3>
+                    <ul class="arrowed-list">
+                        <li><strong>Java Programming:</strong> JavaFX & Swing, Object-oriented Programming</li>
+                        <li><strong>GPS Technology:</strong> Integration with satellites, real-time location tracking, <a href="https://docs.novatel.com/OEM7/Content/Logs/GPGGA.htm">GPGGA sentences</a></li>
+                        <li><strong>Data Structures:</strong> Graphs, trees, and algorithms (<a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's</a> and <a href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm">Bellman-Ford</a>) for pathfinding</li>
+                        <li><strong>Hardware:</strong> Integration with GPS receivers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="second">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">The Product</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="hero-content">
+                <div class="pspacing panelbg">
+                    <p>The Navigation System is a Java-based application designed to provide real-time GPS navigation
+                        and mapping services.</p>
+                    <p>It features a user-friendly interface that allows users to input destinations and receive
+                        directions.</p>
+                    <p>The system utilizes GPS satellite technology to track the user's location and provide accurate
+                        navigation instructions.</p>
+                    <p>It also includes features such as route-relocation.</p>
+                    <p>The <a href="/resources/gifs/projects/navsys.gif">GIF</a> is a very simple demonstration of the system's capabilities in real-time navigation and mapping.</p>
+                </div>
+                <img class="hover-img sized-img" src="/resources/gifs/projects/navsys.gif" alt="Navigation System GIF"> 
+            </div>
+        </div>
+    </section>
+
+    <section id="third">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03.</span>
+                <h2 class="section-title">Challenges &amp; Solutions</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="panelbg pspacing">
+                <p>Going into this project, I knew nothing about the world of GPS technology and real-time navigation
+                systems. I had to learn everything about this subject while also figuring out how to program it at the same time.</p>
+                <p>The biggest challenge I faced was system optimization. A GPS system must process location data quickly
+                and efficiently to provide real-time updates to users. I had to learn about algorithms for pathfinding
+                and how to manage data from multiple sources.</p>
+                <img width=100% style="background-color: white" class="sized-img" src="/resources/images/projects/navsystemdesign.svg" alt="Navigation System Design Document">
+            </div>
+        </div>
+    </section>
+
+    <section id="fourth">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04.</span>
+                <h2 class="section-title">Takeaways</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="panelbg pspacing">
+                <p>This project taught me the importance of understanding both the hardware and software aspects of GPS technology. I learned how to effectively integrate these components to create a functional navigation system.</p>
+                <p>Working on this project also improved my skills in Java programming, particularly in GUI development and
+                    real-time data processing. Threading was also a key aspect, as it allowed for smoother user interactions
+                    and more responsive updates.</p>
+                <p>Additionally, I gained insights into design patterns that are crucial for building scalable and maintainable software. Understanding patterns such as Model-View-Controller (MVC), Observer, and Strategy helped me structure the application more effectively.</p>
+                <p>Some key takeaways include:</p>
+                <ul class="arrowed-list">
+                    <li>Improving my skills in Java programming and GUI development.</li>
+                    <li>Understanding the systems behind navigation systems.</li>
+                    <li>Gaining experience in optimizing algorithms for efficient pathfinding and navigation.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+</body>
+</html>
