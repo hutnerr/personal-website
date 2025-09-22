@@ -44,7 +44,7 @@
 /* ========= RANDOM =============== */
 /* ==================================== */
 
-.pspacing p {
+.pspacing p:not(:last-child) {
     padding-bottom: 1.2rem;
 }
 

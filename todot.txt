@@ -1,5 +1,5 @@
 Double Checking Progress
-- [ ] Blog
+- [x] Blog
 - [ ] Games
 - [X] Nav
 - [ ] Projects
