@@ -3,7 +3,7 @@ Double Checking Progress
 - [X] Games
 - [X] Nav
 - [ ] Projects
-- [ ] Other
+- [X] Other
 - [X] Index & 404
 
 

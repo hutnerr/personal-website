@@ -13,10 +13,11 @@
 .contact-form input,
 .contact-form textarea {
     padding: 10px;
-    border: 1px solid var(--text-primary);
+    border: 1px solid var(--bg-primary);
     border-radius: 5px;
     font-size: 16px;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     margin-bottom: 15px;
     background-color: var(--bg-secondary);
@@ -28,10 +29,9 @@
     color: var(--bg-primary);
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .contact-form input[type="submit"]:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(250, 189, 47, 0.2);
 }
