@@ -1,27 +1,7 @@
-Double Checking Progress
-- [x] Blog
-- [X] Games
-- [X] Nav
-- [ ] Projects
-- [X] Other
-- [X] Index & 404
-
-
-DOUBLE CHECKING
-- ALL links work
-- Each has the proper title at the top
-- Has an icon at the top
-- things have all the links they want
-    - links to their github
-    - links to their outsourced page (ie pantry panic)
-- The styles are proper. If it hovers, then it isn't jarring going back down. 
-
-
 MERGING & POST MERGE
 - merge the branch and let this one be active
 - setup the email form thing
 - text the metadata stuff my posting it in discord.
-
 
 FINAL UPDATES
 - Fix all external links pointing to the website
@@ -30,6 +10,3 @@ FINAL UPDATES
     - top.gg
     - itch.io profile 
     - all github repos of the projects
-
-PATCHES
-- Fix mobile views. 

@@ -127,6 +127,12 @@ footer ul li a:hover {
     color: var(--text-primary);
 }
 
+@media (max-width: 768px) {
+    footer ul {
+        font-size: 0.9rem;
+    }
+}
+
 /* ==================================== */
 /* ===== SCROLL ANIMATIONS  ====== */
 /* ==================================== */
