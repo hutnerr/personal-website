@@ -1,6 +1,6 @@
 Double Checking Progress
 - [x] Blog
-- [ ] Games
+- [X] Games
 - [X] Nav
 - [ ] Projects
 - [ ] Other
