@@ -37,7 +37,7 @@
 }
 
 .svg-icon:hover {
-    transform: translateY(-2px); /* Subtle lift instead of scale */
+    transform: translateY(-2px);
 }
 
 /* ==================================== */
@@ -56,8 +56,6 @@
     width: 100%;
     height: auto;
     border-radius: 16px;
-    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
-    /* border: 1px solid var(--border); */
     margin-top: 1rem;
     margin-bottom: 1rem;
     object-fit: cover;
@@ -77,7 +75,6 @@
 .arrowed-list {
     display: flex;
     flex-direction: column;
-    /* gap: 0.2rem; */
     list-style: none;
 }
 
@@ -140,7 +137,7 @@
 .btn:hover {
     border-color: var(--text-accent);
     color: var(--text-accent);
-    transform: translateY(-2px); /* Subtle lift instead of scale */
+    transform: translateY(-2px);
     text-decoration: none;
 }
 
@@ -151,7 +148,6 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.1), transparent);
     transition: left 0.5s ease;
 }
 
@@ -159,49 +155,11 @@
     left: 100%;
 }
 
-.btn-focus {
-  position: relative;
-  background: linear-gradient(45deg, var(--text-accent), #fe8019, var(--text-accent));
-  background-size: 300% 300%;
-  color: white;
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  cursor: pointer;
-  transform: translateY(0);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  animation: gradientShift 3s ease infinite, pulse 2s ease-in-out infinite alternate;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.btn-focus:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  color: white;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .btn-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     margin-top: 2rem;
-    /* margin-left: 10%; */
-    /* margin-right: 10%; */
 }
 
 .btn-grid .btn {
@@ -244,8 +202,6 @@
 
 .work-item:hover {
     border-color: var(--text-accent);
-    /* box-shadow: 0 8px 16px var(--text-accent, rgba(100,255,218,0.15)); */
-    /* transform: scale(1.02); */
 }
 
 .work-item::before {
@@ -332,7 +288,6 @@
 .work-list li::before {
     padding-left: 20px;
     content: '▸';
-    /* position: absolute; */
     left: 0;
     color: var(--text-accent);
 }
@@ -356,7 +311,6 @@
         gap: 0.5rem;
     }
 }
-
 
 
 /* 

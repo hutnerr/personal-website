@@ -1,12 +1,9 @@
 .contact-form {
     display: flex;
     flex-direction: column;
-    /* gap: 15px; */
-    /* max-width: 600px; */
     align-items: flex-start;
     width: 75%;
     margin: 0px auto;
-    
 }
 
 .contact-form label {

@@ -18,12 +18,16 @@
     justify-content: center;
 }
 
+.nav-bar ul li a {
+    transition: all 0.3s ease;
+}
+
 .nav-bar ul li a:hover {
     transform: uppercase;
     color: var(--text-accent);
     font-weight: 600;
     transition: all 0.3s ease;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 
 }
 

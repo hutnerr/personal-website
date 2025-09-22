@@ -20,7 +20,6 @@
     --border: #665c54;
     --code-bg: #1d2021;
     --hover: #32302f;
-    --gradient: linear-gradient(135deg, #fabd2f 0%, #b8bb26 100%);
 }
 
 body {
@@ -39,5 +38,5 @@ a {
 
 a:hover {
     text-decoration: underline;
-    transform: translateY(-2px); /* Subtle lift instead of scale */
+    transform: translateY(-2px);
 }

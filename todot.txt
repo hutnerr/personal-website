@@ -30,3 +30,6 @@ FINAL UPDATES
     - top.gg
     - itch.io profile 
     - all github repos of the projects
+
+PATCHES
+- Fix mobile views. 
