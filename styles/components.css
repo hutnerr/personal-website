@@ -76,6 +76,9 @@
     display: flex;
     flex-direction: column;
     list-style: none;
+    align-items: flex-start;
+    padding-left: 0;
+    margin-left: 0;
 }
 
 .arrowed-list li {
@@ -171,6 +174,18 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+    .btn-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .btn-grid .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
 /* ==================================== */
 /* =========  CIRCLE IMAGE =============== */
 /* ==================================== */
@@ -186,6 +201,28 @@
 
 .circle-img:hover {
     transform: scale(1.02);
+}
+
+.dec-sized-img {
+    width: 75%;
+    height: auto;
+}
+
+.major-dec-sized-img {
+    width: 50%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .dec-sized-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .major-dec-sized-img {
+        width: 75%;
+        height: auto;
+    }
 }
 
 /* ==================================== */
