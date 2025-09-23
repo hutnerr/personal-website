@@ -310,6 +310,11 @@
         flex-direction: column;
         gap: 0.5rem;
     }
+
+    .work-links {
+        /* justify-content: center; */
+        flex-wrap: wrap;
+    }
 }
 
 

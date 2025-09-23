@@ -7,3 +7,18 @@
   border: none;
   border-radius: 15px;
 }
+
+.jam-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .jam-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}

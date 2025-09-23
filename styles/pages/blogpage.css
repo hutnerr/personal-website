@@ -10,6 +10,7 @@
     color: var(--text-secondary);
     position: relative;
     padding-left: 1rem;
+    margin-bottom: 0.15rem;
 }
 
 .blog-list li::before {
@@ -17,4 +18,11 @@
     position: absolute;
     left: 0;
     color: var(--text-accent);
+}
+
+@media (max-width: 600px) {
+    .blog-list li {
+        font-size: 0.9rem;
+        padding-bottom: 0.5rem;
+    }
 }
