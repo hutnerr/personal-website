@@ -1,10 +1,41 @@
 www.hunter-baker.com
 
-## Overview
-The purpose of this website was to act as a hub for my resume, other socials, as well as a place I can display all of my projects. It has numerous sections and pages. 
+## Personal Website
+This is my personal portfolio website. It houses much of my work, a blog, as well as other credentials and things about me.
 
-Some of the features it houses are:
-- [**Project Pages:**](https://www.hunter-baker.com/pages/nav/projects.html) Each project I've worked on and completed is described in detail.
-- [**Blog:**](https://www.hunter-baker.com/pages/nav/blog.html) A place where I give updates and explain about what I'm working on.
-- [**Background:**](https://www.hunter-baker.com/pages/other/experience.html) My previous experience, class history, certs, etc.
-- **Other:** It also houses my contact information, resume, and other relevant things. 
+<br>
+
+<table>
+  <tr>
+    <th>Page</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><a href="https://www.hunter-baker.com"><strong>Home</strong></a></td>
+    <td>The home and title page.</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.hunter-baker.com/pages/nav/blog.html"><strong>Blog</strong></a></td>
+    <td>A place where I give updates and explain my goals and what I'm working on.</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.hunter-baker.com/pages/nav/projects.html"><strong>Projects</strong></a></td>
+    <td>Some key projects I've worked on and completed are described in detail.</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.hunter-baker.com/pages/other/experience.html"><strong>Experience</strong></a></td>
+    <td>My previous experience, class history, certifications, etc.</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.hunter-baker.com/pages/other/classhistory"><strong>Class History</strong></a></td>
+    <td>A comprehensive history of all of the courses I've taken.</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.hunter-baker.com/pages/other/contact.html"><strong>Contact</strong></a></td>
+    <td>The best way to find me elsewhere and contact me!</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.hunter-baker.com/pages/nav/other"><strong>Other</strong></a></td>
+    <td>A collection of various relevant pages.</td>
+  </tr>
+</table>
