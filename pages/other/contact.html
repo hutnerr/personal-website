@@ -73,17 +73,22 @@
                 </div>
                 <div>
                     <form class="contact-form" action="https://formsubmit.co/8c1eb463d6ee1727f4a8a1dea1d98dd6" method="POST">
+                        
+                        <input type="text" name="_honey" style="display:none"> <!-- honeypot field to prevent spam -->
+                        
+                        <input type="hidden" name="_captcha" value="true">
+                        
                         <input type="hidden" name="_next" value="https://hunter-baker.com/pages/other/contact.html">
-
+                        
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
-
+                        
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
-
+                        
                         <label for="message">Message:</label>
                         <textarea id="message" name="message" rows="4" required></textarea>
-
+                        
                         <input type="submit" value="Send">
                     </form>
                 </div>
