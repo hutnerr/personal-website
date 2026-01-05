@@ -369,3 +369,44 @@
 html {
   overflow-y: scroll;
 }
+
+/* 
+----------------------------
+===== Custom Scrollbar =====
+----------------------------
+*/
+
+.simple-start-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;   
+}
+
+.simple-start-grid ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.simple-start-grid ul li {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1rem;
+}
+
+.simple-start-grid ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--text-accent);
+}
+
+.simple-start-grid-item h3 {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}

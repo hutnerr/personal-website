@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lospec Daily Bot</title>
+    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/navigation.css">
+    <link rel="stylesheet" href="/styles/sections.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <script src="/scripts/components.js"></script>
+    <script src="/scripts/anims.js"></script>
+
+    <meta property="og:title" content="Hunter Baker | Lospec Daily Bot">
+    <meta property="og:description" content="A pixel art discord bot focused on daily pixel art challenges from Lospec.">
+    <meta property="og:image" content="https://hunter-baker.com/resources/images/beastcode-walkthrough/beastcode-logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hunter-baker.com/pages/projects/lospec-bot.html">
+    <!-- for Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4J8LXCJ31S');
+    </script>
+</head>
+<body>
+    <div id="background"></div>
+    <div id="header"></div>
+
+    <section id="hero" class="hero-simple">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>lospec daily bot<span class="cursor"></span></h1>
+                    <p class="subtitle">$ a pixel art discord bot</p>
+                </div>
+            </div>
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h2 class="section-title">Overview</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="hero-content">
+                <div class="panelbg pspacing">
+                    <p>
+                        This is a Discord Bot created using <a href="https://discordpy.readthedocs.io/en/stable/">Discord.py.</a>
+                        It posts the daily pixel art challenges from <a href="https://lospec.com/">Lospec</a> into a Discord server
+                        channel daily. It is meant to provide some inspiration and opportunity for pixel artists to practice their skills.
+                    </p>
+                    <p>
+                        As a live service product, it is a constant work in progress and always changing. The source code is
+                        available on <a href="https://github.com/hutnerr/leetcode-bot">GitHub</a>.
+                    </p>
+                </div>
+                <div class="panelbg">
+                    <h3>Technologies Used</h3>
+                    <ul class="arrowed-list">
+                        <li><strong>Python:</strong> Discord.py, Aiohttp, BS4</li>
+                    </ul>
+                    <br>
+                    <h3>Links</h3>
+                    <ul class="arrowed-list">
+                        <li><a href="https://github.com/hutnerr/lospec-daily-bot">GitHub Repository</a></li>
+                        <li><a href="https://discord.com/oauth2/authorize?client_id=1457439367500009597&permissions=2147485696&integration_type=0&scope=bot">Server Invite</a></li>
+                        <li><a href="https://top.gg/bot/1457439367500009597">Top.gg Page</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="second">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">The Product</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="hero-content">
+                <div class="pspacing panelbg">
+                    <p>
+                        The final product is a quite simple Discord bot that posts the daily pixel art challenges from Lospec.
+                    </p>
+                    <p>
+                        I was originally going to just create a static bot that only worked in my own server, but I figured that other
+                        people might find it useful as well, so I made it public and made it available for anyone to add to their own servers.
+                    </p>
+                    <p>
+                        Overall, it is a simple bot, but it serves its purpose well and is a fun little project to work on.
+                    </p>
+                    <p>
+                        One other thing to note is that this bot is not affiliated with Lospec in any way, it is simply a fan project.
+                    </p>
+                </div>
+                <img style="border-radius: 12px;" class="hover-img centered dec-sized-img" src="https://private-user-images.githubusercontent.com/157746425/532119982-35636abb-bc5e-4a22-a790-ed0032373dbc.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Njc2NTQ3NjksIm5iZiI6MTc2NzY1NDQ2OSwicGF0aCI6Ii8xNTc3NDY0MjUvNTMyMTE5OTgyLTM1NjM2YWJiLWJjNWUtNGEyMi1hNzkwLWVkMDAzMjM3M2RiYy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDEwNVQyMzA3NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wZGU1MmMyNDFhMjlmZmY3NDI1ODJiYTBmMTlhMzVmZGQzYTlkZGViYWQ1MTVlNGY3NzNlMzhiYzgzNzNlMGIzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ICT8wiZkrwYHdEnjaKW_dHJITGN_yLokKkbv7tKGBC0" alt="Lospec Bot Screenshot">
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+</body>
+</html>

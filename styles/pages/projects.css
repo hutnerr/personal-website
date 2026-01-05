@@ -34,6 +34,10 @@
     transition: color 0.2s;
 }
 
+.project-grid-item h3::after {
+    content: " ▼";
+}
+
 .project-grid-item h3:hover {
     color: var(--text-accent);
     text-decoration: underline;
