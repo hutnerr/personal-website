@@ -55,6 +55,14 @@ section {
     width: 100%;
 }
 
+.hero-content-not-centered {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    width: 100%;
+}
+
 .hero-text h1 {
     font-family: 'JetBrains Mono', monospace;
     font-size: 4rem;
