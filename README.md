@@ -1,7 +1,8 @@
-www.hunter-baker.com
+https://www.hunter-baker.com
 
-## Personal Website
-This is my personal portfolio website. It houses much of my work, a blog, as well as other credentials and things about me.
+## Overview
+This repository contains the source code for my personal portfolio website.  
+It showcases my projects, blog posts, experience, and other professional information.
 
 <br>
 
@@ -39,3 +40,9 @@ This is my personal portfolio website. It houses much of my work, a blog, as wel
     <td>A collection of various relevant pages.</td>
   </tr>
 </table>
+
+## License
+© 2026 Hunter Baker. All rights reserved.
+
+The source code for this website is provided for reference only.
+Content, design, and branding may not be reused without permission.

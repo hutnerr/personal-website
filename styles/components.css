@@ -102,6 +102,17 @@
     margin-right: auto;
 }
 
+.grid-collapse {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .grid-collapse {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ==================================== */
 /* ========= BLINKING CURSOR =============== */
 /* ==================================== */
