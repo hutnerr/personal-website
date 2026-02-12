@@ -1,4 +1,4 @@
-document.addEventListener('componentsLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const navDots = [];
     const navMenu = document.querySelector('.nav-menu');
