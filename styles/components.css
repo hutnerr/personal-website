@@ -125,8 +125,16 @@
 }
 
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
 }
 
 /* ==================================== */
@@ -144,7 +152,8 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    border-radius: 8px;;
+    border-radius: 8px;
+    ;
     background-color: var(--bg-primary);
 }
 
@@ -372,13 +381,13 @@
 ----------------------------
 */
 * {
-  scrollbar-width: auto;
-  scrollbar-color: var(--bg-secondary) var(--bg-primary);
+    scrollbar-width: auto;
+    scrollbar-color: var(--bg-secondary) var(--bg-primary);
 }
 
 /* make the scrollbar always present */
 html {
-  overflow-y: scroll;
+    overflow-y: scroll;
 }
 
 /* 
@@ -391,7 +400,7 @@ html {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 20px;   
+    padding: 20px;
 }
 
 .simple-start-grid ul {

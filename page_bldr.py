@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+"""
+Static Site Builder - Inlines HTML components into pages
+Replaces dynamic component loading with static HTML for faster page loads
+"""
+
 import os
 import re
 from pathlib import Path
@@ -37,28 +43,60 @@ class StaticSiteBuilder:
         """Replace component div placeholders with actual component HTML"""
         modified = html_content
         
-        # Pattern to match: <div id="component_name">...any content...</div>
-        # This will work for both empty divs and divs with existing content
         for component_id in self.component_map.keys():
-            # Match opening div tag through closing div tag, capturing any content in between
-            # This pattern handles:
-            # - <div id="component_id"></div> (empty)
-            # - <div id="component_id">...content...</div> (with content)
-            # - <div id='component_id'> (single quotes)
-            # - Whitespace variations
-            pattern = rf'<div\s+id=["\']?{component_id}["\']?\s*>.*?</div>'
-            
             component_html = self.load_component(component_id)
-            replacement = f'<div id="{component_id}">\n{component_html}\n</div>'
             
-            modified = re.sub(
-                pattern,
-                replacement,
-                modified,
-                flags=re.IGNORECASE | re.DOTALL  # DOTALL makes . match newlines too
-            )
+            # Find the component div and replace its entire content
+            # We need to handle nested divs properly
+            modified = self._replace_component_div(modified, component_id, component_html)
         
         return modified
+    
+    def _replace_component_div(self, html: str, component_id: str, new_content: str) -> str:
+        """Replace a component div handling nested tags properly"""
+        # Find opening tag: <div id="component_id">
+        opening_pattern = rf'<div\s+id=["\']?{component_id}["\']?\s*>'
+        opening_match = re.search(opening_pattern, html, re.IGNORECASE)
+        
+        if not opening_match:
+            return html  # Component div not found
+        
+        start_pos = opening_match.end()
+        
+        # Now find the matching closing </div> by counting nested divs
+        depth = 1
+        pos = start_pos
+        
+        while pos < len(html) and depth > 0:
+            # Look for next opening or closing div
+            next_open = html.find('<div', pos)
+            next_close = html.find('</div>', pos)
+            
+            # If no more closing tags, something is wrong
+            if next_close == -1:
+                return html
+            
+            # Check which comes first
+            if next_open != -1 and next_open < next_close:
+                # Found nested opening div
+                depth += 1
+                pos = next_open + 4
+            else:
+                # Found closing div
+                depth -= 1
+                if depth == 0:
+                    # This is our matching closing tag
+                    end_pos = next_close
+                    break
+                pos = next_close + 6
+        
+        # Replace everything between opening and closing tag
+        before = html[:opening_match.start()]
+        after = html[end_pos + 6:]  # +6 for </div>
+        
+        replacement = f'<div id="{component_id}">\n{new_content}\n</div>'
+        
+        return before + replacement + after
     
     def remove_component_loader_script(self, html_content: str) -> str:
         """Remove the component loading JavaScript since it's no longer needed"""
