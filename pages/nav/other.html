@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,6 @@
     <link rel="stylesheet" href="/styles/pages/blogpage.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/components.js"></script>
     <script src="/scripts/anims.js"></script>
 
     <meta property="og:title" content="Hunter Baker | Other Pages">
@@ -23,14 +23,35 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-4J8LXCJ31S');
     </script>
 </head>
+
 <body>
-    <div id="background"></div>
-    <div id="header"></div>
+    <div id="background">
+        <div style="position: fixed; inset: 0; z-index: -1; width: 100vw; height: 100vh; overflow: hidden;">
+            <img id="background-image" src="/resources/images/backgrounds/topography.svg" alt="Background"
+                style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+        </div>
+    </div>
+    <div id="header">
+        <nav>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/nav/blog.html">Blog</a></li>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+            <div class="nav-menu">
+                <!-- dots get added here dynamically based on the sections. -->
+                <!-- each section should have an id -->
+            </div>
+        </nav>
+    </div>
 
     <section id="hero" class="hero-simple">
         <div class="container">
@@ -79,6 +100,23 @@
         </div>
     </section>
 
-    <div id="footer"></div>
+    <div id="footer">
+        <footer>
+            <div class="container">
+                <ul>
+                    <li><a href="mailto:hunter.baker.b@gmail.com">hunter.baker.b@gmail.com</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://github.com/hutnerr">GitHub</a></li>
+                    <li> | </li>
+                    <li><a href="https://www.linkedin.com/in/hunter-b-baker/">LinkedIn</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/pages/other/contact.html">All Socials & Contact</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>

@@ -1,11 +1,11 @@
 .itch-embed {
-  display: block;
-  width: 100%;
-  height: 600px;
-  max-width: 80%;
-  margin: 0 auto;
-  border: none;
-  border-radius: 15px;
+    display: block;
+    width: 100%;
+    height: 600px;
+    max-width: 80%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 15px;
 }
 
 .jam-grid {

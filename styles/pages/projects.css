@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 20px;   
+    padding: 20px;
 }
 
 .project-grid ul {
@@ -42,5 +42,3 @@
     color: var(--text-accent);
     text-decoration: underline;
 }
-
-

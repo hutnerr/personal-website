@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,11 @@
     <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/components.js"></script>
     <script src="/scripts/anims.js"></script>
 
     <meta property="og:title" content="Hunter Baker | Solar Charged">
-    <meta property="og:description" content="Solar Charged is a resource management tower defense game made for the 2025 Kenny Game Jam. This page discusses the development process and retrospectives of the game.">
+    <meta property="og:description"
+        content="Solar Charged is a resource management tower defense game made for the 2025 Kenny Game Jam. This page discusses the development process and retrospectives of the game.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/game-jams/solar-charged-1.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/games/solar-charged.html">
@@ -23,14 +24,35 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-4J8LXCJ31S');
     </script>
 </head>
+
 <body>
-    <div id="background"></div>
-    <div id="header"></div>
+    <div id="background">
+        <div style="position: fixed; inset: 0; z-index: -1; width: 100vw; height: 100vh; overflow: hidden;">
+            <img id="background-image" src="/resources/images/backgrounds/topography.svg" alt="Background"
+                style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+        </div>
+    </div>
+    <div id="header">
+        <nav>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/nav/blog.html">Blog</a></li>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+            <div class="nav-menu">
+                <!-- dots get added here dynamically based on the sections. -->
+                <!-- each section should have an id -->
+            </div>
+        </nav>
+    </div>
 
     <section id="hero" class="hero-simple">
         <div class="container">
@@ -45,7 +67,9 @@
                 <h2 class="section-title">Play</h2>
                 <div class="section-line"></div>
             </div>
-            <iframe class="itch-embed" frameborder="0" src="https://itch.io/embed-upload/14352782?color=282828" allowfullscreen=""><a href="https://hutnerr.itch.io/solarcharged">Play Solar Charged on itch.io</a></iframe>
+            <iframe class="itch-embed" frameborder="0" src="https://itch.io/embed-upload/14352782?color=282828"
+                allowfullscreen=""><a href="https://hutnerr.itch.io/solarcharged">Play Solar Charged on
+                    itch.io</a></iframe>
         </div>
     </section>
 
@@ -58,8 +82,17 @@
             </div>
             <div class="hero-content">
                 <div class="panelbg pspacing">
-                    <p>Solar Charged is a game that I made alongside a <a href="https://github.com/Koborooski">friend</a> for the <a href="https://itch.io/jam/kenney-jam-2025">2025 Kenny Game Jam</a>. The theme for this jam was "Power". Our take on this theme was a resource management tower defense game. Your "Power" acts both as your health as well as your currency. You can play the game directly though the embed above, or you can visit the <a href="https://hutnerr.itch.io/solarcharged">itch.io page</a>.</p>            
-                    <p>I learned a lot about Game Developement through the creation of this game. Namely component-based design, state machines, and the benefits of clean and modular code. One of the things I wish that we had done better was manage our time a bit better so we had more time for balance and playtesting.</p>
+                    <p>Solar Charged is a game that I made alongside a <a
+                            href="https://github.com/Koborooski">friend</a> for the <a
+                            href="https://itch.io/jam/kenney-jam-2025">2025 Kenny Game Jam</a>. The theme for this jam
+                        was "Power". Our take on this theme was a resource management tower defense game. Your "Power"
+                        acts both as your health as well as your currency. You can play the game directly though the
+                        embed above, or you can visit the <a href="https://hutnerr.itch.io/solarcharged">itch.io
+                            page</a>.</p>
+                    <p>I learned a lot about Game Developement through the creation of this game. Namely component-based
+                        design, state machines, and the benefits of clean and modular code. One of the things I wish
+                        that we had done better was manage our time a bit better so we had more time for balance and
+                        playtesting.</p>
                     <p style="padding-bottom: 0px"><strong>Links</strong></p>
                     <ul class="arrowed-list">
                         <li><a href="https://itch.io/jam/kenney-jam-2025/rate/3734468">Game Jam Page</a></li>
@@ -67,9 +100,10 @@
                         <li><a href="https://github.com/hutnerr/kenny-jam-2025">GitHub</a></li>
                         <li><a href="https://itchanalytics.vercel.app/jam/gmtk-2025/3778927">Statistics</a></li>
                         <li><a href="/pages/blog/blog-07-24-2025.html">Blog Post</a></li>
-                    </ul>            
+                    </ul>
                 </div>
-                <img class="sized-img hover-img" src="/resources/gifs/game-jams/solar-charged-clouds.gif" alt="Solar Charged Screenshot 1"/>
+                <img class="sized-img hover-img" src="/resources/gifs/game-jams/solar-charged-clouds.gif"
+                    alt="Solar Charged Screenshot 1" />
             </div>
         </div>
     </section>
@@ -83,10 +117,16 @@
             </div>
             <div class="hero-content">
                 <div class="panelbg pspacing">
-                    <p>The goal is to manage your power effectively while defending against waves of enemies. You must strategically place your towers and upgrade them to survive. However, the more you upgrade them, and the more you have, the more power they will use. If you run out of power, you lose.</p>
-                    <p>The game has a weather cycle that must be taken into account as well. Your power is recharged through solar energy, which is affected by the weather. Make sure to keep an eye on the forecast!</p>
-                    <p>To bring up the upgrade menu, simply select a tower that has been placed. You can also delete towers this way.</p>
-                    <p>Upkeep is the cost of having the tower on the field. This cost switches to active when the tower starts shooting.</p>
+                    <p>The goal is to manage your power effectively while defending against waves of enemies. You must
+                        strategically place your towers and upgrade them to survive. However, the more you upgrade them,
+                        and the more you have, the more power they will use. If you run out of power, you lose.</p>
+                    <p>The game has a weather cycle that must be taken into account as well. Your power is recharged
+                        through solar energy, which is affected by the weather. Make sure to keep an eye on the
+                        forecast!</p>
+                    <p>To bring up the upgrade menu, simply select a tower that has been placed. You can also delete
+                        towers this way.</p>
+                    <p>Upkeep is the cost of having the tower on the field. This cost switches to active when the tower
+                        starts shooting.</p>
                 </div>
                 <div class="panelbg">
                     <h3>Tower Types</h3>
@@ -101,8 +141,25 @@
             </div>
         </div>
     </section>
-    
 
-    <div id="footer"></div>
+
+    <div id="footer">
+        <footer>
+            <div class="container">
+                <ul>
+                    <li><a href="mailto:hunter.baker.b@gmail.com">hunter.baker.b@gmail.com</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://github.com/hutnerr">GitHub</a></li>
+                    <li> | </li>
+                    <li><a href="https://www.linkedin.com/in/hunter-b-baker/">LinkedIn</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/pages/other/contact.html">All Socials & Contact</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>

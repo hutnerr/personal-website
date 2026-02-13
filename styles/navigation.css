@@ -97,15 +97,15 @@ footer {
 }
 
 footer ul {
-  margin-top: 0px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  gap: 10px;
-  list-style-type: none;
-  padding: 0px;
-  font-size: 1rem;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+    padding: 0px;
+    font-size: 1rem;
 }
 
 footer ul li {
@@ -154,12 +154,12 @@ footer ul li a:hover {
 /* kinda out of place but is what it is */
 
 #background-image {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  opacity: 0.35;
-  pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    opacity: 0.35;
+    pointer-events: none;
 }
