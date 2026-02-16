@@ -32,7 +32,7 @@ It showcases my projects, experience, and other professional information.
     <td>A comprehensive history of all of the courses I've taken.</td>
   </tr>
   <tr>
-    <td><a href="https://www.hunter-baker.com/pages/other/contact.html"><strong>Contact</strong></a></td>
+    <td><a href="https://www.hunter-baker.com/pages/nav/contact.html"><strong>Contact</strong></a></td>
     <td>The best way to find me elsewhere and contact me!</td>
   </tr>
   <tr>
