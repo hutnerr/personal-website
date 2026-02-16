@@ -2,7 +2,7 @@ https://www.hunter-baker.com
 
 ## Overview
 This repository contains the source code for my personal portfolio website.  
-It showcases my projects, blog posts, experience, and other professional information.
+It showcases my projects, experience, and other professional information.
 
 <br>
 
