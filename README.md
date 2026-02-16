@@ -16,10 +16,6 @@ It showcases my projects, experience, and other professional information.
     <td>The home and title page.</td>
   </tr>
   <tr>
-    <td><a href="https://www.hunter-baker.com/pages/nav/blog.html"><strong>Blog</strong></a></td>
-    <td>A place where I give updates and explain my goals and what I'm working on.</td>
-  </tr>
-  <tr>
     <td><a href="https://www.hunter-baker.com/pages/nav/projects.html"><strong>Projects</strong></a></td>
     <td>Some key projects I've worked on and completed are described in detail.</td>
   </tr>
