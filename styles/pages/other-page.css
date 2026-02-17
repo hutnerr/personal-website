@@ -1,0 +1,138 @@
+/* ==================================== */
+/* ===== OTHER PAGE CARDS ====== */
+/* ==================================== */
+
+.other-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+.other-card {
+    background: var(--bg-primary);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.other-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--text-accent), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+
+/* Card Header with Icon */
+.other-card-header {
+    padding: 2rem 1.5rem 1rem;
+    text-align: center;
+}
+
+.other-card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.other-card-description {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Card Content - Links */
+.other-card-content {
+    padding: 0 1.5rem 1.5rem;
+    flex-grow: 1;
+}
+
+.other-card-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.other-card-links li {
+    position: relative;
+    padding-left: 0;
+}
+
+.other-card-links li a {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.other-card-links li a::before {
+    content: '▸';
+    color: var(--text-accent);
+    margin-right: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.other-card-links li a:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--text-accent);
+    color: var(--text-primary);
+    transform: translateX(4px);
+    text-decoration: none;
+}
+
+.other-card-links li a:hover::before {
+    transform: translateX(3px);
+}
+
+/* Count Badge */
+.other-card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(250, 189, 47, 0.15);
+    border: 2px solid rgba(250, 189, 47, 0.3);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-accent);
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .other-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .other-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

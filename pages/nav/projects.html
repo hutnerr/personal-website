@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <link rel="stylesheet" href="/styles/pages/projects.css">
+    <link rel="stylesheet" href="/styles/pages/projects-showcase.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <script src="/scripts/anims.js"></script>
+    <script src="/scripts/projects-filter.js"></script>
 
     <meta property="og:title" content="Hunter Baker | Projects">
     <meta property="og:description" content="A showcase of my projects, including games, web applications, and more.">
@@ -60,684 +61,490 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>projects<span class="cursor"></span></h1>
-                    <p class="subtitle">$ view all of my projects</p>
-                    <p class="hero-description">
-                        These are some of the projects I've worked on over the years, ranging from game jams to personal
-                        projects. Each project has it's own page with more details
-                    </p>
-                </div>
-            </div>
-            <div class="section-header">
-                <span class="section-number">01.</span>
-                <h2 class="section-title">All Projects</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="">
-                <div class="project-grid">
-                    <div class="project-grid-item panelbg">
-                        <a href="#software-development">
-                            <h3>Software</h3>
-                        </a>
-                        <ul>
-                            <li><a href="/pages/projects/navsystem.html">Navigation System</a></li>
-                            <li><a href="/pages/projects/united-calculator.html">UnitED Calculator</a></li>
-                            <li><a href="/pages/projects/tip-calculator.html">Tip Calculator</a></li>
-                        </ul>
-                    </div>
-                    <div class="project-grid-item panelbg">
-                        <a href="#game-development">
-                            <h3>Game Dev</h3>
-                        </a>
-                        <ul>
-                            <li><a href="/pages/games/massaquerade.html">Massaquerade</a></li>
-                            <li><a href="/pages/games/forgotten-paths.html">Forgotten Paths</a></li>
-                            <li><a href="/pages/games/solar-charged.html">Solar Charged</a></li>
-                        </ul>
-                    </div>
-                    <div class="project-grid-item panelbg">
-                        <a href="#web-development">
-                            <h3>Web</h3>
-                        </a>
-                        <ul>
-                            <li><a href="/pages/projects/portfolio-website.html">Personal Website</a></li>
-                            <li><a href="/pages/projects/pantry-panic.html">Pantry Panic</a></li>
-                            <li><a href="/pages/projects/toughcents.html">Tough Cents</a></li>
-                        </ul>
-                    </div>
-                    <div class="project-grid-item panelbg">
-                        <a href="#systems-programming">
-                            <h3>Systems</h3>
-                        </a>
-                        <ul>
-                            <li><a href="/pages/projects/dukesh.html">DukeShell</a></li>
-                            <li><a href="/pages/projects/dhcpclientserver.html">DHCP Client &amp; Server</a></li>
-                            <li><a href="/pages/projects/pintos.html">PintOS</a></li>
-                        </ul>
-                    </div>
-                    <div class="project-grid-item panelbg">
-                        <a href="#discord-bots">
-                            <h3>Discord Bots</h3>
-                        </a>
-                        <ul>
-                            <li><a href="/pages/projects/leetcode-bot.html">beast[code]</a></li>
-                            <li><a href="/pages/projects/lospec-bot.html">Lospec Daily Bot</a></li>
-                        </ul>
-                    </div>
-                    <div class="project-grid-item panelbg">
-                        <a href="#other">
-                            <h3>Other</h3>
-                        </a>
-                        <ul>
-                            <li><a href="/pages/projects/txtmet.html">TXTMET</a></li>
-                            <li><a href="/pages/projects/madzip.html">MadZip</a></li>
-                            <li><a href="/pages/projects/black-box-challenge.html">Black Box Challenge</a></li>
-                        </ul>
-                    </div>
+                    <p class="subtitle">$ showcases of various projects</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="software-development">
+    <!-- All Projects Grid -->
+    <section id="all-projects">
         <div class="container">
-            <div class="section-header">
-                <span class="section-number">02.</span>
-                <h2 class="section-title">Software Development</h2>
-                <div class="section-line"></div>
+
+            <!-- Filter System -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="software">Software</button>
+                <button class="filter-btn" data-filter="game-dev">Game Dev</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="systems">Systems</button>
+                <button class="filter-btn" data-filter="discord-bot">Discord Bots</button>
+                <button class="filter-btn" data-filter="other">Other</button>
             </div>
 
-            <!-- NAVIGATION APPLICATION -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">NavSys</h3>
-                        <p class="work-subtitle">Personal Navigation System</p>
+            <div class="showcase-grid">
+
+                <!-- NavSys -->
+                <div class="showcase-card" data-category="software">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/navsystem.html">
+                            <img src="/resources/gifs/projects/navsys.gif" alt="NavSys">
+                        </a>
                     </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Navigation Application with real-time updates, map matching, and route relocation.
-                    </p>
-                    <ul class="work-list">
-                        <li>Used object-oriented principles to model geographic shapes, street segments, and
-                            intersections</li>
-                        <li>Applied design patterns such as the Observer, Model-View-Controller, and Strategy</li>
-                        <li>Developed interactive visualizations using Java Swing and Java 2D graphics</li>
-                        <li>Utilized pathfinding algorithms (Djikstra's and Bellman Ford) and GPS data parsing for
-                            dynamic routing</li>
-                        <li>Developed map matching and route relocation features to adjust routes based on real-time
-                            data</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-java-plain" title="Java"> </i>Java</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/navsystem.html" class="work-link">[project page]</a>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Software</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/navsystem.html">NavSys</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Navigation Application with real-time updates, map matching, and route relocation.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-java-plain"></i>Java</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/navsystem.html" class="showcase-card-link">View Details</a>
+                        </div>
                     </div>
                 </div>
+
+
+                <!-- Forgotten Paths -->
+                <div class="showcase-card" data-category="game-dev">
+                    <div class="showcase-card-image">
+                        <a href="/pages/games/forgotten-paths.html">
+                            <img src="/resources/gifs/game-jams/fp.gif">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Game Dev</div>
+                            <h3 class="showcase-card-title"><a href="/pages/games/forgotten-paths.html">Forgotten
+                                    Paths</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Puzzle game created for the GMTK 2025 Game Jam. Ranked top 6% in enjoyment out of over 9,500 entries.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-godot-plain"></i>Godot</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/games/forgotten-paths.html" class="showcase-card-link">View Details</a>
+                            <a href="https://hutnerr.itch.io/forgotten-paths" class="showcase-card-link">itch.io</a>
+                            <a href="https://github.com/hutnerr/gmtk-jam-2025" class="showcase-card-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- beast[code] -->
+                <div class="showcase-card" data-category="discord-bot">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/leetcode-bot.html">
+                            <img src="/resources/images/beastcode-walkthrough/beastcode-logo.png" alt="beast[code]">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Discord Bot</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/leetcode-bot.html">beast[code]</a>
+                            </h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Discord bot that facilitates coding practice within a discord server. It supplies reoccuring and configurable problems, as well as alerts for contests and other events.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-python-plain"></i>Python</span>
+                            <span class="showcase-tech-tag"><i class="devicon-graphql-plain"></i>GraphQL</span>
+                            <span class="showcase-tech-tag"><i class="devicon-sqlite-plain"></i>SQLite</span>
+                            <span class="showcase-tech-tag"><i class="devicon-raspberrypi-plain"></i>Raspberry Pi</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/leetcode-bot.html" class="showcase-card-link">View Details</a>
+                            <a href="https://github.com/hutnerr/leetcode-bot" class="showcase-card-link">GitHub</a>
+                            <a href="https://top.gg/bot/1392738606120173719" class="showcase-card-link">top.gg</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tip Calculator -->
+                <div class="showcase-card" data-category="software">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/tip-calculator.html">
+                            <img src="/resources/images/projects/tc-banner.png" alt="Tip Calculator">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Software</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/tip-calculator.html">Tip
+                                    Calculator</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            An Ad-free tip calculator app for Android, available on the Play Store.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-java-plain"></i>Java</span>
+                            <span class="showcase-tech-tag"><i class="devicon-android-plain"></i>Android Studio</span>
+                            <span class="showcase-tech-tag"><i class="devicon-google-plain"></i>Google</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/tip-calculator.html" class="showcase-card-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Massaquerade -->
+                <div class="showcase-card" data-category="game-dev">
+                    <div class="showcase-card-image">
+                        <a href="/pages/games/massaquerade.html">
+                            <img src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMi5wbmc=/original/GpyIkO.png" alt="Massaquerade">
+                            <!-- <img src="https://img.itch.zone/aW1nLzI0NzcwNzM5LnBuZw==/original/MKwieg.png" alt="Massaquerade"> -->
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Game Dev</div>
+                            <h3 class="showcase-card-title"><a href="/pages/games/massaquerade.html">Massaquerade</a>
+                            </h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Murder Mystery game created for the Winter MelonJam 2025 Game Jam.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-godot-plain"></i>Godot</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/games/massaquerade.html" class="showcase-card-link">View Details</a>
+                            <a href="https://hutnerr.itch.io/massaquerade" class="showcase-card-link">itch.io</a>
+                            <a href="https://github.com/Rat-Haven-Studios/melon-jam-2025" class="showcase-card-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                                <!-- ToughCents -->
+                <div class="showcase-card" data-category="web">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/toughcents.html">
+                            <img src="/resources/images/projects/tough-cents-3.png" alt="Tough Cents">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Web App</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/toughcents.html">Tough Cents</a>
+                            </h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Web app that links your bank account and uses AI to provide feedback on spending habits.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-nodejs-plain-wordmark"></i>Node.js</span>
+                            <span class="showcase-tech-tag"><i class="devicon-nextjs-plain"></i>Next.js</span>
+                            <span class="showcase-tech-tag"><i class="devicon-flask-original"></i>Flask</span>
+                            <span class="showcase-tech-tag"><i class="devicon-postgresql-plain"></i>PostgreSQL</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/toughcents.html" class="showcase-card-link">View Details</a>
+                            <a href="https://toughcents.com/" class="showcase-card-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solar Charged -->
+                <div class="showcase-card" data-category="game-dev">
+                    <div class="showcase-card-image">
+                        <a href="/pages/games/solar-charged.html">
+                            <img src="/resources/gifs/game-jams/solar-charged-clouds.gif" alt="Solar Charged">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Game Dev</div>
+                            <h3 class="showcase-card-title"><a href="/pages/games/solar-charged.html">Solar Charged</a>
+                            </h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Resource management tower defense. It is a game jam project for the Kenny Game Jam 2025.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-godot-plain"></i>Godot</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/games/solar-charged.html" class="showcase-card-link">View Details</a>
+                            <a href="https://hutnerr.itch.io/solarcharged" class="showcase-card-link">itch.io</a>
+                            <a href="https://github.com/hutnerr/kenny-jam-2025" class="showcase-card-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lospec Daily Bot -->
+                <div class="showcase-card" data-category="discord-bot">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/lospec-bot.html">
+                            <img src="/resources/images/projects/lospec-bot-ss.png" alt="Lospec Daily Bot">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Discord Bot</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/lospec-bot.html">Lospec Daily
+                                    Bot</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Discord bot that posts the Lospec Daily pixel art prompt and palette to a designated channel each day.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-python-plain"></i>Python</span>
+                            <span class="showcase-tech-tag"><i class="devicon-raspberrypi-plain"></i>Raspberry Pi</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/lospec-bot.html" class="showcase-card-link">View Details</a>
+                            <a href="https://github.com/hutnerr/lospec-daily-bot" class="showcase-card-link">GitHub</a>
+                            <a href="https://top.gg/bot/1457439367500009597" class="showcase-card-link">top.gg</a>
+                        </div>
+                    </div>
+                </div>
+
+                                <!-- UnitED Calculator -->
+                <div class="showcase-card" data-category="software">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/united-calculator.html">
+                            <img src="/resources/images/projects/united.png" alt="unitED Calculator">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Software</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/united-calculator.html">unitED
+                                    Calculator</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Calculator that performs calculations across different unit types.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-java-plain"></i>Java</span>
+                            <span class="showcase-tech-tag"><i class="devicon-git-plain"></i>Git</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/united-calculator.html" class="showcase-card-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Website -->
+                <div class="showcase-card" data-category="web">
+                    <div class="showcase-card-icon">
+                        <a href="/pages/projects/portfolio-website.html">
+                            <i class="devicon-html5-plain"></i>
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Web</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/portfolio-website.html">Personal Website</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            My personal portfolio website, built from scratch using HTML, CSS, and JavaScript.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-html5-plain"></i>HTML</span>
+                            <span class="showcase-tech-tag"><i class="devicon-css3-plain"></i>CSS</span>
+                            <span class="showcase-tech-tag"><i class="devicon-javascript-plain"></i>JavaScript</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/portfolio-website.html" class="showcase-card-link">View Details</a>
+                            <a href="https://github.com/hutnerr/personal-website" class="showcase-card-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TXTMET -->
+                <div class="showcase-card" data-category="other">
+                    <div class="showcase-card-icon">
+                        <a href="/pages/projects/txtmet.html">
+                            <i class="devicon-c-plain"></i>
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Other</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/txtmet.html">TXTMET</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Command line utility to provide certain metrics of text files.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-c-plain"></i>C</span>
+                            <span class="showcase-tech-tag"><i class="devicon-rust-plain"></i>Rust</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/txtmet.html" class="showcase-card-link">View Details</a>
+                            <a href="https://github.com/hutnerr/txtmet" class="showcase-card-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pantry Panic -->
+                <div class="showcase-card" data-category="web">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/pantry-panic.html">
+                            <img src="/resources/images/projects/pantry-panic.png" alt="Pantry Panic">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Web App</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/pantry-panic.html">Pantry Panic</a>
+                            </h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Website that provides you recipes based on the ingredients available in your pantry.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-html5-plain"></i>HTML</span>
+                            <span class="showcase-tech-tag"><i class="devicon-css3-plain"></i>CSS</span>
+                            <span class="showcase-tech-tag"><i class="devicon-javascript-plain"></i>JavaScript</span>
+                            <span class="showcase-tech-tag"><i class="devicon-git-plain"></i>Git</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/pantry-panic.html" class="showcase-card-link">View Details</a>
+                            <a href="https://343f24.github.io/343f24-final-project-pantry-panic/search_by_ingredients.html" class="showcase-card-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DukeShell -->
+                <div class="showcase-card" data-category="systems">
+                    <div class="showcase-card-icon">
+                        <a href="/pages/projects/dukesh.html">
+                            <i class="devicon-c-plain"></i>
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Systems</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/dukesh.html">DukeShell</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Unix-style shell with custom utilities, piping, and environment variable management.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-c-plain"></i>C</span>
+                            <span class="showcase-tech-tag"><i class="devicon-git-plain"></i>Git</span>
+                            <span class="showcase-tech-tag"><i class="devicon-linux-plain"></i>Linux</span>
+                            <span class="showcase-tech-tag"><i class="devicon-bash-plain"></i>Bash</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/dukesh.html" class="showcase-card-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PintOS -->
+                <div class="showcase-card" data-category="systems">
+                    <div class="showcase-card-icon">
+                        <a href="/pages/projects/pintos.html">
+                            <i class="devicon-c-plain"></i>
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Systems</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/pintos.html">PintOS</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Educational operating system used to learn OS concepts such as threading, scheduling, and file systems.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-c-plain"></i>C</span>
+                            <span class="showcase-tech-tag"><i class="devicon-linux-plain"></i>Linux</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/pintos.html" class="showcase-card-link">View Details</a>
+                            <a href="https://web.stanford.edu/class/cs140/projects/pintos/pintos_1.html" class="showcase-card-link">PintOS Docs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DHCP Client & Server -->
+                <div class="showcase-card" data-category="systems">
+                    <div class="showcase-card-icon">
+                        <a href="/pages/projects/dhcpclientserver.html">
+                            <i class="devicon-c-plain"></i>
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Systems</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/dhcpclientserver.html">DHCP Client
+                                    & Server</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Simulates DHCP client behavior with custom BOOTP packet encoding, option parsing, and raw UDP communication.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-c-plain"></i>C</span>
+                            <span class="showcase-tech-tag"><i class="devicon-linux-plain"></i>Linux</span>
+                            <span class="showcase-tech-tag"><i class="devicon-bash-plain"></i>Bash</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/dhcpclientserver.html" class="showcase-card-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MadZip -->
+                <div class="showcase-card" data-category="other">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/madzip.html">
+                            <img src="/resources/images/projects/mad-zip.png" alt="MadZip">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Other</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/madzip.html">MadZip</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Custom file compression utility using Huffman Coding, comparable to 7-Zip and gzip.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-java-plain"></i>Java</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/madzip.html" class="showcase-card-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Black Box Challenge -->
+                <div class="showcase-card" data-category="other">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/black-box-challenge.html">
+                            <img src="/resources/images/projects/blackbox-challenge.png" alt="Black Box Challenge">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Other</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/black-box-challenge.html">Black Box
+                                    Challenge</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Function puzzle game challenging players to deduce hidden functions through input-output observations.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-csharp-plain"></i>C#</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/black-box-challenge.html" class="showcase-card-link">View
+                                Details</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- UNITED CALCULATOR -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">unitED</h3>
-                        <p class="work-subtitle">Unit Calculator</p>
-                    </div>
-                    <span class="work-date">2024</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Calculator that performs calculations across different unit types.
-                    </p>
-                    <ul class="work-list">
-                        <li>Followed an agile (Scrum) process to create a complete software product</li>
-                        <li>Worked with a team of 5 using Git and GitHub</li>
-                        <li>Utilized software design principles and worked to maximize cohesion and minimize coupling
-                        </li>
-                        <li>Worked with a stakeholder to refine requirements</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-java-plain" title="Java"> </i>Java</span>
-                        <span class="tech-tag"><i class="devicon-git-plain" title="Git"> </i>Git</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/united-calculator.html" class="work-link">[project page]</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">Tip Calculator</h3>
-                        <p class="work-subtitle">Android Tip Calculator</p>
-                    </div>
-                    <span class="work-date">2024</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        An Ad-free tip calculator app for Android, available on the Play Store.
-                    </p>
-                    <ul class="work-list">
-                        <li>Built a cohesive, modern, and user-friendly Android application in Android Studio</li>
-                        <li>Published the app on the Google Play Store</li>
-                        <li>Enforced strict error checking and good practices to ensure reliability and accuracy</li>
-                        <li>Built the UI programmatically using Java instead of through XML layouts</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-java-plain" title="Java"> </i>Java</span>
-                        <span class="tech-tag"><i class="devicon-android-plain" title="Android Studio"> </i>Android
-                            Studio</span>
-                        <span class="tech-tag"><i class="devicon-google-plain" title="Google"> </i>Google</span>
-                    </div>
-                    <div class="work-links">
-                        <!-- <a href="" class="work-link">[google play]</a> -->
-                        <a href="/pages/projects/tip-calculator.html" class="work-link">[project page]</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="game-development">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">03.</span>
-                <h2 class="section-title">Game Development</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <!-- Massaquerade -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">Massaquerade</h3>
-                        <p class="work-subtitle">Winter MelonJam 2025 Game Jam Entry</p>
-                    </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Murder Mystery game created for the <a href="https://itch.io/jam/wmj2025">Winter MelonJam 2025
-                            Game Jam</a>.
-                    </p>
-                    <ul class="work-list">
-                        <li>Created a scalable dialogue system to manage complex character interactions</li>
-                        <li>Developed and published a complete game within 72 hours</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-godot-plain" title="Godot"> </i>Godot</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/games/massaquerade.html" class="work-link">[project page]</a>
-                        <a href="https://hutnerr.itch.io/massaquerade" class="work-link">[itch.io]</a>
-                        <a href="https://github.com/Rat-Haven-Studios/melon-jam-2025" class="work-link">[github]</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Forgotten Paths -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">Forgotten Paths</h3>
-                        <p class="work-subtitle">GMTK 2025 Game Jam Entry</p>
-                    </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Puzzle game created for the <a href="https://itch.io/jam/gmtk-2025">GMTK 2025 Game Jam</a>.
-                    </p>
-                    <ul class="work-list">
-                        <li>Ranked top 6% in enjoyment out of over 9,500 entries</li>
-                        <li>Created a user interface that encapsulates complex game mechanics</li>
-                        <li>Designed challenging puzzles that require strategic thinking</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-godot-plain" title="Godot"> </i>Godot</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/games/forgotten-paths.html" class="work-link">[project page]</a>
-                        <a href="https://hutnerr.itch.io/forgotten-paths" class="work-link">[itch.io]</a>
-                        <a href="https://github.com/hutnerr/gmtk-jam-2025" class="work-link">[github]</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Solar Charged -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">Solar Charged</h3>
-                        <p class="work-subtitle">Kenny 2025 Game Jam Entry</p>
-                    </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Resource management tower defense. It is a game jam project for the <a
-                            href="https://itch.io/jam/kenney-jam-2025">Kenny Game Jam 2025</a>.
-                    </p>
-                    <ul class="work-list">
-                        <li>Used state machines to manage game logic for enemies, levels, and towers</li>
-                        <li>Used Godot's signal system for event handling (Observer pattern)</li>
-                        <li>Completed an entire game within the time constraints of the jam (48 hours)</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-godot-plain" title="Godot"> </i>Godot</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/games/solar-charged.html" class="work-link">[project page]</a>
-                        <a href="https://hutnerr.itch.io/solarcharged" class="work-link">[itch.io]</a>
-                        <a href="https://github.com/hutnerr/kenny-jam-2025" class="work-link">[github]</a>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </section>
-
-    <section id="web-development">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">04.</span>
-                <h2 class="section-title">Web Development</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <!-- PORTFOLIO WEBSITE -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">Personal Website</h3>
-                        <p class="work-subtitle">Personal Portfolio Website</p>
-                    </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        My personal portfolio website, built from scratch using HTML, CSS, and JavaScript.
-                    </p>
-                    <ul class="work-list">
-                        <li>Designed and implemented a responsive and visually appealing layout</li>
-                        <li>Utilized modern web development practices for performance and accessibility</li>
-                        <li>Incorporated animations and interactive elements to enhance user experience</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-html5-plain" title="HTML"> </i>HTML</span>
-                        <span class="tech-tag"><i class="devicon-css3-plain" title="CSS"> </i>CSS</span>
-                        <span class="tech-tag"><i class="devicon-javascript-plain" title="JavaScript">
-                            </i>JavaScript</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/portfolio-website.html" class="work-link">[project page]</a>
-                        <a href="https://github.com/hutnerr/personal-website" class="work-link">[github]</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PANTRY PANIC -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">Pantry Panic</h3>
-                        <p class="work-subtitle">Recipe Management Application</p>
-                    </div>
-                    <span class="work-date">2024</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Website that provides you recipes based on the ingredients available in your pantry.
-                    </p>
-                    <ul class="work-list">
-                        <li>Worked with a partner using Git</li>
-                        <li>Created a responsive design</li>
-                        <li>Leveraged API calls to display data</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-html5-plain" title="HTML"> </i>HTML</span>
-                        <span class="tech-tag"><i class="devicon-css3-plain" title="CSS"> </i>CSS</span>
-                        <span class="tech-tag"><i class="devicon-javascript-plain" title="JavaScript">
-                            </i>JavaScript</span>
-                        <span class="tech-tag"><i class="devicon-git-plain" title="Git"> </i>Git</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/pantry-panic.html" class="work-link">[project page]</a>
-                        <a href="https://343f24.github.io/343f24-final-project-pantry-panic/search_by_ingredients.html"
-                            class="work-link">[live demo]</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TOUGH CENTS -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">Tough Cents</h3>
-                        <p class="work-subtitle">Personal Finance Management Application</p>
-                    </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Web app that links your bank account and uses AI to provide feedback on spending habits.
-                    </p>
-                    <ul class="work-list">
-                        <li>Integrated bank APIs for transaction data</li>
-                        <li>Built dynamic interface with Next.js and Node.js</li>
-                        <li>Implemented Flask microservices and PostgreSQL database</li>
-                        <li>Utilized OLLama LLM for personalized messages</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-nodejs-plain-wordmark" title="Node.js">
-                            </i>Node.js</span>
-                        <span class="tech-tag"><i class="devicon-nextjs-plain" title="Next.js"> </i>Next.js</span>
-                        <span class="tech-tag"><i class="devicon-flask-original" title="Python"> </i>Flask</span>
-                        <span class="tech-tag"><i class="devicon-postgresql-plain" title="PostgreSQL">
-                            </i>PostgreSQL</span>
-                        <span class="tech-tag">OLLama</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/toughcents.html" class="work-link">[project page]</a>
-                        <a href="https://toughcents.com/" class="work-link">[live demo]</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="systems-programming">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">05.</span>
-                <h2 class="section-title">Systems Programming</h2>
-                <div class="section-line"></div>
-            </div>
-
-
-            <!-- DUKE SHELL -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">DukeShell</h3>
-                        <p class="work-subtitle">Command-Line Shell</p>
-                    </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Unix-style shell with custom utilities, piping, and environment variable management.
-                    </p>
-                    <ul class="work-list">
-                        <li>Built interactive + batch shell modes using fork(), exec*(), and dup2()</li>
-                        <li>Created custom versions of ls, chmod, head, cat, env, and more</li>
-                        <li>Implemented piping, variable parsing, and command chaining</li>
-                        <li>Wrote scripts to test shell behavior and validate output</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-c-plain" title="C"> </i>C</span>
-                        <span class="tech-tag"><i class="devicon-git-plain" title="Git"> </i>Git</span>
-                        <span class="tech-tag"><i class="devicon-linux-plain" title="Linux"> </i>Linux</span>
-                        <span class="tech-tag"><i class="devicon-bash-plain" title="Bash"> </i>Bash</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/dukesh.html" class="work-link">[project page]</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- dhcp client and server -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">DHCP Client &amp; Server</h3>
-                        <p class="work-subtitle">Custom Implementation</p>
-                    </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Simulates DHCP client behavior with custom BOOTP packet encoding, option parsing, and raw UDP
-                        communication.
-                    </p>
-                    <ul class="work-list">
-                        <li>Built full DHCP discovery process using raw socket programming and UDP messaging</li>
-                        <li>Parsed and constructed BOOTP packets with custom struct handling and byte-level manipulation
-                        </li>
-                        <li>Implemented option field parsing for key DHCP fields (subnet mask, router, lease time, etc.)
-                        </li>
-                        <li>Simulated client-server interaction for IP address negotiation and configuration</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-c-plain" title="C"> </i>C</span>
-                        <span class="tech-tag"><i class="devicon-linux-plain" title="Linux"> </i>Linux</span>
-                        <span class="tech-tag"><i class="devicon-bash-plain" title="Bash"> </i>Bash</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/dhcpclientserver.html" class="work-link">[project page]</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- pintos -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">PintOS</h3>
-                        <p class="work-subtitle">Educational Operating System</p>
-                    </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Educational operating system used to learn OS concepts such as threading, scheduling, and file
-                        systems.
-                    </p>
-                    <ul class="work-list">
-                        <li>Implemented thread scheduling algorithms including round-robin and priority scheduling</li>
-                        <li>Built a simple file system with support for file creation, deletion, reading, and writing
-                        </li>
-                        <li>Worked with low-level hardware interfaces and memory management techniques</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-c-plain" title="C"> </i>C</span>
-                        <span class="tech-tag"><i class="devicon-linux-plain" title="Linux"> </i>Linux</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/pintos.html" class="work-link">[project page]</a>
-                        <a href="https://web.stanford.edu/class/cs140/projects/pintos/pintos_1.html"
-                            class="work-link">[pintos docs]</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="discord-bots">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">06.</span>
-                <h2 class="section-title">Discord Bots</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <!-- BEAST CODE -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">beast[code]</h3>
-                        <p class="work-subtitle">LeetCode Discord Bot</p>
-                    </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Discord bot that facilitates coding practice within a discord server. It supplies reoccuring and
-                        configurable problems, as well as alerts for contests and other events.
-                    </p>
-                    <ul class="work-list">
-                        <li>Designed, created, and maintained a live service product used in various discord servers
-                        </li>
-                        <li>Used the LeetCode API to get related information</li>
-                        <li>Utilized software design patterns such as the Observer pattern to manage events and
-                            notifications</li>
-                        <li>Self-hosted the bot 24/7 on a Raspberry Pi</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-python-plain" title="Python"> </i>Python</span>
-                        <span class="tech-tag"><i class="devicon-graphql-plain" title="GraphQL"> </i>GraphQL</span>
-                        <span class="tech-tag"><i class="devicon-sqlite-plain" title="SQLite"> </i>SQLite</span>
-                        <span class="tech-tag"><i class="devicon-raspberrypi-plain" title="Raspberry Pi"> </i>Raspberry
-                            Pi</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/leetcode-bot.html" class="work-link">[project page]</a>
-                        <a href="https://github.com/hutnerr/leetcode-bot" class="work-link">[github]</a>
-                        <a href="https://top.gg/bot/1392738606120173719" class="work-link">[top.gg]</a>
-                        <a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot"
-                            class="work-link">[invite link]</a>
-                        <a href="/pages/other/beastcode-help.html" class="work-link">[bot setup]</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">Lospec Daily Bot</h3>
-                        <p class="work-subtitle">Discord Bot that posts the Lospec Daily</p>
-                    </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Discord bot that posts the <a href="https://lospec.com/dailies/">Lospec Daily</a> pixel art
-                        prompt and palette to a designated channel each day.
-                    </p>
-                    <ul class="work-list">
-                        <li>Used what I learned from previous projects to quickly develop and publish a complete bot.
-                        </li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-python-plain" title="Python"> </i>Python</span>
-                        <span class="tech-tag"><i class="devicon-raspberrypi-plain" title="Raspberry Pi"> </i>Raspberry
-                            Pi</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/lospec-bot.html" class="work-link">[project page]</a>
-                        <a href="https://github.com/hutnerr/lospec-daily-bot" class="work-link">[github]</a>
-                        <a href="https://top.gg/bot/1457439367500009597" class="work-link">[top.gg]</a>
-                        <a href="https://discord.com/oauth2/authorize?client_id=1457439367500009597&permissions=2147485696&integration_type=0&scope=bot"
-                            class="work-link">[invite link]</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <section id="other">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">07.</span>
-                <h2 class="section-title">Other</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <!-- TXTMET -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">TXTMET</h3>
-                        <p class="work-subtitle">Text Metadata Utility</p>
-                    </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Command line utility to provide certain metrics of text files.
-                    </p>
-                    <ul class="work-list">
-                        <li>Used <code>getopt</code> to implement command line functionality</li>
-                        <li>Implemented appropriate error handling based on input</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-c-plain" title="C"> </i>C</span>
-                        <span class="tech-tag"><i class="devicon-rust-plain" title="Rust"> </i>Rust</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/txtmet.html" class="work-link">[project page]</a>
-                        <a href="https://github.com/hutnerr/txtmet" class="work-link">[github]</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- mad zip -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">MadZip</h3>
-                        <p class="work-subtitle">File Compression Utility</p>
-                    </div>
-                    <span class="work-date">2024</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Custom file compression utility using Huffman Coding, comparable to 7-Zip and gzip.
-                    </p>
-                    <ul class="work-list">
-                        <li>Built Huffman Trees using a deterministic Min-Heap for consistent encoding/decoding</li>
-                        <li>Wrote comprehensive unit tests to ensure accurate compression and decompression</li>
-                        <li>Serialized compressed data into custom objects storing frequency maps and encoded bitstreams
-                        </li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-java-plain" title="Java"> </i>Java</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/madzip.html" class="work-link">[project page]</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- black box challenge -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">Black Box Challenge</h3>
-                        <p class="work-subtitle">Function Puzzle Game</p>
-                    </div>
-                    <span class="work-date">2024</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Function puzzle game challenging players to deduce hidden functions through input-output
-                        observations.
-                    </p>
-                    <ul class="work-list">
-                        <li>Developed a custom language for defining and testing functions</li>
-                        <li>Implemented a Lexer and Parser for the custom language</li>
-                        <li>Created a responsive and interactive TUI for gameplay</li>
-                        <li>Generated Abstract Syntax Trees (AST) for function evaluation</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-csharp-plain" title="C#"> </i>C#</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/black-box-challenge.html" class="work-link">[project page]</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -757,7 +564,7 @@
                 </ul>
             </div>
         </footer>
-    </div>
+
 </body>
 
 </html>

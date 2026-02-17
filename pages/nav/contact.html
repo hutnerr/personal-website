@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
-    <link rel="stylesheet" href="/styles/pages/contact.css">
-    <link rel="stylesheet" href="/styles/pages/homepage.css">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/contact-page.css">
     <script src="/scripts/anims.js"></script>
 
     <meta property="og:title" content="Hunter Baker | Contact">
@@ -59,75 +58,86 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>contact<span class="cursor"></span></h1>
-                    <p class="subtitle">$ my socials and contact info</p>
+                    <p class="subtitle">$ my socials & contact</p>
                 </div>
             </div>
-            <div class="hero-content">
-                <div>
-                    <div class="card-container">
-                        <a href="https://github.com/hutnerr" class="contact-card">
-                            <p>GitHub</p>
-                            <img class="contact-icon" src="https://www.svgrepo.com/show/475654/github-color.svg"
+
+            <div class="contact-wrapper">
+                <!-- Left Column: Social Links -->
+                <div class="contact-socials-section">
+                    <h2 class="contact-section-title">socials</h2>
+                    <div class="contact-cards-grid">
+                        <a href="https://github.com/hutnerr" class="contact-social-card">
+                            <img class="contact-social-icon" src="https://www.svgrepo.com/show/475654/github-color.svg"
                                 alt="GitHub Logo">
+                            <p class="contact-social-name">GitHub</p>
                         </a>
-                        <a href="https://www.linkedin.com/in/hunter-b-baker/" class="contact-card">
-                            <p>LinkedIn</p>
-                            <img class="contact-icon" src="https://www.svgrepo.com/show/157006/linkedin.svg"
+                        <a href="https://www.linkedin.com/in/hunter-b-baker/" class="contact-social-card">
+                            <img class="contact-social-icon" src="https://www.svgrepo.com/show/157006/linkedin.svg"
                                 alt="LinkedIn Logo">
+                            <p class="contact-social-name">LinkedIn</p>
                         </a>
-                        <a href="mailto:hunter.b.baker@gmail.com" class="contact-card">
-                            <p>Email</p>
-                            <img class="contact-icon"
+                        <a href="mailto:hunter.b.baker@gmail.com" class="contact-social-card">
+                            <img class="contact-social-icon"
                                 src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg"
                                 alt="Email Logo">
+                            <p class="contact-social-name">Email</p>
                         </a>
-                        <a href="https://hutnerr.itch.io/" class="contact-card">
-                            <p>itch.io</p>
-                            <img class="contact-icon" src="https://static.itch.io/images/app-icon.svg"
+                        <a href="https://hutnerr.itch.io/" class="contact-social-card">
+                            <img class="contact-social-icon" src="https://static.itch.io/images/app-icon.svg"
                                 alt="itch.io Logo">
+                            <p class="contact-social-name">itch.io</p>
                         </a>
-                        <a href="https://lospec.com/hutner" class="contact-card">
-                            <p>Lospec</p>
-                            <img class="contact-icon" src="https://lospec.com/brand/lospec_logomark_16x.jpg"
+                        <!-- <a href="https://lospec.com/hutner" class="contact-social-card">
+                            <img class="contact-social-icon" src="https://lospec.com/brand/lospec_logomark_16x.jpg"
                                 alt="Lospec">
-                        </a>
-                        <a href="https://github.com/Rat-Haven-Studios" class="contact-card">
-                            <p>RH Studios</p>
-                            <img class="contact-icon" src="https://avatars.githubusercontent.com/u/252910622?s=200&v=4"
+                            <p class="contact-social-name">Lospec</p>
+                        </a> -->
+                        <a href="https://github.com/Rat-Haven-Studios" class="contact-social-card">
+                            <img class="contact-social-icon" src="https://avatars.githubusercontent.com/u/252910622?s=200&v=4"
                                 alt="Rat Haven Studios Logo">
+                            <p class="contact-social-name">RH Studios</p>
                         </a>
-                        <a href="https://leetcode.com/hutnerr/" class="contact-card">
-                            <p>LeetCode</p>
-                            <img class="contact-icon"
+                        <a href="https://leetcode.com/hutnerr/" class="contact-social-card">
+                            <img class="contact-social-icon"
                                 src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
                                 alt="LeetCode Logo">
+                            <p class="contact-social-name">LeetCode</p>
                         </a>
-                        <a href="https://ko-fi.com/hutner" class="contact-card">
-                            <p>Ko-fi</p>
-                            <img class="contact-icon" src="/resources/images/icons/kofi.svg" alt="Ko-fi">
+                        <a href="https://ko-fi.com/hutner" class="contact-social-card">
+                            <img class="contact-social-icon" src="/resources/images/icons/kofi.svg" alt="Ko-fi">
+                            <p class="contact-social-name">Ko-fi</p>
                         </a>
                     </div>
                 </div>
-                <div>
-                    <form class="contact-form" action="https://formsubmit.co/8c1eb463d6ee1727f4a8a1dea1d98dd6"
-                        method="POST">
 
+                <!-- Right Column: Contact Form -->
+                <div class="contact-form-section">
+                    <h2 class="contact-section-title">send a message</h2>
+                    <p class="form-description">
+                        You can use the form below or email me directly at <a href="mailto:hunter.baker.b@gmail.com">hunter.baker.b@gmail.com</a>
+                    </p>
+                    <form class="contact-form" action="https://formsubmit.co/8c1eb463d6ee1727f4a8a1dea1d98dd6" method="POST">
                         <input type="text" name="_honey" style="display:none"> <!-- honeypot field to prevent spam -->
-
                         <input type="hidden" name="_captcha" value="true">
-
                         <input type="hidden" name="_next" value="https://hunter-baker.com/pages/nav/contact.html">
 
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
+                        <div class="contact-form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name..." required>
+                        </div>
 
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <div class="contact-form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                        </div>
 
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <div class="contact-form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+                        </div>
 
-                        <input type="submit" value="Send">
+                        <input type="submit" value="Send Message">
                     </form>
                 </div>
             </div>

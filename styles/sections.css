@@ -97,7 +97,7 @@ section {
 @media (max-width: 768px) {
     .hero-content {
         grid-template-columns: 1fr;
-        text-align: center;
+        /* text-align: center; */
     }
 
     .hero-text h1 {

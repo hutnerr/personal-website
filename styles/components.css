@@ -13,7 +13,7 @@
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
 }
 
 .centered {
@@ -143,9 +143,10 @@
 
 .btn {
     padding: 12px 24px;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     background: transparent;
     color: var(--text-primary);
+    /* color: var(--text-secondary); */
     text-decoration: none;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.9rem;
@@ -153,8 +154,8 @@
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    ;
     background-color: var(--bg-primary);
+    /* background-color: var(--bg-secondary); */
 }
 
 .btn:hover {
@@ -249,7 +250,7 @@
 /* ========= WORK ITEM =============== */
 /* ==================================== */
 .work-item {
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     margin-bottom: 2rem;
     transition: all 0.3s ease;
     position: relative;
@@ -344,7 +345,7 @@
 
 .work-list li::before {
     padding-left: 20px;
-    content: '▸';
+    content: '▸ ';
     left: 0;
     color: var(--text-accent);
 }
