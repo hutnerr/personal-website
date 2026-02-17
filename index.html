@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
     <link rel="stylesheet" href="/styles/pages/contact-page.css">
+    <link rel="stylesheet" href="/styles/pages/projects-showcase.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <script src="/scripts/anims.js"></script>
 
@@ -77,7 +78,7 @@
                     </p>
                     <div class="hero-cta">
                         <a href="#about" class="btn">about</a>
-                        <a href="#work" class="btn">view projects</a>
+                        <a href="#all-projects" class="btn">view projects</a>
                         <a href="#contact" class="btn">contact &amp; links</a>
                     </div>
                 </div>
@@ -130,7 +131,7 @@
                     </p>
                 </div>
                 <div>
-                    <h3 style="margin-bottom: 1rem; color: var(--text-accent);">Technologies I work with:</h3>
+                    <h3 style="margin-bottom: 1rem; color: var(--text-accent);">Technologies:</h3>
                     <div class="skills-list-container panelbg">
                         <ul class="skills-list">
                             <li>Python</li>
@@ -154,119 +155,190 @@
     </section>
 
     <!-- projects section -->
-    <section id="work">
-        <div class="container">
+    <section id="all-projects" class="container">
+        <div class="showcase-container">
             <div class="section-header">
                 <span class="section-number">02.</span>
                 <h2 class="section-title">Project Spotlight</h2>
                 <div class="section-line"></div>
             </div>
+            <div class="showcase-grid">
+                <div class="showcase-card" data-category="software">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/navsystem.html">
+                            <img src="/resources/gifs/projects/navsys.gif" alt="NavSys">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Software</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/navsystem.html">NavSys</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Navigation Application with real-time updates, map matching, and route relocation.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-java-plain"></i>Java</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/navsystem.html" class="showcase-card-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- BEAST CODE -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">beast[code]</h3>
-                        <p class="work-subtitle">LeetCode Discord Bot</p>
+
+                <!-- Forgotten Paths -->
+                <div class="showcase-card" data-category="game-dev">
+                    <div class="showcase-card-image">
+                        <a href="/pages/games/forgotten-paths.html">
+                            <img src="/resources/gifs/game-jams/fp.gif">
+                        </a>
                     </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Discord bot that facilitates coding practice within a discord server. It supplies reoccuring and
-                        configurable problems, as well as alerts for contests and other events.
-                    </p>
-                    <ul class="work-list">
-                        <li>Designed, created, and maintained a live service product used in various discord servers
-                        </li>
-                        <li>Used the LeetCode API to get related information</li>
-                        <li>Utilized software design patterns such as the Observer pattern to manage events and
-                            notifications</li>
-                        <li>Self-hosted the bot 24/7 on a Raspberry Pi</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-python-plain" title="Python"> </i>Python</span>
-                        <span class="tech-tag"><i class="devicon-graphql-plain" title="GraphQL"> </i>GraphQL</span>
-                        <span class="tech-tag"><i class="devicon-sqlite-plain" title="SQLite"> </i>SQLite</span>
-                        <span class="tech-tag"><i class="devicon-raspberrypi-plain" title="Raspberry Pi"> </i>Raspberry
-                            Pi</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/leetcode-bot.html" class="work-link">[project page]</a>
-                        <a href="https://github.com/hutnerr/leetcode-bot" class="work-link">[github]</a>
-                        <a href="https://top.gg/bot/1392738606120173719" class="work-link">[top.gg]</a>
-                        <a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot"
-                            class="work-link">[invite link]</a>
-                        <a href="/pages/other/beastcode-help.html" class="work-link">[bot setup]</a>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Game Dev</div>
+                            <h3 class="showcase-card-title"><a href="/pages/games/forgotten-paths.html">Forgotten
+                                    Paths</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Puzzle game created for the GMTK 2025 Game Jam. Ranked top 6% in enjoyment out of over 9,500
+                            entries.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-godot-plain"></i>Godot</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/games/forgotten-paths.html" class="showcase-card-link">View Details</a>
+                            <a href="https://github.com/hutnerr/gmtk-jam-2025" class="showcase-card-link">GitHub</a>
+                            <a href="https://hutnerr.itch.io/forgotten-paths" class="showcase-card-link">itch.io</a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- beast[code] -->
+                <div class="showcase-card" data-category="discord-bot">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/leetcode-bot.html">
+                            <img src="/resources/images/beastcode-walkthrough/beastcode-logo.png" alt="beast[code]">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Discord Bot</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/leetcode-bot.html">beast[code]</a>
+                            </h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Discord bot that facilitates coding practice within a discord server. It supplies reoccuring
+                            and configurable problems, as well as alerts for contests and other events.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-python-plain"></i>Python</span>
+                            <span class="showcase-tech-tag"><i class="devicon-graphql-plain"></i>GraphQL</span>
+                            <span class="showcase-tech-tag"><i class="devicon-sqlite-plain"></i>SQLite</span>
+                            <span class="showcase-tech-tag"><i class="devicon-raspberrypi-plain"></i>Raspberry Pi</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/leetcode-bot.html" class="showcase-card-link">View Details</a>
+                            <a href="https://github.com/hutnerr/leetcode-bot" class="showcase-card-link">GitHub</a>
+                            <a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot" class="showcase-card-link">Invite</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tip Calculator -->
+                <div class="showcase-card" data-category="software">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/tip-calculator.html">
+                            <img src="/resources/images/projects/tc-banner.png" alt="Tip Calculator">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Software</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/tip-calculator.html">Tip
+                                    Calculator</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            An Ad-free tip calculator app for Android, available on the Play Store.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-java-plain"></i>Java</span>
+                            <span class="showcase-tech-tag"><i class="devicon-android-plain"></i>Android Studio</span>
+                            <span class="showcase-tech-tag"><i class="devicon-google-plain"></i>Google</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/tip-calculator.html" class="showcase-card-link">View Details</a>
+                            <a href="https://github.com/hutnerr/tip-calculator" class="showcase-card-link">GitHub</a>
+                            <!-- <a href="https://play.google.com/store/apps/details?id=com.hutnerr.tipcalculator" class="showcase-card-link">Play Store</a> -->
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Massaquerade -->
+                <div class="showcase-card" data-category="game-dev">
+                    <div class="showcase-card-image">
+                        <a href="/pages/games/massaquerade.html">
+                            <img src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMi5wbmc=/original/GpyIkO.png"
+                                alt="Massaquerade">
+                            <!-- <img src="https://img.itch.zone/aW1nLzI0NzcwNzM5LnBuZw==/original/MKwieg.png" alt="Massaquerade"> -->
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Game Dev</div>
+                            <h3 class="showcase-card-title"><a href="/pages/games/massaquerade.html">Massaquerade</a>
+                            </h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Murder Mystery game created for the Winter MelonJam 2025 Game Jam.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-godot-plain"></i>Godot</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/games/massaquerade.html" class="showcase-card-link">View Details</a>
+                            <a href="https://github.com/Rat-Haven-Studios/melon-jam-2025" class="showcase-card-link">GitHub</a>
+                            <a href="https://hutnerr.itch.io/massaquerade" class="showcase-card-link">itch.io</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lospec Daily Bot -->
+                <div class="showcase-card" data-category="discord-bot">
+                    <div class="showcase-card-image">
+                        <a href="/pages/projects/lospec-bot.html">
+                            <img src="/resources/images/projects/lospec-bot-ss.png" alt="Lospec Daily Bot">
+                        </a>
+                    </div>
+                    <div class="showcase-card-content">
+                        <div class="showcase-card-header">
+                            <div class="showcase-card-category">Discord Bot</div>
+                            <h3 class="showcase-card-title"><a href="/pages/projects/lospec-bot.html">Lospec Daily
+                                    Bot</a></h3>
+                        </div>
+                        <p class="showcase-card-description">
+                            Discord bot that posts the Lospec Daily pixel art prompt and palette to a designated channel
+                            each day.
+                        </p>
+                        <div class="showcase-card-tech">
+                            <span class="showcase-tech-tag"><i class="devicon-python-plain"></i>Python</span>
+                            <span class="showcase-tech-tag"><i class="devicon-raspberrypi-plain"></i>Raspberry Pi</span>
+                        </div>
+                        <div class="showcase-card-footer">
+                            <a href="/pages/projects/lospec-bot.html" class="showcase-card-link">View Details</a>
+                            <a href="https://github.com/hutnerr/lospec-daily-bot" class="showcase-card-link">GitHub</a>
+                            <a href="https://discord.com/oauth2/authorize?client_id=1457439367500009597&permissions=2147485696&integration_type=0&scope=bot" class="showcase-card-link">Invite</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- NAVIGATION APPLICATION -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">NavSys</h3>
-                        <p class="work-subtitle">Personal Navigation System</p>
-                    </div>
-                    <span class="work-date">2025</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Navigation Application with real-time updates, map matching, and route relocation.
-                    </p>
-                    <ul class="work-list">
-                        <li>Used object-oriented principles to model geographic shapes, street segments, and
-                            intersections</li>
-                        <li>Applied design patterns such as the Observer, Model-View-Controller, and Strategy</li>
-                        <li>Developed interactive visualizations using Java Swing and Java 2D graphics</li>
-                        <li>Utilized pathfinding algorithms (Djikstra's and Bellman Ford) and GPS data parsing for
-                            dynamic routing</li>
-                        <li>Developed map matching and route relocation features to adjust routes based on real-time
-                            data</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-java-plain" title="Java"> </i>Java</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/navsystem.html" class="work-link">[project page]</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- UNITED CALCULATOR -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3 class="work-title">unitED</h3>
-                        <p class="work-subtitle">Unit Calculator</p>
-                    </div>
-                    <span class="work-date">2024</span>
-                </div>
-                <div class="work-content">
-                    <p class="work-description">
-                        Calculator that performs calculations across different unit types.
-                    </p>
-                    <ul class="work-list">
-                        <li>Followed an agile (Scrum) process to create a complete software product</li>
-                        <li>Worked with a team of 5 using Git and GitHub</li>
-                        <li>Utilized software design principles and worked to maximize cohesion and minimize coupling
-                        </li>
-                        <li>Worked with a stakeholder to refine requirements</li>
-                    </ul>
-                    <div class="work-tech">
-                        <span class="tech-tag"><i class="devicon-java-plain" title="Java"> </i>Java</span>
-                        <span class="tech-tag"><i class="devicon-git-plain" title="Git"> </i>Git</span>
-                    </div>
-                    <div class="work-links">
-                        <a href="/pages/projects/united-calculator.html" class="work-link">[project page]</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-cta">
-                <a href="/pages/nav/projects.html" class="btn">view all projects</a>
+            <div
+                style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; font-size: 1.2rem; margin-top: 0.5rem;">
+                <a class="btn" href="/pages/nav/projects.html">view all</a>
             </div>
         </div>
     </section>
@@ -281,11 +353,13 @@
             </div>
             <div class="contact-cards-grid">
                 <a href="https://github.com/hutnerr" class="contact-social-card">
-                    <img class="contact-social-icon" src="https://www.svgrepo.com/show/475654/github-color.svg" alt="GitHub">
+                    <img class="contact-social-icon" src="https://www.svgrepo.com/show/475654/github-color.svg"
+                        alt="GitHub">
                     <p>GitHub</p>
                 </a>
                 <a href="https://www.linkedin.com/in/hunter-b-baker/" class="contact-social-card">
-                    <img class="contact-social-icon" src="https://www.svgrepo.com/show/157006/linkedin.svg" alt="LinkedIn">
+                    <img class="contact-social-icon" src="https://www.svgrepo.com/show/157006/linkedin.svg"
+                        alt="LinkedIn">
                     <p>LinkedIn</p>
                 </a>
                 <a href="mailto:hunter.b.baker@gmail.com" class="contact-social-card">
