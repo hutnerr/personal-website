@@ -10,10 +10,10 @@
 
 .panelbg {
     background: var(--bg-primary);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 2px solid var(--border);
+    padding: 1.5rem 1.75rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
 }
 
 .centered {
