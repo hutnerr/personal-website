@@ -80,19 +80,18 @@
     display: flex;
     align-items: center;
     padding: 0.7rem 1rem;
-    background: var(--bg-secondary);
-    border: 2px solid var(--border);
+    background: var(--bg-primary);
+    border-left: 4px solid var(--border);
     border-radius: 8px;
-    color: var(--text-secondary);
+    color: var(--text-accent);
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 0.95rem;
 }
 
 .other-card-links li a::before {
     content: '▸';
     color: var(--text-accent);
-    margin-right: 0.75rem;
+    margin-right: 0.25rem;
     transition: transform 0.3s ease;
 }
 

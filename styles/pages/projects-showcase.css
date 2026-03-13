@@ -54,7 +54,7 @@
 }
 
 .showcase-card {
-    background: var(--bg-secondary);
+    background: var(--bg-primary);
     border: 2px solid var(--border);
     border-radius: 16px;
     overflow: hidden;
