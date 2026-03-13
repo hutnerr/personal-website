@@ -1,1 +1,158 @@
-WIP
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOLSUMMD</title>
+    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/navigation.css">
+    <link rel="stylesheet" href="/styles/sections.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <script src="/scripts/anims.js"></script>
+
+    <meta property="og:title" content="Hunter Baker | LOLSUMMD">
+    <meta property="og:description"
+        content="A champion mastery aggregator for League of Legends.">
+    <meta property="og:image"
+        content="https://hunter-baker.com/resources/images/beastcode-walkthrough/beastcode-logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hunter-baker.com/pages/projects/lolsummd.html">
+    <!-- for Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4J8LXCJ31S');
+    </script>
+</head>
+
+<body>
+    <div id="background">
+        <div style="position: fixed; inset: 0; z-index: -1; width: 100vw; height: 100vh; overflow: hidden;">
+            <img id="background-image" src="/resources/images/backgrounds/topography.svg" alt="Background"
+                style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+        </div>
+    </div>
+    <div id="header">
+        <nav>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+            <div class="nav-menu">
+                <!-- dots get added here dynamically based on the sections. -->
+                <!-- each section should have an id -->
+            </div>
+        </nav>
+    </div>
+
+    <section id="hero" class="hero-simple">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>lolsummd<span class="cursor"></span></h1>
+                    <p class="subtitle">$ a champion mastery aggregator for League of Legends</p>
+                </div>
+            </div>
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h2 class="section-title">Overview</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="hero-content">
+                <div class="panelbg pspacing">
+                    <p>
+                        This is a project I created to aggregate champion mastery data across multiple accounts for League of Legends. 
+                        It allows users to easily view their total mastery points and levels if they happen to have multiple accounts.
+                    </p>
+                    <p>
+                        It was built using Python and Flask for the backend, with Redis for caching API responses from Riot's servers. 
+                        The frontend is a simple HTML/CSS/JavaScript interface that displays the aggregated mastery data in a clean and user-friendly way.
+                    </p>
+                    <p>
+                        The app is hosted on Vercel and utilizes Upstash for Redis caching. 
+                        It was a fun project to work on and helped me learn more about web development and working with third-party APIs.
+                    </p>
+                </div>
+                <div class="panelbg">
+                    <h3>Technologies Used</h3>
+                    <ul class="arrowed-list">
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>Redis</li>
+                        <li>Riot API</li>
+                        <li>HTML/CSS/JavaScript</li>
+                    </ul>
+                    <br>
+                    <h3>Links</h3>
+                    <ul class="arrowed-list">
+                        <li><a href="https://lolsummd.com">Project Website</a></li>
+                        <li><a href="https://github.com/hutnerr/lolsummd">GitHub Repository</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="second">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">The Product</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="hero-content">
+                <div class="pspacing panelbg">
+                    <p>
+                        The main feature of the app is the ability to aggregate champion mastery data across multiple accounts. 
+                        This is done by adding accounts to the app using their Name and Tag (SummonerName#Tagline), 
+                        and the app will fetch the mastery data for each account from Riot's API and display the total combined mastery points 
+                        and levels for each champion.
+                    </p>
+                    <p>
+                        Up to 10 accounts can be added to the app, and the mastery data is cached temporarily in Redis to reduce the 
+                        number of API calls made to Riot's servers. 
+                    </p>
+                    <p>
+                        The app also includes a simple and clean interface for viewing the aggregated mastery data, 
+                        with champion icons, mastery levels, and total mastery points displayed in an easy-to-read format.
+                    </p>
+                    <p>
+                        Additionally, there exists a sorting feature that allows users to sort their champions by name, mastery points, 
+                        or levels, making it easier to see which champions they have the most experience with.
+                    </p>
+                </div>
+                <img class="hover-img centered sized-img"
+                    src="/resources/images/projects/lolsummd.png"
+                    alt="LOLSUMMD Screenshot">
+            </div>
+        </div>
+    </section>
+
+    <div id="footer">
+        <footer>
+            <div class="container">
+                <ul>
+                    <li><a href="mailto:hunter.baker.b@gmail.com">hunter.baker.b@gmail.com</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://github.com/hutnerr">GitHub</a></li>
+                    <li> | </li>
+                    <li><a href="https://www.linkedin.com/in/hunter-b-baker/">LinkedIn</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/pages/nav/contact.html">All Socials & Contact</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
