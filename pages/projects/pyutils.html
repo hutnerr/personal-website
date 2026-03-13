@@ -128,39 +128,45 @@
                         and per-call overrides. Use it as a drop-in replacement for <code>print()</code> with a lot
                         more control.
                     </p>
-                    <pre><code class="language-python">from pyutils import Clogger, CloggerConfig, CloggerOverrideFactory, LogLevel
+                    <pre><code class="language-python">from pyutils import Clogger, CloggerConfig, CloggerColor, CloggerSetting, CloggerOverrideFactory, LogLevel
 
-# Basic log levels
 Clogger.info("Server started.")
 Clogger.warn("High memory usage.")
-Clogger.error("Failed to connect to database.")
+Clogger.error("Failed to connect.", exc=KeyError)  # logs then raises
 Clogger.debug("Request payload: {...}")
 Clogger.action("User clicked submit.")
-Clogger.log("BOOT", "Config loaded.")        # custom tag</code></pre>
-                    <p>
-                        Adjust global behavior by swapping the config:
-                    </p>
-                    <pre><code class="language-python"># Only print WARN and above
-Clogger.config = CloggerConfig(min_log_level=LogLevel.WARN)
+Clogger.log("BOOT", "Config loaded.")              # custom tag</code></pre>
 
-# Disable terminal output and write everything to a file instead
+                    <p>Adjust global behavior by swapping the config:</p>
+                    <pre><code class="language-python">Clogger.config = CloggerConfig(min_log_level=LogLevel.WARN)
+Clogger.config = CloggerConfig(disable_colors=True, use_tag=False)
 Clogger.config = CloggerConfig(print_disabled=True, write_to_file=True, log_file_path="run.log")
+Clogger.config = CloggerConfig()  # reset</code></pre>
 
-# Reset to defaults
-Clogger.config = CloggerConfig()</code></pre>
-                    <p>
-                        Per-call overrides let you deviate from the global config for a single line:
-                    </p>
-                    <pre><code class="language-python">Clogger.info("Detailed trace.", settings_override=CloggerOverrideFactory.verbose())
+                    <p>Per-call overrides let you deviate from the global config for a single line:</p>
+                    <pre><code class="language-python">Clogger.info("Verbose trace.", settings_override=CloggerOverrideFactory.verbose())
 Clogger.error("Saved quietly.", settings_override=CloggerOverrideFactory.file_only("errors.log"))
-Clogger.error("Key not found", exc=KeyError)  # throws exception after logging
-Clogger.debug("Pretty printed.", settings_override=CloggerOverrideFactory.pretty())
+Clogger.debug("Dict dump.", settings_override=CloggerOverrideFactory.pretty())
 
-# Combine overrides
+# Combine overrides — later keys win on conflict
 Clogger.info("Verbose and saved.", settings_override=CloggerOverrideFactory.combine(
     CloggerOverrideFactory.verbose(),
-    CloggerOverrideFactory.write_to_file("verbose.log")
+    CloggerOverrideFactory.write_to_file("verbose.log"),
+    {CloggerSetting.DISABLE_COLORS: True},
 ))</code></pre>
+
+                    <p>Create reusable custom loggers with <code>make_log</code>:</p>
+                    <pre><code class="language-python">log_boot = Clogger.make_log("BOOT", color=CloggerColor.CYAN, level=LogLevel.INFO)
+log_boot("App starting up.")   # [BOOT]    | main.py:12 | App starting up.
+
+# Bake in a settings baseline — still overridable per call
+log_trace = Clogger.make_log(
+    "TRACE",
+    color=CloggerColor.MAGENTA,
+    settings_override={CloggerSetting.SIMPLIFY_TIMESTAMPS: False},
+)
+log_trace("Deep trace.")
+log_trace("No source.", settings_override={CloggerSetting.SHOW_SOURCE_FILE: False})</code></pre>
                 </div>
             </div>
         </div>
@@ -176,41 +182,57 @@ Clogger.info("Verbose and saved.", settings_override=CloggerOverrideFactory.comb
             <div>
                 <div class="pspacing panelbg">
                     <p>
-                        <strong>Clogobj</strong> provides individual logger instances with their own baked-in config.
-                        Useful when different parts of your app need different logging behavior without touching the
-                        global <code>Clogger.config</code>.
+                        <strong>Clogobj</strong> provides individual logger instances with their own baked-in config
+                        and optional name. Useful when different parts of your app need different logging behavior
+                        without touching the global <code>Clogger.config</code>.
                     </p>
                     <pre><code class="language-python">from pyutils import Clogobj, ClogobjFactory, CloggerConfig
 
-# Pre-built presets
 verbose_logger = ClogobjFactory.verbose()
-error_logger   = ClogobjFactory.errors_only()
-silent_logger  = ClogobjFactory.silent()        # useful in tests
+silent_logger  = ClogobjFactory.silent()   # useful in tests
+file_logger    = ClogobjFactory.file_only("run.log")
 
 verbose_logger.info("Full timestamps and source shown.")
-error_logger.warning("Only WARN and above will print.")
-silent_logger.error("No output at all.")</code></pre>
+silent_logger.error("No output at all.")
+file_logger.warn("Written to run.log only.")</code></pre>
 
-                    <p>Tag a logger to a specific module — no need to pass a tag on every call:</p>
-                    <pre><code class="language-python">db_logger   = ClogobjFactory.for_module("Database")
-auth_logger = ClogobjFactory.for_module("Auth", log_func=Clogger.warning)
+                    <p>Name a logger to a module — the name appears before the level tag on every line:</p>
+                    <pre><code class="language-python">db_logger = ClogobjFactory.for_module("Database")
+db_logger.info("Connection established.")   # [Database][INFO]  | db.py:42 | Connection established.
+db_logger.warn("Slow query detected.")      # [Database][WARN]  | db.py:43 | Slow query detected.</code></pre>
 
-db_logger.tagged("Connection established.")      # [Database] Connection established.
-db_logger.tagged("Query timeout.", tag="SLOW")   # one-off override: [SLOW] Query timeout.
-auth_logger.tagged("Invalid token.")             # [Auth] as WARNING</code></pre>
+                    <p><code>make_log</code> on an instance returns a bound logger that inherits the instance's settings and name:</p>
+                    <pre><code class="language-python">auth = Clogobj(
+    settings=CloggerConfig(simplify_timestamps=False),
+    name="Auth",
+)
+
+log_token = auth.make_log("TOKEN", color=CloggerColor.YELLOW, level=LogLevel.WARN)
+log_token("Invalid token.")   # 2025-01-01 17:58:40 EST [Auth][TOKEN]  | auth.py:7 | Invalid token.
+
+# Per-call overrides still layer on top
+log_token("Suppressed.", settings_override={CloggerSetting.PRINT_DISABLED: True})</code></pre>
+
+                    <p>Use <code>log_errors</code> as a decorator to automatically route exceptions through the instance:</p>
+                    <pre><code class="language-python">db = ClogobjFactory.for_module("Database")
+
+@db.log_errors
+def connect():
+    raise ConnectionError("timeout")
+
+connect()  # [Database][ERROR] | db.py:8 | connect failed: timeout</code></pre>
 
                     <p>Write a component's logs to its own file:</p>
                     <pre><code class="language-python">db_logger = ClogobjFactory.for_file("db.log", also_print=True)
 db_logger.info("Printed to terminal and saved to db.log.")</code></pre>
 
                     <p>Fully custom when nothing else fits:</p>
-                    <pre><code class="language-python">boot_logger = ClogobjFactory.custom(
+                    <pre><code class="language-python">boot = ClogobjFactory.custom(
     settings=CloggerConfig(simplify_timestamps=False, show_source_file=True),
-    default_tag="BOOT",
-    default_log_func=Clogger.info,
+    name="BOOT",
 )
-boot_logger.log("App starting up.")
-boot_logger.tagged("Config loaded.")</code></pre>
+boot.info("App starting up.")
+boot.log("INIT", "Config loaded.")</code></pre>
                 </div>
             </div>
         </div>
