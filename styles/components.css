@@ -144,6 +144,7 @@
 .btn {
     padding: 12px 24px;
     border: 2px solid var(--border);
+    border-left: 6px solid var(--border);
     background: transparent;
     color: var(--text-primary);
     /* color: var(--text-secondary); */

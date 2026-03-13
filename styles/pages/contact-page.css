@@ -39,7 +39,8 @@
 
 .contact-social-card {
     background: var(--bg-primary);
-    border: 2px solid var(--border);
+    border: 1px solid var(--border);
+    border-left: 8px solid var(--border);
     border-radius: 12px;
     padding: 1.25rem;
     display: flex;
@@ -74,9 +75,7 @@
     text-decoration: none;
 }
 
-.contact-social-card:hover::before {
-    transform: scaleX(1);
-}
+
 
 .contact-social-icon {
     width: 40px;

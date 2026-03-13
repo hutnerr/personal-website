@@ -81,7 +81,8 @@
     align-items: center;
     padding: 0.7rem 1rem;
     background: var(--bg-primary);
-    border-left: 4px solid var(--border);
+    border: 1px solid var(--border);
+    border-left: 6px solid var(--border);
     border-radius: 8px;
     color: var(--text-accent);
     text-decoration: none;
