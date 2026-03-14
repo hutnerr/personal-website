@@ -242,6 +242,53 @@ boot.log("INIT", "Config loaded.")</code></pre>
         <div class="container">
             <div class="section-header">
                 <span class="section-number">04.</span>
+                <h2 class="section-title">Option &amp; Result</h2>
+                <div class="section-line"></div>
+            </div>
+            <div>
+                <div class="pspacing panelbg">
+                    <p>
+                        Rust-inspired types for explicit null and error handling — no bare <code>None</code> checks
+                        or scattered <code>try/except</code> blocks.
+                    </p>
+                    <p>
+                        <strong>Option</strong> wraps a value that may or may not exist. Unlike bare <code>None</code>,
+                        <code>Some(None)</code> is a valid distinct state.
+                    </p>
+                    <pre><code class="language-python">from pyutils import Option
+
+Option.some(42).unwrap()           # 42
+Option.none().unwrap_or(0)         # 0
+Option.none().unwrap_or_else(fn)   # fn() — only called if None</code></pre>
+
+                    <p>
+                        <strong>Result</strong> wraps either a success value or an error. <code>Ok(None)</code> and
+                        <code>Err(None)</code> are both valid and distinguishable.
+                    </p>
+                    <pre><code class="language-python">from pyutils import Result
+
+Result.ok(42).unwrap()                 # 42
+Result.err("oops").unwrap_err()        # "oops"
+Result.err("oops").unwrap_or(0)        # 0
+Result.err("oops").expect("failed")    # raises: ValueError: failed: 'oops'</code></pre>
+
+                    <p>Both types support <code>bool()</code> coercion, equality, hashing, and iter unpacking:</p>
+                    <pre><code class="language-python">bool(Option.some(0))     # True  — state-based, not value-based
+bool(Option.none())      # False
+bool(Result.ok(None))    # True
+bool(Result.err("x"))    # False
+
+Option.some(1) == Option.some(1)   # True
+(value,) = Option.some("hello")    # unpacking</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fifth">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05.</span>
                 <h2 class="section-title">Other Utilities</h2>
                 <div class="section-line"></div>
             </div>
