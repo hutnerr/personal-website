@@ -23,9 +23,17 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
+.skills-list-header {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
 .skills-list {
     gap: 0.5rem;
     list-style: none;
+    margin-bottom: 1.5rem;
 }
 
 .skills-list li {

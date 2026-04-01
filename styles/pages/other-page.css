@@ -10,8 +10,8 @@
 }
 
 .other-card {
-    background: var(--bg-primary);
-    border: 2px solid var(--border);
+    /* background: var(--bg-primary); */
+    /* border: 2px solid var(--border); */
     border-radius: 16px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -41,18 +41,12 @@
 }
 
 .other-card-title {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
-}
-
-.other-card-description {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    opacity: 0.7;
 }
 
 /* Card Content - Links */

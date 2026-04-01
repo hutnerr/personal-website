@@ -12,6 +12,7 @@ section {
     align-items: center;
     gap: 1rem;
     margin-bottom: 3rem;
+    margin-top: 1rem;
 }
 
 .section-number {
@@ -24,6 +25,7 @@ section {
 .section-title {
     font-size: 2rem;
     font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .section-line {
