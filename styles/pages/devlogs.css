@@ -1,0 +1,59 @@
+/* ==================================== */
+/* ===== DEVLOG GRID & CARDS ====== */
+/* ==================================== */
+
+.devlog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    /* padding: 2rem 0; */
+}
+
+.devlog-grid a {
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 1.1rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-left: 6px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-accent);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.devlog-grid a::before {
+    content: '▸';
+    color: var(--text-accent);
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.devlog-grid a:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--text-accent);
+    color: var(--text-primary);
+    transform: translateX(4px);
+    text-decoration: none;
+}
+
+.devlog-grid a:hover::before {
+    transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .devlog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .devlog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

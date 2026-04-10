@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgotten Paths Revival</title>
+    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/navigation.css">
+    <link rel="stylesheet" href="/styles/sections.css">
+    <link rel="stylesheet" href="/styles/components.css">
+    <script src="/scripts/anims.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- GDScript isn't in Prism's core, so we use the closest match for highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    <meta property="og:title" content="Hunter Baker | Forgotten Paths Revival">
+    <meta property="og:description" content="Devlog #1 - Rebuilding Forgotten Paths from scratch for a full Steam release">
+    <meta property="og:image" content="https://hunter-baker.com/resources/images/headshot.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hunter-baker.com/pages/blog/2026-04-09_fp.html">
+
+    <!-- for Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4J8LXCJ31S');
+    </script>
+</head>
+
+<body>
+    <div id="background">
+        <div style="position: fixed; inset: 0; z-index: -1; width: 100vw; height: 100vh; overflow: hidden;">
+            <img id="background-image" src="/resources/images/backgrounds/topography.svg" alt="Background"
+                style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+        </div>
+    </div>
+    <div id="header">
+        <nav>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+            <div class="nav-menu">
+                <!-- dots get added here dynamically based on the sections. -->
+                <!-- each section should have an id -->
+            </div>
+        </nav>
+    </div>
+
+    <section id="hero" class="hero-simple">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>forgotten paths revival<span class="cursor"></span></h1>
+                    <p class="subtitle">$ april 9th, 2026</p>
+                </div>
+            </div>
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h2 class="section-title">Starting Over</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="hero-content">
+                <div class="panelbg hero-text pspacing">
+                    <p>
+                        About 8 months ago, my friend and I submitted
+                        <a href="/pages/games/forgotten-paths.html">Forgotten Paths</a> to the
+                        <a href="https://itch.io/jam/gmtk-2025">GMTK 2025 Game Jam</a>. This is one of the biggest game jams
+                        ever held, with over 9,500 submissions (at the time of writing). We were really happy with how it turned out,
+                        and so were the people who played it. We <a href="/pages/other/game-jams.html">ranked</a> very well,
+                        which felt incredible given the scale of the competition.
+                    </p>
+                    <p>
+                        The feedback we got was really encouraging and gave us a lot of ideas. So we decided to take
+                        Forgotten Paths further and turn it into a full Steam release.
+                        We decided to start completely from scratch and rebuild it to support future development
+                        as opposed to try and fix our buggy and spaghetti code from the jam.
+                        The core concept is the same, but everything under the hood is being rebuilt properly to support all the features we want to add.
+                    </p>
+                    <p>
+                        This is the first devlog for the revamped Forgotten Paths. I want to document what we're building, how we're
+                        thinking about it, and what's changed from the original. If you wanted to play the jam version to see where we started, you can find it
+                        <a href="/pages/games/forgotten-paths.html">here</a>.
+                    </p>
+                </div>
+                <img class="hover-img sized-img" src="/resources/gifs/game-jams/fp.gif" alt="Forgotten Paths Revival">
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">The New Structure</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="panelbg hero-text pspacing">
+                <p>
+                    The biggest lesson from the jam version was that clean, extensible code makes everything easier.
+                    The jam gave us 96 hours, so shortcuts were taken. This time we don't have that excuse, and we're
+                    building the backend right from the start.
+                </p>
+                <p>
+                    At the core of the new version is the <code>BattleEngine</code>. It's the main backend manager
+                    that drives everything. It handles the game loop, processes tiles and entities each tick, tracks
+                    the player's command budget, and determines win/lose conditions. The tick order is always
+                    tiles → enemies → player, and every tick returns an array of <code>GameEvents</code> instead
+                    of directly mutating the scene. This means the UI and logic are fully decoupled. The engine doesn't
+                    care how anything gets displayed; it just processes state and spits out events. There is a small code snippet below that illustrates this approach.
+                    The renderer can respond to those events however it wants, or ignore them entirely. This also enables us to run 
+                    the engine in a headless mode for the Simulator, which I'll talk about later.
+                </p>
+                <p>
+                    The grid itself is managed by the <code>GridManager</code>, which uses two dictionaries
+                    instead of 2D arrays. One mapping positions to tiles, and one mapping positions to entities.
+                    We found that Dictionary-based grids are just more flexible than arrays for this kind of puzzle game.
+                    Sparse maps, irregular shapes, fast lookups all work naturally. The tile grid is set once
+                    when a map loads and never changes. The entity grid is the live, mutable state.
+                </p>
+                <p>
+                    Maps themselves are defined by <code>MapData</code> resources. These are plain Godot
+                    <code>.tres</code> files that describe grid dimensions, tile spawns, entity spawns, the player's
+                    starting position, and a couple of constraints for puzzle design like the command budget and max loop length.
+                    This gets loaded by the GridManager at the start of each level and used to populate the tile and entity dictionaries.
+                </p>
+                <pre><code class="language-python"># tick() is the core loop. call this once per game step.
+# tick order: tiles -> enemies -> player
+func tick() -> Array[GameEvent]:
+	if is_terminal:
+		Clogger.warn("ticking after a terminal event")
+		return []
+		
+	var events: Array[GameEvent] = []
+
+	events.append_array(_process_tick_tiles())
+	if _check_terminal(events): return events
+
+	events.append_array(_process_entities())
+	if _check_terminal(events): return events
+
+	var cmd: Command = player.current_command()
+	events.append_array(_process_player())
+	if _check_terminal(events): return events
+
+	# deduct the cost of the command that just ran
+	if remaining_budget >= 0 and cmd != null:
+		remaining_budget -= cmd.cost
+		if remaining_budget <= 0:
+			remaining_budget = 0
+			events.append(GameOverEvent.new(GameOverEvent.Reason.BUDGET_EXHAUSTED))
+
+	return events</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="commands-and-loop">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03.</span>
+                <h2 class="section-title">The Command Loop</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="panelbg hero-text pspacing">
+                <p>
+                    The core mechanic of Forgotten Paths is the command loop. The player doesn't directly control
+                    their character tick by tick. Instead, they set up a sequence of commands that the player character
+                    then executes repeatedly in a cycle. Getting that loop right is the puzzle.
+                </p>
+                <p>
+                    In the new codebase this is modeled with a proper <code>Command</code> base class that each
+                    command type extends. Right now we have <code>MoveCommand</code>,
+                    <code>RotateCommand</code>, and <code>WaitCommand</code> in an attempt to mimic the behavior of the original jam version. 
+                    Each one has an
+                    <code>execute()</code> method that takes an entity and the grid and returns a list of GameEvents.
+                    This pattern makes adding new commands really easy. You just create a new class, implement
+                    <code>execute()</code>, and it plugs right into the system without touching anything else. 
+                    This was an intentional design choice to make future expansion easier. 
+                    We have a long list of commands we want to add eventually, and this structure means we can do that without changing and breaking existing code.
+                </p>
+                <p>
+                    MoveCommand supports all four directions and is aware of the player's current rotation, so a
+                    command that says "move up" might actually move the player right if they've been rotated 90
+                    degrees clockwise. RotateCommand is what changes that rotation state. The WaitCommand is a
+                    simple no-op which will be useful for timing-based puzzles when we get there.
+                    Each command also has a <code>cost</code> field that gets deducted from the map's budget when
+                    it runs, which is how we can make some actions more expensive than others.
+                </p>
+                <p>
+                    One other important design choice we made is that <code>Command</code> instances take an <code>Entity</code> as a parameter. This allows us 
+                    to use the same command system for enemy behavior as well. If we want to add an enemy that moves in a pattern, we can just give it a command loop 
+                    like the player's and have it execute that each tick. This keeps everything consistent and reusable. If we need special handling per entity type,
+                    we can always check the entity's class in the command's execute method and adjust behavior accordingly. The code snippet below shows how this works for MoveCommand.
+                </p>
+                <pre><code class="language-python"># Adding a new command is as simple as extending Command and implementing execute().
+# Nothing else in the engine needs to change.
+
+extends Command
+class_name MoveCommand
+
+var direction: Consts.Direction
+
+func execute(entity: Entity, grid: GridManager) -> Array[GameEvent]:
+	var target: Vector2i
+	if entity is Player:
+        # rotation is applied here, so the loop's directions are relative to
+        # the player's current facing - not the world grid.
+		var actual_dir = RotationHelper.rotate_direction(direction, entity.current_rotation)
+		target = GridHelper.get_movement_in_direction(entity.position, actual_dir)
+	else:
+		target = GridHelper.get_movement_in_direction(entity.position, direction)
+	return grid.move_entity(entity, target)
+
+# factory methods keep loop construction readable at the call site
+static func up()    -> MoveCommand: return MoveCommand.new(Consts.Direction.UP)
+static func down()  -> MoveCommand: return MoveCommand.new(Consts.Direction.DOWN)
+static func left()  -> MoveCommand: return MoveCommand.new(Consts.Direction.LEFT)
+static func right() -> MoveCommand: return MoveCommand.new(Consts.Direction.RIGHT)</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="tiles-and-entities">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04.</span>
+                <h2 class="section-title">Tiles &amp; Entities</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="panelbg hero-text pspacing">
+                <p>
+                    Both tiles and entities follow the same design philosophy: a base class that defines the interface,
+                    and subclasses that override specific behavior. The <code>BaseTile</code> class has two
+                    overridable methods: <code>is_passable()</code> and <code>on_entered()</code>. Most tiles are
+                    passable and do nothing when stepped on, but some override those methods to create walls, traps, portals, etc. 
+                </p>
+                <p>
+                    Currently we have <code>BlockedTile</code> (the rocks and walls from the jam),
+                    <code>PortalTile</code> (teleports the entity to its paired portal on entry), and
+                    <code>TickTile</code> (a base class for tiles that need to fire behavior every tick, like
+                    traps). The <code>TickTile</code> is a base class for tiles that need to fire behavior every tick, like traps.
+                    Most tiles don't need that, but this allows us to support more complex tile behavior without bloating the base class 
+                    with a bunch of empty methods.
+                </p>
+                <p>
+                    On the entity side, <code>BaseEnemy</code> extends the <code>Entity</code> base class
+                    and adds the concept of being alive and an <code>on_entered()</code> callback for when the player
+                    walks into them. The first concrete enemy type is <code>StaticEnemy</code> which just stands
+                    there and dies when the player bumps into it. That's the only enemy type in the jam game too,
+                    but now the system is set up to support enemies that move, have patterns, react to rotations, etc.
+                    We'll get there.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05.</span>
+                <h2 class="section-title">The Simulator</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="panelbg hero-text pspacing">
+                <p>
+                    This is probably my favorite part of the new codebase. The <code>Simulator</code> is a tool
+                    that wraps the BattleEngine and lets us test command loops programmatically. You give it a map
+                    and a loop, it runs the engine until there's a win, loss, or timeout, and returns a
+                    <code>SimResult</code> describing what happened.
+                </p>
+                <p>
+                    The really powerful function is <code>simulate_all()</code>. It generates every possible command
+                    loop up to the map's <code>max_loop_length</code> using base-N enumeration over the command
+                    palette, runs each one, and collects every loop that results in a win. This lets us verify that
+                    a given map is actually solvable, and find <em>all</em> the solutions.
+                    If a map has 50 winning loops when we only intended there to be 2 or 3, that tells us the
+                    puzzle is too loose and needs more constraints. If it has zero, we broke something.
+                </p>
+                <p>
+                    It's essentially a built-in puzzle validator, and it means we can design levels with a lot more
+                    confidence than we had during the jam, where we were mostly just playtesting by hand. It's going
+                    to be indispensable as the puzzle complexity grows.
+                </p>
+                <pre><code class="language-python"># simulate_all() brute-forces every possible loop up to max_loop_length.
+# returns only the winning SimResults so we can audit solution counts per map.
+func simulate_all(max_ticks: int = 100) -> Array[SimResult]:
+    var max_length: int = _engine.grid._loaded_map.max_loop_length
+    var palette: Array[Command] = [
+        MoveCommand.up(), MoveCommand.down(),
+        MoveCommand.left(), MoveCommand.right(),
+        RotateCommand.r90cc(), RotateCommand.r270cc(), RotateCommand.r180(),
+    ]
+
+    var wins: Array[SimResult] = []
+    for length in range(1, max_length + 1):
+        var combo_count: int = int(pow(palette.size(), length))
+        for i in range(combo_count):
+            var loop: Array[Command] = _index_to_loop(i, palette, length) # base-N enumeration to get the loop for this combo index
+            var result: SimResult = simulate(loop, max_ticks)
+            result.loop = loop
+            if result.outcome == SimResult.Outcome.WIN:
+                wins.append(result)
+
+    return wins</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="whats-next">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">06.</span>
+                <h2 class="section-title">What's Next</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="panelbg hero-text pspacing">
+                <p>
+                    The backend is in a solid place. The BattleEngine ticks correctly, the Simulator validates maps,
+                    entities and tiles are extensible, and the event system keeps everything decoupled. What doesn't
+                    exist yet is anything visual. There is no renderer, no UI, no actual Godot scene to run it in. That's the
+                    next big chunk of work.
+                </p>
+                <p>
+                    Beyond that, we have a long list of things to build out based on the jam feedback and our own
+                    ideas: more enemy types, more tile types, a proper level editor, a UI for building the command
+                    loop, and eventually a full campaign. There's a lot to do, but for the first time it actually
+                    feels like the foundation is solid enough to build on top of.
+                </p>
+                <p>
+                    I'll keep posting these as progress gets made. If you want to follow along or played the jam
+                    version and have thoughts, feel free to reach out.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div class="container hero-simple"> -->
+        <!-- <div class="btn-grid"> -->
+            <!-- <a href="/pages/blog/blog-prev.html" class="btn">← Previous</a> -->
+            <!-- <div></div> -->
+            <!-- <a href="/pages/blog/blog-next.html" class="btn">Next →</a> -->
+        <!-- </div> -->
+    <!-- </div> -->
+
+    <div id="footer">
+        <footer>
+            <div class="container">
+                <ul>
+                    <li><a href="mailto:hunter.baker.b@gmail.com">hunter.baker.b@gmail.com</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://github.com/hutnerr">GitHub</a></li>
+                    <li> | </li>
+                    <li><a href="https://www.linkedin.com/in/hunter-b-baker/">LinkedIn</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/pages/nav/contact.html">All Socials & Contact</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
