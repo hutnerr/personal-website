@@ -47,4 +47,5 @@
 38. update the templates folder with a couple different templates for each of the type of pages
 39. update CLAUDE.md
 40. make sure page_bldr is right.
+41. should the navbar be fixed to the top?
 
