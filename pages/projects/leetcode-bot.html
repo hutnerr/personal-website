@@ -7,20 +7,15 @@
     <title>beast[code]</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/anims.js"></script>
 
     <meta property="og:title" content="Hunter Baker | beast[code]">
-    <meta property="og:description"
-        content="A LeetCode Discord bot focused on customizable daily problems and contest reminders.">
-    <meta property="og:image"
-        content="https://hunter-baker.com/resources/images/beastcode-walkthrough/beastcode-logo.png">
+    <meta property="og:description" content="A LeetCode Discord bot with customizable daily problems and contest reminders.">
+    <meta property="og:image" content="https://hunter-baker.com/resources/images/beastcode-walkthrough/beastcode-logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/leetcode-bot.html">
 
-    <!-- for Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -57,134 +52,70 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>beast[code]<span class="cursor"></span></h1>
-                    <p class="subtitle">$ a leetcode discord bot</p>
-                </div>
+            <h1>beast[code]<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a LeetCode Discord bot</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>beast[code] is a Discord bot that facilitates LeetCode practice within a server. It runs a configurable system of recurring problems, contest reminder alerts, a point leaderboard, and user submission tracking — all driven by per-server and per-problem settings.</p>
+                <p>As a live service product it is constantly evolving. Server admins configure it via slash commands; users link their LeetCode accounts and submit solutions for points.</p>
             </div>
-            <h2>Overview</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>This is a Discord Bot created using <a
-                            href="https://discordpy.readthedocs.io/en/stable/">Discord.py.</a>
-                        Its purpose is to facilitate LeetCoding within a Discord server. It achieves this goal through
-                        the usage
-                        of custom settings, customizable daily problems, notifications for upcoming contests, and other
-                        features.</p>
-                    <p>As a live service product, it is a constant work in progress and always changing. The source code
-                        is
-                        available on <a href="https://github.com/hutnerr/leetcode-bot">GitHub</a>. If interested in
-                        setting it up in your own server, you can follow the instructions <a
-                            href="/pages/other/beastcode-help.html">here.</a></p>
+
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+                <div>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>Python — Discord.py, Requests</li>
+                        <li>LeetCode API — GraphQL queries for problems and user data</li>
+                        <li>Observer pattern for notification delivery</li>
+                    </ul>
                 </div>
                 <div>
-                    <h3>Technologies Used</h3>
-                    <ul class="arrowed-list">
-                        <li><strong>Python:</strong> Discord.py, Requests</li>
-                        <li><strong>APIs:</strong> GraphQL, JSON</li>
-                    </ul>
-                    <br>
-                    <h3>Links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/leetcode-bot">GitHub Repository</a></li>
-                        <li><a
-                                href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot">Server
-                                Invite</a></li>
-                        <li><a href="https://top.gg/bot/1392738606120173719">Top.gg Page</a></li>
-                        <li><a href="/pages/other/beastcode-help.html">Bot Setup & Help Page</a></li>
-                    </ul>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+                        <a href="https://github.com/hutnerr/leetcode-bot" class="btn btn-background" target="_blank">GitHub</a>
+                        <a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot" class="btn btn-background" target="_blank">Add to Server</a>
+                        <a href="https://top.gg/bot/1392738606120173719" class="btn btn-background" target="_blank">Top.gg</a>
+                        <a href="/pages/other/beastcode-help.html" class="btn btn-background">Help Page</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="second">
+    <section id="showcase">
         <div class="container">
-            <h2>The Product</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>The final product was a Discord bot that helps users with LeetCode problems by providing
-                        a system of customizable reoccurring problems, contest reminders, and other various alerts.</p>
-                    <p>The bot is designed to be easily configurable, allowing server administrators to set their own
-                        preferences for problem difficulty, frequency of these problems, and more.</p>
-                    <p>The bot uses the LeetCode API to fetch problems and user data, ensuring that users receive
-                        relevant
-                        content.</p>
-                    <p>It also includes features such as reminders for upcoming contests, a leaderboard to track user
-                        progress, and a help command to assist users in navigating the bot's features.</p>
-                    <p>The image shows an example of a problem being sent to a user.</p>
-                    <p>For a more in depth look about the product itself, I highly recommend checking it out for
-                        yourself! Otherwise, take a look at the <a href="/pages/other/beastcode-help.html">Help & Setup
-                            Page</a>.</p>
-                </div>
-                <img style="border-radius: 12px;" class="hover-img centered dec-sized-img"
-                    src="/resources/images/projects/leetcode-bot.png" alt="LeetCode Bot Screenshot">
-            </div>
+            <h2>showcase</h2>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/leetcode-bot.png" alt="beast[code] Discord Bot Screenshot" data-lightbox>
         </div>
     </section>
 
-    <section id="third">
+    <section id="challenges">
         <div class="container">
-            <h2>Challenges &amp; Solutions</h2>
+            <h2>challenges &amp; solutions</h2>
             <div class="pspacing">
-                <p>At the time of making this, it was the biggest project I've ever worked on and designed on my own.
-                    This
-                    naturally came with a lot of unique challenges that I had not encountered yet. This project required
-                    a lot of foresight into not only what I knew I wanted to build, but to try and make it easier to
-                    adapt to new and different ideas that I could come up with. The way I designed this project was in
-                    two stages. First I built the backend and the core. Once that was complete, I moved onto the
-                    integration using Discord.py. Despite my best efforts, I still had issues where I was missing
-                    something in my backend that I should've had implemented already. Many instances like this let me
-                    value the planning that I did. While I encounted many issues of this kind, I am very very sure it
-                    would've been a much bigger problem if I did not take the original efforts that I did to try and
-                    plan ahead.</p>
-                <p>One of the main challenges was designing a bot that could scale with the needs of the users. I had to
-                    ensure that the bot could handle multiple servers and users without performance issues. One
-                    particular performance struggle I was dealing with was originally I would save to a file and read on
-                    every access, later I switched to having both saved to a JSON file as well as being cached in
-                    memory. However, this led to it's own problems with there being mismatches between the cached data
-                    and the saved data. This problem occurred when I would update the saved data but failed to properly
-                    reflect that change in the cached data, leading to inconsistencies. I fixed this problem through the
-                    use of a "Synchronizer" that ensured both the cached data and saved data were updated together.</p>
-                <p>Additionally, a major challenge was getting the notification and problem delivery system to work.
-                    Ultimately through the usage of the Observer pattern and some custom made buckets, I was able to
-                    accurately notify users. The way I implemented this was adding to the buckets based on settings and
-                    other parameters. Then I have a loop running that is constantly checking the time. On specific
-                    times, I would search through the buckets and essentially notify each server with the type of
-                    notification.</p>
-                <p>Finally, I had to ensure that the bot was user-friendly and easy to use. I spent a lot of time
-                    designing
-                    the commands and interactions to be intuitive and straightforward. This included creating a help
-                    command
-                    that provided users with information on how to use the bot and its features. I also spent some time
-                    developing a <a href="/pages/other/beastcode-help.html">Help & Setup Page</a>.</p>
+                <p>This was the largest project I had designed on my own at the time, which meant novel challenges at every stage. I built it in two phases: backend core first, then Discord integration — but I still found gaps in the backend mid-integration that required back-tracking.</p>
+                <p>One major scalability challenge was storage access. Initially I read from and wrote to files on every operation. I switched to an in-memory cache backed by JSON files, but this introduced cache/disk divergence bugs. I solved this with a "Synchronizer" that ensures both layers update atomically.</p>
+                <p>Getting the notification and timed problem delivery right required significant design work. I implemented an Observer pattern with time-bucketed scheduling: settings populate buckets, and a background loop fires notifications when the current time matches a bucket's threshold.</p>
             </div>
         </div>
     </section>
 
-    <section id="fourth">
+    <section id="takeaways">
         <div class="container">
-            <h2>Takeaways</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>This was an incredibly useful project for my development. Building this product allowed me to put
-                        together everything I know and learned in a way that allowed me to apply my skills effectively. Not
-                        only did I learn an enormous amount about building and maintaining a live service product, but I
-                        also gained valuable experience in project management and design.</p>
-                    <p>I also realized how useful it is to have a solid understanding of the underlying technologies and
-                        frameworks when building a complex system. Whenever I would have a problem, I would go refer to the
-                        documentation.</p>
-                    <p>Some key takeaways include:</p>
-                    <ul class="arrowed-list">
-                        <li>Designing and programming a complete live service product</li>
-                        <li>Understanding the value of planning and foresight</li>
-                        <li>Documentation is an amazing resource to use</li>
-                        <li>Maintaining a live service product</li>
-                    </ul>
-                </div>
-                <img class="sized-img hover-img centered dec-sized-img"
-                    src="/resources/images/beastcode-walkthrough/beastcode-logo.png" alt="LeetCode Bot Screenshot">
+            <h2>takeaways</h2>
+            <div class="pspacing">
+                <p>Building and maintaining a live service product sharpened my understanding of system design, planning, and the real cost of shortcuts. Some key takeaways:</p>
+                <ul class="arrowed-list">
+                    <li>Designing and shipping a complete live service product end to end</li>
+                    <li>Value of upfront planning — saved significant rework mid-integration</li>
+                    <li>Cache/storage consistency as a first-class design concern</li>
+                    <li>Maintaining and iterating on a deployed product over time</li>
+                </ul>
             </div>
         </div>
     </section>

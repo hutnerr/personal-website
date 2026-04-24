@@ -7,18 +7,15 @@
     <title>DukeSH</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/anims.js"></script>
 
     <meta property="og:title" content="Hunter Baker | DukeSH">
-    <meta property="og:description" content="A simple shell implementation">
-    <meta property="og:image" content="https://hunter-baker.com/resources/images/headshot.png">
+    <meta property="og:description" content="A custom Unix shell implementation in C.">
+    <meta property="og:image" content="https://hunter-baker.com/resources/images/my_rat_pfp_nobg.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/dukesh.html">
 
-    <!-- for Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -54,51 +51,38 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>duke shell<span class="cursor"></span></h1>
-                    <p class="subtitle">$ a simple shell implementation</p>
-                </div>
+            <h1>duke shell<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a custom Unix shell implementation</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>DukeSH is a custom shell program that supports command execution, process management, I/O redirection, and piping. Built in C, it was developed to deepen understanding of how processes and system calls work at the OS level.</p>
+                <p>The shell supports built-in commands alongside external executables, handles foreground and background processes, and implements a basic REPL loop with proper signal handling.</p>
             </div>
-            <h2>Overview</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>The Duke Shell (DukeSH) is a custom shell program designed to provide a user-friendly
-                        command-line
-                        interface for executing commands and managing processes. It was developed as part of a project
-                        to
-                        enhance understanding of processes and system calls.</p>
-                    <p>The shell supports various features, including command execution, process management, and
-                        built-in
-                        commands. It is designed to be lightweight and efficient, making it suitable for educational
-                        purposes
-                        and as a foundation for further development.</p>
-                </div>
-                <div>
-                    <h3>Technologies Used</h3>
-                    <ul class="arrowed-list">
-                        <li><strong>C Programming Language:</strong> Used for implementing the shell's core
-                            functionality and system calls.</li>
-                        <li><strong>Makefile:</strong> Used for managing the build process and dependencies.</li>
-                    </ul>
-                </div>
+
+            <div style="margin-top: 24px;">
+                <h3 style="margin-bottom: 12px;">tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>C — system calls, process lifecycle, file descriptors</li>
+                    <li>Makefile — build process and dependency management</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="second">
+    <section id="takeaways">
         <div class="container">
-            <h2>Takeaways</h2>
+            <h2>takeaways</h2>
             <div class="pspacing">
-                <p>This project was very valuable in teaching about the process lifecycle and system calls.</p>
-                <p>Not only did it help me become a better C programmer, it's primary value to me was in how it deepened
-                    my
-                    understanding of operating system concepts.</p>
-                <p>Some key takeaways include:</p>
+                <p>Building a shell from scratch gave concrete understanding of how processes are created, managed, and terminated, and how shells themselves work under the hood. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>Understanding of process management and system calls.</li>
-                    <li>Importance of robust error handling in software development.</li>
-                    <li>Value of thorough testing and documentation.</li>
+                    <li>Process management — fork, exec, wait, and signal handling</li>
+                    <li>I/O redirection and pipe implementation using file descriptors</li>
+                    <li>Robust error handling in systems-level C code</li>
                 </ul>
             </div>
         </div>

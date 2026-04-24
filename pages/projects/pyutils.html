@@ -7,36 +7,17 @@
     <title>Python Utilities</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/anims.js"></script>
 
-    <!-- Prism.js syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-gruvbox-dark.min.css">
-    <style>
-        /* Override Prism background to match site's */
-        pre[class*="language-"] {
-            background: var(--bg-secondary) !important;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            line-height: 1.6;
-            margin: 1rem 0;
-        }
-        code[class*="language-"] {
-            font-family: 'JetBrains Mono', 'Fira Code', monospace;
-            font-size: 0.875rem;
-        }
-    </style>
 
     <meta property="og:title" content="Hunter Baker | Python Utilities">
-    <meta property="og:description"
-        content="A small personal Python utility library containing code I frequently use across my personal projects.">
-    <meta property="og:image"
-        content="https://hunter-baker.com/resources/images/beastcode-walkthrough/beastcode-logo.png">
+    <meta property="og:description" content="A personal Python utility library with enhanced logging, Option/Result types, and other helpers.">
+    <meta property="og:image" content="https://hunter-baker.com/resources/images/my_rat_pfp_nobg.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/pyutils.html">
-    <!-- for Google Analytics -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -72,55 +53,41 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>python utilities<span class="cursor"></span></h1>
-                    <p class="subtitle">$ a personal python utility library</p>
-                </div>
+            <h1>python utilities<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a personal Python utility library</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>A small personal Python library containing helpers I use frequently across projects. Rather than rewriting the same code every time, this packages them for easy installation directly from GitHub via pip. Licensed under MIT.</p>
             </div>
-            <h2>Overview</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>
-                        A small personal Python utility library containing code I frequently use across my personal
-                        projects. Rather than rewriting the same helpers every time, this library packages them up for
-                        easy reuse and installation directly from GitHub.
-                    </p>
-                    <p>
-                        The library includes an enhanced logging system with colored output and per-call overrides,
-                        individual logger instances for modular apps, and a handful of general-purpose utilities for
-                        environment variables and HTTP responses.
-                    </p>
-                    <p>
-                        Licensed under the MIT License and installable directly from GitHub via pip.
-                    </p>
-                </div>
+
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
                 <div>
-                    <h3>Technologies Used</h3>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
                         <li>Python</li>
                     </ul>
-                    <br>
-                    <h3>Links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/python-utils">GitHub Repository</a></li>
-                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+                        <a href="https://github.com/hutnerr/python-utils" class="btn btn-background" target="_blank">GitHub</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="second">
+    <section id="clogger">
         <div class="container">
             <h2>Clogger</h2>
-            <div>
-                <div class="pspacing">
-                    <p>
-                        <strong>Clogger</strong> is a static logger with colored output, timestamps, source tracking,
-                        and per-call overrides. Use it as a drop-in replacement for <code>print()</code> with a lot
-                        more control.
-                    </p>
-                    <pre><code class="language-python">from pyutils import Clogger, CloggerConfig, CloggerColor, CloggerSetting, CloggerOverrideFactory, LogLevel
+            <div class="pspacing">
+                <p><strong>Clogger</strong> is a static logger with colored output, timestamps, source tracking, and per-call overrides. Drop-in replacement for <code>print()</code> with significantly more control.</p>
+                <pre><code class="language-python">from pyutils import Clogger, CloggerConfig, CloggerColor, CloggerSetting, CloggerOverrideFactory, LogLevel
 
 Clogger.info("Server started.")
 Clogger.warn("High memory usage.")
@@ -129,14 +96,14 @@ Clogger.debug("Request payload: {...}")
 Clogger.action("User clicked submit.")
 Clogger.log("BOOT", "Config loaded.")              # custom tag</code></pre>
 
-                    <p>Adjust global behavior by swapping the config:</p>
-                    <pre><code class="language-python">Clogger.config = CloggerConfig(min_log_level=LogLevel.WARN)
+                <p>Adjust global behavior by swapping the config:</p>
+                <pre><code class="language-python">Clogger.config = CloggerConfig(min_log_level=LogLevel.WARN)
 Clogger.config = CloggerConfig(disable_colors=True, use_tag=False)
 Clogger.config = CloggerConfig(print_disabled=True, write_to_file=True, log_file_path="run.log")
 Clogger.config = CloggerConfig()  # reset</code></pre>
 
-                    <p>Per-call overrides let you deviate from the global config for a single line:</p>
-                    <pre><code class="language-python">Clogger.info("Verbose trace.", settings_override=CloggerOverrideFactory.verbose())
+                <p>Per-call overrides let you deviate from the global config for a single line:</p>
+                <pre><code class="language-python">Clogger.info("Verbose trace.", settings_override=CloggerOverrideFactory.verbose())
 Clogger.error("Saved quietly.", settings_override=CloggerOverrideFactory.file_only("errors.log"))
 Clogger.debug("Dict dump.", settings_override=CloggerOverrideFactory.pretty())
 
@@ -147,8 +114,8 @@ Clogger.info("Verbose and saved.", settings_override=CloggerOverrideFactory.comb
     {CloggerSetting.DISABLE_COLORS: True},
 ))</code></pre>
 
-                    <p>Create reusable custom loggers with <code>make_log</code>:</p>
-                    <pre><code class="language-python">log_boot = Clogger.make_log("BOOT", color=CloggerColor.CYAN, level=LogLevel.INFO)
+                <p>Create reusable custom loggers with <code>make_log</code>:</p>
+                <pre><code class="language-python">log_boot = Clogger.make_log("BOOT", color=CloggerColor.CYAN, level=LogLevel.INFO)
 log_boot("App starting up.")   # [BOOT]    | main.py:12 | App starting up.
 
 # Bake in a settings baseline — still overridable per call
@@ -159,22 +126,16 @@ log_trace = Clogger.make_log(
 )
 log_trace("Deep trace.")
 log_trace("No source.", settings_override={CloggerSetting.SHOW_SOURCE_FILE: False})</code></pre>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="third">
+    <section id="clogobj">
         <div class="container">
             <h2>Clogobj</h2>
-            <div>
-                <div class="pspacing">
-                    <p>
-                        <strong>Clogobj</strong> provides individual logger instances with their own baked-in config
-                        and optional name. Useful when different parts of your app need different logging behavior
-                        without touching the global <code>Clogger.config</code>.
-                    </p>
-                    <pre><code class="language-python">from pyutils import Clogobj, ClogobjFactory, CloggerConfig
+            <div class="pspacing">
+                <p><strong>Clogobj</strong> provides individual logger instances with their own baked-in config and optional name. Useful when different parts of your app need different logging behavior without touching the global <code>Clogger.config</code>.</p>
+                <pre><code class="language-python">from pyutils import Clogobj, ClogobjFactory, CloggerConfig
 
 verbose_logger = ClogobjFactory.verbose()
 silent_logger  = ClogobjFactory.silent()   # useful in tests
@@ -184,13 +145,13 @@ verbose_logger.info("Full timestamps and source shown.")
 silent_logger.error("No output at all.")
 file_logger.warn("Written to run.log only.")</code></pre>
 
-                    <p>Name a logger to a module — the name appears before the level tag on every line:</p>
-                    <pre><code class="language-python">db_logger = ClogobjFactory.for_module("Database")
+                <p>Name a logger to a module — the name appears before the level tag on every line:</p>
+                <pre><code class="language-python">db_logger = ClogobjFactory.for_module("Database")
 db_logger.info("Connection established.")   # [Database][INFO]  | db.py:42 | Connection established.
 db_logger.warn("Slow query detected.")      # [Database][WARN]  | db.py:43 | Slow query detected.</code></pre>
 
-                    <p><code>make_log</code> on an instance returns a bound logger that inherits the instance's settings and name:</p>
-                    <pre><code class="language-python">auth = Clogobj(
+                <p><code>make_log</code> on an instance returns a bound logger that inherits the instance's settings and name:</p>
+                <pre><code class="language-python">auth = Clogobj(
     settings=CloggerConfig(simplify_timestamps=False),
     name="Auth",
 )
@@ -201,8 +162,8 @@ log_token("Invalid token.")   # 2025-01-01 17:58:40 EST [Auth][TOKEN]  | auth.py
 # Per-call overrides still layer on top
 log_token("Suppressed.", settings_override={CloggerSetting.PRINT_DISABLED: True})</code></pre>
 
-                    <p>Use <code>log_errors</code> as a decorator to automatically route exceptions through the instance:</p>
-                    <pre><code class="language-python">db = ClogobjFactory.for_module("Database")
+                <p>Use <code>log_errors</code> as a decorator to automatically route exceptions through the instance:</p>
+                <pre><code class="language-python">db = ClogobjFactory.for_module("Database")
 
 @db.log_errors
 def connect():
@@ -210,75 +171,59 @@ def connect():
 
 connect()  # [Database][ERROR] | db.py:8 | connect failed: timeout</code></pre>
 
-                    <p>Write a component's logs to its own file:</p>
-                    <pre><code class="language-python">db_logger = ClogobjFactory.for_file("db.log", also_print=True)
+                <p>Write a component's logs to its own file:</p>
+                <pre><code class="language-python">db_logger = ClogobjFactory.for_file("db.log", also_print=True)
 db_logger.info("Printed to terminal and saved to db.log.")</code></pre>
 
-                    <p>Fully custom when nothing else fits:</p>
-                    <pre><code class="language-python">boot = ClogobjFactory.custom(
+                <p>Fully custom when nothing else fits:</p>
+                <pre><code class="language-python">boot = ClogobjFactory.custom(
     settings=CloggerConfig(simplify_timestamps=False, show_source_file=True),
     name="BOOT",
 )
 boot.info("App starting up.")
 boot.log("INIT", "Config loaded.")</code></pre>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="fourth">
+    <section id="option-result">
         <div class="container">
             <h2>Option &amp; Result</h2>
-            <div>
-                <div class="pspacing">
-                    <p>
-                        Rust-inspired types for explicit null and error handling — no bare <code>None</code> checks
-                        or scattered <code>try/except</code> blocks.
-                    </p>
-                    <p>
-                        <strong>Option</strong> wraps a value that may or may not exist. Unlike bare <code>None</code>,
-                        <code>Some(None)</code> is a valid distinct state.
-                    </p>
-                    <pre><code class="language-python">from pyutils import Option
+            <div class="pspacing">
+                <p>Rust-inspired types for explicit null and error handling — no bare <code>None</code> checks or scattered <code>try/except</code> blocks.</p>
+                <p><strong>Option</strong> wraps a value that may or may not exist. Unlike bare <code>None</code>, <code>Some(None)</code> is a valid distinct state.</p>
+                <pre><code class="language-python">from pyutils import Option
 
 Option.some(42).unwrap()           # 42
 Option.none().unwrap_or(0)         # 0
 Option.none().unwrap_or_else(fn)   # fn() — only called if None</code></pre>
 
-                    <p>
-                        <strong>Result</strong> wraps either a success value or an error. <code>Ok(None)</code> and
-                        <code>Err(None)</code> are both valid and distinguishable.
-                    </p>
-                    <pre><code class="language-python">from pyutils import Result
+                <p><strong>Result</strong> wraps either a success value or an error. <code>Ok(None)</code> and <code>Err(None)</code> are both valid and distinguishable.</p>
+                <pre><code class="language-python">from pyutils import Result
 
 Result.ok(42).unwrap()                 # 42
 Result.err("oops").unwrap_err()        # "oops"
 Result.err("oops").unwrap_or(0)        # 0
 Result.err("oops").expect("failed")    # raises: ValueError: failed: 'oops'</code></pre>
 
-                    <p>Both types support <code>bool()</code> coercion, equality, hashing, and iter unpacking:</p>
-                    <pre><code class="language-python">bool(Option.some(0))     # True  — state-based, not value-based
+                <p>Both types support <code>bool()</code> coercion, equality, hashing, and iter unpacking:</p>
+                <pre><code class="language-python">bool(Option.some(0))     # True  — state-based, not value-based
 bool(Option.none())      # False
 bool(Result.ok(None))    # True
 bool(Result.err("x"))    # False
 
 Option.some(1) == Option.some(1)   # True
 (value,) = Option.some("hello")    # unpacking</code></pre>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="fifth">
+    <section id="other-utilities">
         <div class="container">
-            <h2>Other Utilities</h2>
-            <div>
-                <div class="pspacing">
-                    <p>
-                        The library also includes two lightweight helpers for common tasks: safely loading environment
-                        variables and validating HTTP responses.
-                    </p>
-                    <pre><code class="language-python">from pyutils import get_env, check_response
+            <h2>other utilities</h2>
+            <div class="pspacing">
+                <p>Two lightweight helpers for common tasks: safely loading environment variables and validating HTTP responses.</p>
+                <pre><code class="language-python">from pyutils import get_env, check_response
 import requests
 
 API_KEY = get_env("API_KEY")
@@ -287,15 +232,8 @@ response = requests.get("https://api.example.com/data")
 if check_response(response):
     data = response.json()</code></pre>
 
-                    <p>
-                        <strong>get_env()</strong> wraps <code>os.environ</code> access with clean error handling so
-                        missing variables surface clearly rather than causing cryptic failures later in your code.
-                    </p>
-                    <p>
-                        <strong>check_response()</strong> performs basic validation on a <code>requests.Response</code>
-                        object, covering common status codes and making HTTP error handling more concise.
-                    </p>
-                </div>
+                <p><strong>get_env()</strong> wraps <code>os.environ</code> access with clean error handling so missing variables surface clearly rather than causing cryptic failures downstream.</p>
+                <p><strong>check_response()</strong> validates a <code>requests.Response</code> object against common status codes, making HTTP error handling more concise.</p>
             </div>
         </div>
     </section>
@@ -320,7 +258,6 @@ if check_response(response):
 </footer>
 </div>
 
-    <!-- Prism.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
 </body>

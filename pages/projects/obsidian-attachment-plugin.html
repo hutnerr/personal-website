@@ -7,19 +7,15 @@
     <title>Obsidian Attachment Plugin</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/anims.js"></script>
 
     <meta property="og:title" content="Hunter Baker | Obsidian Attachment Plugin">
-    <meta property="og:description"
-        content="A plugin for Obsidian.md that allows easy attachment and management of files within notes.">
-    <meta property="og:image"
-        content="https://hunter-baker.com/resources/images/beastcode-walkthrough/beastcode-logo.png">
+    <meta property="og:description" content="An Obsidian plugin for rule-based attachment placement within your vault.">
+    <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/obs-attachment-placement-settings.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/obsidian-attachment-plugin.html">
-    <!-- for Google Analytics -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -56,130 +52,52 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>obsidian attachment plugin<span class="cursor"></span></h1>
-                    <p class="subtitle">$ a plugin for Obsidian.md</p>
-                </div>
+            <h1>obsidian attachment plugin<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ rule-based attachment placement for Obsidian.md</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>An officially published Obsidian community plugin that gives you per-folder control over where new attachments are saved. Instead of dumping everything into one global folder, you define placement rules per directory — when you paste or drop a file, the plugin walks up the folder tree from the current note and applies the first matching rule.</p>
+                <p>Built out of personal frustration with Obsidian's single-destination attachment behavior in larger, organized vaults.</p>
             </div>
-            <h2>Overview</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>
-                        This is a plugin for Obsidian MD that I created to help with managing attachments.
-                        I created this plugin out of a personal need for a better way to manage attachments in my own
-                        Obsidian vault.
-                    </p>
-                    <p>
-                        The plugin works by allowing users to define placement rules for new attachments
-                        based on the location they are working in. More on this below.
-                    </p>
-                    <p>
-                        The plugin is officially published on the Obsidian community plugins list,
-                        and it is available for anyone to install and use.
-                    </p>
+
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+                <div>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>TypeScript — Obsidian plugin API</li>
+                    </ul>
                 </div>
                 <div>
-                    <h3>Technologies Used</h3>
-                    <ul class="arrowed-list">
-                        <li>TypeScript</li>
-                    </ul>
-                    <br>
-                    <h3>Links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/obsidian-attachment-placement">GitHub Repository</a>
-                        </li>
-                        <li><a href="/pages/other/obsidian-attachment-placement-help.html">Help Page</a></li>
-                    </ul>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+                        <a href="https://github.com/hutnerr/obsidian-attachment-placement" class="btn btn-background" target="_blank">GitHub</a>
+                        <a href="/pages/other/obsidian-attachment-placement-help.html" class="btn btn-background">Help Page</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="second">
+    <section id="how-it-works">
         <div class="container">
-            <h2>The Product</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>
-                        This plugin is designed to make attachment and resource placement inside your vault much more
-                        flexible.
-                        Instead of forcing every new file into a single global folder, resources can be organized based
-                        on where
-                        you are currently working.
-                    </p>
-
-                    <p>
-                        When a new resource is created, the plugin walks up the folder tree and looks for the first
-                        placement rule
-                        that applies. This allows different areas of a vault to keep their own attachment locations
-                        without
-                        requiring manual sorting.
-                    </p>
-
-                    <p>
-                        The main goal is to make workflows like copy-pasting images, screenshots, or other resources
-                        feel natural
-                        while still keeping everything neatly organized behind the scenes.
-                    </p>
-
-                    <p>
-                        It’s a small quality-of-life plugin, but it can make larger vaults significantly easier to
-                        manage.
-                    </p>
-                </div>
-                <img class="hover-img centered sized-img"
-                    src="/resources/images/projects/obs-attachment-placement-settings.png"
-                    alt="Attachment Placement Settings Screenshot">
+            <h2>how it works</h2>
+            <div class="pspacing">
+                <p>When a new attachment is created, the plugin starts at the folder containing the active note and searches up the directory tree for a matching placement rule. The first rule found determines the destination. If no rule exists in the entire hierarchy, it falls back to a configurable default.</p>
+                <p>This means different areas of your vault can silently route attachments to different locations — no manual sorting needed after the fact.</p>
             </div>
         </div>
     </section>
 
-    <section id="third">
+    <section id="showcase">
         <div class="container">
-            <h2>Example</h2>
-
-            <div>
-                <div class="pspacing">
-                    <p>
-                        The plugin determines where to place new resources by walking up the folder tree
-                        from the file you are currently working in until it finds a placement rule.
-                    </p>
-
-                    <p>
-                        For example, imagine the following vault structure:
-                    </p>
-
-                    <pre>
-/
-├── attachments/
-│   ├── school/
-│   ├── journal/
-│   └── videogames/
-├── journal/
-├── league-of-legends/
-├── dragon-age-origins/
-└── school/
-    └── math/
-        ├── factoring.md
-        └── addition.md
-                    </pre>
-
-                    <p>
-                        If you are currently editing <strong>addition.md</strong>, the plugin will first check
-                        the <strong>math/</strong> folder for a placement rule. If none exists, it will check
-                        <strong>school/</strong>, then continue moving upward until a rule is found or the
-                        root folder is reached.
-                    </p>
-
-                    <p>
-                        Once a rule is found, the resource will be placed in the configured location,
-                        such as <strong>attachments/school/</strong>. If no rule exists anywhere in the
-                        hierarchy, the plugin will fall back to the default attachment location
-                        defined in the settings.
-                    </p>
-                </div>
-            </div>
+            <h2>showcase</h2>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/obs-attachment-placement-settings.png" alt="Attachment Placement Settings" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" style="margin-top: 1rem;" src="/resources/images/projects/obs-attachment-example.png" alt="Attachment Placement Example Configuration" data-lightbox>
         </div>
     </section>
 

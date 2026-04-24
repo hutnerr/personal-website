@@ -7,38 +7,20 @@
     <title>ToneForge</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/anims.js"></script>
 
-    <!-- Prism.js syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-gruvbox-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
-    <style>
-        pre[class*="language-"] {
-            background: var(--bg-secondary) !important;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            line-height: 1.6;
-            margin: 1rem 0;
-        }
-        code[class*="language-"] {
-            font-family: 'JetBrains Mono', 'Fira Code', monospace;
-            font-size: 0.875rem;
-        }
-    </style>
 
     <meta property="og:title" content="Hunter Baker | ToneForge">
-    <meta property="og:description"
-        content="A public REST API that converts text into specific lingos using AI.">
-    <meta property="og:image"
-        content="https://hunter-baker.com/resources/images/my_rat_pfp_nobg.png">
+    <meta property="og:description" content="A public REST API that converts text into specific lingos using AI.">
+    <meta property="og:image" content="https://hunter-baker.com/resources/images/my_rat_pfp_nobg.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/tone-forge.html">
-    <!-- for Google Analytics -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -74,116 +56,78 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>toneforge<span class="cursor"></span></h1>
-                    <p class="subtitle">$ a text lingo conversion api</p>
-                </div>
+            <h1>toneforge<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a text lingo conversion REST API</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>ToneForge is a public REST API that converts text into specific lingos using AI. For example, using the <strong>Pirate</strong> lingo: <em>Hello, Friend</em> → <em>Ahoy Matey!</em> The conversion is handled by the Gemini API, so results are natural and contextual rather than a word-swap.</p>
+                <p>Rate limits are strict due to free-tier constraints on both Gemini and AWS EC2. Started as a personal experiment, made public for anyone to build on.</p>
             </div>
-            <h2>Overview</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>
-                        ToneForge is a public REST API that converts text into specific lingos using AI. For example,
-                        using the <strong>Pirate</strong> lingo, it might convert:
-                        <em>Hello, Friend</em> → <em>Ahoy Matey!</em>
-                    </p>
-                    <p>
-                        It is built with <a href="https://spring.io/projects/spring-boot">Spring Boot</a>, hosted on
-                        <a href="https://aws.amazon.com/ec2/">AWS EC2</a>, and uses the
-                        <a href="https://ai.google.dev/">Gemini API</a> for the language conversion. Rate limits are
-                        strict due to free-tier constraints on both Gemini and AWS.
-                    </p>
-                    <p>
-                        The source code is available on <a href="https://github.com/hutnerr/tone-forge">GitHub</a>.
-                    </p>
+
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+                <div>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>Java — Spring Boot</li>
+                        <li>AWS EC2 — hosting</li>
+                        <li>Google Gemini API — language conversion</li>
+                    </ul>
                 </div>
                 <div>
-                    <h3>Technologies Used</h3>
-                    <ul class="arrowed-list">
-                        <li><strong>Java:</strong> Spring Boot</li>
-                        <li><strong>Cloud:</strong> AWS EC2</li>
-                        <li><strong>AI:</strong> Gemini API</li>
-                    </ul>
-                    <br>
-                    <h3>Links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/tone-forge">GitHub Repository</a></li>
-                        <li><a href="http://52.207.146.61/api/strategies">Live API</a></li>
-                    </ul>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+                        <a href="https://github.com/hutnerr/tone-forge" class="btn btn-background" target="_blank">GitHub</a>
+                        <a href="http://52.207.146.61/api/strategies" class="btn btn-background" target="_blank">Live API</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="second">
+    <section id="endpoints">
         <div class="container">
-            <h2>The Product</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>
-                        ToneForge exposes a simple API that takes a piece of text and a target lingo (called a
-                        "strategy") and returns the converted text. The conversion is handled by the Gemini API under
-                        the hood, so the results are natural and contextual rather than a simple word-swap.
-                    </p>
-                    <p>
-                        The <code>/strategies</code> endpoint returns all available lingos, and the
-                        <code>/convert</code> endpoint does the conversion. Both are open and require no authentication.
-                    </p>
-                    <p>
-                        It started as a personal experiment but ended up being something I thought others might want to
-                        play with or build on top of, so I made it public.
-                    </p>
-                </div>
-                <div>
-                    <h3>Endpoints</h3>
-                    <ul class="arrowed-list">
-                        <li><strong>POST</strong> <code>/api/convert</code> - Convert text to the specified lingo</li>
-                        <li><strong>GET</strong> <code>/api/strategies</code> - Returns a list of all available lingos</li>
-                    </ul>
-                </div>
+            <h2>endpoints</h2>
+            <div class="pspacing">
+                <p>Two open endpoints, no authentication required:</p>
+                <ul class="arrowed-list">
+                    <li><strong>GET</strong> <code>/api/strategies</code> — returns a list of all available lingos</li>
+                    <li><strong>POST</strong> <code>/api/convert</code> — converts text to the specified lingo</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="third">
+    <section id="usage">
         <div class="container">
-            <h2>Usage</h2>
-            <div class="hero-content-not-centered">
-                <div class="pspacing">
-                    <p>
-                        Send a <code>POST</code> request to <code>http://52.207.146.61/api/convert</code> with a JSON
-                        body containing a <code>strategy</code> and <code>text</code> field.
-                    </p>
-                    <h3>Request</h3>
-                    <pre><code class="language-json">{
+            <h2>usage</h2>
+            <div class="pspacing">
+                <p>Send a <code>POST</code> to <code>http://52.207.146.61/api/convert</code> with a JSON body:</p>
+                <h3 style="margin-bottom: 8px;">request</h3>
+                <pre><code class="language-json">{
     "strategy": "Pirate",
     "text": "Hello, Friend"
 }</code></pre>
-                    <h3>Response</h3>
-                    <pre><code class="language-json">{
+                <h3 style="margin-bottom: 8px;">response</h3>
+                <pre><code class="language-json">{
     "original": "Hello, Friend",
     "converted": "Ahoy Matey!",
     "lingo": "Pirate",
     "error": null
 }</code></pre>
-                </div>
-                <div>
-                    <h3>JavaScript Example</h3>
-                    <pre><code class="language-javascript">const response = await fetch(
+                <h3 style="margin-bottom: 8px;">javascript example</h3>
+                <pre><code class="language-javascript">const response = await fetch(
     `http://52.207.146.61/api/convert`,
     {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            strategy,
-            text
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ strategy, text })
     }
 );</code></pre>
-                </div>
             </div>
         </div>
     </section>

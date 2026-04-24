@@ -7,18 +7,15 @@
     <title>Tip Calculator</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/anims.js"></script>
 
     <meta property="og:title" content="Hunter Baker | Tip Calculator">
-    <meta property="og:description" content="A tip calculator">
-    <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/united.png">
+    <meta property="og:description" content="An ad-free Android tip calculator with bill splitting and customizable settings.">
+    <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/tc-logo.png">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hunter-baker.com/pages/projects/unitED.html">
+    <meta property="og:url" content="https://hunter-baker.com/pages/projects/tip-calculator.html">
 
-    <!-- for Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -55,82 +52,44 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>tip calculator<span class="cursor"></span></h1>
-                    <p class="subtitle">$ an android tip calculator</p>
-                </div>
+            <h1>tip calculator<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ an ad-free Android tip calculator</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>A simple, ad-free Android tip calculator built to get started with Android development. Open the app, type the bill amount, and the tip is calculated immediately using your saved settings — no extra taps. Features persist between sessions so it's always configured to your preference.</p>
+                <p>Supports rounding modes, multiple currencies, bill splitting among up to 99 people, and several preset themes. Works entirely offline.</p>
             </div>
-            <h2>Overview</h2>
-            <!-- <img class="sized-img hover-img major-dec-sized-img" src="/resources/images/projects/tc-banner.png" alt="Tip Calculator Screenshot"> -->
-            <div class="hero-content">
+
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
                 <div>
-                    <img class="sized-img hover-img sized-img" src="/resources/images/projects/tc-banner.png"
-                        alt="Tip Calculator Screenshot">
-                    <div class="pspacing">
-                        <p>
-                            This tip calculator was a project I made to get started with Android development.
-                            Overall, it is quite simple and only has a few features, but it was a great learning
-                            experience for me.
-                        </p>
-                        <p>
-                            You can download the <a href="/resources/bin/tip-calculator.apk" download>APK</a> or get it from the <a href="https://play.google.com/store/apps/details?id=com.hbtipcalc.tipcalculator" target="_blank">Google Play Store</a>.
-                        </p>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>Java — Android SDK, OOP</li>
+                        <li>Android Studio — Gradle build system</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+                        <a href="https://play.google.com/store/apps/details?id=com.hbtipcalc.tipcalculator" class="btn btn-background" target="_blank">Play Store</a>
+                        <a href="https://github.com/hutnerr/tip-calculator" class="btn btn-background" target="_blank">GitHub</a>
+                        <a href="/resources/bin/tip-calculator.apk" class="btn btn-background" download>APK Download</a>
+                        <a href="/pages/other/tip-calculator-help.html" class="btn btn-background">Help Page</a>
                     </div>
                 </div>
-                <div>
-                    <h3>Technologies Used</h3>
-                    <ul class="arrowed-list">
-                        <li><strong>Java Programming:</strong> Object-oriented Programming</li>
-                        <li><strong>Android Development:</strong> Android Studio, Gradle</li>
-                    </ul>
-                    <br>
-                    <h3>Links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://play.google.com/store/apps/details?id=com.hbtipcalc.tipcalculator" target="_blank">Google Play Store</a></li>
-                        <li>APK Download:  or <a
-                                href="https://github.com/hutnerr/tip-calculator/releases">GitHub Releases</a></li>
-                        <li><a href="https://github.com/hutnerr/tip-calculator">GitHub Repo</a></li>
-                        <li><a href="/pages/other/tip-calculator-help.html">Help Page</a></li>
-                    </ul>
-                </div>
-                <!-- <img class="sized-img hover-img major-dec-sized-img" src="/resources/images/projects/tc-logo.png" alt="Tip Calculator Screenshot"> -->
             </div>
         </div>
     </section>
 
-    <section id="second">
+    <section id="showcase">
         <div class="container">
-            <h2>The Product</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <h2>What is it?</h2>
-                    <p>
-                        At its core, this is a simple, Ad-free tip calculator app for Android devices.
-                        It allows users to calculate the appropriate tip amount based on the bill total and desired tip
-                        percentage.
-                    </p>
-                    <p>
-                        It was designed to be simple and easy to use. Many of the design choices and features were made
-                        with
-                        the intention of making the app easy to pull out, type in the bill total, and get the tip
-                        amount quickly and exactly how the user wants it.
-                    </p>
-                    <h2>Features</h2>
-                    <ul class="arrowed-list">
-                        <li><strong>Rounding System</strong>: Users can choose how/if the tip is rounded</li>
-                        <li><strong>Customizable</strong>: Users can set up the app to their preferences</li>
-                        <li><strong>Currency Support</strong>: Includes a few popular currencies</li>
-                        <li><strong>Themes</strong>: Multiple preset themes available</li>
-                        <li><strong>Default Tip Percentage</strong>: Set your preferred default tip</li>
-                        <li><strong>Bill Splitting</strong>: Split the total evenly among up to 10 people</li>
-                        <li><strong>Ad-free</strong>: Enjoy an ad-free experience for uninterrupted use</li>
-                        <li><strong>Offline</strong>: The app can be used entirely offline</li>
-                    </ul>
-                </div>
-                <img class="hover-img sized-img major-dec-sized-img" src="/resources/images/projects/tc5.jpg"
-                    alt="Tip Calculator Screenshot">
-            </div>
+            <h2>showcase</h2>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/tc-banner.png" alt="Tip Calculator Banner" data-lightbox>
         </div>
     </section>
 

@@ -7,18 +7,15 @@
     <title>Pantry Panic</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/anims.js"></script>
 
     <meta property="og:title" content="Hunter Baker | Pantry Panic">
-    <meta property="og:description" content="A recipe management application">
+    <meta property="og:description" content="A web app that finds recipes based on ingredients you have on hand.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/pantry-panic.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/pantry-panic.html">
 
-    <!-- for Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -55,85 +52,56 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>pantry panic<span class="cursor"></span></h1>
-                    <p class="subtitle">$ a recipe management application</p>
-                </div>
-            </div>
-            <h2>Overview</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>This was a group Web Development project. In this project, we created a website whose purpose was
-                        to help
-                        users find recipes they could make using the ingredients they had on deck using the <a
-                            href="https://spoonacular.com/food-api">Spoonacular API</a>. My primary role in this
-                        project was working with the backend to integrate the recipe API and database.</p>
-                    <p>You can view the website <a
-                            href="https://343f24.github.io/343f24-final-project-pantry-panic/search_by_ingredients.html">here</a>.
-                        However, the project is currently not functional due to a cancellation of the API service.</p>
-                </div>
-                <div>
-                    <h3>Technologies Used</h3>
-                    <ul class="arrowed-list">
-                        <li><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
-                        <li><strong>APIs:</strong> RESTful APIs, JSON</li>
-                        <li><strong>Version Control:</strong> Git, GitHub</li>
-                    </ul>
-                    <br>
-                    <h3>Links</h3>
-                    <ul class="arrowed-list">
-                        <!-- the repo is private -->
-                        <!-- <li><a href="https://github.com/343f24/343f24-final-project-pantry-panic">GitHub</a></li> -->
-                        <li><a href="https://github.com/hutnerr/pantry-panic">GitHub</a></li>
-                        <li><a href="https://hutnerr.github.io/pantry-panic/search_by_ingredients.html">Demo</a></li>
-                    </ul>
-                </div>
-            </div>
+            <h1>pantry panic<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a recipe finder for ingredients you already have</p>
         </div>
     </section>
 
-    <section id="second">
+    <section id="overview">
         <div class="container">
-            <h2>The Product</h2>
-            <div class="hero-content pspacing">
-                <div>
-                    <p>The final product was a web application that what food items a user had in their "Pantry", and
-                        would allow them to simply click a button to perform a search to see numerous recipes they
-                        could've
-                        made with what they had on deck.</p>
-                    <p>The website was designed to be user-friendly and visually appealing, with a clean and modern
-                        interface. The main features of the website included: </p>
-                    <ul class="arrowed-list">
-                        <li>Pantry feature to manage and search using ingredients set</li>
-                        <li>Ingredient-based recipe search</li>
-                        <li>Save favorite recipes using local storage</li>
-                        <li>View recipe details and instructions</li>
-                    </ul>
-                    <br>
-                    <p>Some other features include the ability to export/import your favorite recipes and media queries
-                        to make the website mobile friendly.</p>
-                </div>
-                <img class="hover-img sized-img dec-sized-img" src="/resources/images/projects/pantry-panic.png"
-                    alt="Pantry Panic Screenshot">
-            </div>
-        </div>
-    </section>
-
-    <section id="second">
-        <div class="container">
-            <h2>Takeaways</h2>
+            <h2>overview</h2>
             <div class="pspacing">
-                <p>This was my first time using an API and I learned a lot about how to work with them effectively. I
-                    gained
-                    valuable experience in making API calls, handling responses, and integrating data into a web
-                    application.</p>
-                <p>Some key takeaways include:</p>
+                <p>A group web development project. Pantry Panic lets you manage a virtual "pantry" of ingredients you have on hand, then searches the <a href="https://spoonacular.com/food-api">Spoonacular API</a> for recipes you can actually make with them. My primary role was backend integration — wiring up the recipe API and managing data flow.</p>
+                <p>Note: the project is currently non-functional due to the Spoonacular API service being cancelled. The demo links to a personal fork.</p>
+            </div>
+
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+                <div>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>HTML, CSS, JavaScript — frontend</li>
+                        <li>Spoonacular API — recipe search</li>
+                        <li>Local storage — saved favorites and pantry persistence</li>
+                        <li>Git &amp; GitHub — version control</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+                        <a href="https://github.com/hutnerr/pantry-panic" class="btn btn-background" target="_blank">GitHub</a>
+                        <a href="https://hutnerr.github.io/pantry-panic/search_by_ingredients.html" class="btn btn-background" target="_blank">Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="showcase">
+        <div class="container">
+            <h2>showcase</h2>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/pantry-panic.png" alt="Pantry Panic Screenshot" data-lightbox>
+        </div>
+    </section>
+
+    <section id="takeaways">
+        <div class="container">
+            <h2>takeaways</h2>
+            <div class="pspacing">
+                <p>First time integrating a third-party REST API — it taught a lot about async request handling, error states, and the gap between API documentation and production behavior. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>APIs are very powerful tools and very useful overall</li>
-                    <li>Effective communication mitigates a majority of issues that arise in group projects</li>
-                    <li>Understanding the importance of user experience and accessibility in web design</li>
-                    <li>Experience working with JavaScript and asynchronous programming</li>
+                    <li>REST API integration and async JavaScript</li>
+                    <li>Group coordination — communication prevents most merge conflicts and missed dependencies</li>
+                    <li>User experience as a first-class concern in frontend design</li>
                 </ul>
             </div>
         </div>

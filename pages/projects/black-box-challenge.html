@@ -7,17 +7,15 @@
     <title>Black Box Challenge</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/anims.js"></script>
 
     <meta property="og:title" content="Hunter Baker | Black Box Challenge">
-    <meta property="og:description" content="A function guessing game">
-    <meta property="og:image" content="https://hunter-baker.com/resources/images/headshot.png">
+    <meta property="og:description" content="A terminal-based function guessing game with a custom interpreter.">
+    <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/blackbox-challenge.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/black-box-challenge.html">
-    <!-- for Google Analytics -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -54,74 +52,57 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>black box challenge<span class="cursor"></span></h1>
-                    <p class="subtitle">$ a function guessing game</p>
-                </div>
-            </div>
-            <h2>Overview</h2>
-            <div class="hero-content">
-                <div>
-                    <p>The Black Box Challenge is a terminal-based coding game where users attempt to reverse-engineer
-                        mystery functions. Players test the function with different inputs, observe outputs, and write
-                        code to replicate its behavior using a custom programming language and interpreter.</p>
-                </div>
-                <div>
-                    <h3>Technologies Used</h3>
-                    <ul class="arrowed-list">
-                        <li><strong>Language:</strong> Custom implementation with lexer and parser</li>
-                        <li><strong>UI:</strong> <a href="https://github.com/gui-cs/Terminal.Gui">Terminal.Gui</a>
-                            library for terminal interface</li>
-                        <li><strong>Patterns:</strong> Abstract Syntax Trees, Visitor Pattern</li>
-                        <li><strong>Algorithms:</strong> Recursive descent parsing, tree traversal</li>
-                    </ul>
-                    <br>
-                    <h3>Links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/blackbox-challenge">GitHub</a></li>
-                    </ul>
-                </div>
-            </div>
+            <h1>black box challenge<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a terminal-based function guessing game</p>
         </div>
     </section>
 
-    <section id="second">
+    <section id="overview">
         <div class="container">
-            <h2>The Product</h2>
-            <div class="hero-content pspacing">
-                <div>
-                    <p>The final product is a complete interpreter and interactive coding challenge system built from
-                        scratch.</p>
-                    <p>The system features a custom programming language with support for arithmetic, logical, and
-                        bitwise operations, variable assignment, and multi-statement programs. The interpreter uses
-                        abstract syntax trees and the visitor pattern for clean code organization.</p>
-                    <p>Key features include a terminal-based UI with live code editing, parameter testing table showing
-                        expected vs. actual outputs, real-time syntax error reporting, and support for custom mystery
-                        functions loaded from files.</p>
-                </div>
-                <img class="hover-img sized-img" src="/resources/images/projects/blackbox-challenge.png"
-                    alt="Black Box Challenge Screenshot">
-            </div>
-        </div>
-    </section>
-
-    <section id="second">
-        <div class="container">
-            <h2>Takeaways</h2>
+            <h2>overview</h2>
             <div class="pspacing">
-                <p>This project provided deep insights into compiler design and language implementation. Building a
-                    complete interpreter from lexer to evaluator illuminated how programming languages work under the
-                    hood and the importance of good patterns.</p>
+                <p>The Black Box Challenge is a terminal-based coding game where players reverse-engineer mystery functions. You test the function with different inputs, observe the outputs, then write code to replicate its behavior using a custom programming language with its own lexer, parser, and interpreter.</p>
+                <p>Key features include a terminal UI with live code editing, a parameter testing table showing expected vs. actual outputs, real-time syntax error reporting, and support for custom mystery functions loaded from files.</p>
+            </div>
 
-                <p>Some key takeaways include:</p>
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+                <div>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>Custom language — lexer, parser, interpreter from scratch</li>
+                        <li><a href="https://github.com/gui-cs/Terminal.Gui">Terminal.Gui</a> for the terminal UI</li>
+                        <li>Abstract Syntax Trees + Visitor Pattern</li>
+                        <li>Recursive descent parsing, tree traversal</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+                        <a href="https://github.com/hutnerr/blackbox-challenge" class="btn btn-background" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="showcase">
+        <div class="container">
+            <h2>showcase</h2>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/blackbox-challenge.png" alt="Black Box Challenge Screenshot" data-lightbox>
+        </div>
+    </section>
+
+    <section id="takeaways">
+        <div class="container">
+            <h2>takeaways</h2>
+            <div class="pspacing">
+                <p>Building a complete interpreter from lexer to evaluator illuminated how programming languages work under the hood and the value of clean design patterns. Some key takeaways:</p>
                 <ul class="arrowed-list">
                     <li>Implementing lexers and parsers using formal grammars and BNF notation</li>
                     <li>Applying the visitor pattern to separate operations from data structures</li>
                     <li>Building and traversing abstract syntax trees for code evaluation</li>
                     <li>Managing operator precedence and associativity in expression parsing</li>
-                    <li>Creating interactive terminal applications with the <a
-                            href="https://github.com/gui-cs/Terminal.Gui">Terminal.Gui</a> library</li>
+                    <li>Creating interactive terminal applications with Terminal.Gui</li>
                 </ul>
             </div>
         </div>

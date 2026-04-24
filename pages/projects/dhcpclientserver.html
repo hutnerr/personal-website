@@ -7,18 +7,15 @@
     <title>DHCP Client &amp; Server</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/anims.js"></script>
 
     <meta property="og:title" content="Hunter Baker | DHCP Client &amp; Server">
-    <meta property="og:description" content="A DHCP Client &amp; Server implementation">
-    <meta property="og:image" content="https://hunter-baker.com/resources/images/headshot.png">
+    <meta property="og:description" content="A complete DHCP client and multithreaded server implementation in C.">
+    <meta property="og:image" content="https://hunter-baker.com/resources/images/my_rat_pfp_nobg.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/dhcpclientserver.html">
 
-    <!-- for Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -54,54 +51,42 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>dhcp client &amp; server<span class="cursor"></span></h1>
-                    <p class="subtitle">$ a DHCP Client &amp; Server implementation</p>
-                </div>
+            <h1>dhcp client &amp; server<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a DHCP protocol implementation in C</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>A two-part networking project: first implementing a complete DHCP client, then a multithreaded DHCP server. Built incrementally across multiple phases, both components follow RFC 2131 and RFC 2132 specifications and involve deep binary data manipulation and socket programming in C.</p>
+                <p>The server handles concurrent client connections using pthreads and manages IP address lease pools. The client completes the full DORA handshake (Discover, Offer, Request, Acknowledge) and processes option fields per spec.</p>
             </div>
-            <h2>Overview</h2>
-            <div class="hero-content">
-                <p>This comprehensive networking project consisted of two major components: implementing
-                    a complete DHCP client followed by a multithreaded DHCP server. Built incrementally over multiple
-                    phases, these projects involved deep protocol implementation following RFC specifications, binary
-                    data manipulation, and advanced socket programming in C.</p>
-                <div>
-                    <h3>Technologies Used</h3>
-                    <ul class="arrowed-list">
-                        <li><strong>C Language:</strong> Pointer manipulation, memory management, struct design</li>
-                        <li><strong>Network Programming:</strong> UDP sockets, custom port handling, localhost
-                            communication</li>
-                        <li><strong>DHCP Protocol:</strong> RFC 2131, RFC 2132 compliance</li>
-                        <li><strong>Multithreading:</strong> pthreads for concurrent server handling</li>
-                        <li><strong>Binary Data Processing:</strong> Byte-level manipulation, network byte order</li>
-                    </ul>
-                </div>
+
+            <div style="margin-top: 24px;">
+                <h3 style="margin-bottom: 12px;">tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>C — pointer manipulation, memory management, struct design</li>
+                    <li>Network programming — UDP sockets, custom port handling</li>
+                    <li>DHCP protocol — RFC 2131, RFC 2132 compliance</li>
+                    <li>Multithreading — pthreads for concurrent server handling</li>
+                    <li>Binary data processing — byte-level manipulation, network byte order</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="second">
+    <section id="takeaways">
         <div class="container">
-            <h2>Takeaways</h2>
+            <h2>takeaways</h2>
             <div class="pspacing">
-                <p>This project series provided deep exposure to systems-level network programming and protocol
-                    implementation. The incremental development approach, spanning multiple weeks, allowed for thorough
-                    understanding of each component before building upon it.</p>
-                <p>Working directly with RFC specifications taught the importance of precise protocol implementation and
-                    attention to detail in network programming. The binary data manipulation aspects significantly
-                    strengthened my understanding of memory management and low-level programming concepts in C.</p>
-                <p>The multithreading component introduced valuable concepts in concurrent programming and resource
-                    management, while the comprehensive testing requirements emphasized the importance of robust error
-                    handling in networked applications.</p>
-
-                <p>Some key takeaways include:</p>
+                <p>Working directly from RFC specifications taught precise protocol implementation and the cost of any deviation. The binary manipulation work solidified low-level memory concepts in C, and the multithreaded server introduced concurrent programming and resource management fundamentals.</p>
                 <ul class="arrowed-list">
-                    <li>Understanding of DHCP protocol and its workings</li>
+                    <li>Understanding of DHCP protocol mechanics end to end</li>
                     <li>Experience with socket programming in C</li>
-                    <li>Knowledge of client-server architecture</li>
+                    <li>Concurrent server design with pthreads</li>
                 </ul>
-
             </div>
         </div>
     </section>

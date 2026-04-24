@@ -7,18 +7,15 @@
     <title>PintOS</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/anims.js"></script>
 
     <meta property="og:title" content="Hunter Baker | PintOS">
-    <meta property="og:description" content="An educational operating system implementation">
-    <meta property="og:image" content="https://hunter-baker.com/resources/images/headshot.png">
+    <meta property="og:description" content="An educational operating system implementation targeting the 80x86 architecture.">
+    <meta property="og:image" content="https://hunter-baker.com/resources/images/my_rat_pfp_nobg.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/pintos.html">
 
-    <!-- for Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -54,53 +51,46 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>pintos<span class="cursor"></span></h1>
-                    <p class="subtitle">$ an educational operating system implementation</p>
-                </div>
+            <h1>pintos<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ an educational operating system implementation</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>PintOS is a simple educational OS framework for the 80x86 architecture, originally developed at Stanford as a teaching tool for operating systems courses. The project involved implementing several core OS components including thread scheduling, process management, system calls, and file system operations.</p>
             </div>
-            <h2>Overview</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>PintOS is a simple educational operating system framework for the 80x86 architecture. It was
-                        developed at Stanford University as a teaching tool for operating systems courses.</p>
-                    <p>The project involved implementing various operating system components, including process
-                        management, file systems, and system calls.</p>
+
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+                <div>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>C — everything</li>
+                        <li>x86 assembly — select low-level routines</li>
+                    </ul>
                 </div>
                 <div>
-                    <h3>Technologies Used</h3>
-                    <ul class="arrowed-list">
-                        <li><strong>C Programming Language:</strong> Used for everything.</li>
-                    </ul>
-                    <br />
-                    <h3>Links</h3>
-                    <ul class="arrowed-list">
-                        <li><strong><a href="https://web.stanford.edu/class/cs140/projects/pintos/pintos_1.html"
-                                    target="_blank" rel="noopener noreferrer">PintOS Documentation</a></strong></li>
-                    </ul>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+                        <a href="https://web.stanford.edu/class/cs140/projects/pintos/pintos_1.html" class="btn btn-background" target="_blank">PintOS Docs</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="second">
+    <section id="takeaways">
         <div class="container">
-            <h2>Takeaways</h2>
+            <h2>takeaways</h2>
             <div class="pspacing">
-                <p>
-                    This project was very valuable in teaching me about how Operating Systems function and work.
-                    I found scheduling to be the most interesting part, as well as the part that I had the most fun
-                    writing.
-                    Not only did it help me become a better C programmer, it's primary value to me was in how it
-                    deepened my
-                    understanding of operating system concepts.
-                </p>
-                <p>Some key takeaways include:</p>
+                <p>PintOS is one of the most educational C projects I've done. Writing a scheduler from scratch — including priority scheduling and aging — made OS concepts click in a way that lecture alone doesn't. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>Understanding of process management and system calls.</li>
-                    <li>Threading and synchronization.</li>
-                    <li>File systems and storage management.</li>
+                    <li>Thread scheduling — priority, round-robin, and aging</li>
+                    <li>Synchronization — locks, semaphores, condition variables</li>
+                    <li>System call implementation and user/kernel space separation</li>
+                    <li>File system design and disk block management</li>
                 </ul>
             </div>
         </div>

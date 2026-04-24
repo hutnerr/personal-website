@@ -7,18 +7,15 @@
     <title>Navigation System</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/navigation.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
-    <script src="/scripts/anims.js"></script>
 
     <meta property="og:title" content="Hunter Baker | Navigation System">
-    <meta property="og:description" content="A personal navigation system utilizing GPS technology.">
+    <meta property="og:description" content="A real-time GPS navigation system with USB satellite receiver support.">
     <meta property="og:image" content="https://hunter-baker.com/resources/gifs/projects/navsys.gif">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/navsystem.html">
 
-    <!-- for Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -55,102 +52,67 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>navsys<span class="cursor"></span></h1>
-                    <p class="subtitle">$ a simple navigation system</p>
-                </div>
+            <h1>navsys<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a real-time GPS navigation system</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>NavSys is a Java-based personal navigation system that uses a USB satellite receiver for real-time GPS updates. It parses <a href="https://docs.novatel.com/OEM7/Content/Logs/GPGGA.htm">GPGGA sentences</a> from the satellite feed and displays live position on a map rendered in JavaFX.</p>
+                <p>Pathfinding uses Dijkstra's and Bellman-Ford algorithms on a graph of road nodes. The system supports route re-calculation and live position tracking as you move.</p>
             </div>
-            <h2>Overview</h2>
-            <div class="hero-content">
+
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
                 <div>
-                    <p>This personal navigation system utilizes GPS technology to provide real-time location tracking
-                        and
-                        navigation assistance. It has USB satellite receiver support for real time updates. You can view
-                        the
-                        design document <a href="/resources/images/projects/navsystemdesign.svg">here</a>.</p>
-                </div>
-                <div>
-                    <h3>Technologies Used</h3>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li><strong>Java Programming:</strong> JavaFX & Swing, Object-oriented Programming</li>
-                        <li><strong>GPS Technology:</strong> Integration with satellites, real-time location tracking,
-                            <a href="https://docs.novatel.com/OEM7/Content/Logs/GPGGA.htm">GPGGA sentences</a>
-                        </li>
-                        <li><strong>Data Structures:</strong> Graphs, trees, and algorithms (<a
-                                href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's</a> and <a
-                                href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm">Bellman-Ford</a>)
-                            for pathfinding</li>
-                        <li><strong>Hardware:</strong> Integration with GPS receivers</li>
-                    </ul>
-                    <br>
-                    <h3>Links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/navsystem">GitHub</a></li>
+                        <li>Java — JavaFX, multithreading, MVC pattern</li>
+                        <li>GPS hardware — USB satellite receiver, GPGGA sentence parsing</li>
+                        <li>Pathfinding — <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's</a> and <a href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm">Bellman-Ford</a> on graph structures</li>
                     </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="second">
-        <div class="container">
-            <h2>The Product</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>The Navigation System is a Java-based application designed to provide real-time GPS navigation
-                        and mapping services.</p>
-                    <p>It features a user-friendly interface that allows users to input destinations and receive
-                        directions.</p>
-                    <p>The system utilizes GPS satellite technology to track the user's location and provide accurate
-                        navigation instructions.</p>
-                    <p>It also includes features such as route-relocation.</p>
-                    <p>The <a href="/resources/gifs/projects/navsys.gif">GIF</a> is a very simple demonstration of the
-                        system's capabilities in real-time navigation and mapping.</p>
+                <div>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+                        <a href="https://github.com/hutnerr/navsystem" class="btn btn-background" target="_blank">GitHub</a>
+                        <a href="/resources/images/projects/navsystemdesign.svg" class="btn btn-background" target="_blank">Design Doc</a>
+                    </div>
                 </div>
-                <img class="hover-img sized-img" src="/resources/gifs/projects/navsys.gif" alt="Navigation System GIF">
             </div>
         </div>
     </section>
 
-    <section id="third">
+    <section id="showcase">
         <div class="container">
-            <h2>Challenges &amp; Solutions</h2>
+            <h2>showcase</h2>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/gifs/projects/navsys.gif" alt="NavSys real-time navigation demo" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" style="background-color: white; margin-top: 1rem;" src="/resources/images/projects/navsystemdesign.svg" alt="NavSys design document" data-lightbox>
+        </div>
+    </section>
+
+    <section id="challenges">
+        <div class="container">
+            <h2>challenges &amp; solutions</h2>
             <div class="pspacing">
-                <p>Going into this project, I knew nothing about the world of GPS technology and real-time navigation
-                    systems. I had to learn everything about this subject while also figuring out how to program it at
-                    the same time.</p>
-                <p>The biggest challenge I faced was system optimization. A GPS system must process location data
-                    quickly
-                    and efficiently to provide real-time updates to users. I had to learn about algorithms for
-                    pathfinding
-                    and how to manage data from multiple sources.</p>
-                <img style="background-color: white" class="sized-img"
-                    src="/resources/images/projects/navsystemdesign.svg" alt="Navigation System Design Document">
+                <p>Going in I knew nothing about GPS technology — I learned about satellite receivers, NMEA sentences, and coordinate systems while simultaneously building the system.</p>
+                <p>The biggest technical challenge was real-time performance. GPS data comes in continuously and the map must update smoothly. Threading was critical: the GPS read loop runs on its own thread and publishes position updates that the UI thread consumes without blocking.</p>
             </div>
         </div>
     </section>
 
-    <section id="fourth">
+    <section id="takeaways">
         <div class="container">
-            <h2>Takeaways</h2>
+            <h2>takeaways</h2>
             <div class="pspacing">
-                <p>This project taught me the importance of understanding both the hardware and software aspects of GPS
-                    technology. I learned how to effectively integrate these components to create a functional
-                    navigation system.</p>
-                <p>Working on this project also improved my skills in Java programming, particularly in GUI development
-                    and
-                    real-time data processing. Threading was also a key aspect, as it allowed for smoother user
-                    interactions
-                    and more responsive updates.</p>
-                <p>Additionally, I gained insights into design patterns that are crucial for building scalable and
-                    maintainable software. Understanding patterns such as Model-View-Controller (MVC), Observer, and
-                    Strategy helped me structure the application more effectively.</p>
-                <p>Some key takeaways include:</p>
+                <p>This project spanned hardware integration, real-time data processing, and algorithm implementation — a much broader scope than typical academic projects. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>Improving my skills in Java programming and GUI development.</li>
-                    <li>Understanding the systems behind navigation systems.</li>
-                    <li>Gaining experience in optimizing algorithms for efficient pathfinding and navigation.</li>
+                    <li>GPS hardware integration and NMEA sentence parsing</li>
+                    <li>Multithreaded GUI design — producer/consumer with JavaFX</li>
+                    <li>Practical application of graph algorithms for pathfinding</li>
+                    <li>MVC, Observer, and Strategy patterns in a real system</li>
                 </ul>
             </div>
         </div>

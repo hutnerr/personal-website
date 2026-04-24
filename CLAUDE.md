@@ -27,13 +27,22 @@ There is no dev server, test suite, or linter. Development is: edit files → ru
 - `pages/nav/` — top-level nav destinations (projects, contact, other)
 - `pages/projects/` — individual project detail pages
 - `pages/other/` — secondary pages (experience, class history, etc.)
-- `pages/games/` + `pages/devlogs/` — game showcases and dev logs
+- `pages/games/` — game showcases (solar-charged, massaquerade, forgotten-paths)
 
-**New pages** should be copied from `templates/page.html`.
+**New pages** should be copied from the appropriate template in `templates/`:
+- `templates/page.html` — generic page (hero + sections)
+- `templates/project.html` — project detail page (overview + tech stack + links)
+- `templates/game.html` — game showcase page (embed + overview + how to play + results)
 
-**Styling:** `styles/styles.css` defines the global design system (CSS variables, typography). Other CSS files are scoped by concern: `navigation.css`, `components.css`, `sections.css`, and per-page files under `styles/pages/`.
+**Styling:** `styles/styles.css` defines the global design system (CSS variables, typography). Other CSS files are scoped by concern: `components.css`, `sections.css`, and per-page files under `styles/pages/`. Active per-page CSS files:
+- `styles/pages/homepage.css` — home page only
+- `styles/pages/games.css` — game showcase pages
+- `styles/pages/contact-page.css` — contact page
 
-**JavaScript:** `scripts/anims.js` handles scroll-based section tracking (IntersectionObserver → navigation dots) and fade-up animations. `scripts/projects-filter.js` filters the projects grid using `data-category` attributes.
+**JavaScript:**
+- `scripts/projects-filter.js` — filters the projects grid using `data-category` attributes
+- `scripts/lightbox.js` — image lightbox on click
+- `scripts/game-embed.js` — lazy-loads itch.io game embeds on click
 
 ## Design System
 
@@ -59,8 +68,33 @@ Background: `body::before` CSS mask with `/resources/images/backgrounds/topograp
 
 ## Page Conventions
 
-- Sections are numbered (01., 02., …) using `.section-header` > `.section-number` + `.section-title` + `.section-line`
-- Sub-page heroes use `<section id="hero" class="hero-simple">` with `.hero-content` > `.hero-text`
-- Home hero uses `.hero-content` two-column grid (text left, circular photo right via `.logo-wrapper`)
-- No dot navigation, no fade-up scroll animations (`anims.js` is now a no-op)
-- Responsive breakpoints: 768px (tablet/mobile)
+**Hero section:** All sub-pages use a simple hero — `h1` + optional `p` directly inside `.container`, no wrapper divs:
+```html
+<section id="hero">
+    <div class="container">
+        <h1>page title<span class="cursor"></span></h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">$ subtitle</p>
+    </div>
+</section>
+```
+The `#hero > .container > h1` selector in `sections.css` centers this automatically.
+
+**Section titles:** All lowercase (e.g. `<h2>overview</h2>`, not `Overview`).
+
+**Project pages** use a vertical layout:
+- Hero with title + tagline
+- Overview section with description paragraphs, tech stack as `.grid-2` lists, and link buttons
+- Additional sections as needed (e.g. features, usage)
+- Links use `.btn.btn-background` class: `<a href="..." class="btn btn-background" target="_blank">Label</a>`
+
+**Help/walkthrough pages** use `.walkthrough-step` and `.walkthrough-img` from `components.css`:
+- `.walkthrough-step` — bordered section for each step (border-bottom between steps, none on last)
+- `.walkthrough-img` — styled image with accent hover border (max-width 680px; use inline `max-width: 320px` for portrait phone screenshots)
+
+**Home hero:** `.hero-content` two-column grid (text left, circular photo right via `.logo-wrapper`).
+
+**Navbar:** `position: fixed` — body has `padding-top: 56px` to prevent content overlap.
+
+**Responsive breakpoints:** 768px (tablet/mobile).
+
+**Dead assets:** Unreferenced files are in `resources/_unused/` for manual review before deletion.

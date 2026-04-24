@@ -1,51 +1,44 @@
-1. go through styles and remove ALL styles that are NOT being used
-2. go through pages and remove ALL styles that no longer exist
-3. make the contact form page centered or something overall a bit better. 
-4. clean up the text and stuff on the contact pages
-5. add the button background to the buttons on the project pages
-6. make links go back to not being underlined, just colored, and have them show the underline on hover
-7. properly classify the projects based on their project data filters
-8. on the other page, make it so when a link gets hovered here, the arrow moved forward a bit like it did before. 
-9. why does the other page have a bigger gap between the header and the "other pages" then a page like projects and the "projects" heaing
-10. make sure the sections titles are consistent. either have them all be uppercase or all lowercase
-11. in the experience page, make the title/subtitle stuff stick out a bit more from the text itself.
-12. have the text on class history spread out. right now its only on the left size. 
-13. make sure the documents page has the same styling as the other navpage
-14. remove the devlogs pages and sections. that'll be handled all on rat haven studios page. 
-15. change the cursor from the magnifying glass to a normal pointer on lightbox images. 
-16. make the formatting of the game jam page a little bit better. 
-17. the text size of the navbar should be a bit bigger. same with footer.
-18. get rid of the double getting started on beast code help
-19. make the walkthrough of beast code help vertical instead of the left to right sections
-20. for the tip calculator page, do something similar to beast code. maybe add a screenshots section at the bottom.
-21. fix up the broken headers. 
-22. might be a good idea to make the page titles be able to span the whole width and not be fixed onto the left side. 
-23. for the obsidian attachment plugin, similar to the same things for beat code and tip calculator help pages
-24. add links to vercel and upstash on the LOLSUMMD project page
-25. restructure the entire project page structure. it should have a couple set sections and dynamic sections. maybe more similar to the game pages on rhs
-    - will always have: 
-        - overview
-        - links
-        - tech stack
-        - showcase/the product
-    - will likely have
-        - challenges / solutions
-        - takeaways
-        - screenshots section at bottom?
-26. links to rhs website on game pages and itch pages. 
-27. use the content of the website to make sure they all have the meta info
-28. for the code blocks in tone forge, get rid of the border on the code.  maybe keep the border and add a background
-29. remove ALL dead scripts and stuff as well. 
-30. remove all the useless branches
-31. remove all comments in the pages
-32. format each page
-33. similar to removing each 
-34. delete forclaude folder
-35. redo the filestructure to support future growth. primarily in the resources folder.
-36. similarly, move all dead assets that aren't being used to a temporary folder so that I can go through them
-37. remove page specific styles entirely. if something is page specific, try and generalize it and add it to our base styles
-38. update the templates folder with a couple different templates for each of the type of pages
-39. update CLAUDE.md
-40. make sure page_bldr is right.
-41. should the navbar be fixed to the top?
+x. check for mobile layout
+x. check if all links work
+x. compare pages to current website. i think it trimmed a ton of text from help pages
+x. go through each page and clean it up
+    - remove dead styles
+    - remove empty divs and junk
+    - double check they all have their metadata
+x. remove the dead branches
+x. redo the filestructure to support future growth. primarily in the resources folder.
 
+1. clean up the text and stuff on the contact pages
+2. add the button background to the buttons on the project pages
+3. remove the "game jam" datatag.
+4. the class history tables look a little strange. 
+    - primarily because of A+ isnt aligned with just A for example
+    - also some class names get smushed onto 2 lines which make gaps
+5. maybe make the background a little more visible. just a tiny bit. 
+6. for the experience cards, make the top header section be a darker color.
+7. try and factor out inline styles and make them be individual classes. 
+8. add a rat haven studios website project page (frontend)
+9. add a project page for this website. (frontend)
+10. change the cursor from the magnifying glass to a normal pointer on lightbox images. 
+11. remove the em dashes.
+12. center the commands section in the beast code help
+13. move the tip calculator screenshots to a screenshot section at the very bottom
+14. obsidian attachment placement settings section looks really bad. the beast code one is also a bit rough. needs to be cleaned up
+15. the image hoving on project pages (at least LOLSUMMD) is very very sudden and not clean at all
+16. the tech links section shouldn't be buttons but instead the arrowed list that exists on the other/documents navpages
+17. clean up the game pages, they aren't are vertical as i'd like.
+18. the play button on the games doesnt work.
+19. update the templates folder with a couple different templates for each of the type of pages
+20. run /init to update CLAUDE.md
+21. why is the itch.io logo a different colored yellow?
+22. add more project that I've worked on to the project pages. 
+23. unsure if i like the page breaks on the help pages. probably remove them 
+24. make it so the arrowed list items ONLY move if there are links. normal lists should be static. 
+25. go back to my language and text.
+26. I want ALL the technical pages and stuff to be a big more fleshed out with what actually did. maybe some code examples, etc...
+    - i want this because it forces me to review what i've done
+    - i also want to have it there in case anyone looks. 
+27. determine if the game pages should be more set as project pages now that i have rat haven studios to host more demo pages.
+    - i think this is the right way. they serve more as my implementations and stuff. 
+    - i can remove the technical stuff once i do the big cleanup.
+    

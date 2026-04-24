@@ -1,5 +1,0 @@
-/* Navigation styles are now in styles.css — this file is intentionally minimal */
-
-/* Legacy fade-up removed — no scroll animations */
-.fade-up { opacity: 1; transform: none; }
-.fade-up.visible { opacity: 1; transform: none; }
