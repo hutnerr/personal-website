@@ -1,44 +1,49 @@
+/* Legacy project grid — used on older project sub-pages */
+
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 12px 0;
 }
 
 .project-grid ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
 }
 
 .project-grid ul li {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--text-secondary);
-    position: relative;
-    padding-left: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted);
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.88rem;
+  margin-bottom: 0.2rem;
 }
 
 .project-grid ul li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--text-accent);
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
 }
 
 .project-grid-item h3 {
-    text-decoration: none;
-    color: var(--text-primary);
-    font-weight: 600;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: color 0.2s;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.15s;
+  margin-bottom: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .project-grid-item h3::after {
-    content: " ▼";
+  content: ' ▼';
+  font-size: 0.75em;
 }
 
 .project-grid-item h3:hover {
-    color: var(--text-accent);
-    text-decoration: underline;
+  color: var(--accent);
 }

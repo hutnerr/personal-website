@@ -1,27 +1,22 @@
-// Project Filter System
 document.addEventListener('DOMContentLoaded', function () {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.showcase-card');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const filter = this.getAttribute('data-filter');
-
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-
-            cards.forEach(card => {
-                if (filter === 'all') {
-                    card.classList.remove('hidden');
-                } else {
-                    const category = card.getAttribute('data-category');
-                    if (category === filter) {
-                        card.classList.remove('hidden');
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                }
-            });
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.closest('.filter-group').querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            applyFilters();
         });
     });
+
+    function applyFilters() {
+        const activeFilters = Array.from(document.querySelectorAll('.filter-group')).map(group => {
+            const active = group.querySelector('.filter-btn.active');
+            return active ? active.dataset.filter : 'all';
+        });
+
+        document.querySelectorAll('.card[data-tags]').forEach(card => {
+            const tags = card.dataset.tags.split(' ');
+            const visible = activeFilters.every(f => f === 'all' || tags.includes(f));
+            card.style.display = visible ? '' : 'none';
+        });
+    }
 });

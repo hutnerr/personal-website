@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Games - Rat Haven Studios</title>
+  <link rel="stylesheet" href="../../styles/styles.css"/>
+  <link rel="icon" type="image/png" href="../../resources/logo-nt.png"/>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../../index.html" class="site-logo"><img src="../../resources/logo-nt.png" alt=""/>Rat Haven Studios</a>
+    <ul class="site-nav">
+      <li><a href="../../index.html">Home</a></li>
+      <span class="nav-sep">|</span>
+      <li><a href="games.html" class="nav-active">Games</a></li>
+      <span class="nav-sep">|</span>
+      <li><a href="devlogs.html">Devlogs</a></li>
+      <span class="nav-sep">|</span>
+      <li><a href="workshop.html">Workshop</a></li>
+      <span class="nav-sep">|</span>
+      <li><a href="developers.html">Devs</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h1>Games</h1>
+    <p>
+      All of the games we've ever made. 
+      Click on a game for more info, screenshots, and links to download or play.
+    </p>
+    <br>
+
+    <!--
+      FILTER TAGS - add these space-separated in data-tags="" on each .card
+      Release type : game-jam | full-release
+      Genre        : puzzle | mystery | tower-defense | action | platformer | rpg | horror | adventure
+    -->
+    <div class="filter-bar">
+      <div class="filter-group" data-param="type">
+        <span class="filter-label">Type</span>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="full-release">Full Release</button>
+        <button class="filter-btn" data-filter="game-jam">Game Jam</button>
+      </div>
+      <div class="filter-group" data-param="genre">
+        <span class="filter-label">Genre</span>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="puzzle">Puzzle</button>
+        <button class="filter-btn" data-filter="mystery">Mystery</button>
+        <button class="filter-btn" data-filter="tower-defense">Tower Defense</button>
+      </div>
+    </div>
+
+    <div class="grid grid-3">
+
+      <div class="card" data-tags="game-jam mystery puzzle">
+        <a class="card-img" href="../games/massaquerade.html">
+          <img src="../../resources/massaquerade-jam.png" alt="Massaquerade"/>
+        </a>
+        <h3><a href="../games/massaquerade.html">Massaquerade</a></h3>
+        <span class="card-subtitle">Game Jam • Mystery • Dec 29, 2025</span>
+        <p>Murder mystery but you're the murderer. Entry for <a href="https://itch.io/jam/wmj2025" target="_blank">Winter Melon Jam 2025</a>.</p>
+        <div class="btn-grid">
+          <a href="../games/massaquerade.html" class="btn">View</a>
+          <a href="https://hutnerr.itch.io/massaquerade" class="btn icon-btn itch-btn" target="_blank"><img src="https://static.itch.io/images/itchio-textless-white.svg">itch</a>
+        </div>
+      </div>
+
+      <div class="card" data-tags="game-jam puzzle">
+        <a class="card-img" href="../games/forgotten-paths-jam.html">
+          <img src="../../resources/fp-jam.gif" alt="Forgotten Paths"/>
+        </a>
+        <h3><a href="../games/forgotten-paths-jam.html">Forgotten Paths (Jam)</a></h3>
+        <span class="card-subtitle">Game Jam • Puzzle • Aug 5, 2025</span>
+        <p>Looping movement puzzle game. Entry for the <a href="https://itch.io/jam/gmtk-2025" target="_blank">GMTK Game Jam 2025</a>.</p>
+        <div class="btn-grid">
+          <a href="../games/forgotten-paths-jam.html" class="btn">View</a>
+          <a href="https://hutnerr.itch.io/forgotten-paths" class="btn icon-btn itch-btn" target="_blank"><img src="https://static.itch.io/images/itchio-textless-white.svg">itch</a>
+        </div>
+      </div>
+
+      <div class="card" data-tags="game-jam tower-defense">
+        <a class="card-img" href="../games/solar-charged.html">
+          <img src="../../resources/solarcharged-jam.gif" alt="Solar Charged"/>
+        </a>
+        <h3><a href="../games/solar-charged.html">Solar Charged</a></h3>
+        <span class="card-subtitle">Game Jam • Tower Defense • July 20, 2025</span>
+        <p>A resource management tower defense. Entry for the <a href="https://itch.io/jam/kenney-jam-2025" target="_blank">Kenney Game Jam 2025</a>.</p>
+        <div class="btn-grid">
+          <a href="../games/solar-charged.html" class="btn">View</a>
+          <a href="https://hutnerr.itch.io/solarcharged" class="btn icon-btn itch-btn" target="_blank"><img src="https://static.itch.io/images/itchio-textless-white.svg">itch</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-copy">&copy; 2026 Rat Haven Studios</p>
+    <div class="footer-links">
+      <a href="games.html">Games</a>
+      <span class="nav-sep">|</span>
+      <a href="devlogs.html">Devlogs</a>
+      <span class="nav-sep">|</span>
+      <a href="workshop.html">Workshop</a>
+      <span class="nav-sep">|</span>
+      <a href="developers.html">Devs</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/Rat-Haven-Studios" target="_blank">GitHub</a>
+      <span class="nav-sep">|</span>
+      <a href="https://discord.gg/vk3X99kD3D" target="_blank">Discord</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../scripts/filter.js"></script>
+</body>
+</html>

@@ -1,450 +1,215 @@
-/* ==================================== */
-/* ========= CONTAINER =============== */
-/* ==================================== */
-
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.panelbg {
-    background: var(--bg-primary);
-    padding: 1.5rem 1.75rem;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.05);
-    border: 1px solid var(--border);
-}
+/* ==========================================
+   UTILITIES
+   ========================================== */
 
 .centered {
-    display: flex;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    justify-content: center;
-    align-items: center;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.svg-icon {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) saturate(100%) invert(71%) sepia(95%) saturate(1739%) hue-rotate(5deg) brightness(104%) contrast(101%);
-    transition: transform 0.3s ease;
-    vertical-align: middle;
-    margin-left: 0.5rem;
-
-}
-
-.svg-icon:hover {
-    transform: translateY(-2px);
-}
-
-/* ==================================== */
-/* ========= RANDOM =============== */
-/* ==================================== */
 
 .pspacing p:not(:last-child) {
-    padding-bottom: 1.2rem;
-}
-
-.panelspacing {
-    margin-top: 2rem;
+  padding-bottom: 1.2rem;
 }
 
 .sized-img {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    object-fit: cover;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 1rem auto;
+  object-fit: cover;
+  display: block;
 }
 
 .hover-img {
-    transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
 .hover-img:hover {
-    transform: scale(1.05);
-}
-
-.arrowed-list {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    align-items: flex-start;
-    padding-left: 0;
-    margin-left: 0;
-}
-
-.arrowed-list li {
-    position: relative;
-    padding-left: 1rem;
-}
-
-.arrowed-list li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--text-accent);
-}
-
-.table-gap td:not(:last-child) {
-    padding-right: 1rem;
-}
-
-.table-centered {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.grid-collapse {
-    display: grid;
-    gap: 2rem;
-}
-
-@media (max-width: 768px) {
-    .grid-collapse {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ==================================== */
-/* ========= BLINKING CURSOR =============== */
-/* ==================================== */
-.cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1em;
-    background: var(--text-accent);
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-
-    0%,
-    50% {
-        opacity: 1;
-    }
-
-    51%,
-    100% {
-        opacity: 0;
-    }
-}
-
-/* ==================================== */
-/* ========= BUTTONS =============== */
-/* ==================================== */
-
-.btn {
-    padding: 12px 24px;
-    border: 2px solid var(--border);
-    border-left: 6px solid var(--border);
-    background: transparent;
-    color: var(--text-primary);
-    /* color: var(--text-secondary); */
-    text-decoration: none;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    background-color: var(--bg-primary);
-    /* background-color: var(--bg-secondary); */
-}
-
-.btn:hover {
-    border-color: var(--text-accent);
-    color: var(--text-accent);
-    transform: translateY(-2px);
-    text-decoration: none;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    transition: left 0.5s ease;
-}
-
-.btn:hover::before {
-    left: 100%;
-}
-
-.btn-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin-top: 2rem;
-}
-
-.btn-grid .btn {
-    justify-self: center;
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
-    min-width: 180px;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-    .btn-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .btn-grid .btn {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-/* ==================================== */
-/* =========  CIRCLE IMAGE =============== */
-/* ==================================== */
-
-.circle-img {
-    border-radius: 50%;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    height: 90%;
-    width: 80%;
-    object-fit: cover;
-    justify-self: center;
-}
-
-.circle-img:hover {
-    transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .dec-sized-img {
-    width: 75%;
-    height: auto;
+  width: 75%;
+  height: auto;
 }
 
 .major-dec-sized-img {
-    width: 50%;
-    height: auto;
+  width: 50%;
+  height: auto;
 }
 
-@media (max-width: 768px) {
-    .dec-sized-img {
-        width: 100%;
-        height: auto;
-    }
-
-    .major-dec-sized-img {
-        width: 75%;
-        height: auto;
-    }
+.table-gap td:not(:last-child) {
+  padding-right: 1rem;
 }
 
-/* ==================================== */
-/* ========= WORK ITEM =============== */
-/* ==================================== */
-.work-item {
-    border: 2px solid var(--border);
-    margin-bottom: 2rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;
+.table-centered {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.work-item:hover {
-    border-color: var(--text-accent);
+.grid-collapse {
+  display: grid;
+  gap: 2rem;
 }
 
-.work-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--text-accent);
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
+/* ==========================================
+   CIRCLE IMAGE (profile photo)
+   ========================================== */
+
+.circle-img {
+  border-radius: 50%;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  border: 3px solid var(--border);
 }
 
-.work-item:hover::before {
-    transform: scaleY(1);
+.circle-img:hover {
+  transform: scale(1.05);
+  border-color: var(--accent);
 }
 
-.work-header {
-    padding: 1.5rem;
-    background: var(--bg-secondary);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+/* ==========================================
+   SVG ICON
+   ========================================== */
+
+.svg-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) saturate(100%) invert(71%) sepia(95%) saturate(1739%) hue-rotate(5deg) brightness(104%) contrast(101%);
+  transition: transform 0.2s ease;
+  vertical-align: middle;
+  margin-left: 0.5rem;
 }
 
-.work-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+.svg-icon:hover {
+  transform: translateY(-2px);
 }
 
-.work-subtitle {
-    color: var(--text-accent);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
+/* ==========================================
+   BLINKING CURSOR
+   ========================================== */
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--accent);
+  animation: blink 1s infinite;
+  vertical-align: text-bottom;
 }
 
-.work-date {
-    color: var(--text-secondary);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
+@keyframes blink {
+  0%, 50%  { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
-.work-content {
-    padding: 1.5rem;
-    background-color: var(--bg-primary);
+/* ==========================================
+   ARROWED LIST
+   ========================================== */
+
+.arrowed-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  align-items: flex-start;
+  padding-left: 0;
+  margin-left: 0;
 }
 
-.work-description {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-    line-height: 1.6;
+.arrowed-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
 }
 
-.work-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+.arrowed-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
 }
 
-.tech-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--text-accent);
-    background: rgba(100, 255, 218, 0.1);
-    padding: 0.3rem 0.8rem;
-    border-radius: 4px;
-}
-
-.work-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.work-list {
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    list-style-type: none;
-}
-
-.work-list li::before {
-    padding-left: 20px;
-    content: '▸ ';
-    left: 0;
-    color: var(--text-accent);
-}
-
-.work-link {
-    color: var(--text-accent);
-    text-decoration: none;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
-    transition: text-decoration 0.3s, color 0.3s;
-    transition: all 0.3s ease;
-}
-
-.work-link:hover {
-    color: var(--text-accent);
-}
-
-@media (max-width: 768px) {
-    .work-header {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .work-links {
-        /* justify-content: center; */
-        flex-wrap: wrap;
-    }
-}
-
-
-/* 
-----------------------------
-===== Custom Scrollbar =====
-----------------------------
-*/
-* {
-    scrollbar-width: auto;
-    scrollbar-color: var(--bg-secondary) var(--bg-primary);
-}
-
-/* make the scrollbar always present */
-html {
-    overflow-y: scroll;
-}
-
-/* 
-----------------------------
-===== Custom Scrollbar =====
-----------------------------
-*/
+/* ==========================================
+   SIMPLE START GRID (skills on homepage)
+   ========================================== */
 
 .simple-start-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 12px 0;
 }
 
 .simple-start-grid ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
 }
 
 .simple-start-grid ul li {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--text-secondary);
-    position: relative;
-    padding-left: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted);
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
 }
 
 .simple-start-grid ul li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--text-accent);
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
 }
 
 .simple-start-grid-item h3 {
-    text-decoration: none;
-    color: var(--text-primary);
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.2s;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+  margin-bottom: 0.5rem;
 }
 
-/* 
-----------------------------
-===== CODE!! =====
-----------------------------
-*/
+/* ==========================================
+   CODE BLOCK (alternate class)
+   ========================================== */
+
 pre.code {
-    background: var(--bg-secondary);
-    padding: 1rem;
-    border-radius: 8px;
-    overflow-x: auto;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--text-primary);
+  background: var(--surface);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text);
+  border: 2px solid var(--border);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+  .dec-sized-img {
+    width: 100%;
+  }
+
+  .major-dec-sized-img {
+    width: 75%;
+  }
+
+  .grid-collapse {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,63 +1,66 @@
-/* ==================================== */
-/* ========= ABOUT SECTION =============== */
-/* ==================================== */
-.about-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 4rem;
-}
-
-.about-text {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
-}
-
+/* ==========================================
+   SKILLS LIST
+   ========================================== */
 
 .skills-list-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 24px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.skills-category {
+  padding: 1rem 1.25rem;
+  border-right: 2px solid var(--border);
+}
+
+.skills-category:last-child {
+  border-right: none;
 }
 
 .skills-list-header {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.1rem;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.4rem;
 }
 
 .skills-list {
-    gap: 0.5rem;
-    list-style: none;
-    margin-bottom: 1.5rem;
+  list-style: none;
+  margin-bottom: 0.5rem;
 }
 
 .skills-list li {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    position: relative;
-    padding-left: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.15rem;
 }
 
 .skills-list li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--text-accent);
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
 }
 
 @media (max-width: 768px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
+  .skills-list-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .skills-list {
-        grid-template-columns: 1fr;
-    }
+  .skills-category:nth-child(2) {
+    border-right: none;
+  }
+
+  .skills-category:nth-child(3) {
+    border-top: 2px solid var(--border);
+  }
 }
-

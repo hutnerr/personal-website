@@ -1,59 +1,61 @@
-/* ==================================== */
-/* ===== DEVLOG GRID & CARDS ====== */
-/* ==================================== */
+/* ==========================================
+   DEVLOG GRID & LINKS
+   ========================================== */
 
 .devlog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    /* padding: 2rem 0; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 .devlog-grid a {
-    display: flex;
-    align-items: center;
-    padding: 0.9rem 1.1rem;
-    background: var(--bg-primary);
-    border: 1px solid var(--border);
-    border-left: 6px solid var(--border);
-    border-radius: 8px;
-    color: var(--text-accent);
-    text-decoration: none;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: 8px;
+  color: var(--accent);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .devlog-grid a::before {
-    content: '▸';
-    color: var(--text-accent);
-    margin-right: 0.5rem;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
+  content: '▸';
+  color: var(--accent);
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
 }
 
 .devlog-grid a:hover {
-    background: var(--bg-tertiary);
-    border-color: var(--text-accent);
-    color: var(--text-primary);
-    transform: translateX(4px);
-    text-decoration: none;
+  background: var(--surface-2);
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
 }
 
 .devlog-grid a:hover::before {
-    transform: translateX(3px);
+  transform: translateX(3px);
 }
 
-/* Responsive */
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
 @media (max-width: 768px) {
-    .devlog-grid {
-        grid-template-columns: 1fr;
-    }
+  .devlog-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .devlog-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .devlog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workshop - Rat Haven Studios</title>
+  <link rel="stylesheet" href="../../styles/styles.css"/>
+  <link rel="icon" type="image/png" href="../../resources/logo-nt.png"/>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../../index.html" class="site-logo"><img src="../../resources/logo-nt.png" alt=""/>Rat Haven Studios</a>
+    <ul class="site-nav">
+      <li><a href="../../index.html">Home</a></li>
+      <span class="nav-sep">|</span>
+      <li><a href="games.html">Games</a></li>
+      <span class="nav-sep">|</span>
+      <li><a href="devlogs.html">Devlogs</a></li>
+      <span class="nav-sep">|</span>
+      <li><a href="workshop.html" class="nav-active">Workshop</a></li>
+      <span class="nav-sep">|</span>
+      <li><a href="developers.html">Devs</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h1>Workshop</h1>
+    <p>
+      Tutorials, resources, and writeups about game development. 
+      Some stuff we've made, some stuff we think is cool and want to share.
+    </p>
+    <br>
+
+    <!--
+      FILTER TAGS - add these space-separated in data-tags="" on each .card
+      Type  : tutorial | resource | writeup
+      Topic : art | music | design | code
+    -->
+    <div class="filter-bar">
+      <div class="filter-group" data-param="type">
+        <span class="filter-label">Type</span>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="tutorial">Tutorial</button>
+        <button class="filter-btn" data-filter="resource">Resource</button>
+        <button class="filter-btn" data-filter="writeup">Writeup</button>
+      </div>
+      <div class="filter-group" data-param="topic">
+        <span class="filter-label">Topic</span>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="art">Art</button>
+        <button class="filter-btn" data-filter="music">Music</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="code">Code</button>
+      </div>
+    </div>
+
+    <div class="grid grid-3">
+
+      <div class="card" data-tags="writeup code">
+        <h3><a href="../workshop/2026-04-17_godot-state-machines.html">Godot State Machines</a></h3>
+        <span class="card-subtitle">Writeup • Code • April 17, 2026</span>
+        <p>Notes, thoughts, and opinions about State Machines in Godot.</p>
+        <a href="../workshop/2026-04-17_godot-state-machines.html" class="btn">Read</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-copy">&copy; 2026 Rat Haven Studios</p>
+    <div class="footer-links">
+      <a href="games.html">Games</a>
+      <span class="nav-sep">|</span>
+      <a href="devlogs.html">Devlogs</a>
+      <span class="nav-sep">|</span>
+      <a href="workshop.html">Workshop</a>
+      <span class="nav-sep">|</span>
+      <a href="developers.html">Devs</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/Rat-Haven-Studios" target="_blank">GitHub</a>
+      <span class="nav-sep">|</span>
+      <a href="https://discord.gg/vk3X99kD3D" target="_blank">Discord</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../scripts/filter.js"></script>
+</body>
+</html>
