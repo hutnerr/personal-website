@@ -36,7 +36,7 @@
 27. use the content of the website to make sure they all have the meta info
 28. for the code blocks in tone forge, get rid of the border on the code.  maybe keep the border and add a background
 29. remove ALL dead scripts and stuff as well. 
-
+30. remove all the useless branches
 
 new content:
 - update my job history stuff.
