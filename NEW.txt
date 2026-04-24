@@ -1,0 +1,9 @@
+
+new content:
+- update my job history stuff.
+- update the project pages to sound more technical
+- link more to Rat Haven Studios when applicable
+- go through ALL project pages and update them.
+    - technical pages should get more breadth
+    - product pages should get more showcasey
+

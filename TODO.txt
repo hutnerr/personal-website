@@ -37,12 +37,14 @@
 28. for the code blocks in tone forge, get rid of the border on the code.  maybe keep the border and add a background
 29. remove ALL dead scripts and stuff as well. 
 30. remove all the useless branches
-
-new content:
-- update my job history stuff.
-- update the project pages to sound more technical
-- link more to Rat Haven Studios when applicable
-- go through ALL project pages and update them.
-    - technical pages should get more breadth
-    - product pages should get more showcasey
+31. remove all comments in the pages
+32. format each page
+33. similar to removing each 
+34. delete forclaude folder
+35. redo the filestructure to support future growth. primarily in the resources folder.
+36. similarly, move all dead assets that aren't being used to a temporary folder so that I can go through them
+37. remove page specific styles entirely. if something is page specific, try and generalize it and add it to our base styles
+38. update the templates folder with a couple different templates for each of the type of pages
+39. update CLAUDE.md
+40. make sure page_bldr is right.
 
