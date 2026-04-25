@@ -1,3 +1,5 @@
+0. Fix the filepaths. Ctrl + Shift + F to find /resources, then go in and update those filepaths
+
 1. Make the new project pages for:
     - toughcents
     - pintos
@@ -22,10 +24,6 @@
 6. Final Touches
     - Check and make sure the mobile layout works
     - Check if all the links work
-    - Compare old pages to new. Add some of the content back that was lost
+    - Compare ALL old pages to new. Add some of the content back that was lost
     - Double check their metadata 
     - Remove the dead Git Brances
-
-
-Fix the filepaths. 
-Ctrl + Shift + F to find /resources, then go in and update those filepaths
