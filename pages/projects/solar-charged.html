@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar Charged</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
-    <link rel="stylesheet" href="/styles/pages/games.css">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | Solar Charged">
-    <meta property="og:description"
-        content="Solar Charged is a resource management tower defense game made for the 2025 Kenny Game Jam. This page discusses the development process and retrospectives of the game.">
+    <meta property="og:description" content="A tower defense game for Kenny Jam 2025 built in Godot 4, where solar energy serves as both your resource pool and your health — run out and you lose.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/game-jams/solar-charged-1.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/solar-charged.html">
@@ -55,12 +53,46 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>solar charged<span class="cursor"></span></h1>
-                    <p class="subtitle">$ a resource management tower defense game</p>
+            <h1>solar charged<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a resource management tower defense game where energy is currency and health</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>Solar Charged is a tower defense game built with a partner for the 2025 Kenny Game Jam. The theme was "Power." Energy acts as both currency and health: you spend it to place towers, towers cost upkeep while on the field (and more while actively shooting), and solar panels recharge it over time based on weather conditions. If your energy hits zero, you lose.</p>
+                <p>Tower types include a basic shooter, a piercing laser, an area damage tower, an energy buff tower that boosts adjacent towers, and a slow tower. Each has two independent upgrade tracks with three levels each.</p>
+            </div>
+
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+                <div>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>Godot 4, GDScript — game engine and scripting</li>
+                        <li>State machine — explicit StateMachine + State base classes managing 5 game states</li>
+                        <li>HealthComponent — dual-purpose energy system; depletion triggers defeat, spending builds towers</li>
+                        <li>Weather system — 4 weighted states (Rain 7%, Cloudy 15%, Normal 35%, Sunny 50%) affecting energy recovery rate</li>
+                        <li>PathFollow2D — enemy movement along pre-placed paths</li>
+                        <li>Tower upgrade system — two independent upgrade tracks per tower, 3 levels each</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <ul class="arrowed-list">
+                        <li><a href="https://itch.io/jam/kenney-jam-2025/rate/3734468" target="_blank">Game Jam Page</a></li>
+                        <li><a href="https://hutnerr.itch.io/solarcharged" target="_blank">itch.io</a></li>
+                        <li><a href="https://github.com/Rat-Haven-Studios/kenny-jam-2025" target="_blank">GitHub</a></li>
+                        <li><a href="https://rat-haven-studios.github.io/website/" target="_blank">Rat Haven Studios</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="play">
+        <div class="container">
             <h2>play</h2>
             <div class="game-embed">
                 <div class="game-embed-placeholder"
@@ -73,66 +105,50 @@
         </div>
     </section>
 
-    <section id="second">
+    <section id="showcase">
         <div class="container">
-            <h2>overview</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>Solar Charged is a game that I made alongside a <a
-                            href="https://github.com/Koborooski">friend</a> for the <a
-                            href="https://itch.io/jam/kenney-jam-2025">2025 Kenny Game Jam</a>. The theme for this jam
-                        was "Power". Our take on this theme was a resource management tower defense game. Your "Power"
-                        acts both as your health as well as your currency. You can play the game directly though the
-                        embed above, or you can visit the <a href="https://hutnerr.itch.io/solarcharged">itch.io
-                            page</a>.</p>
-                    <p>I learned a lot about Game Developement through the creation of this game. Namely component-based
-                        design, state machines, and the benefits of clean and modular code. One of the things I wish
-                        that we had done better was manage our time a bit better so we had more time for balance and
-                        playtesting.</p>
-                    <p style="padding-bottom: 0px"><strong>Links</strong></p>
-                    <ul class="arrowed-list">
-                        <li><a href="https://itch.io/jam/kenney-jam-2025/rate/3734468">Game Jam Page</a></li>
-                        <li><a href="https://hutnerr.itch.io/solarcharged">itch.io</a></li>
-                        <li><a href="https://github.com/Rat-Haven-Studios/kenny-jam-2025">GitHub</a></li>
-                        <li><a href="https://rat-haven-studios.github.io/website/" target="_blank">Rat Haven Studios</a></li>
-                    </ul>
-                </div>
-                <img class="sized-img hover-img" src="/resources/gifs/game-jams/solar-charged-clouds.gif"
-                    alt="Solar Charged Screenshot 1" />
+            <h2>showcase</h2>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/gifs/game-jams/solar-charged-clouds.gif" alt="Solar Charged gameplay" data-lightbox>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2>how it works</h2>
+            <div class="pspacing">
+                <p>The game is divided into five explicit game states managed by a StateMachine class: MainMenu, Placing (drag-to-place towers), Combat (waves active), Shop (between waves), and Win/Lose. Each state is a separate class inheriting from a State base, with <code>enter()</code>, <code>exit()</code>, and <code>update()</code> methods. Transitions are triggered by events (wave cleared, energy depleted, shop confirmed) and the state machine calls the appropriate lifecycle hooks.</p>
+                <p>Energy is managed through a single HealthComponent shared between the currency and health systems. Tower placement deducts from it; passive and active upkeep drain it each tick; solar recovery adds back at a rate determined by the current weather. The weather cycle transitions between Rain, Cloudy, Normal, and Sunny states using weighted random selection, giving Sunny the highest probability (50%) and Rain the lowest (7%). Weather state determines the per-tick energy recovery multiplier.</p>
+                <p>Enemy movement uses PathFollow2D nodes along pre-authored paths. Tower targeting logic checks enemies within range and prioritizes by progress along the path, hitting the one closest to the end.</p>
             </div>
         </div>
     </section>
 
-    <section id="third">
+    <section id="challenges">
         <div class="container">
-            <h2>how to play</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>The goal is to manage your power effectively while defending against waves of enemies. You must
-                        strategically place your towers and upgrade them to survive. However, the more you upgrade them,
-                        and the more you have, the more power they will use. If you run out of power, you lose.</p>
-                    <p>The game has a weather cycle that must be taken into account as well. Your power is recharged
-                        through solar energy, which is affected by the weather. Make sure to keep an eye on the
-                        forecast!</p>
-                    <p>To bring up the upgrade menu, simply select a tower that has been placed. You can also delete
-                        towers this way.</p>
-                    <p>Upkeep is the cost of having the tower on the field. This cost switches to active when the tower
-                        starts shooting.</p>
-                </div>
-                <div>
-                    <h3>Tower Types</h3>
-                    <ul class="arrowed-list">
-                        <li><strong>Orange Tower:</strong> Simple shooter</li>
-                        <li><strong>Red Tower:</strong> Piercing lazer</li>
-                        <li><strong>Green Tower:</strong> Increases power of towers in radius</li>
-                        <li><strong>Blue Tower:</strong> Slows down enemies by at percent</li>
-                        <li><strong>Grey Tower:</strong> Deals constant damage in it's radius</li>
-                    </ul>
-                </div>
+            <h2>challenges</h2>
+            <div class="pspacing">
+                <p>The dual-purpose energy mechanic required a single source of truth that both the economy and the health system read from. Using one HealthComponent for both meant all UI, all drain calculations, and the lose condition all pointed at the same value — which eliminated sync bugs but required careful ordering of operations each tick (apply upkeep, apply recovery, check for depletion, then allow placement).</p>
+                <p>The two-track upgrade system per tower needed to be data-driven so towers could have distinct upgrade trees without duplicating logic. Each tower defines its upgrade data as a nested structure; the upgrade panel reads from it dynamically when a tower is selected.</p>
+                <p>Time management during the jam was the main regret — not enough time remained for balance passes and playtesting once core systems were in place.</p>
             </div>
         </div>
     </section>
 
+    <section id="takeaways">
+        <div class="container">
+            <h2>takeaways</h2>
+            <div class="pspacing">
+                <p>The first game built with explicit state machines and component-based design rather than ad-hoc singletons. The difference in maintainability was immediately apparent. Some key takeaways:</p>
+                <ul class="arrowed-list">
+                    <li>Explicit state machine pattern for game flow management across menus, gameplay phases, and outcomes</li>
+                    <li>Component-based design — HealthComponent as a reusable, single-responsibility node</li>
+                    <li>Weighted random state transitions for weather simulation</li>
+                    <li>Tower defense fundamentals: placement, upkeep, targeting, and wave spawning</li>
+                    <li>Balancing resource drain and recovery rates as a design problem, not just a tuning problem</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <div id="footer">
 <footer class="site-footer">

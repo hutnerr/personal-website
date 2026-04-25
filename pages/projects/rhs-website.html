@@ -89,8 +89,8 @@
             <h2>how it works</h2>
             <div class="pspacing">
                 <p>Each content type has its own nav listing (<code>games.html</code>, <code>devlogs.html</code>, <code>workshop.html</code>) backed by the same <code>filter.js</code> script. Cards carry <code>data-tags</code> attributes; each <code>.filter-group</code> operates independently and all active filters must match, so genre and type filters can be combined without any OR logic.</p>
-                <p>The workshop section publishes GDScript code samples, but GDScript has no Prism.js support. Rather than pulling in a general syntax highlighter and registering a grammar, a custom IIFE tokenizer (<code>gdscript-highlight.js</code>) was written from scratch. It runs a priority-ordered list of regex patterns — comments, strings, annotations, numbers, identifiers — over the raw <code>textContent</code> of each <code>code.language-gdscript</code> block and rewrites it with <code>&lt;span class="gds-*"&gt;</code> wrappers. Keyword and built-in type lookups are <code>Set</code>-based for O(1) dispatch; function detection checks whether the next non-whitespace character after a word token is <code>(</code>.</p>
-                <p>Game pages use a lazy iframe loader (<code>game-embed.js</code>): a <code>.game-embed-placeholder</code> div with a <code>data-src</code> attribute renders a thumbnail and play button; clicking it replaces the placeholder with the live itch.io iframe. The lightbox (<code>lightbox.js</code>) injects a single overlay and wires all <code>[data-lightbox]</code> images to it, with Escape-key dismiss.</p>
+                <p>The workshop section publishes GDScript code samples, but GDScript has no Prism.js support. Rather than pulling in a general syntax highlighter and registering a grammar, a custom IIFE tokenizer (<code>gdscript-highlight.js</code>) was written from scratch. It runs a priority-ordered list of regex patterns — comments, strings, annotations, numbers, identifiers — over the raw <code>textContent</code> of each <code>code.language-gdscript</code> block and rewrites it with <code>&lt;span class="gds-*"&gt;</code> wrappers. Keyword and built-in type lookups are <code>Set</code>-based for O(1) dispatch; function detection checks whether the next non-whitespace character after a word token is <code>(</code>. The result is loaded once and runs synchronously on <code>DOMContentLoaded</code>.</p>
+                <p>Game pages use a lazy iframe loader: a <code>.game-embed-placeholder</code> div with a <code>data-src</code> attribute renders a thumbnail and play button; clicking it replaces the placeholder with the live itch.io iframe. The lightbox injects a single overlay and wires all <code>[data-lightbox]</code> images to it, with Escape-key dismiss.</p>
             </div>
         </div>
     </section>
@@ -98,18 +98,16 @@
     <section id="features">
         <div class="container">
             <h2>features</h2>
-            <div class="pspacing">
-                <ul class="arrowed-list">
-                    <li>Game showcase pages with hero layout, screenshot galleries, and lazy itch.io embeds</li>
-                    <li>Devlog archive with filter-by-type support</li>
-                    <li>Workshop section for tutorials, resources, and writeups with GDScript code samples</li>
-                    <li>Developer profile pages per team member</li>
-                    <li>Custom GDScript syntax highlighter — written from scratch, no Prism dependency</li>
-                    <li>Multi-group AND filter bar reused across all three nav listing pages</li>
-                    <li>Retro pixel aesthetic — Press Start 2P headings, VT323 body text</li>
-                    <li>Zero npm dependencies, no bundler, no runtime framework</li>
-                </ul>
-            </div>
+            <ul class="arrowed-list">
+                <li>Game showcase pages with hero layout, screenshot galleries, and lazy itch.io embeds</li>
+                <li>Devlog archive with filter-by-type support</li>
+                <li>Workshop section for tutorials, resources, and writeups with GDScript code samples</li>
+                <li>Developer profile pages per team member</li>
+                <li>Custom GDScript syntax highlighter — written from scratch, no Prism dependency</li>
+                <li>Multi-group AND filter bar reused across all three nav listing pages</li>
+                <li>Retro pixel aesthetic — Press Start 2P headings, VT323 body text</li>
+                <li>Zero npm dependencies, no bundler, no runtime framework</li>
+            </ul>
         </div>
     </section>
 

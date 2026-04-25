@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | Pantry Panic">
-    <meta property="og:description" content="A web app that finds recipes based on ingredients you have on hand.">
+    <meta property="og:description" content="A group web project that searches the Spoonacular API for recipes based on ingredients in your pantry, with saved recipes and blob-based import/export.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/pantry-panic.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/pantry-panic.html">
@@ -61,18 +61,19 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>A group web development project. Pantry Panic lets you manage a virtual "pantry" of ingredients you have on hand, then searches the <a href="https://spoonacular.com/food-api">Spoonacular API</a> for recipes you can actually make with them. My primary role was backend integration - wiring up the recipe API and managing data flow.</p>
-                <p>Note: the project is currently non-functional due to the Spoonacular API service being cancelled. The demo links to a personal fork.</p>
+                <p>Pantry Panic is a group web development project. It lets you build a virtual pantry of ingredients you have on hand, then searches for recipes you can actually make with them. My primary role was the backend integration — wiring up the Spoonacular API and managing data flow between the API responses and the frontend state.</p>
+                <p>The project is currently non-functional because the Spoonacular API service was cancelled. The demo links to a personal fork.</p>
             </div>
 
             <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>HTML, CSS, JavaScript - frontend</li>
-                        <li>Spoonacular API - recipe search</li>
-                        <li>Local storage - saved favorites and pantry persistence</li>
-                        <li>Git &amp; GitHub - version control</li>
+                        <li>HTML, CSS, JavaScript — frontend-only single-page application</li>
+                        <li>Spoonacular API — two-stage search: findByIngredients then informationBulk for full recipe details</li>
+                        <li>localStorage — persists pantry items (CSV), checkbox states (JSON), and saved recipe IDs (array)</li>
+                        <li>Blob API — pantry import/export as downloadable files</li>
+                        <li>APIACTIVE kill switch — boolean flag disables all API calls for local development without key</li>
                     </ul>
                 </div>
                 <div>
@@ -89,7 +90,28 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/pantry-panic.png" alt="Pantry Panic Screenshot" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/pantry-panic.png" alt="Pantry Panic recipe search screenshot" data-lightbox>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2>how it works</h2>
+            <div class="pspacing">
+                <p>Recipe search uses a two-stage API flow. The first call hits <code>findByIngredients</code> with the pantry list and returns a ranked list of matching recipes along with how many ingredients each recipe uses vs. misses. The second call hits <code>informationBulk</code> with the result IDs to fetch full recipe details — title, image, instructions, nutrition — for display.</p>
+                <p>Pantry state is stored in <code>localStorage</code> across three keys: <code>'pantry'</code> as a CSV string of ingredient names, <code>'pantryCheckboxes'</code> as a JSON object tracking which ingredients are checked for the current search, and <code>'savedRecipes'</code> as an array of recipe IDs the user has bookmarked. This means state survives page reloads without any server-side storage.</p>
+                <p>The Blob API handles pantry import and export: export serializes the current pantry list to a text file the browser downloads, and import reads an uploaded file back into state. An <code>APIACTIVE</code> boolean flag at the top of the integration code disables all outbound API calls during local development, allowing UI work without consuming API quota or requiring a live key.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="challenges">
+        <div class="container">
+            <h2>challenges</h2>
+            <div class="pspacing">
+                <p>The two-stage API design was driven by Spoonacular's endpoint structure rather than preference. <code>findByIngredients</code> is fast but returns minimal data; <code>informationBulk</code> returns everything but requires IDs. Coordinating the two calls — handling the case where the first returns no results, the second fails for some IDs, or the API quota is hit — required explicit error states for each stage rather than treating the whole flow as a single operation.</p>
+                <p>Working in a group on a frontend-only codebase meant merge conflicts were frequent: everyone was editing the same HTML and CSS files. Establishing which person owned which file sections early would have prevented most of them.</p>
+            </div>
         </div>
     </section>
 
@@ -97,11 +119,12 @@
         <div class="container">
             <h2>takeaways</h2>
             <div class="pspacing">
-                <p>First time integrating a third-party REST API - it taught a lot about async request handling, error states, and the gap between API documentation and production behavior. Some key takeaways:</p>
+                <p>First time integrating a third-party REST API — it taught a lot about the gap between reading documentation and handling production edge cases. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>REST API integration and async JavaScript</li>
-                    <li>Group coordination - communication prevents most merge conflicts and missed dependencies</li>
-                    <li>User experience as a first-class concern in frontend design</li>
+                    <li>REST API integration with async JavaScript — fetch, promise chaining, and staged error handling</li>
+                    <li>localStorage as a persistence layer for frontend state across three independent keys</li>
+                    <li>Blob API for client-side file import/export without a server</li>
+                    <li>Group coordination — communication prevents most merge conflicts and missed dependencies</li>
                 </ul>
             </div>
         </div>

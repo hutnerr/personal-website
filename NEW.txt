@@ -1,23 +1,28 @@
-new content:
-- update my job history stuff.
-- update the project pages to sound more technical
-- link more to Rat Haven Studios when applicable
-- go through ALL project pages and update them.
-    - technical pages should get more breadth
-    - product pages should get more showcasey
+1. Make the new project pages for:
+    - toughcents
+    - pintos
+    - dukeshell
+    - dhcp client and server
 
-x. check for mobile layout
-x. check if all links work
-x. compare pages to current website. i think it trimmed a ton of text from help pages
-x. go through each page and clean it up
-    - remove dead styles
-    - remove empty divs and junk
-    - double check they all have their metadata
-x. remove the dead git branches
+2. Give Claude the OLD project pages and tell is to combine the new and old one to make a better comprehensive page.
+    - Technical projects should focus more on the technical capabilities
+    - Product project should focus more on the final product and what it can do
 
-20. run /init to update CLAUDE.md
-22. add more project that I've worked on to the project pages. 
+3. Updated From Project Page
+    - Make subtitles on cards match the category instead of the type. 
+    - Update the cards based on the new project pages
+    - Update the "skills" section on the index
+    - Maybe add a "Technical" and a "Product" type for sorting
 
-convert the game pages to the project pages. 
+4. Make my Job Experience sound more technical and strong. 
 
-check on the subtitles of the project cards. make it match the category instead of the type. 
+5. Implement the appropriate links to Rat Haven Studios
+    - Use the domain now that we have it. 
+
+6. Final Touches
+    - Check and make sure the mobile layout works
+    - Check if all the links work
+    - Compare old pages to new. Add some of the content back that was lost
+    - Remove empty divs and other junk
+    - Double check their metadata 
+    - Remove the dead Git Brances

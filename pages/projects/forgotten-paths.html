@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgotten Paths</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
-    <link rel="stylesheet" href="/styles/pages/games.css">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | Forgotten Paths">
-    <meta property="og:description"
-        content="Forgotten Paths is a puzzle game made for the GMTK 2025 Game Jam. This page discusses the development process and retrospectives of the game.">
+    <meta property="og:description" content="A puzzle game for GMTK Game Jam 2025 where players program a robot with looping movement commands that execute in relative directions — built in 72 hours in Godot 4.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/game-jams/fp1.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/forgotten-paths.html">
@@ -55,12 +53,45 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>forgotten paths<span class="cursor"></span></h1>
-                    <p class="subtitle">$ a looping puzzle game</p>
+            <h1>forgotten paths<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a looping puzzle game built in 72 hours for GMTK 2025</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>Forgotten Paths is the second game built with a partner, this time for GMTK 2025. The jam theme was "Loop." The player programs a robot with a sequence of movement commands — RIGHT, LEFT, UP, DOWN, and three rotation variants — and those commands execute repeatedly in a loop until the robot stops manually or clears the level by defeating all enemies. To win each level, all enemies must be slain.</p>
+                <p>The game ranked highly out of over 9,500 submissions in the jam, an impressive result for a second-ever game. You can play it directly on itch.io or via the embed below.</p>
+            </div>
+
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+                <div>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>Godot 4, GDScript — game engine and scripting</li>
+                        <li>Command pattern — 7 discrete command types queued and executed sequentially</li>
+                        <li>Relative direction transforms — matrix lookup converts absolute directions to robot-relative movement after rotation</li>
+                        <li>Gridleton — global spatial index singleton for O(1) grid cell occupancy lookup</li>
+                        <li>Loop cancellation — incrementing currentLoopId invalidates in-flight coroutines without explicit cancellation</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <ul class="arrowed-list">
+                        <li><a href="https://itch.io/jam/gmtk-2025/rate/3778927" target="_blank">Game Jam Page</a></li>
+                        <li><a href="https://hutnerr.itch.io/forgotten-paths" target="_blank">itch.io</a></li>
+                        <li><a href="https://github.com/Rat-Haven-Studios/gmtk-jam-2025" target="_blank">GitHub</a></li>
+                        <li><a href="https://rat-haven-studios.github.io/website/" target="_blank">Rat Haven Studios</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="play">
+        <div class="container">
             <h2>play</h2>
             <div class="game-embed">
                 <div class="game-embed-placeholder"
@@ -73,79 +104,53 @@
         </div>
     </section>
 
-    <section id="second">
+    <section id="showcase">
         <div class="container">
-            <h2>overview</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>Forgotten paths is the second game that I made alongside a <a
-                            href="https://github.com/Koborooski">friend</a>, this time for the <a
-                            href="https://itch.io/jam/gmtk-2025">GMTK 2025</a>. "Loop" was the theme for this jam. We
-                        incoroproated this through creating a puzzle game where you define a sequence of movement
-                        commands that constantly loop until the player is manually stopped or completes the puzzle. You
-                        can play the game directly though the embed above, or you can visit the <a
-                            href="https://hutnerr.itch.io/forgotten-paths">itch.io page</a>.</p>
-                    <p>Once again I learned many things through making of this game with my partner. One of my main
-                        focuses during this jam was the UI design and implementation. It was difficult to try and make a
-                        UI that conveyed all of the information that was necessary while also being simple and easy to
-                        use and understand.</p>
-                    <p>One thing I feel like we did a lot better this jam was adding in a lot of the essentials first
-                        before we started. This included simple things like a settings menu, a way to close the game,
-                        etc. Our last jam entry we didn't get to these in time and it made the game feel very unpolished
-                        and lacking. One of the reasons this worked is that it also gave us time to focus on and plan
-                        out our ideas and concepts before starting them. This approach of doing some of the non-gameplay
-                        impactful things worked great for us.</p>
-                    <p style="padding-bottom: 0px"><strong>Links</strong></p>
-                    <ul class="arrowed-list">
-                        <li><a href="https://itch.io/jam/gmtk-2025/rate/3778927">Game Jam Page</a></li>
-                        <li><a href="https://hutnerr.itch.io/forgotten-paths">itch.io</a></li>
-                        <li><a href="https://github.com/Rat-Haven-Studios/gmtk-jam-2025">GitHub</a></li>
-                        <li><a href="https://rat-haven-studios.github.io/website/" target="_blank">Rat Haven Studios</a></li>
-                        </ul>
-                </div>
-                <div>
-                    <img class="sized-img hover-img" src="/resources/gifs/game-jams/fp.gif" alt="Forgotten Paths GIF" />
-                    <img class="sized-img hover-img" src="/resources/images/game-jams/fp2.png"
-                        alt="Forgotten Paths Screenshot 1" />
-                </div>
+            <h2>showcase</h2>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/gifs/game-jams/fp.gif" alt="Forgotten Paths gameplay loop" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/game-jams/fp2.png" alt="Forgotten Paths level screenshot" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/game-jams/fp4.png" alt="Forgotten Paths puzzle screenshot" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/game-jams/forgotten-paths-results.png" alt="Forgotten Paths jam results" data-lightbox>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2>how it works</h2>
+            <div class="pspacing">
+                <p>The robot's behavior is entirely driven by a command queue. The player selects up to several commands from the available set, then hits play. Each command is a discrete type: movement commands (RIGHT/LEFT/UP/DOWN) and rotation commands (ROTATE90/ROTATE180/ROTATE270). The robot executes them one at a time in sequence, then starts over from the first.</p>
+                <p>The rotation commands change the robot's facing direction, which affects how subsequent movement commands are interpreted. A direction transform lookup maps each absolute grid direction (UP/DOWN/LEFT/RIGHT) to the correct grid offset given the robot's current facing — so if the robot is rotated 90 degrees clockwise, a "UP" command moves it in the direction that is now "forward" from its perspective. This makes multi-step sequences with rotations non-trivially puzzling.</p>
+                <p>Grid objects (the robot, enemies, walls) are registered with a global singleton called Gridleton, which maintains a Dictionary mapping grid coordinates to objects. This gives O(1) occupancy lookup for movement validation and collision detection without scanning all objects. A separate Dictionary tracks defeated enemies so the same enemy cannot be killed twice if the loop revisits its cell.</p>
             </div>
         </div>
     </section>
 
-    <section id="third">
+    <section id="challenges">
         <div class="container">
-            <h2>how to play</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>At it's core, the game is quite simple. You select a few movement commands and then click play.
-                        These will repeatedly loop until you either win or stop it manually. To complete a level, all of
-                        the enemies there must be slain.</p>
-                    <p>Though it may sound easy, it get's pretty difficult! Especially on the levels that require
-                        rotations. Give it a chance! If you're truly stuck, there is a hints &amp; solutions cheat sheet
-                        on the <a href="https://hutnerr.itch.io/forgotten-paths">itch.io</a>.</p>
-                </div>
-                <img class="sized-img hover-img" src="/resources/images/game-jams/fp4.png"
-                    alt="Forgotten Paths Screenshot 1" />
+            <h2>challenges</h2>
+            <div class="pspacing">
+                <p>The trickiest implementation problem was canceling an in-flight command loop cleanly. When the player presses stop mid-execution, the current loop of coroutines needs to halt immediately — but GDScript coroutines cannot be canceled once started. The solution uses a <code>currentLoopId</code> integer that is incremented each time a new loop begins. Each coroutine captures the loop ID at start and checks after every yield whether its captured ID still matches the current one; if not, it exits silently. This makes stale coroutines self-terminate without any reference tracking or explicit cancellation API.</p>
+                <p>The relative direction system required careful thought. Players think in absolute terms ("move up"), but the commands execute relative to the robot's facing after rotations are applied. Getting the transform table right — and making it readable enough to debug — was a small but non-trivial design task.</p>
+                <p>UI was a personal focus during this jam. Conveying the command queue state, the robot's current action, and the loop status simultaneously required iteration. Having essentials like a settings menu and a quit button in place early (a lesson from the previous jam) left more time for this polish.</p>
             </div>
         </div>
     </section>
 
-    <section id="fourth">
+    <section id="takeaways">
         <div class="container">
-            <h2>results</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>Overall, we did quite well for ourselves in this game. When you stop and consider that over 9,500
-                        games were submitted to this jam, it is quite amazing to see our game rank so highly.</p>
-                    <p>It also feels amazing that this the second time I've ever made a game. It really motivates me to
-                        keep going and makes be believe I'm on a good path.</p>
-                </div>
-                <img class="sized-img hover-img dec-sized-img"
-                    src="/resources/images/game-jams/forgotten-paths-results.png" alt="Forgotten Paths Screenshot 2" />
+            <h2>takeaways</h2>
+            <div class="pspacing">
+                <p>Building a puzzle game where the challenge comes from compositional command sequences — not from twitch skill — required thinking carefully about what the player sees and understands at each moment. Some key takeaways:</p>
+                <ul class="arrowed-list">
+                    <li>Command pattern for queued, sequential game actions with loop semantics</li>
+                    <li>Coroutine lifetime management via ID invalidation as an alternative to explicit cancellation</li>
+                    <li>Global spatial indexing with a singleton registry for O(1) grid lookup</li>
+                    <li>Puzzle game UI design — communicating system state without overloading the player</li>
+                    <li>Scope discipline in a jam: essentials first, polish second</li>
+                </ul>
             </div>
         </div>
     </section>
-
 
     <div id="footer">
 <footer class="site-footer">

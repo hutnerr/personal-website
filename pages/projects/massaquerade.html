@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Massaquerade</title>
     <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
-    <link rel="stylesheet" href="/styles/pages/games.css">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | Massaquerade">
-    <meta property="og:description"
-        content="Massaquerade is a game made for the Winter MelonJam 2025. This page discusses the development process and retrospectives of the game.">
+    <meta property="og:description" content="A narrative mystery game for Winter MelonJam 2025 where players swap masks to unlock dialogue options and identify the murder target at a masquerade ball — built in 72 hours in Godot 4.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/game-jams/massaquerade1.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/massaquerade.html">
@@ -55,111 +53,101 @@
 
     <section id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>massaquerade<span class="cursor"></span></h1>
-                    <p class="subtitle">$ a murder mystery game</p>
+            <h1>massaquerade<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a murder mystery game built in 72 hours for Winter MelonJam 2025</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>Massaquerade is the third game built with a partner, for the Winter MelonJam 2025. The theme was "Mask." The player attends a masquerade ball as the murderer: talk to guests, collect clues, and identify the target. Wearing different masks unlocks different personalities and dialogue options, and each new piece of information can open up branches in conversations you've already had. Once you've decided who the target is, press M to strike.</p>
+                <p>The game ranked 36th overall out of 200 submissions, with 17th place in the Art category and 39th in Gameplay.</p>
+            </div>
+
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+                <div>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>Godot 4, GDScript — game engine and scripting</li>
+                        <li>JSON dialogue trees — per-character, per-mask branching dialogue with declarative flag conditions and mutations</li>
+                        <li>Flag system — conversationState (local per-dialogue) and Data.player.actionFlags (global persistent)</li>
+                        <li>Suspicion tracking — global integer compared against per-dialogue thresholds</li>
+                        <li>Murder mechanic — M-key input checked in dialogue context triggers accusation resolution</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <ul class="arrowed-list">
+                        <li><a href="https://itch.io/jam/wmj2025/rate/4155805" target="_blank">Game Jam Page</a></li>
+                        <li><a href="https://hutnerr.itch.io/massaquerade" target="_blank">itch.io</a></li>
+                        <li><a href="https://github.com/Rat-Haven-Studios/melon-jam-2025" target="_blank">GitHub</a></li>
+                        <li><a href="https://rat-haven-studios.github.io/website/" target="_blank">Rat Haven Studios</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="play">
+        <div class="container">
             <h2>play</h2>
             <div class="game-embed">
                 <div class="game-embed-placeholder"
                      data-src="https://itch.io/embed-upload/15981388?color=282828"
                      data-width="640" data-height="380">
-                    <img src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMi5wbmc=/original/GpyIkO.png" alt="Massaquerade"/>
+                    <img src="/resources/images/game-jams/massaquerade1.png" alt="Massaquerade"/>
                     <div class="play-overlay"><span class="play-btn">&#9654; Play</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="second">
+    <section id="showcase">
         <div class="container">
-            <h2>overview</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>
-                        Massaquerade is the third game that I made alongside a <a
-                            href="https://github.com/Koborooski">friend</a>,
-                        this time for the <a href="https://itch.io/jam/wmj2025">Winter MelonJam 2025</a>.
-                        "Mask" was the theme for this jam. We incoroproated this through creating a murder mystery game
-                        where
-                        you are the murderer at a masquerade ball and must find your target. You can play the game
-                        directly though the embed above, or you can visit
-                        the <a href="https://hutnerr.itch.io/massaquerade">itch.io page</a>.
-                    </p>
-                    <p>
-                        By far the biggest thing I learned about through this jam was how to do dialogue. We did a JSON
-                        based system which you could define flags to set, flags to check, the next piece to go to, and
-                        many
-                        other options. Not only was building this scalable system a challenge, but it was also quite
-                        difficult
-                        to try and write all the dialogue itself.
-                    </p>
-                    <p style="padding-bottom: 0px"><strong>Links</strong></p>
-                    <ul class="arrowed-list">
-                        <li><a href="https://itch.io/jam/wmj2025/rate/4155805">Game Jam Page</a></li>
-                        <li><a href="https://hutnerr.itch.io/massaquerade">itch.io</a></li>
-                        <li><a href="https://github.com/Rat-Haven-Studios/melon-jam-2025">GitHub</a></li>
-                        <li><a href="https://rat-haven-studios.github.io/website/" target="_blank">Rat Haven Studios</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <img class="sized-img hover-img"
-                        src="https://img.itch.zone/aW1nLzI0NzcwNzM5LnBuZw==/original/MKwieg.png"
-                        alt="Forgotten Paths GIF" />
-                    <img class="sized-img hover-img"
-                        src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMy5wbmc=/original/7RZu5v.png"
-                        alt="Forgotten Paths Screenshot 1" />
-                </div>
+            <h2>showcase</h2>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/game-jams/massaquerade1.png" alt="Massaquerade masquerade ball scene" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/game-jams/massaquerade-results.png" alt="Massaquerade jam results" data-lightbox>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2>how it works</h2>
+            <div class="pspacing">
+                <p>Dialogue is driven entirely by JSON files — one file per character per mask. Each dialogue node defines the display text, response options, conditions required to show the option, flags to set when the option is chosen, and the next node to advance to. Conditions are evaluated against two scopes: <code>conversationState</code>, a dictionary local to the active conversation that accumulates flags set during the current exchange, and <code>Data.player.actionFlags</code>, the global persistent flag store that persists across all conversations.</p>
+                <p>The result is that choosing a response in one conversation can set a global flag that unlocks a new branch in an entirely different character's dialogue tree — the clue chain the player follows to identify the target. Suspicion is tracked as a global integer; dialogue nodes can check it against thresholds to reveal or hide information based on how much the player has already uncovered.</p>
+                <p>Because each character has a separate dialogue file per mask, swapping masks at the in-game mask rack literally changes which dialogue tree loads for that NPC — the same character can have a completely different conversation depending on which mask the player wears.</p>
             </div>
         </div>
     </section>
 
-    <section id="third">
+    <section id="challenges">
         <div class="container">
-            <h2>how to play</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>The game is quite simple, it's the mystery that might be a little hard. You have to go around and
-                        interact with people to gather clues. These clues might open up dialogue options that weren't
-                        previously available, even to people you're already talked to before. Once you've decided who
-                        your target is, that is when you strike. Good luck!</p>
-                </div>
-                <img class="sized-img hover-img"
-                    src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMi5wbmc=/original/GpyIkO.png"
-                    alt="Forgotten Paths Screenshot 1" />
+            <h2>challenges</h2>
+            <div class="pspacing">
+                <p>Building a scalable dialogue system was the core technical challenge. A naive approach — writing dialogue state directly into scripts — would have made branching and authoring impossible to manage. The JSON tree format let dialogue content be written outside the code entirely, which was critical because in a jam the artist and programmer may not be the same person.</p>
+                <p>The two-scope flag system (local conversation vs. global) required careful design: local flags track what has been said in the current exchange (useful for preventing repeat questions), while global flags track what the player has learned across all interactions (useful for unlocking new branches after the fact). Getting the evaluation order right — check conditions, display options, then apply mutations — meant no flag changes could leak backward into the conditions that gated the current step.</p>
+                <p>The honest limitation of this jam was throughput. The main bottleneck was not systems but content: writing enough unique, coherent dialogue for multiple characters across multiple mask variants consumed most of the 72 hours. The game systems were solid; the game was smaller than planned because writing is slow.</p>
             </div>
         </div>
     </section>
 
-    <section id="fourth">
+    <section id="takeaways">
         <div class="container">
-            <h2>results</h2>
-            <div class="hero-content">
-                <div class="pspacing">
-                    <p>
-                        Once again, we did pretty well. Overall we got 36th out of 200 submissions, with our highest
-                        score being
-                        17th place in the "Art" category. Our second highest was "Gameplay" (the most important
-                        category) at
-                        39th place.
-                    </p>
-                    <p>
-                        One of the main differences between this game and the previous ones is that I was not as happy
-                        with how this one turned out. In this game, it felt like our main limitation was how fast we
-                        could
-                        write dialogue instead of adding cooler systems and interactions with the game. Regardless, I
-                        still had a
-                        great time working on it and am proud of what we accomplished.
-                    </p>
-                </div>
-                <img class="sized-img hover-img dec-sized-img"
-                    src="/resources/images/game-jams/massaquerade-results.png" alt="Forgotten Paths Screenshot 2" />
+            <h2>takeaways</h2>
+            <div class="pspacing">
+                <p>The biggest learning was how much time narrative content takes relative to code. Systems that feel small to implement become enormous when multiplied by the number of characters, masks, and dialogue branches needed to make the mystery feel real. Some key takeaways:</p>
+                <ul class="arrowed-list">
+                    <li>JSON-driven dialogue trees — separating content from logic for scriptable narrative systems</li>
+                    <li>Two-scope flag evaluation for local conversation state vs. global persistent state</li>
+                    <li>Designing for content throughput — how much dialogue can actually be written in 72 hours</li>
+                    <li>Branching narrative design — clue chains that reward exploration without requiring a walkthrough</li>
+                </ul>
             </div>
         </div>
     </section>
-
 
     <div id="footer">
 <footer class="site-footer">

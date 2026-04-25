@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | Navigation System">
-    <meta property="og:description" content="A real-time GPS navigation system with USB satellite receiver support.">
+    <meta property="og:description" content="A Java navigation system that reads live GPGGA serial data from a USB GPS receiver, builds a road graph, and routes using both Dijkstra's and Bellman-Ford algorithms.">
     <meta property="og:image" content="https://hunter-baker.com/resources/gifs/projects/navsys.gif">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/navsystem.html">
@@ -52,8 +52,8 @@
 
     <section id="hero">
         <div class="container">
-            <h1>navsys<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a real-time GPS navigation system</p>
+            <h1>navigation system<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a real-time GPS navigation system with two routing algorithms</p>
         </div>
     </section>
 
@@ -61,24 +61,28 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>NavSys is a Java-based personal navigation system that uses a USB satellite receiver for real-time GPS updates. It parses <a href="https://docs.novatel.com/OEM7/Content/Logs/GPGGA.htm">GPGGA sentences</a> from the satellite feed and displays live position on a map rendered in JavaFX.</p>
-                <p>Pathfinding uses Dijkstra's and Bellman-Ford algorithms on a graph of road nodes. The system supports route re-calculation and live position tracking as you move.</p>
+                <p>NavSys is a Java desktop application that turns a USB satellite receiver into a working navigation system. It reads raw NMEA GPGGA sentences from the serial port, parses the coordinate data, and displays live position on a map rendered in Swing. Setting a destination triggers route calculation using either Dijkstra's or Bellman-Ford on a graph of road nodes, with automatic rerouting if the current position drifts off the calculated path.</p>
+                <p>Built for CS coursework, but the scope — GPS hardware integration, real-time threading, graph pathfinding, and reroute detection — went well beyond typical academic assignments.</p>
             </div>
 
             <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Java - JavaFX, multithreading, MVC pattern</li>
-                        <li>GPS hardware - USB satellite receiver, GPGGA sentence parsing</li>
-                        <li>Pathfinding - <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's</a> and <a href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm">Bellman-Ford</a> on graph structures</li>
+                        <li>Java 17, Swing — desktop GUI with live-updating map display</li>
+                        <li>jSerialComm 2.11.0 — serial port communication for USB GPS hardware</li>
+                        <li>GPGGA parsing — converts DDmm.mm NMEA format to decimal degrees</li>
+                        <li>Dijkstra's (Label Setting) — with PermanentLabelBuckets optimization using 1km-width bucket bins</li>
+                        <li>Bellman-Ford (Label Correcting) — with early termination; supports comparison against Dijkstra's</li>
+                        <li>SwingWorker — background GPS read thread publishes position updates to the Swing EDT</li>
+                        <li>Observer, MVC, Strategy patterns — GPS data flow, display separation, and interchangeable routing</li>
                     </ul>
                 </div>
                 <div>
                     <h3 style="margin-bottom: 12px;">links</h3>
                     <ul class="arrowed-list">
                         <li><a href="https://github.com/hutnerr/navsystem" target="_blank">GitHub</a></li>
-                        <li><a href="/resources/images/projects/navsystemdesign.svg" target="_blank">Design Doc</a></li>
+                        <li><a href="/resources/images/projects/navsystemdesign.svg">Design Doc</a></li>
                     </ul>
                 </div>
             </div>
@@ -89,16 +93,29 @@
         <div class="container">
             <h2>showcase</h2>
             <img class="walkthrough-img hover-img sized-img" src="/resources/gifs/projects/navsys.gif" alt="NavSys real-time navigation demo" data-lightbox>
-            <img class="walkthrough-img hover-img sized-img" style="background-color: white; margin-top: 1rem;" src="/resources/images/projects/navsystemdesign.svg" alt="NavSys design document" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" style="background-color: white; margin-top: 1rem;" src="/resources/images/projects/navsystemdesign.svg" alt="NavSys system design document" data-lightbox>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2>how it works</h2>
+            <div class="pspacing">
+                <p>GPS data arrives continuously on the serial port via jSerialComm. A <code>GPSReaderTask</code> extends <code>SwingWorker</code>, running the read loop on a background thread and publishing parsed coordinates to the Swing Event Dispatch Thread via <code>publish()</code>/<code>process()</code>. This keeps the UI responsive while handling a continuous byte stream.</p>
+                <p>Each GPGGA sentence encodes latitude and longitude in DDmm.mm format (degrees plus decimal minutes). The parser converts this to decimal degrees for all downstream math. The road network is stored as an adjacency list graph; each node is a GPS coordinate and each edge has a distance weight.</p>
+                <p>Route calculation runs the selected algorithm (Strategy pattern, swappable at runtime) from the current position to the destination. The Label Setting Algorithm (Dijkstra's) uses <code>PermanentLabelBuckets</code> — buckets of 1km width — instead of a standard priority queue. Nodes are partitioned into buckets by tentative distance and the minimum is found by scanning only the current bucket, reducing overhead for dense urban graphs. The Label Correcting Algorithm (Bellman-Ford) runs with early termination: if a full pass makes no relaxations, it exits before completing all iterations.</p>
+                <p>Off-route detection uses point-to-segment distance with dot product projection to find the closest point on each road segment to the current GPS position. If the nearest segment is farther than a threshold, rerouting triggers. The reroute implementation pre-computes all shortest paths from the destination rather than the source, so any new source position finds its path in O(P) time (path length) rather than rerunning the full algorithm.</p>
+            </div>
         </div>
     </section>
 
     <section id="challenges">
         <div class="container">
-            <h2>challenges &amp; solutions</h2>
+            <h2>challenges</h2>
             <div class="pspacing">
-                <p>Going in I knew nothing about GPS technology - I learned about satellite receivers, NMEA sentences, and coordinate systems while simultaneously building the system.</p>
-                <p>The biggest technical challenge was real-time performance. GPS data comes in continuously and the map must update smoothly. Threading was critical: the GPS read loop runs on its own thread and publishes position updates that the UI thread consumes without blocking.</p>
+                <p>The biggest challenge going in was that I knew nothing about GPS technology. I learned about satellite receivers, NMEA sentence formats, and coordinate systems while simultaneously building the parser and integration layer — each piece of new knowledge revealed a new assumption in the code that needed fixing.</p>
+                <p>Real-time performance was the central technical constraint. GPS data arrives continuously and must not block the UI thread. The <code>SwingWorker</code> producer/consumer model solved this cleanly: the background thread reads and parses, then hands coordinate updates to the EDT through the framework's built-in handoff mechanism. This pattern also made the Observer chain from GPS → map display → route update straightforward to wire up without manual thread synchronization.</p>
+                <p>The rerouting problem looked like "just run the algorithm again" but has a hidden cost: the source changes on every reroute, so a source-rooted shortest path tree becomes stale immediately. Pre-computing the all-shortest-paths tree from the destination inverts the direction and makes rerouting a simple lookup regardless of where the current position is.</p>
             </div>
         </div>
     </section>
@@ -107,12 +124,14 @@
         <div class="container">
             <h2>takeaways</h2>
             <div class="pspacing">
-                <p>This project spanned hardware integration, real-time data processing, and algorithm implementation - a much broader scope than typical academic projects. Some key takeaways:</p>
+                <p>This project spanned hardware integration, real-time data processing, and algorithm implementation — a much broader scope than typical coursework. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>GPS hardware integration and NMEA sentence parsing</li>
-                    <li>Multithreaded GUI design - producer/consumer with JavaFX</li>
-                    <li>Practical application of graph algorithms for pathfinding</li>
-                    <li>MVC, Observer, and Strategy patterns in a real system</li>
+                    <li>GPS hardware integration and NMEA sentence parsing from raw serial data</li>
+                    <li>Multithreaded GUI design — SwingWorker producer/consumer for smooth real-time updates</li>
+                    <li>Dijkstra's with bucket-based priority for dense graph optimization</li>
+                    <li>Bellman-Ford with early termination and its trade-offs vs. Dijkstra's</li>
+                    <li>Pre-computing destination-rooted path trees for O(P) rerouting</li>
+                    <li>MVC, Observer, and Strategy patterns applied to a real-time system</li>
                 </ul>
             </div>
         </div>

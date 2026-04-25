@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | Tip Calculator">
-    <meta property="og:description" content="An ad-free Android tip calculator with bill splitting and customizable settings.">
+    <meta property="og:description" content="An ad-free Android tip calculator with four BigDecimal rounding modes, three themes, bill splitting up to 99 people, and persistent settings via DataStore — built with a fully programmatic UI.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/tc-logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/tip-calculator.html">
@@ -53,7 +53,7 @@
     <section id="hero">
         <div class="container">
             <h1>tip calculator<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ an ad-free Android tip calculator</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ an ad-free Android tip calculator with rounding modes and bill splitting</p>
         </div>
     </section>
 
@@ -61,16 +61,18 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>A simple, ad-free Android tip calculator built to get started with Android development. Open the app, type the bill amount, and the tip is calculated immediately using your saved settings - no extra taps. Features persist between sessions so it's always configured to your preference.</p>
-                <p>Supports rounding modes, multiple currencies, bill splitting among up to 99 people, and several preset themes. Works entirely offline.</p>
+                <p>A simple, ad-free Android tip calculator built to get started with Android development. Open the app, type the bill amount using the custom NumPad, and the tip and total calculate immediately using your saved settings — no extra taps required. Supports rounding modes, multiple currencies, bill splitting among up to 99 people, and several preset themes. Works entirely offline. Available on the Play Store.</p>
             </div>
 
             <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Java - Android SDK, OOP</li>
-                        <li>Android Studio - Gradle build system</li>
+                        <li>Java, Android SDK — fully programmatic UI with no XML layouts; all views constructed in code</li>
+                        <li>DataStore (RxDataStore) — reactive persistent settings storage for preferences across sessions</li>
+                        <li>BigDecimal — four rounding modes (UP/DOWN/DYNAMIC/NONE) for exact monetary arithmetic</li>
+                        <li>Observer pattern — NumPad → TextBox → Calculator → display update chain</li>
+                        <li>ViewPropertyAnimator — hardware-accelerated 300ms slide transitions between pages</li>
                     </ul>
                 </div>
                 <div>
@@ -78,7 +80,7 @@
                     <ul class="arrowed-list">
                         <li><a href="https://play.google.com/store/apps/details?id=com.hbtipcalc.tipcalculator" target="_blank">Play Store</a></li>
                         <li><a href="https://github.com/hutnerr/tip-calculator" target="_blank">GitHub</a></li>
-                        <li><a href="/resources/bin/tip-calculator.apk" download>APK Download</a></li>
+                        <li><a href="/resources/bin/tip-calculator.apk">APK Download</a></li>
                         <li><a href="/pages/other/tip-calculator-help.html">Help Page</a></li>
                     </ul>
                 </div>
@@ -89,7 +91,46 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/tc-banner.png" alt="Tip Calculator Banner" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/tc-banner.png" alt="Tip Calculator app banner" data-lightbox>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2>how it works</h2>
+            <div class="pspacing">
+                <p>The entire UI is built programmatically — no XML layouts. All views are constructed and constrained in Java, which made the layout logic explicit and testable but required manually managing all the constraint relationships that XML would otherwise handle declaratively.</p>
+                <p>Input flows through an Observer chain: the custom NumPad fires events on each key press; a TextBox observer receives them and updates the displayed input string; a Calculator observer watches the TextBox and recomputes the tip and total; display components observe the Calculator and update their text. This makes the data flow unidirectional and means any component can be tested independently by observing its output without touching the UI.</p>
+                <p>Tip arithmetic uses BigDecimal throughout to avoid floating-point rounding errors on monetary values. Four rounding modes are supported: UP (always rounds away from zero), DOWN (always truncates), DYNAMIC (rounds to nearest, half-up), and NONE (no rounding — exact decimal result). The selected mode is applied to the final per-person amount after splitting.</p>
+                <p>Settings — last-used tip percentage, rounding mode, currency symbol, theme selection — persist across sessions via RxDataStore. Page transitions between the calculator view and the settings view use <code>ViewPropertyAnimator</code> with hardware layer enabled: 300ms slides that compose on the GPU rather than redrawing in software.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="challenges">
+        <div class="container">
+            <h2>challenges</h2>
+            <div class="pspacing">
+                <p>Programmatic UI without XML means the view hierarchy must be reasoned about entirely in code. ConstraintLayout's constraint API is verbose in Java: every edge constraint is a separate method call, and the relationship between views must be specified explicitly in both directions. Keeping this readable required careful decomposition into factory methods that construct logically related groups of views together.</p>
+                <p>BigDecimal rounding mode selection exposed a design decision: DYNAMIC mode (round half-up) matches what most people expect from a calculator, but UP and DOWN modes exist for specific expense-reporting cases where the rounding direction matters. Exposing all four and making DYNAMIC the default required documenting the behavior clearly in the help page so users understand why their total might differ by a cent.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="takeaways">
+        <div class="container">
+            <h2>takeaways</h2>
+            <div class="pspacing">
+                <p>First Android app shipped to the Play Store. The combination of programmatic UI, reactive settings storage, and exact decimal arithmetic made it a good introduction to Android's more nuanced APIs. Some key takeaways:</p>
+                <ul class="arrowed-list">
+                    <li>Fully programmatic Android UI — ConstraintLayout in Java without XML</li>
+                    <li>Observer pattern for unidirectional data flow in a reactive UI</li>
+                    <li>BigDecimal for exact monetary arithmetic and per-mode rounding semantics</li>
+                    <li>DataStore/RxDataStore for reactive settings persistence</li>
+                    <li>Hardware-accelerated page transitions with ViewPropertyAnimator</li>
+                    <li>Play Store submission and app lifecycle management</li>
+                </ul>
+            </div>
         </div>
     </section>
 

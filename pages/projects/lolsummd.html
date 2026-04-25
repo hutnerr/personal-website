@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | LOLSUMMD">
-    <meta property="og:description" content="A champion mastery aggregator for League of Legends multi-account players.">
+    <meta property="og:description" content="A web app that aggregates champion mastery across multiple League of Legends accounts, combining points and levels per champion using the Riot API and Redis caching.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/lolsummd.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/lolsummd.html">
@@ -53,7 +53,7 @@
     <section id="hero">
         <div class="container">
             <h1>lolsummd<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a champion mastery aggregator for League of Legends</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ aggregate League of Legends champion mastery across all your accounts</p>
         </div>
     </section>
 
@@ -61,19 +61,19 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>LOLSUMMD aggregates League of Legends champion mastery data across multiple accounts. Add up to 10 accounts by Name#Tag, and the app fetches and combines mastery points and levels for every champion - useful if your history is split across accounts.</p>
-                <p>API responses are cached in Redis via <a href="https://upstash.com/">Upstash</a> to reduce calls to Riot's servers. The app is deployed on <a href="https://vercel.com/">Vercel</a> with a Flask backend. Champions can be sorted by name, mastery points, or levels.</p>
+                <p>LOLSUMMD solves a specific problem for multi-account League of Legends players: champion mastery history is siloed per account, so your real total for a champion you've played across multiple accounts is invisible to the client. The app lets you add up to 10 accounts by Name#Tag, fetches mastery data for each via the Riot API, and sums points and levels per champion ID to produce a unified view.</p>
+                <p>Champions can be sorted by name, total mastery points, or combined level. The top three champions are displayed in a podium widget, and the full dataset can be exported as JSON.</p>
             </div>
 
             <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Python - Flask backend</li>
-                        <li>Redis via Upstash - API response caching</li>
-                        <li>Riot Games API - champion mastery data</li>
-                        <li>HTML/CSS/JavaScript - frontend</li>
-                        <li>Vercel - hosting</li>
+                        <li>Python, Flask — backend serving templates and handling form submissions</li>
+                        <li>Redis via Upstash — serverless Redis for 24-hour mastery data caching with auto-indexed name lookup</li>
+                        <li>Riot Games API — 14 regional endpoints across 4 continental platforms for summoner and mastery data</li>
+                        <li>HTML, CSS, JavaScript — frontend with clipboard paste parsing, podium widget, and JSON export</li>
+                        <li>Vercel — serverless deployment</li>
                     </ul>
                 </div>
                 <div>
@@ -90,7 +90,43 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/lolsummd.png" alt="LOLSUMMD Screenshot" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/lolsummd.png" alt="LOLSUMMD champion mastery aggregator screenshot" data-lightbox>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2>how it works</h2>
+            <div class="pspacing">
+                <p>Account lookup uses a two-stage Riot API flow. The Name#Tag pair is resolved to a PUUID via the Account API on the appropriate continental platform, then the PUUID is used to fetch per-champion mastery records from the regional endpoint. Riot exposes 14 regional APIs across 4 continental platforms (Americas, Europe, Asia, SEA), and the app maps each region to its correct pair of endpoints.</p>
+                <p>Mastery aggregation is a straightforward reduce: iterate each account's mastery list, accumulate <code>{champion_id: {points: N, level: N}}</code> into a shared dictionary, and sort the result. The frontend parses clipboard paste input splitting on the <code>#</code> separator and submits the account list as a form POST.</p>
+                <p>API responses are cached in Redis with a 24-hour TTL. Two cache key namespaces are used: <code>cache:accounts:{puuid}</code> stores mastery data for a given account, and <code>cache:name_index:{username}#{tag}#{region}</code> stores the resolved PUUID so repeated lookups for the same summoner skip the account resolution call. Cache entries are auto-indexed on write so name-based lookups can hit the cache without re-resolving.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="challenges">
+        <div class="container">
+            <h2>challenges</h2>
+            <div class="pspacing">
+                <p>The Riot API's regional structure is its own complexity. Different data types live at different endpoint tiers — summoner identity at the continental level, mastery at the regional level — and the correct pairing depends on the region the account was created in. Mapping all 14 regions to their continental platforms and ensuring each request hit the right base URL required building a lookup table and validating it against every region.</p>
+                <p>XSS prevention was a non-obvious concern for a frontend that renders user-supplied summoner names directly into the DOM. The JavaScript escapes all user-provided strings through an <code>escHtml()</code> helper before inserting them, treating every Riot API response as untrusted input even though it comes from a controlled source.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="takeaways">
+        <div class="container">
+            <h2>takeaways</h2>
+            <div class="pspacing">
+                <p>Building around a rate-limited, multi-tier external API forced careful design of the caching layer and request routing from the start. Some key takeaways:</p>
+                <ul class="arrowed-list">
+                    <li>Multi-tier external API design — navigating regional and continental endpoint separation</li>
+                    <li>Redis caching strategy with TTL and multi-namespace key design</li>
+                    <li>Serverless deployment on Vercel with Flask as the backend framework</li>
+                    <li>XSS prevention for user-controlled content rendered in the DOM</li>
+                </ul>
+            </div>
         </div>
     </section>
 

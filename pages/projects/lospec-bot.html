@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | Lospec Daily Bot">
-    <meta property="og:description" content="A Discord bot that posts daily pixel art challenges from Lospec.">
+    <meta property="og:description" content="A Discord bot that scrapes and posts the daily pixel art palette from Lospec.com to subscribed servers every morning at 8 AM EST.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/lospec-bot-ss.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/lospec-bot.html">
@@ -53,7 +53,7 @@
     <section id="hero">
         <div class="container">
             <h1>lospec daily bot<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a pixel art daily challenge Discord bot</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ daily pixel art palette posts from Lospec to your Discord server</p>
         </div>
     </section>
 
@@ -61,15 +61,18 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>A Discord bot that scrapes and posts the daily pixel art challenges from <a href="https://lospec.com/">Lospec</a> into any server channel. It's meant to provide daily inspiration and a prompt for pixel artists to practice.</p>
-                <p>Originally built for personal use, it was made public once it felt polished enough that others might find it useful too. Not affiliated with Lospec.</p>
+                <p>A Discord bot that posts the daily pixel art palette from Lospec.com to any subscribed server channel every morning at 8 AM EST. It's designed for pixel art communities that want a daily creative prompt delivered automatically — no manual checking, no copy-pasting links. Not affiliated with Lospec.</p>
+                <p>Originally built for personal use and made public once it felt polished enough that others might find it useful.</p>
             </div>
 
             <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Python - Discord.py, Aiohttp, BeautifulSoup4</li>
+                        <li>Python — Discord.py for bot framework, Aiohttp for async HTTP requests</li>
+                        <li>BeautifulSoup4 — HTML parsing of Lospec.com palette pages to extract daily palette slug and metadata</li>
+                        <li>Per-server JSON persistence — subscription config stored in data/servers/{serverID}.json</li>
+                        <li>Polling loop — 1-minute interval checks current time against 8 AM EST delivery target</li>
                     </ul>
                 </div>
                 <div>
@@ -87,7 +90,42 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/lospec-bot-ss.png" alt="Lospec Bot Discord Screenshot" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/lospec-bot-ss.png" alt="Lospec Daily Bot Discord screenshot" data-lightbox>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2>how it works</h2>
+            <div class="pspacing">
+                <p>A background loop polls once per minute and compares the current time (in EST) against the 8 AM delivery window. When the window opens, the bot fetches the Lospec dailies page and uses BeautifulSoup4 to locate the <code>div.daily.tag</code> and <code>div.daily.palette</code> elements, extracting the palette slug and display metadata from the page HTML. The palette image is constructed from the CDN URL pattern <code>https://cdn.lospec.com/thumbnails/palette-list/{slug}-social.png</code>.</p>
+                <p>Per-server configuration is stored in individual JSON files under <code>data/servers/{serverID}.json</code>. Each file records the subscribed channel ID, the bot's enabled/disabled state for that server, and delivery preferences. The bot exposes 6 slash commands for server admins to configure the channel, toggle posting, and check current settings.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="challenges">
+        <div class="container">
+            <h2>challenges</h2>
+            <div class="pspacing">
+                <p>Scraping Lospec requires treating the site's HTML as an external dependency — class names and structure can change without notice. The parser targets specific CSS selectors (<code>div.daily.tag</code>, <code>div.daily.palette</code>) rather than brittle positional indexing, which gives some resilience to layout changes around those elements.</p>
+                <p>Delivery timing with a polling loop rather than scheduled callbacks meant handling the edge case where the bot restarts mid-day: if the daily has already been posted for the day (tracked in state), a late restart should not re-send. Per-server state tracks whether today's palette has already been delivered, preventing duplicate posts on restart.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="takeaways">
+        <div class="container">
+            <h2>takeaways</h2>
+            <div class="pspacing">
+                <p>A small project, but it shipped and runs. The main value was building the full cycle: scraping, state management, slash commands, and deployment. Some key takeaways:</p>
+                <ul class="arrowed-list">
+                    <li>Web scraping with BeautifulSoup4 — targeting stable selectors over positional parsing</li>
+                    <li>Per-server bot configuration with JSON persistence</li>
+                    <li>Discord slash command registration and interaction handling with Discord.py</li>
+                    <li>Edge case handling for stateful scheduled delivery (restart safety, duplicate prevention)</li>
+                </ul>
+            </div>
         </div>
     </section>
 
