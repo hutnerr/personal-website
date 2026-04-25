@@ -61,12 +61,16 @@
         <div class="container">
             <h2>getting started</h2>
             <div class="pspacing">
-                <p>Obsidian Attachment Placement is a community plugin that gives you fine-grained control over where new attachments are saved in your vault. Instead of every attachment landing in a single global folder, you define placement rules per folder — the plugin walks up the directory tree from the current note and applies the first rule it finds.</p>
+                <p>Obsidian Attachment Placement is a community plugin that gives you fine-grained control over where new attachments are saved in your vault. Instead of every attachment landing in a single global folder, you define placement rules per folder - the plugin walks up the directory tree from the current note and applies the first rule it finds.</p>
                 <p>Install it from the Obsidian community plugins directory, then configure it via <strong>Settings → Attachment Placement</strong>. No restart required.</p>
             </div>
 
             <h3 style="margin-top: 24px; margin-bottom: 12px;">settings</h3>
-            <table class="table-gap">
+            <table class="table-gap table-desc" style="width: 100%;">
+                <colgroup>
+                    <col style="width: 220px;">
+                    <col style="width: auto;">
+                </colgroup>
                 <tbody>
                     <tr><td><code>Fallback Destination</code></td><td>Default folder used when no placement rule matches. Leave blank to use Obsidian's built-in default.</td></tr>
                     <tr><td><code>Fallback Depth Limit</code></td><td>How far up the folder hierarchy the plugin searches before giving up. 0 = current folder only; higher values check parent folders too.</td></tr>
@@ -89,7 +93,7 @@
             <h2>walkthrough</h2>
 
             <div class="walkthrough-step">
-                <p>The plugin settings panel. Add placement rules by specifying a folder path and a destination — whenever you drop an attachment into a note inside that folder, it lands in the destination you specified.</p>
+                <p>The plugin settings panel. Add placement rules by specifying a folder path and a destination - whenever you drop an attachment into a note inside that folder, it lands in the destination you specified.</p>
                 <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/obs-attachment-placement-settings.png" alt="Obsidian Attachment Placement settings panel" data-lightbox>
             </div>
 

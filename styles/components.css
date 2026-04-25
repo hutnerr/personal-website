@@ -45,14 +45,80 @@
   vertical-align: top;
 }
 
-.table-gap td:last-child {
-  text-align: right;
+.table-gap td:first-child {
   white-space: nowrap;
+}
+
+.table-gap td:last-child {
+  white-space: nowrap;
+}
+
+.table-desc td:last-child {
+  text-align: left;
+  white-space: normal;
 }
 
 .table-centered {
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ==========================================
+   CARD HEADER (darker top bar on cards)
+   ========================================== */
+
+.card-header {
+  background: var(--bg);
+  padding: 12px 16px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-body {
+  padding: 20px 24px;
+  font-size: 0.82rem;
+}
+
+.card-body p + p {
+  margin-top: 0.9em;
+}
+
+.card-header h3 {
+  padding: 0 0 4px;
+  color: var(--accent);
+}
+
+.card-header .card-subtitle {
+  padding: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+  display: block;
+  color: var(--text);
+}
+
+/* ==========================================
+   SCREENSHOT ROW (phone screenshot gallery)
+   ========================================== */
+
+.screenshot-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.screenshot-row img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  transition: border-color 0.2s ease, transform 0.25s ease;
+}
+
+.screenshot-row img:hover {
+  border-color: var(--accent);
+  transform: scale(1.03);
 }
 
 /* ==========================================
@@ -123,7 +189,7 @@
   transition: transform 0.15s ease;
 }
 
-.arrowed-list li:hover::before {
+.arrowed-list li:has(a):hover::before {
   transform: translateX(4px);
 }
 
@@ -175,20 +241,16 @@
 
 .walkthrough-step {
   margin-bottom: 2.5rem;
-  padding-bottom: 2.5rem;
-  border-bottom: 1px solid var(--border);
 }
 
 .walkthrough-step:last-child {
-  border-bottom: none;
   margin-bottom: 0;
-  padding-bottom: 0;
 }
 
 .walkthrough-img {
   max-width: 680px;
   border: 2px solid var(--border);
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.25s ease;
 }
 
 .walkthrough-img:hover {

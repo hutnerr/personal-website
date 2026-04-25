@@ -1,4 +1,3 @@
-
 new content:
 - update my job history stuff.
 - update the project pages to sound more technical
@@ -7,3 +6,18 @@ new content:
     - technical pages should get more breadth
     - product pages should get more showcasey
 
+x. check for mobile layout
+x. check if all links work
+x. compare pages to current website. i think it trimmed a ton of text from help pages
+x. go through each page and clean it up
+    - remove dead styles
+    - remove empty divs and junk
+    - double check they all have their metadata
+x. remove the dead git branches
+
+8. add a rat haven studios website project page (frontend)
+9. add a project page for this website. (frontend)
+20. run /init to update CLAUDE.md
+22. add more project that I've worked on to the project pages. 
+
+convert the game pages to the project pages. 

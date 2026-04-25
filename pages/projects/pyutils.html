@@ -74,9 +74,9 @@
                 </div>
                 <div>
                     <h3 style="margin-bottom: 12px;">links</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
-                        <a href="https://github.com/hutnerr/python-utils" class="btn btn-background" target="_blank">GitHub</a>
-                    </div>
+                    <ul class="arrowed-list">
+                        <li><a href="https://github.com/hutnerr/python-utils" target="_blank">GitHub</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@ Clogger.config = CloggerConfig()  # reset</code></pre>
 Clogger.error("Saved quietly.", settings_override=CloggerOverrideFactory.file_only("errors.log"))
 Clogger.debug("Dict dump.", settings_override=CloggerOverrideFactory.pretty())
 
-# Combine overrides — later keys win on conflict
+# Combine overrides - later keys win on conflict
 Clogger.info("Verbose and saved.", settings_override=CloggerOverrideFactory.combine(
     CloggerOverrideFactory.verbose(),
     CloggerOverrideFactory.write_to_file("verbose.log"),
@@ -118,7 +118,7 @@ Clogger.info("Verbose and saved.", settings_override=CloggerOverrideFactory.comb
                 <pre><code class="language-python">log_boot = Clogger.make_log("BOOT", color=CloggerColor.CYAN, level=LogLevel.INFO)
 log_boot("App starting up.")   # [BOOT]    | main.py:12 | App starting up.
 
-# Bake in a settings baseline — still overridable per call
+# Bake in a settings baseline - still overridable per call
 log_trace = Clogger.make_log(
     "TRACE",
     color=CloggerColor.MAGENTA,
@@ -145,7 +145,7 @@ verbose_logger.info("Full timestamps and source shown.")
 silent_logger.error("No output at all.")
 file_logger.warn("Written to run.log only.")</code></pre>
 
-                <p>Name a logger to a module — the name appears before the level tag on every line:</p>
+                <p>Name a logger to a module - the name appears before the level tag on every line:</p>
                 <pre><code class="language-python">db_logger = ClogobjFactory.for_module("Database")
 db_logger.info("Connection established.")   # [Database][INFO]  | db.py:42 | Connection established.
 db_logger.warn("Slow query detected.")      # [Database][WARN]  | db.py:43 | Slow query detected.</code></pre>
@@ -190,13 +190,13 @@ boot.log("INIT", "Config loaded.")</code></pre>
         <div class="container">
             <h2>Option &amp; Result</h2>
             <div class="pspacing">
-                <p>Rust-inspired types for explicit null and error handling — no bare <code>None</code> checks or scattered <code>try/except</code> blocks.</p>
+                <p>Rust-inspired types for explicit null and error handling - no bare <code>None</code> checks or scattered <code>try/except</code> blocks.</p>
                 <p><strong>Option</strong> wraps a value that may or may not exist. Unlike bare <code>None</code>, <code>Some(None)</code> is a valid distinct state.</p>
                 <pre><code class="language-python">from pyutils import Option
 
 Option.some(42).unwrap()           # 42
 Option.none().unwrap_or(0)         # 0
-Option.none().unwrap_or_else(fn)   # fn() — only called if None</code></pre>
+Option.none().unwrap_or_else(fn)   # fn() - only called if None</code></pre>
 
                 <p><strong>Result</strong> wraps either a success value or an error. <code>Ok(None)</code> and <code>Err(None)</code> are both valid and distinguishable.</p>
                 <pre><code class="language-python">from pyutils import Result
@@ -207,7 +207,7 @@ Result.err("oops").unwrap_or(0)        # 0
 Result.err("oops").expect("failed")    # raises: ValueError: failed: 'oops'</code></pre>
 
                 <p>Both types support <code>bool()</code> coercion, equality, hashing, and iter unpacking:</p>
-                <pre><code class="language-python">bool(Option.some(0))     # True  — state-based, not value-based
+                <pre><code class="language-python">bool(Option.some(0))     # True  - state-based, not value-based
 bool(Option.none())      # False
 bool(Result.ok(None))    # True
 bool(Result.err("x"))    # False

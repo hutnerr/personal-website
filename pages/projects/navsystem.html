@@ -69,17 +69,17 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Java — JavaFX, multithreading, MVC pattern</li>
-                        <li>GPS hardware — USB satellite receiver, GPGGA sentence parsing</li>
-                        <li>Pathfinding — <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's</a> and <a href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm">Bellman-Ford</a> on graph structures</li>
+                        <li>Java - JavaFX, multithreading, MVC pattern</li>
+                        <li>GPS hardware - USB satellite receiver, GPGGA sentence parsing</li>
+                        <li>Pathfinding - <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's</a> and <a href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm">Bellman-Ford</a> on graph structures</li>
                     </ul>
                 </div>
                 <div>
                     <h3 style="margin-bottom: 12px;">links</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
-                        <a href="https://github.com/hutnerr/navsystem" class="btn btn-background" target="_blank">GitHub</a>
-                        <a href="/resources/images/projects/navsystemdesign.svg" class="btn btn-background" target="_blank">Design Doc</a>
-                    </div>
+                    <ul class="arrowed-list">
+                        <li><a href="https://github.com/hutnerr/navsystem" target="_blank">GitHub</a></li>
+                        <li><a href="/resources/images/projects/navsystemdesign.svg" target="_blank">Design Doc</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@
         <div class="container">
             <h2>challenges &amp; solutions</h2>
             <div class="pspacing">
-                <p>Going in I knew nothing about GPS technology — I learned about satellite receivers, NMEA sentences, and coordinate systems while simultaneously building the system.</p>
+                <p>Going in I knew nothing about GPS technology - I learned about satellite receivers, NMEA sentences, and coordinate systems while simultaneously building the system.</p>
                 <p>The biggest technical challenge was real-time performance. GPS data comes in continuously and the map must update smoothly. Threading was critical: the GPS read loop runs on its own thread and publishes position updates that the UI thread consumes without blocking.</p>
             </div>
         </div>
@@ -107,10 +107,10 @@
         <div class="container">
             <h2>takeaways</h2>
             <div class="pspacing">
-                <p>This project spanned hardware integration, real-time data processing, and algorithm implementation — a much broader scope than typical academic projects. Some key takeaways:</p>
+                <p>This project spanned hardware integration, real-time data processing, and algorithm implementation - a much broader scope than typical academic projects. Some key takeaways:</p>
                 <ul class="arrowed-list">
                     <li>GPS hardware integration and NMEA sentence parsing</li>
-                    <li>Multithreaded GUI design — producer/consumer with JavaFX</li>
+                    <li>Multithreaded GUI design - producer/consumer with JavaFX</li>
                     <li>Practical application of graph algorithms for pathfinding</li>
                     <li>MVC, Observer, and Strategy patterns in a real system</li>
                 </ul>

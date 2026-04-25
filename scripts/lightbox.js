@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const lightboxImg = overlay.querySelector('.lightbox-img');
 
-    document.querySelectorAll('img.hover-img, img.post-img').forEach(img => {
-        img.style.cursor = 'zoom-in';
+    document.querySelectorAll('img[data-lightbox]').forEach(img => {
         img.addEventListener('click', () => {
             lightboxImg.src = img.src;
             lightboxImg.alt = img.alt;

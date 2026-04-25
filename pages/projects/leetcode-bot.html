@@ -61,7 +61,7 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>beast[code] is a Discord bot that facilitates LeetCode practice within a server. It runs a configurable system of recurring problems, contest reminder alerts, a point leaderboard, and user submission tracking — all driven by per-server and per-problem settings.</p>
+                <p>beast[code] is a Discord bot that facilitates LeetCode practice within a server. It runs a configurable system of recurring problems, contest reminder alerts, a point leaderboard, and user submission tracking - all driven by per-server and per-problem settings.</p>
                 <p>As a live service product it is constantly evolving. Server admins configure it via slash commands; users link their LeetCode accounts and submit solutions for points.</p>
             </div>
 
@@ -69,19 +69,19 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Python — Discord.py, Requests</li>
-                        <li>LeetCode API — GraphQL queries for problems and user data</li>
+                        <li>Python - Discord.py, Requests</li>
+                        <li>LeetCode API - GraphQL queries for problems and user data</li>
                         <li>Observer pattern for notification delivery</li>
                     </ul>
                 </div>
                 <div>
                     <h3 style="margin-bottom: 12px;">links</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
-                        <a href="https://github.com/hutnerr/leetcode-bot" class="btn btn-background" target="_blank">GitHub</a>
-                        <a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot" class="btn btn-background" target="_blank">Add to Server</a>
-                        <a href="https://top.gg/bot/1392738606120173719" class="btn btn-background" target="_blank">Top.gg</a>
-                        <a href="/pages/other/beastcode-help.html" class="btn btn-background">Help Page</a>
-                    </div>
+                    <ul class="arrowed-list">
+                        <li><a href="https://github.com/hutnerr/leetcode-bot" target="_blank">GitHub</a></li>
+                        <li><a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot" target="_blank">Add to Server</a></li>
+                        <li><a href="https://top.gg/bot/1392738606120173719" target="_blank">Top.gg</a></li>
+                        <li><a href="/pages/other/beastcode-help.html">Help Page</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@
         <div class="container">
             <h2>challenges &amp; solutions</h2>
             <div class="pspacing">
-                <p>This was the largest project I had designed on my own at the time, which meant novel challenges at every stage. I built it in two phases: backend core first, then Discord integration — but I still found gaps in the backend mid-integration that required back-tracking.</p>
+                <p>This was the largest project I had designed on my own at the time, which meant novel challenges at every stage. I built it in two phases: backend core first, then Discord integration - but I still found gaps in the backend mid-integration that required back-tracking.</p>
                 <p>One major scalability challenge was storage access. Initially I read from and wrote to files on every operation. I switched to an in-memory cache backed by JSON files, but this introduced cache/disk divergence bugs. I solved this with a "Synchronizer" that ensures both layers update atomically.</p>
                 <p>Getting the notification and timed problem delivery right required significant design work. I implemented an Observer pattern with time-bucketed scheduling: settings populate buckets, and a background loop fires notifications when the current time matches a bucket's threshold.</p>
             </div>
@@ -112,7 +112,7 @@
                 <p>Building and maintaining a live service product sharpened my understanding of system design, planning, and the real cost of shortcuts. Some key takeaways:</p>
                 <ul class="arrowed-list">
                     <li>Designing and shipping a complete live service product end to end</li>
-                    <li>Value of upfront planning — saved significant rework mid-integration</li>
+                    <li>Value of upfront planning - saved significant rework mid-integration</li>
                     <li>Cache/storage consistency as a first-class design concern</li>
                     <li>Maintaining and iterating on a deployed product over time</li>
                 </ul>
