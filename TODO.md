@@ -28,3 +28,4 @@
 
 
 Fix the filepaths. 
+Ctrl + Shift + F to find /resources, then go in and update those filepaths

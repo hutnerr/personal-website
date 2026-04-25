@@ -41,7 +41,7 @@ body::before {
   position: fixed;
   inset: 0;
   background-color: var(--bg-pattern);
-  mask-image: url('/resources/images/backgrounds/topography.svg');
+  mask-image: url('/assets/background/topography.svg');
   pointer-events: none;
   z-index: -1;
   opacity: 0.72;
