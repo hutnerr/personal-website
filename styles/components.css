@@ -78,7 +78,7 @@
   font-size: 0.82rem;
 }
 
-.card-body p + p {
+.card-body p+p {
   margin-top: 0.9em;
 }
 
@@ -156,8 +156,16 @@
 }
 
 @keyframes blink {
-  0%, 50%  { opacity: 1; }
-  51%, 100% { opacity: 0; }
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* ==========================================

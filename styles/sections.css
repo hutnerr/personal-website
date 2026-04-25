@@ -53,8 +53,8 @@
    SUB-PAGE HERO CENTERING
    ========================================== */
 
-#hero > .container > h1,
-#hero > .container > p {
+#hero>.container>h1,
+#hero>.container>p {
   text-align: center;
 }
 
@@ -63,6 +63,7 @@
    ========================================== */
 
 @media (max-width: 768px) {
+
   .hero-two-col,
   .hero-content,
   .hero-content-not-centered {

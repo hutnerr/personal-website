@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | Obsidian Attachment Placement Help">
-    <meta property="og:description" content="A comprehensive guide to setting up and using the Obsidian Attachment Placement plugin.">
-    <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/obs-attachment-placement-settings.png">
+    <meta property="og:description"
+        content="A comprehensive guide to setting up and using the Obsidian Attachment Placement plugin.">
+    <meta property="og:image"
+        content="https://hunter-baker.com/resources/images/projects/obs-attachment-placement-settings.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/other/obsidian-attachment-placement-help.html">
 
@@ -27,33 +29,31 @@
 </head>
 
 <body>
-    <div id="background">
-<!-- Background pattern handled via CSS body::before -->
-</div>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/resources/images/my_rat_pfp_nobg.png" alt=""/>
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
     </div>
-</header>
-</div>
 
     <section id="hero">
         <div class="container">
             <h1>obsidian attachment placement help<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ get started with the Obsidian Attachment Placement plugin</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ get started with the Obsidian Attachment
+                Placement plugin</p>
         </div>
     </section>
 
@@ -61,8 +61,12 @@
         <div class="container">
             <h2>getting started</h2>
             <div class="pspacing">
-                <p>Obsidian Attachment Placement is a community plugin that gives you fine-grained control over where new attachments are saved in your vault. Instead of every attachment landing in a single global folder, you define placement rules per folder - the plugin walks up the directory tree from the current note and applies the first rule it finds.</p>
-                <p>Install it from the Obsidian community plugins directory, then configure it via <strong>Settings → Attachment Placement</strong>. No restart required.</p>
+                <p>Obsidian Attachment Placement is a community plugin that gives you fine-grained control over where
+                    new attachments are saved in your vault. Instead of every attachment landing in a single global
+                    folder, you define placement rules per folder - the plugin walks up the directory tree from the
+                    current note and applies the first rule it finds.</p>
+                <p>Install it from the Obsidian community plugins directory, then configure it via <strong>Settings →
+                        Attachment Placement</strong>. No restart required.</p>
             </div>
 
             <h3 style="margin-top: 24px; margin-bottom: 12px;">settings</h3>
@@ -72,11 +76,28 @@
                     <col style="width: auto;">
                 </colgroup>
                 <tbody>
-                    <tr><td><code>Fallback Destination</code></td><td>Default folder used when no placement rule matches. Leave blank to use Obsidian's built-in default.</td></tr>
-                    <tr><td><code>Fallback Depth Limit</code></td><td>How far up the folder hierarchy the plugin searches before giving up. 0 = current folder only; higher values check parent folders too.</td></tr>
-                    <tr><td><code>Notifications</code></td><td>Toggle popup alerts when the plugin places an attachment.</td></tr>
-                    <tr><td><code>Reset Settings</code></td><td>Restores all settings to defaults.</td></tr>
-                    <tr><td><code>Clear All Rules</code></td><td>Removes every placement rule you have defined.</td></tr>
+                    <tr>
+                        <td><code>Fallback Destination</code></td>
+                        <td>Default folder used when no placement rule matches. Leave blank to use Obsidian's built-in
+                            default.</td>
+                    </tr>
+                    <tr>
+                        <td><code>Fallback Depth Limit</code></td>
+                        <td>How far up the folder hierarchy the plugin searches before giving up. 0 = current folder
+                            only; higher values check parent folders too.</td>
+                    </tr>
+                    <tr>
+                        <td><code>Notifications</code></td>
+                        <td>Toggle popup alerts when the plugin places an attachment.</td>
+                    </tr>
+                    <tr>
+                        <td><code>Reset Settings</code></td>
+                        <td>Restores all settings to defaults.</td>
+                    </tr>
+                    <tr>
+                        <td><code>Clear All Rules</code></td>
+                        <td>Removes every placement rule you have defined.</td>
+                    </tr>
                 </tbody>
             </table>
 
@@ -93,12 +114,19 @@
             <h2>walkthrough</h2>
 
             <div class="walkthrough-step">
-                <p>The plugin settings panel. Add placement rules by specifying a folder path and a destination - whenever you drop an attachment into a note inside that folder, it lands in the destination you specified.</p>
-                <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/obs-attachment-placement-settings.png" alt="Obsidian Attachment Placement settings panel" data-lightbox>
+                <p>The plugin settings panel. Add placement rules by specifying a folder path and a destination -
+                    whenever you drop an attachment into a note inside that folder, it lands in the destination you
+                    specified.</p>
+                <img class="walkthrough-img hover-img sized-img"
+                    src="/resources/images/projects/obs-attachment-placement-settings.png"
+                    alt="Obsidian Attachment Placement settings panel" data-lightbox>
             </div>
 
             <div class="walkthrough-step">
-                <p>An example vault structure to illustrate how rules are resolved. If you are editing <code>Queue.md</code> inside <code>CS240 - Data Structures</code> and paste an image, the plugin checks for a rule on that folder first, then walks up to <code>School</code>, then the vault root, before falling back to the default destination.</p>
+                <p>An example vault structure to illustrate how rules are resolved. If you are editing
+                    <code>Queue.md</code> inside <code>CS240 - Data Structures</code> and paste an image, the plugin
+                    checks for a rule on that folder first, then walks up to <code>School</code>, then the vault root,
+                    before falling back to the default destination.</p>
                 <pre style="margin-bottom: 1rem;">Obsidian Vault
 ├─ 00 - Attachments
 │  └─ Programming
@@ -114,31 +142,33 @@
    ├─ CS240 - Data Structures
    │  └─ Queue.md
    └─ CS261 - Computer Systems</pre>
-                <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/obs-attachment-example.png" alt="Obsidian Attachment Placement example configuration" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img"
+                    src="/resources/images/projects/obs-attachment-example.png"
+                    alt="Obsidian Attachment Placement example configuration" data-lightbox>
             </div>
 
         </div>
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

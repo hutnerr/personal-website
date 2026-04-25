@@ -18,7 +18,9 @@
   padding: 0;
 }
 
-html { overflow-y: scroll; }
+html {
+  overflow-y: scroll;
+}
 
 body {
   background-color: var(--bg);
@@ -45,8 +47,13 @@ body::before {
   opacity: 0.72;
 }
 
-#background { display: none; }
-#footer { margin-top: auto; }
+#background {
+  display: none;
+}
+
+#footer {
+  margin-top: auto;
+}
 
 /* -------------------- LAYOUT -------------------- */
 .container {
@@ -64,23 +71,54 @@ section {
   gap: 24px;
 }
 
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
 
 /* -------------------- TYPOGRAPHY -------------------- */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'JetBrains Mono', monospace;
 }
 
-h1 { font-size: 2.4rem; color: var(--accent); }
-h2 { font-size: 1.4rem; color: var(--text); margin-bottom: 20px; }
-h3 { font-size: 1.1rem; color: var(--text); }
-h4 { font-size: 0.95rem; color: var(--text); }
+h1 {
+  font-size: 2.4rem;
+  color: var(--accent);
+}
 
-p { color: var(--text-muted); }
-p + p { margin-top: 1em; }
+h2 {
+  font-size: 1.4rem;
+  color: var(--text);
+  margin-bottom: 20px;
+}
 
-strong { color: var(--text); }
+h3 {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+h4 {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+p+p {
+  margin-top: 1em;
+}
+
+strong {
+  color: var(--text);
+}
 
 /* -------------------- LINKS -------------------- */
 a {
@@ -198,7 +236,9 @@ a:hover {
   box-shadow: none;
 }
 
-.card.hidden { display: none; }
+.card.hidden {
+  display: none;
+}
 
 .card h3 {
   padding: 12px 16px 2px;
@@ -225,7 +265,7 @@ a:hover {
   color: var(--text-muted);
 }
 
-.card > p {
+.card>p {
   padding: 0 16px 12px;
   font-size: 0.82rem;
 }
@@ -435,7 +475,7 @@ a:hover {
   align-items: center;
 }
 
-.footer-inner > p {
+.footer-inner>p {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
@@ -491,11 +531,27 @@ code {
 }
 
 /* -------------------- SCROLLBAR -------------------- */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent); }
-* { scrollbar-width: thin; scrollbar-color: var(--border) var(--bg); }
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) var(--bg);
+}
 
 /* -------------------- GAME EMBEDS -------------------- */
 .game-embed {
@@ -657,7 +713,10 @@ img[data-lightbox] {
 
 /* -------------------- MOBILE -------------------- */
 @media (max-width: 768px) {
-  .grid-2, .grid-3, .social-grid {
+
+  .grid-2,
+  .grid-3,
+  .social-grid {
     grid-template-columns: 1fr;
   }
 

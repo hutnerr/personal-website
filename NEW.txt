@@ -23,6 +23,5 @@
     - Check and make sure the mobile layout works
     - Check if all the links work
     - Compare old pages to new. Add some of the content back that was lost
-    - Remove empty divs and other junk
     - Double check their metadata 
     - Remove the dead Git Brances

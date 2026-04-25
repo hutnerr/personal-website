@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | Rat Haven Studios Website">
-    <meta property="og:description" content="The official site for Rat Haven Studios — a static HTML/CSS studio website with game showcases, devlogs, a workshop, and a custom GDScript syntax highlighter.">
+    <meta property="og:description"
+        content="The official site for Rat Haven Studios — a static HTML/CSS studio website with game showcases, devlogs, a workshop, and a custom GDScript syntax highlighter.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/my_rat_pfp_nobg.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/rhs-website.html">
@@ -26,33 +27,31 @@
 </head>
 
 <body>
-    <div id="background">
-<!-- Background pattern handled via CSS body::before -->
-</div>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/resources/images/my_rat_pfp_nobg.png" alt=""/>
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
     </div>
-</header>
-</div>
 
     <section id="hero">
         <div class="container">
             <h1>rat haven studios website<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ studio website for a small indie game dev team</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ studio website for a small indie game dev team
+            </p>
         </div>
     </section>
 
@@ -60,8 +59,13 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>The official website for Rat Haven Studios, a small indie game studio formed by a group of friends in 2025. The site covers all studio output: game showcases with playable itch.io embeds, devlogs documenting each project, a workshop section for tutorials and writeups, and individual developer profiles.</p>
-                <p>Built with no frameworks and no build step — pure HTML, CSS, and JavaScript. The retro aesthetic uses <code>Press Start 2P</code> for headings and buttons and <code>VT323</code> for body text, on a dark navy palette with a blue accent.</p>
+                <p>The official website for Rat Haven Studios, a small indie game studio formed by a group of friends in
+                    2025. The site covers all studio output: game showcases with playable itch.io embeds, devlogs
+                    documenting each project, a workshop section for tutorials and writeups, and individual developer
+                    profiles.</p>
+                <p>Built with no frameworks and no build step — pure HTML, CSS, and JavaScript. The retro aesthetic uses
+                    <code>Press Start 2P</code> for headings and buttons and <code>VT323</code> for body text, on a dark
+                    navy palette with a blue accent.</p>
             </div>
 
             <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
@@ -88,9 +92,23 @@
         <div class="container">
             <h2>how it works</h2>
             <div class="pspacing">
-                <p>Each content type has its own nav listing (<code>games.html</code>, <code>devlogs.html</code>, <code>workshop.html</code>) backed by the same <code>filter.js</code> script. Cards carry <code>data-tags</code> attributes; each <code>.filter-group</code> operates independently and all active filters must match, so genre and type filters can be combined without any OR logic.</p>
-                <p>The workshop section publishes GDScript code samples, but GDScript has no Prism.js support. Rather than pulling in a general syntax highlighter and registering a grammar, a custom IIFE tokenizer (<code>gdscript-highlight.js</code>) was written from scratch. It runs a priority-ordered list of regex patterns — comments, strings, annotations, numbers, identifiers — over the raw <code>textContent</code> of each <code>code.language-gdscript</code> block and rewrites it with <code>&lt;span class="gds-*"&gt;</code> wrappers. Keyword and built-in type lookups are <code>Set</code>-based for O(1) dispatch; function detection checks whether the next non-whitespace character after a word token is <code>(</code>. The result is loaded once and runs synchronously on <code>DOMContentLoaded</code>.</p>
-                <p>Game pages use a lazy iframe loader: a <code>.game-embed-placeholder</code> div with a <code>data-src</code> attribute renders a thumbnail and play button; clicking it replaces the placeholder with the live itch.io iframe. The lightbox injects a single overlay and wires all <code>[data-lightbox]</code> images to it, with Escape-key dismiss.</p>
+                <p>Each content type has its own nav listing (<code>games.html</code>, <code>devlogs.html</code>,
+                    <code>workshop.html</code>) backed by the same <code>filter.js</code> script. Cards carry
+                    <code>data-tags</code> attributes; each <code>.filter-group</code> operates independently and all
+                    active filters must match, so genre and type filters can be combined without any OR logic.</p>
+                <p>The workshop section publishes GDScript code samples, but GDScript has no Prism.js support. Rather
+                    than pulling in a general syntax highlighter and registering a grammar, a custom IIFE tokenizer
+                    (<code>gdscript-highlight.js</code>) was written from scratch. It runs a priority-ordered list of
+                    regex patterns — comments, strings, annotations, numbers, identifiers — over the raw
+                    <code>textContent</code> of each <code>code.language-gdscript</code> block and rewrites it with
+                    <code>&lt;span class="gds-*"&gt;</code> wrappers. Keyword and built-in type lookups are
+                    <code>Set</code>-based for O(1) dispatch; function detection checks whether the next non-whitespace
+                    character after a word token is <code>(</code>. The result is loaded once and runs synchronously on
+                    <code>DOMContentLoaded</code>.</p>
+                <p>Game pages use a lazy iframe loader: a <code>.game-embed-placeholder</code> div with a
+                    <code>data-src</code> attribute renders a thumbnail and play button; clicking it replaces the
+                    placeholder with the live itch.io iframe. The lightbox injects a single overlay and wires all
+                    <code>[data-lightbox]</code> images to it, with Escape-key dismiss.</p>
             </div>
         </div>
     </section>
@@ -112,24 +130,24 @@
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

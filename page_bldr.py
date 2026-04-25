@@ -17,7 +17,6 @@ class StaticSiteBuilder:
         
         # Component mapping: div id -> component file
         self.component_map = {
-            'background': 'background.html',
             'header': 'header.html',
             'footer': 'footer.html'
         }

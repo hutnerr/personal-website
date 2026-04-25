@@ -15,7 +15,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
 
     <meta property="og:title" content="Hunter Baker | Black Box Challenge">
-    <meta property="og:description" content="A terminal-based coding game where players probe hidden functions and write code in a custom language to replicate their behavior.">
+    <meta property="og:description"
+        content="A terminal-based coding game where players probe hidden functions and write code in a custom language to replicate their behavior.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/blackbox-challenge.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/black-box-challenge.html">
@@ -31,33 +32,31 @@
 </head>
 
 <body>
-    <div id="background">
-<!-- Background pattern handled via CSS body::before -->
-</div>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/resources/images/my_rat_pfp_nobg.png" alt=""/>
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
     </div>
-</header>
-</div>
 
     <section id="hero">
         <div class="container">
             <h1>black box challenge<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ reverse-engineer mystery functions through a custom interpreter</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ reverse-engineer mystery functions through a
+                custom interpreter</p>
         </div>
     </section>
 
@@ -65,8 +64,14 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>The Black Box Challenge is a terminal-based coding puzzle built with a partner for CS 430. The player is presented with a hidden mystery function — they probe it by entering inputs and observing outputs, then write their own expression in a custom programming language to replicate the function's behavior. A side-by-side table shows expected vs. actual output on every run.</p>
-                <p>The project's core technical achievement is a complete interpreter pipeline built from scratch: a lexer that tokenizes source into 27 token types, a recursive descent parser enforcing 13 levels of operator precedence, a typed AST with 56 node classes, and a tree-walking evaluator. Terminal.Gui provides the live terminal UI with panels for input, code editing, and comparison output.</p>
+                <p>The Black Box Challenge is a terminal-based coding puzzle built with a partner for CS 430. The player
+                    is presented with a hidden mystery function — they probe it by entering inputs and observing
+                    outputs, then write their own expression in a custom programming language to replicate the
+                    function's behavior. A side-by-side table shows expected vs. actual output on every run.</p>
+                <p>The project's core technical achievement is a complete interpreter pipeline built from scratch: a
+                    lexer that tokenizes source into 27 token types, a recursive descent parser enforcing 13 levels of
+                    operator precedence, a typed AST with 56 node classes, and a tree-walking evaluator. Terminal.Gui
+                    provides the live terminal UI with panels for input, code editing, and comparison output.</p>
             </div>
 
             <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
@@ -76,7 +81,8 @@
                         <li>C#, .NET 9.0 — complete interpreter pipeline (lexer, parser, AST, evaluator)</li>
                         <li>Terminal.Gui 1.19.0 — cross-platform terminal UI with live code editing</li>
                         <li>Visitor pattern — separates evaluation and translation from AST node structure</li>
-                        <li>Recursive descent parsing — 13 operator precedence levels derived from formal BNF grammar</li>
+                        <li>Recursive descent parsing — 13 operator precedence levels derived from formal BNF grammar
+                        </li>
                         <li>Spectre.Console 0.53.0 — rich console output</li>
                     </ul>
                 </div>
@@ -93,7 +99,8 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/blackbox-challenge.png" alt="Black Box Challenge terminal UI screenshot" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/blackbox-challenge.png"
+                alt="Black Box Challenge terminal UI screenshot" data-lightbox>
         </div>
     </section>
 
@@ -101,8 +108,17 @@
         <div class="container">
             <h2>how it works</h2>
             <div class="pspacing">
-                <p>When the app launches with a mystery function number, the corresponding <code>.txt</code> file is parsed into a reference AST. The UI presents input fields for up to three parameters and a code editor where the player writes their guess.</p>
-                <p>On Ctrl+R, two parallel evaluations happen: the user's code is lexed, parsed into its own AST, and evaluated with the entered parameter values bound as variables; the same values are fed into the pre-parsed reference AST. Both use the same <code>Evaluator</code>, which implements <code>IVisitor&lt;IPrimitiveNode&gt;</code> and walks each node recursively. The results are compared and displayed. The language supports integer and float arithmetic, boolean logic, bitwise operations, relational comparisons, string primitives, variables, blocks, and explicit type casts (<code>int()</code>, <code>float()</code>). All operators enforce strict type homogeneity — <code>5 + 5.0</code> is a type error; explicit casting is required.</p>
+                <p>When the app launches with a mystery function number, the corresponding <code>.txt</code> file is
+                    parsed into a reference AST. The UI presents input fields for up to three parameters and a code
+                    editor where the player writes their guess.</p>
+                <p>On Ctrl+R, two parallel evaluations happen: the user's code is lexed, parsed into its own AST, and
+                    evaluated with the entered parameter values bound as variables; the same values are fed into the
+                    pre-parsed reference AST. Both use the same <code>Evaluator</code>, which implements
+                    <code>IVisitor&lt;IPrimitiveNode&gt;</code> and walks each node recursively. The results are
+                    compared and displayed. The language supports integer and float arithmetic, boolean logic, bitwise
+                    operations, relational comparisons, string primitives, variables, blocks, and explicit type casts
+                    (<code>int()</code>, <code>float()</code>). All operators enforce strict type homogeneity —
+                    <code>5 + 5.0</code> is a type error; explicit casting is required.</p>
             </div>
         </div>
     </section>
@@ -111,7 +127,10 @@
         <div class="container">
             <h2>challenges</h2>
             <div class="pspacing">
-                <p>The most interesting design challenge was operator precedence. Rather than a runtime precedence table, the parser uses a 13-level hierarchy of <code>levelN()</code> methods, where each calls the next for higher-precedence operators. Left-associative operators loop; right-associative exponentiation recurses right instead of left.</p>
+                <p>The most interesting design challenge was operator precedence. Rather than a runtime precedence
+                    table, the parser uses a 13-level hierarchy of <code>levelN()</code> methods, where each calls the
+                    next for higher-precedence operators. Left-associative operators loop; right-associative
+                    exponentiation recurses right instead of left.</p>
 
                 <h3 style="margin-top: 20px; margin-bottom: 8px;">right-associative exponentiation</h3>
                 <pre><code class="language-csharp">private IAstNode level11NonTerminal()
@@ -126,8 +145,14 @@
     return left;
 }</code></pre>
 
-                <p>The <code>-</code> token required context-sensitive disambiguation: the lexer always emits <code>SUBTRACTION_OR_NEGATION</code>, and the parser decides at the call site — in a unary context it becomes <code>NegationNode</code>, in a binary context it becomes <code>SubtractNode</code>. No backtracking required.</p>
-                <p>Short-circuit evaluation was implemented explicitly in the Evaluator: for <code>AndNode</code>, if the left operand evaluates to false, the right is never visited. This required making right-side evaluation conditional rather than eager, which the Visitor pattern made natural — calling <code>.Visit(this)</code> is deferred until needed.</p>
+                <p>The <code>-</code> token required context-sensitive disambiguation: the lexer always emits
+                    <code>SUBTRACTION_OR_NEGATION</code>, and the parser decides at the call site — in a unary context
+                    it becomes <code>NegationNode</code>, in a binary context it becomes <code>SubtractNode</code>. No
+                    backtracking required.</p>
+                <p>Short-circuit evaluation was implemented explicitly in the Evaluator: for <code>AndNode</code>, if
+                    the left operand evaluates to false, the right is never visited. This required making right-side
+                    evaluation conditional rather than eager, which the Visitor pattern made natural — calling
+                    <code>.Visit(this)</code> is deferred until needed.</p>
             </div>
         </div>
     </section>
@@ -136,12 +161,15 @@
         <div class="container">
             <h2>takeaways</h2>
             <div class="pspacing">
-                <p>Building a complete interpreter from a formal grammar illuminated how programming languages work at every layer. Some key takeaways:</p>
+                <p>Building a complete interpreter from a formal grammar illuminated how programming languages work at
+                    every layer. Some key takeaways:</p>
                 <ul class="arrowed-list">
                     <li>Lexer design and context-sensitive tokenization using lookahead characters</li>
                     <li>Recursive descent parsing derived from BNF grammar with explicit operator precedence levels</li>
-                    <li>Visitor pattern to decouple evaluation, string translation, and future passes from AST node structure</li>
-                    <li>Managing operator associativity, strict type systems, and short-circuit semantics during evaluation</li>
+                    <li>Visitor pattern to decouple evaluation, string translation, and future passes from AST node
+                        structure</li>
+                    <li>Managing operator associativity, strict type systems, and short-circuit semantics during
+                        evaluation</li>
                     <li>Building interactive terminal UIs with Terminal.Gui</li>
                 </ul>
             </div>
@@ -149,24 +177,24 @@
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

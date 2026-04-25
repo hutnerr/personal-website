@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | Navigation System">
-    <meta property="og:description" content="A Java navigation system that reads live GPGGA serial data from a USB GPS receiver, builds a road graph, and routes using both Dijkstra's and Bellman-Ford algorithms.">
+    <meta property="og:description"
+        content="A Java navigation system that reads live GPGGA serial data from a USB GPS receiver, builds a road graph, and routes using both Dijkstra's and Bellman-Ford algorithms.">
     <meta property="og:image" content="https://hunter-baker.com/resources/gifs/projects/navsys.gif">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/navsystem.html">
@@ -27,33 +28,31 @@
 </head>
 
 <body>
-    <div id="background">
-<!-- Background pattern handled via CSS body::before -->
-</div>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/resources/images/my_rat_pfp_nobg.png" alt=""/>
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
     </div>
-</header>
-</div>
 
     <section id="hero">
         <div class="container">
             <h1>navigation system<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a real-time GPS navigation system with two routing algorithms</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a real-time GPS navigation system with two
+                routing algorithms</p>
         </div>
     </section>
 
@@ -61,8 +60,13 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>NavSys is a Java desktop application that turns a USB satellite receiver into a working navigation system. It reads raw NMEA GPGGA sentences from the serial port, parses the coordinate data, and displays live position on a map rendered in Swing. Setting a destination triggers route calculation using either Dijkstra's or Bellman-Ford on a graph of road nodes, with automatic rerouting if the current position drifts off the calculated path.</p>
-                <p>Built for CS coursework, but the scope — GPS hardware integration, real-time threading, graph pathfinding, and reroute detection — went well beyond typical academic assignments.</p>
+                <p>NavSys is a Java desktop application that turns a USB satellite receiver into a working navigation
+                    system. It reads raw NMEA GPGGA sentences from the serial port, parses the coordinate data, and
+                    displays live position on a map rendered in Swing. Setting a destination triggers route calculation
+                    using either Dijkstra's or Bellman-Ford on a graph of road nodes, with automatic rerouting if the
+                    current position drifts off the calculated path.</p>
+                <p>Built for CS coursework, but the scope — GPS hardware integration, real-time threading, graph
+                    pathfinding, and reroute detection — went well beyond typical academic assignments.</p>
             </div>
 
             <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
@@ -72,10 +76,13 @@
                         <li>Java 17, Swing — desktop GUI with live-updating map display</li>
                         <li>jSerialComm 2.11.0 — serial port communication for USB GPS hardware</li>
                         <li>GPGGA parsing — converts DDmm.mm NMEA format to decimal degrees</li>
-                        <li>Dijkstra's (Label Setting) — with PermanentLabelBuckets optimization using 1km-width bucket bins</li>
-                        <li>Bellman-Ford (Label Correcting) — with early termination; supports comparison against Dijkstra's</li>
+                        <li>Dijkstra's (Label Setting) — with PermanentLabelBuckets optimization using 1km-width bucket
+                            bins</li>
+                        <li>Bellman-Ford (Label Correcting) — with early termination; supports comparison against
+                            Dijkstra's</li>
                         <li>SwingWorker — background GPS read thread publishes position updates to the Swing EDT</li>
-                        <li>Observer, MVC, Strategy patterns — GPS data flow, display separation, and interchangeable routing</li>
+                        <li>Observer, MVC, Strategy patterns — GPS data flow, display separation, and interchangeable
+                            routing</li>
                     </ul>
                 </div>
                 <div>
@@ -92,8 +99,10 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/gifs/projects/navsys.gif" alt="NavSys real-time navigation demo" data-lightbox>
-            <img class="walkthrough-img hover-img sized-img" style="background-color: white; margin-top: 1rem;" src="/resources/images/projects/navsystemdesign.svg" alt="NavSys system design document" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/gifs/projects/navsys.gif"
+                alt="NavSys real-time navigation demo" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" style="background-color: white; margin-top: 1rem;"
+                src="/resources/images/projects/navsystemdesign.svg" alt="NavSys system design document" data-lightbox>
         </div>
     </section>
 
@@ -101,10 +110,25 @@
         <div class="container">
             <h2>how it works</h2>
             <div class="pspacing">
-                <p>GPS data arrives continuously on the serial port via jSerialComm. A <code>GPSReaderTask</code> extends <code>SwingWorker</code>, running the read loop on a background thread and publishing parsed coordinates to the Swing Event Dispatch Thread via <code>publish()</code>/<code>process()</code>. This keeps the UI responsive while handling a continuous byte stream.</p>
-                <p>Each GPGGA sentence encodes latitude and longitude in DDmm.mm format (degrees plus decimal minutes). The parser converts this to decimal degrees for all downstream math. The road network is stored as an adjacency list graph; each node is a GPS coordinate and each edge has a distance weight.</p>
-                <p>Route calculation runs the selected algorithm (Strategy pattern, swappable at runtime) from the current position to the destination. The Label Setting Algorithm (Dijkstra's) uses <code>PermanentLabelBuckets</code> — buckets of 1km width — instead of a standard priority queue. Nodes are partitioned into buckets by tentative distance and the minimum is found by scanning only the current bucket, reducing overhead for dense urban graphs. The Label Correcting Algorithm (Bellman-Ford) runs with early termination: if a full pass makes no relaxations, it exits before completing all iterations.</p>
-                <p>Off-route detection uses point-to-segment distance with dot product projection to find the closest point on each road segment to the current GPS position. If the nearest segment is farther than a threshold, rerouting triggers. The reroute implementation pre-computes all shortest paths from the destination rather than the source, so any new source position finds its path in O(P) time (path length) rather than rerunning the full algorithm.</p>
+                <p>GPS data arrives continuously on the serial port via jSerialComm. A <code>GPSReaderTask</code>
+                    extends <code>SwingWorker</code>, running the read loop on a background thread and publishing parsed
+                    coordinates to the Swing Event Dispatch Thread via <code>publish()</code>/<code>process()</code>.
+                    This keeps the UI responsive while handling a continuous byte stream.</p>
+                <p>Each GPGGA sentence encodes latitude and longitude in DDmm.mm format (degrees plus decimal minutes).
+                    The parser converts this to decimal degrees for all downstream math. The road network is stored as
+                    an adjacency list graph; each node is a GPS coordinate and each edge has a distance weight.</p>
+                <p>Route calculation runs the selected algorithm (Strategy pattern, swappable at runtime) from the
+                    current position to the destination. The Label Setting Algorithm (Dijkstra's) uses
+                    <code>PermanentLabelBuckets</code> — buckets of 1km width — instead of a standard priority queue.
+                    Nodes are partitioned into buckets by tentative distance and the minimum is found by scanning only
+                    the current bucket, reducing overhead for dense urban graphs. The Label Correcting Algorithm
+                    (Bellman-Ford) runs with early termination: if a full pass makes no relaxations, it exits before
+                    completing all iterations.</p>
+                <p>Off-route detection uses point-to-segment distance with dot product projection to find the closest
+                    point on each road segment to the current GPS position. If the nearest segment is farther than a
+                    threshold, rerouting triggers. The reroute implementation pre-computes all shortest paths from the
+                    destination rather than the source, so any new source position finds its path in O(P) time (path
+                    length) rather than rerunning the full algorithm.</p>
             </div>
         </div>
     </section>
@@ -113,9 +137,19 @@
         <div class="container">
             <h2>challenges</h2>
             <div class="pspacing">
-                <p>The biggest challenge going in was that I knew nothing about GPS technology. I learned about satellite receivers, NMEA sentence formats, and coordinate systems while simultaneously building the parser and integration layer — each piece of new knowledge revealed a new assumption in the code that needed fixing.</p>
-                <p>Real-time performance was the central technical constraint. GPS data arrives continuously and must not block the UI thread. The <code>SwingWorker</code> producer/consumer model solved this cleanly: the background thread reads and parses, then hands coordinate updates to the EDT through the framework's built-in handoff mechanism. This pattern also made the Observer chain from GPS → map display → route update straightforward to wire up without manual thread synchronization.</p>
-                <p>The rerouting problem looked like "just run the algorithm again" but has a hidden cost: the source changes on every reroute, so a source-rooted shortest path tree becomes stale immediately. Pre-computing the all-shortest-paths tree from the destination inverts the direction and makes rerouting a simple lookup regardless of where the current position is.</p>
+                <p>The biggest challenge going in was that I knew nothing about GPS technology. I learned about
+                    satellite receivers, NMEA sentence formats, and coordinate systems while simultaneously building the
+                    parser and integration layer — each piece of new knowledge revealed a new assumption in the code
+                    that needed fixing.</p>
+                <p>Real-time performance was the central technical constraint. GPS data arrives continuously and must
+                    not block the UI thread. The <code>SwingWorker</code> producer/consumer model solved this cleanly:
+                    the background thread reads and parses, then hands coordinate updates to the EDT through the
+                    framework's built-in handoff mechanism. This pattern also made the Observer chain from GPS → map
+                    display → route update straightforward to wire up without manual thread synchronization.</p>
+                <p>The rerouting problem looked like "just run the algorithm again" but has a hidden cost: the source
+                    changes on every reroute, so a source-rooted shortest path tree becomes stale immediately.
+                    Pre-computing the all-shortest-paths tree from the destination inverts the direction and makes
+                    rerouting a simple lookup regardless of where the current position is.</p>
             </div>
         </div>
     </section>
@@ -124,7 +158,8 @@
         <div class="container">
             <h2>takeaways</h2>
             <div class="pspacing">
-                <p>This project spanned hardware integration, real-time data processing, and algorithm implementation — a much broader scope than typical coursework. Some key takeaways:</p>
+                <p>This project spanned hardware integration, real-time data processing, and algorithm implementation —
+                    a much broader scope than typical coursework. Some key takeaways:</p>
                 <ul class="arrowed-list">
                     <li>GPS hardware integration and NMEA sentence parsing from raw serial data</li>
                     <li>Multithreaded GUI design — SwingWorker producer/consumer for smooth real-time updates</li>
@@ -138,24 +173,24 @@
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

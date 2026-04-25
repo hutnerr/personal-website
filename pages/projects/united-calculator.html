@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | UnitED">
-    <meta property="og:description" content="A collaborative Java unit conversion calculator built with a 5-person team using Scrum methodology, featuring custom unit creation, JUnit cross-product testing, and a Strategy-based operator design.">
+    <meta property="og:description"
+        content="A collaborative Java unit conversion calculator built with a 5-person team using Scrum methodology, featuring custom unit creation, JUnit cross-product testing, and a Strategy-based operator design.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/united.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/united-calculator.html">
@@ -27,28 +28,25 @@
 </head>
 
 <body>
-    <div id="background">
-<!-- Background pattern handled via CSS body::before -->
-</div>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/resources/images/my_rat_pfp_nobg.png" alt=""/>
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
     </div>
-</header>
-</div>
 
     <section id="hero">
         <div class="container">
@@ -61,8 +59,13 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>A collaborative software engineering project: a fully functional unit conversion calculator built in Java with a 5-person team using Scrum methodology. Features unit conversions across six categories (Length, Time, Weight, Volume, Power, Money), custom unit creation with CSV persistence, calculation history, and a help section.</p>
-                <p>My primary focus was the conversion engine and GUI components. The project emphasized collaborative development practices — version control, task assignment via Scrum board, and iterative delivery over multiple sprints.</p>
+                <p>A collaborative software engineering project: a fully functional unit conversion calculator built in
+                    Java with a 5-person team using Scrum methodology. Features unit conversions across six categories
+                    (Length, Time, Weight, Volume, Power, Money), custom unit creation with CSV persistence, calculation
+                    history, and a help section.</p>
+                <p>My primary focus was the conversion engine and GUI components. The project emphasized collaborative
+                    development practices — version control, task assignment via Scrum board, and iterative delivery
+                    over multiple sprints.</p>
             </div>
 
             <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
@@ -70,10 +73,12 @@
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
                         <li>Java, Swing — desktop GUI built collaboratively across a 5-person team</li>
-                        <li>Unit interface — base-unit conversion formula (value * from.factor / to.factor) with enum implementations</li>
+                        <li>Unit interface — base-unit conversion formula (value * from.factor / to.factor) with enum
+                            implementations</li>
                         <li>BinaryOperator enum — Strategy pattern with evaluate() method for arithmetic operations</li>
                         <li>Operand Java record — immutable value-type pairing a numeric value with its unit</li>
-                        <li>JUnit 5 — cross-product tests covering all unit-to-unit conversions for 4 unit type groups</li>
+                        <li>JUnit 5 — cross-product tests covering all unit-to-unit conversions for 4 unit type groups
+                        </li>
                         <li>Scrum — agile development methodology with sprint planning and a task board</li>
                     </ul>
                 </div>
@@ -90,7 +95,8 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/united.png" alt="UnitED Calculator screenshot" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/united.png"
+                alt="UnitED Calculator screenshot" data-lightbox>
         </div>
     </section>
 
@@ -98,9 +104,20 @@
         <div class="container">
             <h2>how it works</h2>
             <div class="pspacing">
-                <p>Each unit category is implemented as a Java enum that implements a common <code>Unit</code> interface. Every enum constant defines a <code>factor</code> — its magnitude relative to the category's base unit. Conversion between any two units in a category uses a single formula: <code>value * from.factor / to.factor</code>. For example, Length uses millimeters as the base (factor 1), so converting 1 foot (factor 304.8) to centimeters (factor 10) computes <code>1 * 304.8 / 10 = 30.48</code>.</p>
-                <p>Arithmetic between unit values goes through a <code>BinaryOperator</code> enum that implements the Strategy pattern: each operator (<code>ADD</code>, <code>SUBTRACT</code>, <code>MULTIPLY</code>, <code>DIVIDE</code>) has an <code>evaluate()</code> method that takes two <code>Operand</code> values. <code>Operand</code> is a Java record — an immutable value type pairing a number with its unit — which makes operator input/output explicit and prevents accidental mutation.</p>
-                <p>Custom units are defined by the user and persisted as CSV entries. JUnit 5 tests cover all unit-to-unit conversions for four of the six unit types, organized as cross-product test cases: every unit converted to every other unit in the same category.</p>
+                <p>Each unit category is implemented as a Java enum that implements a common <code>Unit</code>
+                    interface. Every enum constant defines a <code>factor</code> — its magnitude relative to the
+                    category's base unit. Conversion between any two units in a category uses a single formula:
+                    <code>value * from.factor / to.factor</code>. For example, Length uses millimeters as the base
+                    (factor 1), so converting 1 foot (factor 304.8) to centimeters (factor 10) computes
+                    <code>1 * 304.8 / 10 = 30.48</code>.</p>
+                <p>Arithmetic between unit values goes through a <code>BinaryOperator</code> enum that implements the
+                    Strategy pattern: each operator (<code>ADD</code>, <code>SUBTRACT</code>, <code>MULTIPLY</code>,
+                    <code>DIVIDE</code>) has an <code>evaluate()</code> method that takes two <code>Operand</code>
+                    values. <code>Operand</code> is a Java record — an immutable value type pairing a number with its
+                    unit — which makes operator input/output explicit and prevents accidental mutation.</p>
+                <p>Custom units are defined by the user and persisted as CSV entries. JUnit 5 tests cover all
+                    unit-to-unit conversions for four of the six unit types, organized as cross-product test cases:
+                    every unit converted to every other unit in the same category.</p>
             </div>
         </div>
     </section>
@@ -109,10 +126,19 @@
         <div class="container">
             <h2>challenges</h2>
             <div class="pspacing">
-                <p>Most of the personal challenges came from working in a team at this scale for the first time. Three friction areas stood out.</p>
-                <p>Version control was the first: several team members were new to Git, which led to merge conflicts and lost work early on. Running a short training session helped, but merge issues surfaced throughout the project. The lesson was that Git fluency across the whole team needs to be established before the first commit, not treated as something people can figure out as they go.</p>
-                <p>Task dependencies caused stalls when upstream work slipped. If the component one person was building blocked three others, progress halted. Restructuring assignments to minimize hard dependencies — working on self-contained modules rather than features that required another feature to exist first — helped significantly.</p>
-                <p>Design consistency suffered because decisions were distributed without a shared conversation. UI choices made independently resulted in an inconsistent look and feel. Design should have been a standing agenda item across sprints, not assumed to converge naturally.</p>
+                <p>Most of the personal challenges came from working in a team at this scale for the first time. Three
+                    friction areas stood out.</p>
+                <p>Version control was the first: several team members were new to Git, which led to merge conflicts and
+                    lost work early on. Running a short training session helped, but merge issues surfaced throughout
+                    the project. The lesson was that Git fluency across the whole team needs to be established before
+                    the first commit, not treated as something people can figure out as they go.</p>
+                <p>Task dependencies caused stalls when upstream work slipped. If the component one person was building
+                    blocked three others, progress halted. Restructuring assignments to minimize hard dependencies —
+                    working on self-contained modules rather than features that required another feature to exist first
+                    — helped significantly.</p>
+                <p>Design consistency suffered because decisions were distributed without a shared conversation. UI
+                    choices made independently resulted in an inconsistent look and feel. Design should have been a
+                    standing agenda item across sprints, not assumed to converge naturally.</p>
             </div>
         </div>
     </section>
@@ -121,38 +147,40 @@
         <div class="container">
             <h2>takeaways</h2>
             <div class="pspacing">
-                <p>Team projects have a different failure mode than solo work. Technical debt accumulates faster when design decisions are distributed without coordination. Some key takeaways:</p>
+                <p>Team projects have a different failure mode than solo work. Technical debt accumulates faster when
+                    design decisions are distributed without coordination. Some key takeaways:</p>
                 <ul class="arrowed-list">
                     <li>Unit conversion engine design with a base-unit factor model and a single shared formula</li>
                     <li>Strategy pattern via BinaryOperator enum for extensible arithmetic operations</li>
                     <li>Java records as immutable value types for operand representation</li>
                     <li>JUnit 5 cross-product test organization for exhaustive unit conversion coverage</li>
                     <li>Team version control — Git fluency is a prerequisite, not an assumed skill</li>
-                    <li>Scrum in practice — sprint planning, task boards, and coordinating dependencies across people</li>
+                    <li>Scrum in practice — sprint planning, task boards, and coordinating dependencies across people
+                    </li>
                 </ul>
             </div>
         </div>
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | MadZip">
-    <meta property="og:description" content="A Java file compression utility implementing Huffman coding from scratch, with a Swing GUI and up to 43% compression on text files.">
+    <meta property="og:description"
+        content="A Java file compression utility implementing Huffman coding from scratch, with a Swing GUI and up to 43% compression on text files.">
     <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/mad-zip.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/madzip.html">
@@ -27,33 +28,31 @@
 </head>
 
 <body>
-    <div id="background">
-<!-- Background pattern handled via CSS body::before -->
-</div>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/resources/images/my_rat_pfp_nobg.png" alt=""/>
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
     </div>
-</header>
-</div>
 
     <section id="hero">
         <div class="container">
             <h1>madzip<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ file compression and decompression using Huffman coding</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ file compression and decompression using Huffman
+                coding</p>
         </div>
     </section>
 
@@ -61,8 +60,13 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>MadZip is a file compression utility that compresses and decompresses files using a custom Huffman coding implementation. Select a file through the Swing GUI, compress it to a <code>.mz</code> archive, and decompress it back to the original. After each operation the app displays compression statistics including original size, compressed size, and compression ratio — achieving up to 43% reduction on text files.</p>
-                <p>Built as an exercise in implementing a classical compression algorithm from the ground up rather than using a library.</p>
+                <p>MadZip is a file compression utility that compresses and decompresses files using a custom Huffman
+                    coding implementation. Select a file through the Swing GUI, compress it to a <code>.mz</code>
+                    archive, and decompress it back to the original. After each operation the app displays compression
+                    statistics including original size, compressed size, and compression ratio — achieving up to 43%
+                    reduction on text files.</p>
+                <p>Built as an exercise in implementing a classical compression algorithm from the ground up rather than
+                    using a library.</p>
             </div>
 
             <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
@@ -71,9 +75,11 @@
                     <ul class="arrowed-list">
                         <li>Java 17, Swing — desktop GUI for file selection and compression statistics display</li>
                         <li>Huffman coding — custom implementation built from scratch for lossless compression</li>
-                        <li>HashMap + PriorityQueue&lt;HuffTree&gt; — frequency table and tree construction data structures</li>
+                        <li>HashMap + PriorityQueue&lt;HuffTree&gt; — frequency table and tree construction data
+                            structures</li>
                         <li>BitSequence — custom LSB-first bit packing for compact encoded output</li>
-                        <li>Java serialization — HuffmanSave object written to .mz files to embed the tree alongside compressed data</li>
+                        <li>Java serialization — HuffmanSave object written to .mz files to embed the tree alongside
+                            compressed data</li>
                     </ul>
                 </div>
                 <div>
@@ -89,7 +95,8 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/mad-zip.png" alt="MadZip compression utility screenshot" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/mad-zip.png"
+                alt="MadZip compression utility screenshot" data-lightbox>
         </div>
     </section>
 
@@ -97,9 +104,20 @@
         <div class="container">
             <h2>how it works</h2>
             <div class="pspacing">
-                <p>Compression starts by scanning the input file to build a character frequency table stored in a HashMap. The frequency map is loaded into a <code>PriorityQueue&lt;HuffTree&gt;</code> ordered by frequency, and the tree is constructed by <code>HuffTree.buildTree()</code>: repeatedly dequeue the two lowest-frequency nodes, merge them under a new internal node with their combined frequency, and re-enqueue until one root remains.</p>
-                <p>The encoding table is produced by recursively traversing the finished tree: left edges append "0" and right edges append "1", so each leaf (character) maps to a unique variable-length bit string. Shorter codes are assigned to higher-frequency characters, which is the source of the compression gain. The encoded bitstream is packed into a custom <code>BitSequence</code> using LSB-first packing to avoid alignment waste.</p>
-                <p>Decompression requires the original tree. Rather than re-encoding the tree structure separately, the <code>.mz</code> file format wraps a serialized <code>HuffmanSave</code> object using Java's built-in serialization — the tree and the compressed bytes are stored together. On open, the tree is deserialized and used to walk the bitstream back to the original characters.</p>
+                <p>Compression starts by scanning the input file to build a character frequency table stored in a
+                    HashMap. The frequency map is loaded into a <code>PriorityQueue&lt;HuffTree&gt;</code> ordered by
+                    frequency, and the tree is constructed by <code>HuffTree.buildTree()</code>: repeatedly dequeue the
+                    two lowest-frequency nodes, merge them under a new internal node with their combined frequency, and
+                    re-enqueue until one root remains.</p>
+                <p>The encoding table is produced by recursively traversing the finished tree: left edges append "0" and
+                    right edges append "1", so each leaf (character) maps to a unique variable-length bit string.
+                    Shorter codes are assigned to higher-frequency characters, which is the source of the compression
+                    gain. The encoded bitstream is packed into a custom <code>BitSequence</code> using LSB-first packing
+                    to avoid alignment waste.</p>
+                <p>Decompression requires the original tree. Rather than re-encoding the tree structure separately, the
+                    <code>.mz</code> file format wraps a serialized <code>HuffmanSave</code> object using Java's
+                    built-in serialization — the tree and the compressed bytes are stored together. On open, the tree is
+                    deserialized and used to walk the bitstream back to the original characters.</p>
             </div>
         </div>
     </section>
@@ -108,36 +126,40 @@
         <div class="container">
             <h2>takeaways</h2>
             <div class="pspacing">
-                <p>Implementing Huffman coding from scratch made the algorithm concrete in a way that reading about it does not. Some key takeaways:</p>
+                <p>Implementing Huffman coding from scratch made the algorithm concrete in a way that reading about it
+                    does not. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>End-to-end Huffman coding — frequency analysis, priority-queue tree construction, and encoding table derivation</li>
-                    <li>Bit-level I/O — LSB-first packing and the mechanics of reading sub-byte data from a byte stream</li>
+                    <li>End-to-end Huffman coding — frequency analysis, priority-queue tree construction, and encoding
+                        table derivation</li>
+                    <li>Bit-level I/O — LSB-first packing and the mechanics of reading sub-byte data from a byte stream
+                    </li>
                     <li>Java serialization for self-contained binary file formats</li>
-                    <li>Data structure selection: why a priority queue is the right tool for incremental tree construction</li>
+                    <li>Data structure selection: why a priority queue is the right tool for incremental tree
+                        construction</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>
