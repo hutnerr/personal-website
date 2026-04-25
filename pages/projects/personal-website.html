@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/sections.css">
+    <link rel="stylesheet" href="/styles/components.css">
+
+    <meta property="og:title" content="Hunter Baker | Personal Website">
+    <meta property="og:description" content="Hunter Baker's personal portfolio site — built with pure HTML, CSS, and JavaScript, featuring a custom static site builder and the Gruvbox design system.">
+    <meta property="og:image" content="https://hunter-baker.com/resources/images/my_rat_pfp_nobg.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hunter-baker.com/pages/projects/personal-website.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4J8LXCJ31S');
+    </script>
+</head>
+
+<body>
+    <div id="background">
+<!-- Background pattern handled via CSS body::before -->
+</div>
+    <div id="header">
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="/index.html" class="site-logo">
+            <img src="/resources/images/my_rat_pfp_nobg.png" alt=""/>
+            hunter baker
+        </a>
+        <ul class="site-nav">
+            <li><a href="/index.html">Home</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/projects.html">Projects</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/contact.html">Contact</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/other.html">Other</a></li>
+        </ul>
+    </div>
+</header>
+</div>
+
+    <section id="hero">
+        <div class="container">
+            <h1>personal website<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ static portfolio site with a custom Python build pipeline</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview</h2>
+            <div class="pspacing">
+                <p>A fully hand-crafted static portfolio site with no frameworks, no npm dependencies, and no build pipeline beyond a single Python script. Pages, projects, and games are organized into a clear directory hierarchy and share UI components inlined at build time.</p>
+                <p>The design is built around the Gruvbox warm color palette using CSS custom properties, with JetBrains Mono as the sole font. Every visual pattern — card hovers, button states, section layouts — is defined once in the design system and composed across all pages.</p>
+            </div>
+
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+                <div>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>HTML/CSS/JS — no frameworks; pure hand-written markup and styles</li>
+                        <li>Python — static site builder that inlines shared components at build time</li>
+                        <li>CSS custom properties — Gruvbox warm palette design system</li>
+                        <li>GitHub Pages — static hosting</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <ul class="arrowed-list">
+                        <li><a href="https://github.com/hutnerr/personal-website" target="_blank">GitHub</a></li>
+                        <li><a href="https://hunter-baker.com" target="_blank">Live Site</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2>how it works</h2>
+            <div class="pspacing">
+                <p>Shared UI lives in a <code>components/</code> directory: navigation header, footer, and CSS background pattern. Each HTML page contains empty placeholder <code>&lt;div id="header"&gt;</code> elements. Running <code>page_bldr.py</code> crawls every HTML file and replaces each placeholder with the component's inlined content. The builder uses a depth-counting pass over the raw HTML string to locate the matching <code>&lt;/div&gt;</code> for each placeholder before swapping it out — no DOM parser required.</p>
+                <p>This approach avoids the runtime penalty of fetch-on-load dynamic component loading without reaching for a full JavaScript framework. All markup is present in the HTML file on first load.</p>
+                <p>JavaScript is used sparingly and only for behaviors CSS can't handle. <code>projects-filter.js</code> reads <code>data-tags</code> attributes on project cards and applies an AND filter across independent filter groups, hiding cards that don't match every active selection. <code>lightbox.js</code> injects a single overlay element on page load and wires up all <code>[data-lightbox]</code> images to it, including keyboard Escape to dismiss. <code>game-embed.js</code> defers itch.io iframe creation until the user clicks a placeholder, avoiding up-front load cost for embeds that most visitors won't interact with.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>features</h2>
+            <div class="pspacing">
+                <ul class="arrowed-list">
+                    <li>Custom Python static site builder with depth-tracking div replacement</li>
+                    <li>Gruvbox warm palette design system via CSS custom properties</li>
+                    <li>Multi-filter project grid using <code>data-tags</code> attribute AND matching</li>
+                    <li>Vanilla JS image lightbox with Escape key support</li>
+                    <li>Click-to-load itch.io game embed lazy loader</li>
+                    <li>Fully responsive at a single 768px breakpoint</li>
+                    <li>Zero npm dependencies, no bundler, no runtime framework</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer">
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; 2026 Hunter Baker</p>
+        <div class="footer-links">
+            <a href="/pages/nav/projects.html">Projects</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/contact.html">Contact</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/other.html">Other</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+            <span class="nav-sep">|</span>
+            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+
+</html>

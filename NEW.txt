@@ -15,9 +15,9 @@ x. go through each page and clean it up
     - double check they all have their metadata
 x. remove the dead git branches
 
-8. add a rat haven studios website project page (frontend)
-9. add a project page for this website. (frontend)
 20. run /init to update CLAUDE.md
 22. add more project that I've worked on to the project pages. 
 
 convert the game pages to the project pages. 
+
+check on the subtitles of the project cards. make it match the category instead of the type. 

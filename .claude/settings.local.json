@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3 page_bldr.py)"
+      "Bash(python3 page_bldr.py)",
+      "Bash(git -C /home/hutner/Dev/web-dev/rhs-website remote get-url origin)"
     ]
   }
 }
