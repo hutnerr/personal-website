@@ -25,3 +25,6 @@
     - Compare old pages to new. Add some of the content back that was lost
     - Double check their metadata 
     - Remove the dead Git Brances
+
+
+Fix the filepaths. 
