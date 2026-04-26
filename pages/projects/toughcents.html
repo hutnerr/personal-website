@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tough Cents</title>
-    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="icon" href="/assets/me/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | Tough Cents">
     <meta property="og:description"
-        content="A behavior-driven financial accountability tool that calls you out on bad spending habits.">
-    <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/tough-cents-3.png">
+        content="A web app that scans receipts and uses AI to call you out on bad spending. Built with Next.js, Flask, PostgreSQL, Ollama for commentary, and Google Gemini for receipt OCR.">
+    <meta property="og:image" content="https://hunter-baker.com/assets/projects/tough_cents/tough-cents-3.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/toughcents.html">
 
@@ -29,24 +29,25 @@
 
 <body>
     <div id="header">
-        <header class="site-header">
-            <div class="container header-inner">
-                <a href="/index.html" class="site-logo">
-                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
-                    hunter baker
-                </a>
-                <ul class="site-nav">
-                    <li><a href="/index.html">Home</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/projects.html">Projects</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/contact.html">Contact</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/other.html">Other</a></li>
-                </ul>
-            </div>
-        </header>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="/index.html" class="site-logo">
+            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+            hunter baker
+        </a>
+        <ul class="site-nav">
+            <li><a href="/index.html">Home</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/projects.html">Projects</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/contact.html">Contact</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/other.html">Other</a></li>
+        </ul>
     </div>
+</header>
+<script src="/scripts/nav-active.js"></script>
+</div>
 
     <section id="hero">
         <div class="container">
@@ -61,8 +62,10 @@
             <h2>overview</h2>
             <div class="pspacing">
                 <p>Tough Cents is a web app that uses "tough love" behavioral psychology to discourage poor spending.
-                    Scan a receipt and Google Gemini reads the purchase details; Ollama then generates a personalized,
-                    sometimes harsh commentary based on your spending history. Because adults need accountability too.
+                    Unlike passive budgeting apps, it actively intervenes with humor and sharp commentary to discourage
+                    poor spending habits and create genuine accountability. Scan a receipt and Google Gemini reads the
+                    purchase details; Ollama then generates a personalized, sometimes harsh commentary based on your
+                    spending history. Because adults need discipline too.
                 </p>
                 <p>You can also link a bank account for direct transaction data, enabling more comprehensive tracking
                     and feedback over time. The app gamifies financial discipline with a points system and push
@@ -85,12 +88,12 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/images/projects/tough-cents-3.png"
+            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/tough_cents/tough-cents-3.png"
                 alt="Tough Cents App Screenshot" data-lightbox>
             <img class="walkthrough-img hover-img sized-img" style="margin-top: 1rem;"
-                src="/resources/images/projects/toughcents-1.svg" alt="Tough Cents Wireframe 1" data-lightbox>
+                src="/assets/projects/tough_cents/toughcents-1.svg" alt="Tough Cents Wireframe 1" data-lightbox>
             <img class="walkthrough-img hover-img sized-img" style="margin-top: 1rem;"
-                src="/resources/images/projects/toughcents-2.svg" alt="Tough Cents Wireframe 2" data-lightbox>
+                src="/assets/projects/tough_cents/toughcents-2.svg" alt="Tough Cents Wireframe 2" data-lightbox>
         </div>
     </section>
 
@@ -111,24 +114,24 @@
     </section>
 
     <div id="footer">
-        <footer class="site-footer">
-            <div class="container footer-inner">
-                <p>&copy; 2026 Hunter Baker</p>
-                <div class="footer-links">
-                    <a href="/pages/nav/projects.html">Projects</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/contact.html">Contact</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/other.html">Other</a>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-                    <span class="nav-sep">|</span>
-                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </footer>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; 2026 Hunter Baker</p>
+        <div class="footer-links">
+            <a href="/pages/nav/projects.html">Projects</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/contact.html">Contact</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/other.html">Other</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+            <span class="nav-sep">|</span>
+            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+        </div>
     </div>
+</footer>
+</div>
 </body>
 
 </html>

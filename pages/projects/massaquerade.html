@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Massaquerade</title>
-    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="icon" href="/assets/me/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
@@ -13,7 +13,7 @@
     <meta property="og:title" content="Hunter Baker | Massaquerade">
     <meta property="og:description"
         content="A narrative mystery game for Winter MelonJam 2025 where players swap masks to unlock dialogue options and identify the murder target at a masquerade ball — built in 72 hours in Godot 4.">
-    <meta property="og:image" content="https://hunter-baker.com/resources/images/game-jams/massaquerade1.png">
+    <meta property="og:image" content="https://hunter-baker.com/assets/projects/massaquerade/massaquerade-results.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/massaquerade.html">
 
@@ -30,24 +30,25 @@
 
 <body>
     <div id="header">
-        <header class="site-header">
-            <div class="container header-inner">
-                <a href="/index.html" class="site-logo">
-                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
-                    hunter baker
-                </a>
-                <ul class="site-nav">
-                    <li><a href="/index.html">Home</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/projects.html">Projects</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/contact.html">Contact</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/other.html">Other</a></li>
-                </ul>
-            </div>
-        </header>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="/index.html" class="site-logo">
+            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+            hunter baker
+        </a>
+        <ul class="site-nav">
+            <li><a href="/index.html">Home</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/projects.html">Projects</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/contact.html">Contact</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/other.html">Other</a></li>
+        </ul>
     </div>
+</header>
+<script src="/scripts/nav-active.js"></script>
+</div>
 
     <section id="hero">
         <div class="container">
@@ -91,7 +92,7 @@
                         <li><a href="https://hutnerr.itch.io/massaquerade" target="_blank">itch.io</a></li>
                         <li><a href="https://github.com/Rat-Haven-Studios/melon-jam-2025" target="_blank">GitHub</a>
                         </li>
-                        <li><a href="https://rat-haven-studios.github.io/website/" target="_blank">Rat Haven Studios</a>
+                        <li><a href="https://rathavenstudios.com/pages/games/massaquerade.html" target="_blank">RHS</a></li>
                         </li>
                     </ul>
                 </div>
@@ -105,7 +106,7 @@
             <div class="game-embed">
                 <div class="game-embed-placeholder" data-src="https://itch.io/embed-upload/15981388?color=282828"
                     data-width="640" data-height="380">
-                    <img src="/resources/images/game-jams/massaquerade1.png" alt="Massaquerade" />
+                    <img src="/assets/projects/massaquerade/massaquerade-results.png" alt="Massaquerade" />
                     <div class="play-overlay"><span class="play-btn">&#9654; Play</span></div>
                 </div>
             </div>
@@ -115,9 +116,9 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/images/game-jams/massaquerade1.png"
+            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/massaquerade/massaquerade-results.png"
                 alt="Massaquerade masquerade ball scene" data-lightbox>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/images/game-jams/massaquerade-results.png"
+            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/massaquerade/massaquerade-results.png"
                 alt="Massaquerade jam results" data-lightbox>
         </div>
     </section>
@@ -169,6 +170,14 @@
         <div class="container">
             <h2>takeaways</h2>
             <div class="pspacing">
+                <p>By far the biggest thing learned through this jam was how to build a dialogue system. We did a
+                    JSON-based system where you could define flags to set, flags to check, the next node to go to, and
+                    many other options. Not only was building this scalable system a challenge, but it was also quite
+                    difficult to try and write all the dialogue itself.</p>
+                <p>One of the main differences between this game and the previous ones is that it felt like the main
+                    limitation was how fast we could write dialogue instead of adding cooler systems and interactions.
+                    The game systems were solid; the game was smaller than planned because writing is slow. Regardless,
+                    it was a great time working on it and the result is something to be proud of.</p>
                 <p>The biggest learning was how much time narrative content takes relative to code. Systems that feel
                     small to implement become enormous when multiplied by the number of characters, masks, and dialogue
                     branches needed to make the mystery feel real. Some key takeaways:</p>
@@ -184,24 +193,24 @@
     </section>
 
     <div id="footer">
-        <footer class="site-footer">
-            <div class="container footer-inner">
-                <p>&copy; 2026 Hunter Baker</p>
-                <div class="footer-links">
-                    <a href="/pages/nav/projects.html">Projects</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/contact.html">Contact</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/other.html">Other</a>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-                    <span class="nav-sep">|</span>
-                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </footer>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; 2026 Hunter Baker</p>
+        <div class="footer-links">
+            <a href="/pages/nav/projects.html">Projects</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/contact.html">Contact</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/other.html">Other</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+            <span class="nav-sep">|</span>
+            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+        </div>
     </div>
+</footer>
+</div>
 </body>
 
 </html>

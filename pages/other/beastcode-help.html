@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>beast[code] Help</title>
-    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="icon" href="/assets/me/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | beast[code] Help">
-    <meta property="og:description" content="A comprehensive guide to setting up and using beast[code].">
+    <meta property="og:description" content="Setup and usage guide for the beast[code] Discord bot — commands, invite link, configuration, and scheduling.">
     <meta property="og:image"
-        content="https://hunter-baker.com/resources/images/beastcode-walkthrough/beastcode-logo.png">
+        content="https://hunter-baker.com/assets/projects/beast_code/beastcode-logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/other/beastcode-help.html">
 
@@ -29,24 +29,25 @@
 
 <body>
     <div id="header">
-        <header class="site-header">
-            <div class="container header-inner">
-                <a href="/index.html" class="site-logo">
-                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
-                    hunter baker
-                </a>
-                <ul class="site-nav">
-                    <li><a href="/index.html">Home</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/projects.html">Projects</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/contact.html">Contact</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/other.html">Other</a></li>
-                </ul>
-            </div>
-        </header>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="/index.html" class="site-logo">
+            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+            hunter baker
+        </a>
+        <ul class="site-nav">
+            <li><a href="/index.html">Home</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/projects.html">Projects</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/contact.html">Contact</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/other.html">Other</a></li>
+        </ul>
     </div>
+</header>
+<script src="/scripts/nav-active.js"></script>
+</div>
 
     <section id="hero">
         <div class="container">
@@ -188,14 +189,14 @@
                     messages.</p>
                 <p>Once the bot is in the server, begin configuring it using <code>/serverconfig</code>. Select
                     <em>Other Settings</em> to start.</p>
-                <img class="walkthrough-img hover-img sized-img" src="/resources/images/beastcode-walkthrough/1.png"
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/1.png"
                     alt="Beastcode Other Settings Dropdown" data-lightbox>
             </div>
 
             <div class="walkthrough-step">
                 <p>The selection of a setting group provides a dropdown for you to choose the specific setting. The
                     current value is shown in parentheses.</p>
-                <img class="walkthrough-img hover-img sized-img" src="/resources/images/beastcode-walkthrough/2.png"
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/2.png"
                     alt="Beastcode Other Settings Dropdown Expanded" data-lightbox>
             </div>
 
@@ -203,7 +204,7 @@
                 <p>Once <em>Other Settings</em> are configured, move on to the remaining groups by calling
                     <code>/serverconfig</code> again. When done, use <code>/serverinfo</code> to review all settings and
                     confirm everything looks right.</p>
-                <img class="walkthrough-img hover-img sized-img" src="/resources/images/beastcode-walkthrough/3.png"
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/3.png"
                     alt="Beastcode Server Settings Review" data-lightbox>
             </div>
 
@@ -211,7 +212,7 @@
                 <p>With server settings configured, set up a problem using <code>/problemconfig</code>. When using the
                     command on a new problemID, it will prompt you to create a new problem. Note that created problems
                     are immediately active - use <code>/deleteproblem</code> to remove one.</p>
-                <img class="walkthrough-img hover-img sized-img" src="/resources/images/beastcode-walkthrough/5.png"
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/5.png"
                     alt="Beastcode Problem Configuration" data-lightbox>
             </div>
 
@@ -219,14 +220,14 @@
                 <p>Once configured, use <code>/probleminfo</code> to review. The times and parameters shown are what
                     will be used to send problems. In this example, an easy free-only problem will be sent on weekdays
                     at 4:30 PM.</p>
-                <img class="walkthrough-img hover-img sized-img" src="/resources/images/beastcode-walkthrough/6.png"
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/6.png"
                     alt="Beastcode Problem Activation Notification" data-lightbox>
             </div>
 
             <div class="walkthrough-step">
                 <p>When the problem activates, it's sent to the server and becomes an <em>Active Problem</em> - meaning
                     it can be submitted for points. Check active problems with <code>/problemactive</code>.</p>
-                <img class="walkthrough-img hover-img sized-img" src="/resources/images/beastcode-walkthrough/8.png"
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/8.png"
                     alt="Beastcode Problem Notification" data-lightbox>
             </div>
 
@@ -234,7 +235,7 @@
                 <p>To submit a solved problem, link your LeetCode account with <code>/setusername</code>, then use
                     <code>/submitproblems</code>. Points are awarded if your recently completed problems match active
                     ones. Check standings with <code>/leaderboard</code> or <code>/rank</code>.</p>
-                <img class="walkthrough-img hover-img sized-img" src="/resources/images/beastcode-walkthrough/10.png"
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/10.png"
                     alt="Beastcode Problem Submission" data-lightbox>
             </div>
 
@@ -244,31 +245,31 @@
                         href="https://github.com/hutnerr/leetcode-bot">GitHub repository</a>, or reach out via the <a
                         href="/pages/nav/contact.html">contact page</a>.</p>
                 <img class="walkthrough-img hover-img sized-img"
-                    src="/resources/images/beastcode-walkthrough/beastcode-logo.png" alt="Beastcode Logo" data-lightbox>
+                    src="/assets/projects/beast_code/beastcode-logo.png" alt="Beastcode Logo" data-lightbox>
             </div>
 
         </div>
     </section>
 
     <div id="footer">
-        <footer class="site-footer">
-            <div class="container footer-inner">
-                <p>&copy; 2026 Hunter Baker</p>
-                <div class="footer-links">
-                    <a href="/pages/nav/projects.html">Projects</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/contact.html">Contact</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/other.html">Other</a>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-                    <span class="nav-sep">|</span>
-                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </footer>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; 2026 Hunter Baker</p>
+        <div class="footer-links">
+            <a href="/pages/nav/projects.html">Projects</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/contact.html">Contact</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/other.html">Other</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+            <span class="nav-sep">|</span>
+            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+        </div>
     </div>
+</footer>
+</div>
 </body>
 
 </html>

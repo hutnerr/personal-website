@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgotten Paths</title>
-    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="icon" href="/assets/me/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
@@ -13,7 +13,7 @@
     <meta property="og:title" content="Hunter Baker | Forgotten Paths">
     <meta property="og:description"
         content="A puzzle game for GMTK Game Jam 2025 where players program a robot with looping movement commands that execute in relative directions — built in 72 hours in Godot 4.">
-    <meta property="og:image" content="https://hunter-baker.com/resources/images/game-jams/fp1.png">
+    <meta property="og:image" content="https://hunter-baker.com/assets/projects/forgotten_paths/fp1.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/forgotten-paths.html">
 
@@ -30,24 +30,25 @@
 
 <body>
     <div id="header">
-        <header class="site-header">
-            <div class="container header-inner">
-                <a href="/index.html" class="site-logo">
-                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
-                    hunter baker
-                </a>
-                <ul class="site-nav">
-                    <li><a href="/index.html">Home</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/projects.html">Projects</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/contact.html">Contact</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/other.html">Other</a></li>
-                </ul>
-            </div>
-        </header>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="/index.html" class="site-logo">
+            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+            hunter baker
+        </a>
+        <ul class="site-nav">
+            <li><a href="/index.html">Home</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/projects.html">Projects</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/contact.html">Contact</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/other.html">Other</a></li>
+        </ul>
     </div>
+</header>
+<script src="/scripts/nav-active.js"></script>
+</div>
 
     <section id="hero">
         <div class="container">
@@ -89,7 +90,7 @@
                         <li><a href="https://itch.io/jam/gmtk-2025/rate/3778927" target="_blank">Game Jam Page</a></li>
                         <li><a href="https://hutnerr.itch.io/forgotten-paths" target="_blank">itch.io</a></li>
                         <li><a href="https://github.com/Rat-Haven-Studios/gmtk-jam-2025" target="_blank">GitHub</a></li>
-                        <li><a href="https://rat-haven-studios.github.io/website/" target="_blank">Rat Haven Studios</a>
+                        <li><a href="https://rathavenstudios.com/pages/games/forgotten-paths-jam.html" target="_blank">RHS</a></li>
                         </li>
                     </ul>
                 </div>
@@ -103,7 +104,7 @@
             <div class="game-embed">
                 <div class="game-embed-placeholder" data-src="https://itch.io/embed-upload/14538857?color=282828"
                     data-width="640" data-height="380">
-                    <img src="/resources/gifs/game-jams/fp.gif" alt="Forgotten Paths" />
+                    <img src="/assets/projects/forgotten_paths/fp.gif" alt="Forgotten Paths" />
                     <div class="play-overlay"><span class="play-btn">&#9654; Play</span></div>
                 </div>
             </div>
@@ -113,14 +114,14 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/gifs/game-jams/fp.gif"
+            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/forgotten_paths/fp.gif"
                 alt="Forgotten Paths gameplay loop" data-lightbox>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/images/game-jams/fp2.png"
+            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/forgotten_paths/fp2.png"
                 alt="Forgotten Paths level screenshot" data-lightbox>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/images/game-jams/fp4.png"
+            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/forgotten_paths/fp4.png"
                 alt="Forgotten Paths puzzle screenshot" data-lightbox>
             <img class="walkthrough-img hover-img sized-img"
-                src="/resources/images/game-jams/forgotten-paths-results.png" alt="Forgotten Paths jam results"
+                src="/assets/projects/forgotten_paths/forgotten-paths-results.png" alt="Forgotten Paths jam results"
                 data-lightbox>
         </div>
     </section>
@@ -161,10 +162,15 @@
                     but the commands execute relative to the robot's facing after rotations are applied. Getting the
                     transform table right — and making it readable enough to debug — was a small but non-trivial design
                     task.</p>
-                <p>UI was a personal focus during this jam. Conveying the command queue state, the robot's current
-                    action, and the loop status simultaneously required iteration. Having essentials like a settings
-                    menu and a quit button in place early (a lesson from the previous jam) left more time for this
-                    polish.</p>
+                <p>UI was a personal focus during this jam. It was difficult to make a UI that conveyed all of the
+                    information that was necessary while also being simple and easy to use and understand. Conveying the
+                    command queue state, the robot's current action, and the loop status simultaneously required
+                    iteration.</p>
+                <p>One thing done a lot better this jam was adding in all the essentials first before starting. This
+                    included simple things like a settings menu, a way to close the game, etc. The previous jam entry
+                    didn't get to these in time and it made the game feel unpolished and lacking. Adding non-gameplay
+                    essentials first also gave time to properly plan out ideas and concepts before building them — an
+                    approach that worked well.</p>
             </div>
         </div>
     </section>
@@ -175,7 +181,10 @@
             <div class="pspacing">
                 <p>Building a puzzle game where the challenge comes from compositional command sequences — not from
                     twitch skill — required thinking carefully about what the player sees and understands at each
-                    moment. Some key takeaways:</p>
+                    moment. Over 9,500 games were submitted to this jam; ranking highly out of that pool while making
+                    only the second game ever is motivating. If you're truly stuck, there is a hints &amp; solutions
+                    cheat sheet on the <a href="https://hutnerr.itch.io/forgotten-paths" target="_blank">itch.io
+                        page</a>. Some key takeaways:</p>
                 <ul class="arrowed-list">
                     <li>Command pattern for queued, sequential game actions with loop semantics</li>
                     <li>Coroutine lifetime management via ID invalidation as an alternative to explicit cancellation
@@ -189,24 +198,24 @@
     </section>
 
     <div id="footer">
-        <footer class="site-footer">
-            <div class="container footer-inner">
-                <p>&copy; 2026 Hunter Baker</p>
-                <div class="footer-links">
-                    <a href="/pages/nav/projects.html">Projects</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/contact.html">Contact</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/other.html">Other</a>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-                    <span class="nav-sep">|</span>
-                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </footer>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; 2026 Hunter Baker</p>
+        <div class="footer-links">
+            <a href="/pages/nav/projects.html">Projects</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/contact.html">Contact</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/other.html">Other</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+            <span class="nav-sep">|</span>
+            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+        </div>
     </div>
+</footer>
+</div>
 </body>
 
 </html>

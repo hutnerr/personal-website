@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="icon" href="/assets/me/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
@@ -14,7 +14,7 @@
 
     <meta property="og:title" content="Hunter Baker | Projects">
     <meta property="og:description" content="A showcase of my projects, including games, web applications, and more.">
-    <meta property="og:image" content="https://hunter-baker.com/resources/images/headshot.png">
+    <meta property="og:image" content="https://hunter-baker.com/assets/me/headshot.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/nav/projects.html">
 
@@ -29,24 +29,25 @@
 
 <body>
     <div id="header">
-        <header class="site-header">
-            <div class="container header-inner">
-                <a href="/index.html" class="site-logo">
-                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
-                    hunter baker
-                </a>
-                <ul class="site-nav">
-                    <li><a href="/index.html">Home</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/projects.html">Projects</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/contact.html">Contact</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/other.html">Other</a></li>
-                </ul>
-            </div>
-        </header>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="/index.html" class="site-logo">
+            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+            hunter baker
+        </a>
+        <ul class="site-nav">
+            <li><a href="/index.html">Home</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/projects.html">Projects</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/contact.html">Contact</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/other.html">Other</a></li>
+        </ul>
     </div>
+</header>
+<script src="/scripts/nav-active.js"></script>
+</div>
 
     <section id="hero">
         <div class="container">
@@ -85,10 +86,10 @@
 
                 <div class="card" data-tags="fullstack web-app">
                     <a class="card-img" href="/pages/projects/lolsummd.html">
-                        <img src="/resources/images/projects/lolsummd-preview.png" alt="LOLSUMMD">
+                        <img src="/assets/projects/lolsummd/lolsummd-preview.png" alt="LOLSUMMD">
                     </a>
                     <h3><a href="/pages/projects/lolsummd.html">LOLSUMMD</a></h3>
-                    <span class="card-subtitle">Web App</span>
+                    <span class="card-subtitle">multi-account mastery tracker</span>
                     <p>Mastery aggregator web app for League of Legends that summarizes mastery data across multiple
                         accounts. Hosted on Vercel with a Flask backend and Redis caching.</p>
                     <div class="card-tech">
@@ -107,14 +108,15 @@
 
                 <div class="card" data-tags="software tool">
                     <a class="card-img" href="/pages/projects/navsystem.html">
-                        <img src="/resources/gifs/projects/navsys.gif" alt="NavSys">
+                        <img src="/assets/projects/navsys/navsys.gif" alt="NavSys">
                     </a>
                     <h3><a href="/pages/projects/navsystem.html">NavSys</a></h3>
-                    <span class="card-subtitle">Software</span>
+                    <span class="card-subtitle">real-time GPS navigation app</span>
                     <p>Navigation application with real-time updates, map matching, and route relocation. Built entirely
                         from scratch in Java, utilizing Dijkstra's and Bellman-Ford for pathfinding.</p>
                     <div class="card-tech">
                         <span class="tech-tag"><i class="devicon-java-plain"></i>Java</span>
+                        <span class="tech-tag">Swing</span>
                     </div>
                     <div class="btn-grid">
                         <a href="/pages/projects/navsystem.html" class="btn btn-sm">Details</a>
@@ -128,7 +130,7 @@
                             alt="Obsidian Attachment Placement Plugin">
                     </a>
                     <h3><a href="/pages/projects/obsidian-attachment-plugin.html">Obsidian Attachment Plugin</a></h3>
-                    <span class="card-subtitle">Software</span>
+                    <span class="card-subtitle">smart attachment routing</span>
                     <p>Obsidian plugin that allows users to specify the location of new attachments through placement
                         rules. Developed in TypeScript using the Obsidian API.</p>
                     <div class="card-tech">
@@ -145,10 +147,10 @@
 
                 <div class="card" data-tags="gamedev">
                     <a class="card-img" href="/pages/projects/forgotten-paths.html">
-                        <img src="/resources/gifs/game-jams/fp.gif" alt="Forgotten Paths">
+                        <img src="/assets/projects/forgotten_paths/fp.gif" alt="Forgotten Paths">
                     </a>
                     <h3><a href="/pages/projects/forgotten-paths.html">Forgotten Paths</a></h3>
-                    <span class="card-subtitle">Game Dev</span>
+                    <span class="card-subtitle">puzzle game · GMTK 2025</span>
                     <p>Puzzle game created for the <a href="https://itch.io/jam/gmtk-2025">GMTK 2025 Game Jam</a>.
                         Ranked top 6% in enjoyment out of over 9,500 entries.</p>
                     <div class="card-tech">
@@ -158,17 +160,17 @@
                         <a href="/pages/projects/forgotten-paths.html" class="btn btn-sm">Details</a>
                         <a href="https://github.com/hutnerr/gmtk-jam-2025" class="btn btn-sm">GitHub</a>
                         <a href="https://hutnerr.itch.io/forgotten-paths" class="btn btn-sm">itch.io</a>
+                        <a href="https://rathavenstudios.com/pages/games/forgotten-paths-jam.html" class="btn btn-sm" target="_blank">RHS</a>
                     </div>
                 </div>
 
                 <div class="card" data-tags="backend discord-bot">
                     <a class="card-img" href="/pages/projects/leetcode-bot.html">
-                        <img src="/resources/images/beastcode-walkthrough/beastcode-logo.png" alt="beast[code]">
+                        <img src="/assets/projects/beast_code/beastcode-logo.png" alt="beast[code]">
                     </a>
                     <h3><a href="/pages/projects/leetcode-bot.html">beast[code]</a></h3>
-                    <span class="card-subtitle">Discord Bot</span>
-                    <p>Discord bot that facilitates coding practice within a server. Supplies recurring and configurable
-                        problems, as well as alerts for contests and events.</p>
+                    <span class="card-subtitle">LeetCode practice bot</span>
+                    <p>Live Discord bot for coding practice. Sends daily LeetCode problems, contest alerts, and supports configurable schedules per server.</p>
                     <div class="card-tech">
                         <span class="tech-tag"><i class="devicon-python-plain"></i>Python</span>
                         <span class="tech-tag"><i class="devicon-graphql-plain"></i>GraphQL</span>
@@ -184,15 +186,14 @@
 
                 <div class="card" data-tags="software android">
                     <a class="card-img" href="/pages/projects/tip-calculator.html">
-                        <img src="/resources/images/projects/tc-banner.png" alt="Tip Calculator">
+                        <img src="/assets/projects/tip_calculator/tc-banner.png" alt="Tip Calculator">
                     </a>
                     <h3><a href="/pages/projects/tip-calculator.html">Tip Calculator</a></h3>
-                    <span class="card-subtitle">Software</span>
-                    <p>Ad-free tip calculator app for Android, available on the Play Store. Developed in Java using
-                        Android Studio.</p>
+                    <span class="card-subtitle">ad-free tip app for android</span>
+                    <p>Ad-free tip calculator for Android, available on the Play Store. No ads, no tracking — just clean math.</p>
                     <div class="card-tech">
                         <span class="tech-tag"><i class="devicon-java-plain"></i>Java</span>
-                        <span class="tech-tag"><i class="devicon-android-plain"></i>Android Studio</span>
+                        <span class="tech-tag"><i class="devicon-android-plain"></i>Android SDK</span>
                         <span class="tech-tag"><i class="devicon-google-plain"></i>Google</span>
                     </div>
                     <div class="btn-grid">
@@ -206,17 +207,16 @@
 
                 <div class="card" data-tags="fullstack web-app">
                     <a class="card-img" href="/pages/projects/toughcents.html">
-                        <img src="/resources/images/projects/tough-cents-3.png" alt="Tough Cents">
+                        <img src="/assets/projects/tough_cents/tough-cents-3.png" alt="Tough Cents">
                     </a>
                     <h3><a href="/pages/projects/toughcents.html">Tough Cents</a></h3>
-                    <span class="card-subtitle">Web App</span>
-                    <p>Web app that links your bank account and uses AI to provide feedback on spending habits. Built
-                        with Flask and Next.js, using the Plaid API and OpenAI GPT-4.</p>
+                    <span class="card-subtitle">your finances, judged</span>
+                    <p>Web app that scans receipts and uses AI to call you out on bad spending habits. Built with Next.js and Flask, using Ollama for commentary and Google Gemini for receipt OCR.</p>
                     <div class="card-tech">
-                        <span class="tech-tag"><i class="devicon-nodejs-plain-wordmark"></i>Node.js</span>
                         <span class="tech-tag"><i class="devicon-nextjs-plain"></i>Next.js</span>
                         <span class="tech-tag"><i class="devicon-flask-original"></i>Flask</span>
                         <span class="tech-tag"><i class="devicon-postgresql-plain"></i>PostgreSQL</span>
+                        <span class="tech-tag">Ollama</span>
                     </div>
                     <div class="btn-grid">
                         <a href="/pages/projects/toughcents.html" class="btn btn-sm">Details</a>
@@ -225,10 +225,10 @@
 
                 <div class="card" data-tags="software tool">
                     <a class="card-img" href="/pages/projects/united-calculator.html">
-                        <img src="/resources/images/projects/united.png" alt="unitED Calculator">
+                        <img src="/assets/projects/united/united.png" alt="unitED Calculator">
                     </a>
                     <h3><a href="/pages/projects/united-calculator.html">unitED Calculator</a></h3>
-                    <span class="card-subtitle">Software</span>
+                    <span class="card-subtitle">cross-unit arithmetic</span>
                     <p>Calculator that performs calculations across different unit types. Built among a team of 5 using
                         Java, Git, and Agile methodologies.</p>
                     <div class="card-tech">
@@ -243,12 +243,11 @@
 
                 <div class="card" data-tags="software tool">
                     <a class="card-img" href="/pages/projects/black-box-challenge.html">
-                        <img src="/resources/images/projects/blackbox-challenge.png" alt="Black Box Challenge">
+                        <img src="/assets/projects/black_box_challenge/blackbox-challenge.png" alt="Black Box Challenge">
                     </a>
                     <h3><a href="/pages/projects/black-box-challenge.html">Black Box Challenge</a></h3>
-                    <span class="card-subtitle">Other</span>
-                    <p>TUI app implementing a custom grammar with Lexer and Parser for a function puzzle game
-                        challenging players to deduce hidden functions through observations.</p>
+                    <span class="card-subtitle">terminal function puzzle</span>
+                    <p>Terminal puzzle game where you deduce hidden functions by testing inputs and observing outputs. Built in C# with a custom lexer, parser, and AST evaluator.</p>
                     <div class="card-tech">
                         <span class="tech-tag"><i class="devicon-csharp-plain"></i>C#</span>
                     </div>
@@ -265,7 +264,7 @@
                         </a>
                     </div>
                     <h3><a href="/pages/projects/pintos.html">PintOS</a></h3>
-                    <span class="card-subtitle">Systems</span>
+                    <span class="card-subtitle">OS internals in C</span>
                     <p>Educational operating system used to learn OS concepts such as threading, scheduling, and file
                         systems.</p>
                     <div class="card-tech">
@@ -284,12 +283,14 @@
                         </a>
                     </div>
                     <h3><a href="/pages/projects/tone-forge.html">ToneForge</a></h3>
-                    <span class="card-subtitle">Other</span>
+                    <span class="card-subtitle">text-to-tone REST API</span>
                     <p>A Spring Boot API that translates text into a specific lingo or "tone". Hosted on AWS and uses
                         Gemini for translations.</p>
                     <div class="card-tech">
                         <span class="tech-tag"><i class="devicon-spring-plain"></i>Spring Boot</span>
                         <span class="tech-tag"><i class="devicon-java-plain"></i>Java</span>
+                        <span class="tech-tag"><i class="devicon-docker-plain"></i>Docker</span>
+                        <span class="tech-tag"><i class="devicon-amazonwebservices-plain-wordmark"></i>AWS</span>
                     </div>
                     <div class="btn-grid">
                         <a href="/pages/projects/tone-forge.html" class="btn btn-sm">Details</a>
@@ -300,10 +301,10 @@
 
                 <div class="card" data-tags="backend discord-bot">
                     <a class="card-img" href="/pages/projects/lospec-bot.html">
-                        <img src="/resources/images/projects/lospec-bot-ss.png" alt="Lospec Daily Bot">
+                        <img src="/assets/projects/lospec_bot/lospec-bot-ss.png" alt="Lospec Daily Bot">
                     </a>
                     <h3><a href="/pages/projects/lospec-bot.html">Lospec Daily Bot</a></h3>
-                    <span class="card-subtitle">Discord Bot</span>
+                    <span class="card-subtitle">daily pixel art prompt bot</span>
                     <p>Discord bot that posts the <a href="https://lospec.com/dailies/">Lospec Daily</a> pixel art
                         prompt and palette to a designated channel each day.</p>
                     <div class="card-tech">
@@ -320,10 +321,10 @@
 
                 <div class="card" data-tags="software tool">
                     <a class="card-img" href="/pages/projects/madzip.html">
-                        <img src="/resources/images/projects/mad-zip.png" alt="MadZip">
+                        <img src="/assets/projects/mad_zip/mad-zip.png" alt="MadZip">
                     </a>
                     <h3><a href="/pages/projects/madzip.html">MadZip</a></h3>
-                    <span class="card-subtitle">Other</span>
+                    <span class="card-subtitle">huffman file compression</span>
                     <p>Custom file compression utility using Huffman Coding, comparable to 7-Zip and gzip.</p>
                     <div class="card-tech">
                         <span class="tech-tag"><i class="devicon-java-plain"></i>Java</span>
@@ -340,9 +341,8 @@
                             alt="Massaquerade">
                     </a>
                     <h3><a href="/pages/projects/massaquerade.html">Massaquerade</a></h3>
-                    <span class="card-subtitle">Game Dev</span>
-                    <p>Murder Mystery game created for the <a href="https://itch.io/jam/wmj2025">Winter MelonJam 2025
-                            Game Jam</a>.</p>
+                    <span class="card-subtitle">murder mystery · game jam</span>
+                    <p>Murder mystery game for the <a href="https://itch.io/jam/wmj2025">Winter MelonJam 2025</a>. Talk to guests, gather clues, and identify the killer before the party ends.</p>
                     <div class="card-tech">
                         <span class="tech-tag"><i class="devicon-godot-plain"></i>Godot</span>
                     </div>
@@ -350,15 +350,16 @@
                         <a href="/pages/projects/massaquerade.html" class="btn btn-sm">Details</a>
                         <a href="https://github.com/Rat-Haven-Studios/melon-jam-2025" class="btn btn-sm">GitHub</a>
                         <a href="https://hutnerr.itch.io/massaquerade" class="btn btn-sm">itch.io</a>
+                        <a href="https://rathavenstudios.com/pages/games/massaquerade.html" class="btn btn-sm" target="_blank">RHS</a>
                     </div>
                 </div>
 
                 <div class="card" data-tags="gamedev">
                     <a class="card-img" href="/pages/projects/solar-charged.html">
-                        <img src="/resources/gifs/game-jams/solar-charged-clouds.gif" alt="Solar Charged">
+                        <img src="/assets/projects/solar_charged/solar-charged-clouds.gif" alt="Solar Charged">
                     </a>
                     <h3><a href="/pages/projects/solar-charged.html">Solar Charged</a></h3>
-                    <span class="card-subtitle">Game Dev</span>
+                    <span class="card-subtitle">tower defense · game jam</span>
                     <p>Resource management tower defense game for the <a
                             href="https://itch.io/jam/kenney-jam-2025">Kenny Game Jam 2025</a>.</p>
                     <div class="card-tech">
@@ -368,15 +369,16 @@
                         <a href="/pages/projects/solar-charged.html" class="btn btn-sm">Details</a>
                         <a href="https://github.com/hutnerr/kenny-jam-2025" class="btn btn-sm">GitHub</a>
                         <a href="https://hutnerr.itch.io/solarcharged" class="btn btn-sm">itch.io</a>
+                        <a href="https://rathavenstudios.com/pages/games/solar-charged.html" class="btn btn-sm" target="_blank">RHS</a>
                     </div>
                 </div>
 
                 <div class="card" data-tags="frontend web-app">
                     <a class="card-img" href="/pages/projects/pantry-panic.html">
-                        <img src="/resources/images/projects/pantry-panic.png" alt="Pantry Panic">
+                        <img src="/assets/projects/pantry_panic/pantry-panic.png" alt="Pantry Panic">
                     </a>
                     <h3><a href="/pages/projects/pantry-panic.html">Pantry Panic</a></h3>
-                    <span class="card-subtitle">Web App</span>
+                    <span class="card-subtitle">recipe finder by ingredient</span>
                     <p>Website that provides recipes based on the ingredients available in your pantry. Built with a
                         partner using Git and a recipe API.</p>
                     <div class="card-tech">
@@ -400,7 +402,7 @@
                         </a>
                     </div>
                     <h3><a href="/pages/projects/dukesh.html">DukeShell</a></h3>
-                    <span class="card-subtitle">Systems</span>
+                    <span class="card-subtitle">unix shell in C</span>
                     <p>Unix-style shell with custom utilities, piping, and environment variable management.</p>
                     <div class="card-tech">
                         <span class="tech-tag"><i class="devicon-c-plain"></i>C</span>
@@ -420,8 +422,8 @@
                         </a>
                     </div>
                     <h3><a href="/pages/projects/txtmet.html">TXTMET</a></h3>
-                    <span class="card-subtitle">Other</span>
-                    <p>Command line utility to provide certain metrics of text files.</p>
+                    <span class="card-subtitle">text metrics in C &amp; Rust</span>
+                    <p>CLI tool for word, line, and character counts — written in both C and Rust as a language comparison.</p>
                     <div class="card-tech">
                         <span class="tech-tag"><i class="devicon-c-plain"></i>C</span>
                         <span class="tech-tag"><i class="devicon-rust-plain"></i>Rust</span>
@@ -439,7 +441,7 @@
                         </a>
                     </div>
                     <h3><a href="/pages/projects/dhcpclientserver.html">DHCP Client &amp; Server</a></h3>
-                    <span class="card-subtitle">Systems</span>
+                    <span class="card-subtitle">DHCP protocol implementation</span>
                     <p>Simulates DHCP client behavior with custom BOOTP packet encoding, option parsing, and raw UDP
                         communication.</p>
                     <div class="card-tech">
@@ -459,7 +461,7 @@
                         </a>
                     </div>
                     <h3><a href="/pages/projects/pyutils.html">PY Utils</a></h3>
-                    <span class="card-subtitle">Other</span>
+                    <span class="card-subtitle">personal python toolkit</span>
                     <p>Collection of Python utilities frequently reused across projects. Includes logging, data
                         validation, convenience functions, and more.</p>
                     <div class="card-tech">
@@ -467,6 +469,7 @@
                     </div>
                     <div class="btn-grid">
                         <a href="/pages/projects/pyutils.html" class="btn btn-sm">Details</a>
+                        <a href="https://github.com/hutnerr/python-utils" class="btn btn-sm" target="_blank">GitHub</a>
                     </div>
                 </div>
 
@@ -477,7 +480,7 @@
                         </a>
                     </div>
                     <h3><a href="/pages/projects/rhs-website.html">Rat Haven Studios Website</a></h3>
-                    <span class="card-subtitle">Web App</span>
+                    <span class="card-subtitle">rat haven studios site</span>
                     <p>Studio website for Rat Haven Studios. Game showcases, devlogs, workshop posts, and developer
                         profiles — no frameworks, no build step. Includes a custom GDScript syntax highlighter written
                         from scratch.</p>
@@ -488,8 +491,8 @@
                     </div>
                     <div class="btn-grid">
                         <a href="/pages/projects/rhs-website.html" class="btn btn-sm">Details</a>
-                        <a href="https://github.com/Rat-Haven-Studios/website" class="btn btn-sm"
-                            target="_blank">GitHub</a>
+                        <a href="https://github.com/Rat-Haven-Studios/website" class="btn btn-sm" target="_blank">GitHub</a>
+                        <a href="https://rathavenstudios.com" class="btn btn-sm" target="_blank">Website</a>
                     </div>
                 </div>
 
@@ -500,7 +503,7 @@
                         </a>
                     </div>
                     <h3><a href="/pages/projects/personal-website.html">Personal Website</a></h3>
-                    <span class="card-subtitle">Web App</span>
+                    <span class="card-subtitle">this site</span>
                     <p>This site. A static portfolio built with pure HTML, CSS, and JS — no frameworks, no bundler. Uses
                         a custom Python script to inline shared components at build time.</p>
                     <div class="card-tech">
@@ -521,24 +524,24 @@
     </section>
 
     <div id="footer">
-        <footer class="site-footer">
-            <div class="container footer-inner">
-                <p>&copy; 2026 Hunter Baker</p>
-                <div class="footer-links">
-                    <a href="/pages/nav/projects.html">Projects</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/contact.html">Contact</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/other.html">Other</a>>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-                    <span class="nav-sep">|</span>
-                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </footer>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; 2026 Hunter Baker</p>
+        <div class="footer-links">
+            <a href="/pages/nav/projects.html">Projects</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/contact.html">Contact</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/other.html">Other</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+            <span class="nav-sep">|</span>
+            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+        </div>
     </div>
+</footer>
+</div>
 
 </body>
 

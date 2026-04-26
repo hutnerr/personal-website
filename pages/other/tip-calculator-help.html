@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tip Calculator Help</title>
-    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="icon" href="/assets/me/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
 
     <meta property="og:title" content="Hunter Baker | Tip Calculator Help">
-    <meta property="og:description" content="A comprehensive guide to setting up and using the Tip Calculator.">
-    <meta property="og:image" content="https://hunter-baker.com/resources/images/projects/tc-logo.png">
+    <meta property="og:description" content="Setup and usage guide for the Tip Calculator Android app — rounding modes, currency settings, bill splitting, and more.">
+    <meta property="og:image" content="https://hunter-baker.com/assets/projects/tip_calculator/tc-logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/other/tip-calculator-help.html">
 
@@ -28,24 +28,25 @@
 
 <body>
     <div id="header">
-        <header class="site-header">
-            <div class="container header-inner">
-                <a href="/index.html" class="site-logo">
-                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
-                    hunter baker
-                </a>
-                <ul class="site-nav">
-                    <li><a href="/index.html">Home</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/projects.html">Projects</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/contact.html">Contact</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/other.html">Other</a></li>
-                </ul>
-            </div>
-        </header>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="/index.html" class="site-logo">
+            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+            hunter baker
+        </a>
+        <ul class="site-nav">
+            <li><a href="/index.html">Home</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/projects.html">Projects</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/contact.html">Contact</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/other.html">Other</a></li>
+        </ul>
     </div>
+</header>
+<script src="/scripts/nav-active.js"></script>
+</div>
 
     <section id="hero">
         <div class="container">
@@ -80,11 +81,41 @@
             <ul class="arrowed-list">
                 <li><a href="https://play.google.com/store/apps/details?id=com.hbtipcalc.tipcalculator"
                         target="_blank">Google Play Store</a></li>
-                <li>APK Download: <a href="/resources/bin/tip-calculator.apk" download>Direct</a> or <a
-                        href="https://github.com/hutnerr/tip-calculator/releases">GitHub Releases</a></li>
+                <li><a href="https://github.com/hutnerr/tip-calculator/releases">APK Download</a></li>
                 <li><a href="https://github.com/hutnerr/tip-calculator">GitHub Repo</a></li>
                 <li><a href="/pages/projects/tip-calculator.html">Project Showcase</a></li>
             </ul>
+        </div>
+    </section>
+
+    <section id="settings">
+        <div class="container">
+            <h2>settings walkthrough</h2>
+            <div class="pspacing">
+                <p>The settings menu lets you customize the app to your liking. Open it using the gear icon in the
+                    title bar. A reset button (arrow icon) is also in the title bar to restore all settings to defaults,
+                    and the X button closes settings and returns to the main calculator.</p>
+                <p><strong>Theme</strong>: Choose the visual theme of the app. Options include <a
+                        href="https://github.com/morhetz/gruvbox">Gruvbox</a>, <a
+                        href="https://github.com/dracula/dracula-theme">Dracula</a>, and Mocha.</p>
+                <p><strong>Rounding Method</strong>: Choose how the total amount is rounded. Options include:</p>
+                <ul class="arrowed-list">
+                    <li><strong>No Rounding</strong>: The total is not rounded. (5.49 remains 5.49)</li>
+                    <li><strong>Dynamic Rounding</strong>: The total is rounded to the closest whole number (5.49 →
+                        5.00, or 5.51 → 6.00).</li>
+                    <li><strong>Always Down</strong>: The total is always rounded down to the nearest whole number
+                        (5.99 → 5.00, 5.15 → 5.00).</li>
+                    <li><strong>Always Up</strong>: The total is always rounded up to the nearest whole number
+                        (5.49 → 6.00, 5.15 → 6.00).</li>
+                </ul>
+                <br>
+                <p><strong>Currency</strong>: Select the currency symbol used in the app. Options include USD ($),
+                    GBP (£), EUR (€), INR (₹), PHP (₱), THB (฿), or None.</p>
+                <p><strong>Default Tip Percentage</strong>: Set the tip percentage used by default when opening the
+                    app.</p>
+                <p><strong>Max Split</strong>: Set the maximum number of people you can split the bill among (up to
+                    99).</p>
+            </div>
         </div>
     </section>
 
@@ -92,34 +123,34 @@
         <div class="container">
             <h2>screenshots</h2>
             <div class="screenshot-row">
-                <img src="/resources/images/projects/tc1.jpg" alt="Tip Calculator main screen" data-lightbox>
-                <img src="/resources/images/projects/tc2.jpg" alt="Tip Calculator settings menu" data-lightbox>
-                <img src="/resources/images/projects/tc3.jpg" alt="Tip Calculator rounding options" data-lightbox>
-                <img src="/resources/images/projects/tc4.jpg" alt="Tip Calculator bill splitting" data-lightbox>
-                <img src="/resources/images/projects/tc5.jpg" alt="Tip Calculator theme selection" data-lightbox>
+                <img src="/assets/projects/tip_calculator/tc1.jpg" alt="Tip Calculator main screen" data-lightbox>
+                <img src="/assets/projects/tip_calculator/tc2.jpg" alt="Tip Calculator settings menu" data-lightbox>
+                <img src="/assets/projects/tip_calculator/tc3.jpg" alt="Tip Calculator rounding options" data-lightbox>
+                <img src="/assets/projects/tip_calculator/tc4.jpg" alt="Tip Calculator bill splitting" data-lightbox>
+                <img src="/assets/projects/tip_calculator/tc5.jpg" alt="Tip Calculator theme selection" data-lightbox>
             </div>
         </div>
     </section>
 
     <div id="footer">
-        <footer class="site-footer">
-            <div class="container footer-inner">
-                <p>&copy; 2026 Hunter Baker</p>
-                <div class="footer-links">
-                    <a href="/pages/nav/projects.html">Projects</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/contact.html">Contact</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/other.html">Other</a>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-                    <span class="nav-sep">|</span>
-                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </footer>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; 2026 Hunter Baker</p>
+        <div class="footer-links">
+            <a href="/pages/nav/projects.html">Projects</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/contact.html">Contact</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/other.html">Other</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+            <span class="nav-sep">|</span>
+            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+        </div>
     </div>
+</footer>
+</div>
 </body>
 
 </html>

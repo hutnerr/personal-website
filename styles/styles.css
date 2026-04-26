@@ -198,7 +198,7 @@ a:hover {
 
 .site-nav a.nav-active {
   color: var(--accent);
-  text-decoration: underline;
+  background: rgba(250, 189, 47, 0.1);
 }
 
 .nav-sep {
@@ -718,6 +718,14 @@ img[data-lightbox] {
   .grid-3,
   .social-grid {
     grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    position: static;
+  }
+
+  body {
+    padding-top: 0;
   }
 
   .header-inner {

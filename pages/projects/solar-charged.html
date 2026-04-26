@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar Charged</title>
-    <link rel="icon" href="/resources/images/my_rat_pfp_nobg.png">
+    <link rel="icon" href="/assets/me/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
@@ -13,7 +13,7 @@
     <meta property="og:title" content="Hunter Baker | Solar Charged">
     <meta property="og:description"
         content="A tower defense game for Kenny Jam 2025 built in Godot 4, where solar energy serves as both your resource pool and your health — run out and you lose.">
-    <meta property="og:image" content="https://hunter-baker.com/resources/images/game-jams/solar-charged-1.png">
+    <meta property="og:image" content="https://hunter-baker.com/assets/projects/solar_charged/solar-charged-1.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/solar-charged.html">
 
@@ -30,24 +30,25 @@
 
 <body>
     <div id="header">
-        <header class="site-header">
-            <div class="container header-inner">
-                <a href="/index.html" class="site-logo">
-                    <img src="/resources/images/my_rat_pfp_nobg.png" alt="" />
-                    hunter baker
-                </a>
-                <ul class="site-nav">
-                    <li><a href="/index.html">Home</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/projects.html">Projects</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/contact.html">Contact</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/other.html">Other</a></li>
-                </ul>
-            </div>
-        </header>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="/index.html" class="site-logo">
+            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+            hunter baker
+        </a>
+        <ul class="site-nav">
+            <li><a href="/index.html">Home</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/projects.html">Projects</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/contact.html">Contact</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/other.html">Other</a></li>
+        </ul>
     </div>
+</header>
+<script src="/scripts/nav-active.js"></script>
+</div>
 
     <section id="hero">
         <div class="container">
@@ -92,7 +93,7 @@
                         <li><a href="https://hutnerr.itch.io/solarcharged" target="_blank">itch.io</a></li>
                         <li><a href="https://github.com/Rat-Haven-Studios/kenny-jam-2025" target="_blank">GitHub</a>
                         </li>
-                        <li><a href="https://rat-haven-studios.github.io/website/" target="_blank">Rat Haven Studios</a>
+                        <li><a href="https://rathavenstudios.com/pages/games/solar-charged.html" target="_blank">RHS</a></li>
                         </li>
                     </ul>
                 </div>
@@ -106,7 +107,7 @@
             <div class="game-embed">
                 <div class="game-embed-placeholder" data-src="https://itch.io/embed-upload/14352782?color=282828"
                     data-width="640" data-height="380">
-                    <img src="/resources/gifs/game-jams/solar-charged-clouds.gif" alt="Solar Charged" />
+                    <img src="/assets/projects/solar_charged/solar-charged-clouds.gif" alt="Solar Charged" />
                     <div class="play-overlay"><span class="play-btn">&#9654; Play</span></div>
                 </div>
             </div>
@@ -116,8 +117,31 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/resources/gifs/game-jams/solar-charged-clouds.gif"
+            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/solar_charged/solar-charged-clouds.gif"
                 alt="Solar Charged gameplay" data-lightbox>
+        </div>
+    </section>
+
+    <section id="how-to-play">
+        <div class="container">
+            <h2>how to play</h2>
+            <div class="pspacing">
+                <p>The goal is to manage your power effectively while defending against waves of enemies. Strategically
+                    place and upgrade towers, but keep in mind: the more towers you have and the more you upgrade them,
+                    the more power they consume. If you run out of power, you lose.</p>
+                <p>Your power is recharged through solar energy, which is affected by the weather cycle. Keep an eye
+                    on the forecast. To open the upgrade menu, select a placed tower — you can also delete towers this
+                    way. Upkeep is the passive cost of having a tower on the field; this cost increases when the tower
+                    is actively shooting.</p>
+            </div>
+            <h3 style="margin-top: 16px; margin-bottom: 12px;">tower types</h3>
+            <ul class="arrowed-list">
+                <li><strong>Orange Tower:</strong> Simple shooter</li>
+                <li><strong>Red Tower:</strong> Piercing laser</li>
+                <li><strong>Green Tower:</strong> Increases the power of towers in its radius</li>
+                <li><strong>Blue Tower:</strong> Slows down enemies by a percent</li>
+                <li><strong>Grey Tower:</strong> Deals constant damage in its radius</li>
+            </ul>
         </div>
     </section>
 
@@ -179,24 +203,24 @@
     </section>
 
     <div id="footer">
-        <footer class="site-footer">
-            <div class="container footer-inner">
-                <p>&copy; 2026 Hunter Baker</p>
-                <div class="footer-links">
-                    <a href="/pages/nav/projects.html">Projects</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/contact.html">Contact</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/other.html">Other</a>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-                    <span class="nav-sep">|</span>
-                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </footer>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; 2026 Hunter Baker</p>
+        <div class="footer-links">
+            <a href="/pages/nav/projects.html">Projects</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/contact.html">Contact</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/other.html">Other</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+            <span class="nav-sep">|</span>
+            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+        </div>
     </div>
+</footer>
+</div>
 </body>
 
 </html>
