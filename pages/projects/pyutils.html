@@ -32,25 +32,25 @@
 
 <body>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
+        <script src="/scripts/nav-active.js"></script>
     </div>
-</header>
-<script src="/scripts/nav-active.js"></script>
-</div>
 
     <section id="hero">
         <div class="container">
@@ -72,17 +72,14 @@
 
             <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
                 <div>
-                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <h3 style="margin-bottom: 12px;">features</h3>
                     <ul class="arrowed-list">
-                        <li>Python 3.8+: colorama for terminal colors, python-dotenv for env loading, requests for HTTP
-                        </li>
                         <li>Clogger: static logger with stack frame inspection for automatic source file/line tracking
                         </li>
                         <li>Clogobj: instance-based logger with module name tagging, log_errors decorator, and factory
                             presets</li>
                         <li>Option, Result: Rust-inspired types using a _MISSING sentinel to distinguish Some(None)
                             from None</li>
-                        <li>setuptools, pyproject.toml: pip-installable directly from GitHub, version 1.0.4</li>
                     </ul>
                 </div>
                 <div>
@@ -99,7 +96,8 @@
         <div class="container">
             <h2>how it works</h2>
             <div class="pspacing">
-                <p>Clogger is the library's main component - a static logger that produces structured, colored output
+                <p>Clogger is the library's main component. It is a static logger that produces structured, colored
+                    output
                     with timestamps, log levels, and automatic source file and line number tracking. Source tracking
                     uses Python's <code>inspect</code> module to walk the call stack at log time and extract the
                     caller's filename and line number, so <code>Clogger.info("message")</code> prints the file and line
@@ -107,42 +105,23 @@
                 <p>Twelve config settings control behavior: minimum log level, color toggle, timestamp format, source
                     file display, file write mode, and more. A <code>CloggerConfig</code> object is swapped on
                     <code>Clogger.config</code> to change global behavior. <code>CloggerOverrideFactory</code> generates
-                    per-call override dicts that layer on top of the global config for a single log statement -
+                    per-call override dicts that layer on top of the global config for a single log statement.
                     <code>verbose()</code>, <code>file_only("path")</code>, <code>pretty()</code>, and
-                    <code>combine()</code> for merging multiple overrides.</p>
+                    <code>combine()</code> for merging multiple overrides.
+                </p>
                 <p><code>Clogobj</code> provides the same capabilities but as instances rather than a global.
                     <code>ClogobjFactory</code> has presets: <code>verbose()</code>, <code>silent()</code> (useful in
                     tests), <code>file_only()</code>, <code>for_module()</code> (prepends a name to every line),
                     <code>for_file()</code>, and <code>custom()</code>. Instance loggers have a <code>log_errors</code>
-                    decorator that automatically routes exceptions through the logger when applied to a function.</p>
+                    decorator that automatically routes exceptions through the logger when applied to a function.
+                </p>
                 <p><code>Option</code> and <code>Result</code> bring Rust-style explicit null and error handling to
                     Python. The core challenge these types solve is distinguishing "no value was provided" from "the
                     value is None": <code>Option.some(None)</code> is a valid present value, distinct from
                     <code>Option.none()</code>. <code>Result</code> uses an explicit <code>_is_ok</code> boolean rather
                     than checking the type of the wrapped value, so <code>Result.ok(None)</code> and
-                    <code>Result.err(None)</code> are both valid and unambiguous.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="challenges">
-        <div class="container">
-            <h2>challenges</h2>
-            <div class="pspacing">
-                <p>The <code>_MISSING</code> sentinel pattern for <code>Option</code> required careful thought. Python's
-                    <code>None</code> is the natural "no value" representation, but <code>Option.some(None)</code>
-                    should be a distinct state from <code>Option.none()</code> - the whole point of the type is to make
-                    absence explicit. Using a private sentinel object that is never exposed outside the module means
-                    there is no valid input that collides with it: <code>Option.some(None)</code> stores
-                    <code>None</code> in <code>_value</code>, and <code>Option.none()</code> stores
-                    <code>_MISSING</code>. The <code>bool()</code> coercion, equality checks, and <code>unwrap</code>
-                    all dispatch on whether <code>_value is _MISSING</code>, not on whether it is falsy.</p>
-                <p>Stack frame inspection for source tracking has a fixed offset problem: the number of stack frames
-                    between the log call site and the <code>inspect.stack()</code> call inside the logger depends on how
-                    many internal methods are in between. Getting the offset right required counting frames through the
-                    <code>make_log</code> factory case (which adds a wrapper frame) vs. the direct call case (which does
-                    not). The two cases need different offsets, handled by passing the frame depth as a parameter
-                    through the call chain.</p>
+                    <code>Result.err(None)</code> are both valid and unambiguous.
+                </p>
             </div>
         </div>
     </section>
@@ -167,24 +146,24 @@
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

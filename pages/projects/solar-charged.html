@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | Solar Charged">
     <meta property="og:description"
-        content="A tower defense game for Kenny Jam 2025 built in Godot 4, where solar energy serves as both your resource pool and your health - run out and you lose.">
+        content="A tower defense game for Kenny Jam 2025 built in Godot 4, where solar energy serves as both your resource pool and your health. Run out and you lose.">
     <meta property="og:image" content="https://hunter-baker.com/assets/projects/solar_charged/solar-charged-1.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/solar-charged.html">
@@ -30,25 +30,25 @@
 
 <body>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
+        <script src="/scripts/nav-active.js"></script>
     </div>
-</header>
-<script src="/scripts/nav-active.js"></script>
-</div>
 
     <section id="hero">
         <div class="container">
@@ -93,7 +93,8 @@
                         <li><a href="https://hutnerr.itch.io/solarcharged" target="_blank">itch.io</a></li>
                         <li><a href="https://github.com/Rat-Haven-Studios/kenny-jam-2025" target="_blank">GitHub</a>
                         </li>
-                        <li><a href="https://rathavenstudios.com/pages/games/solar-charged.html" target="_blank">RHS</a></li>
+                        <li><a href="https://rathavenstudios.com/pages/games/solar-charged.html" target="_blank">RHS</a>
+                        </li>
                         </li>
                     </ul>
                 </div>
@@ -117,8 +118,9 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/solar_charged/solar-charged-clouds.gif"
-                alt="Solar Charged gameplay" data-lightbox>
+            <img class="walkthrough-img hover-img sized-img"
+                src="/assets/projects/solar_charged/solar-charged-clouds.gif" alt="Solar Charged gameplay"
+                data-lightbox>
         </div>
     </section>
 
@@ -130,7 +132,7 @@
                     place and upgrade towers, but keep in mind: the more towers you have and the more you upgrade them,
                     the more power they consume. If you run out of power, you lose.</p>
                 <p>Your power is recharged through solar energy, which is affected by the weather cycle. Keep an eye
-                    on the forecast. To open the upgrade menu, select a placed tower - you can also delete towers this
+                    on the forecast. To open the upgrade menu, select a placed tower. You can also delete towers this
                     way. Upkeep is the passive cost of having a tower on the field; this cost increases when the tower
                     is actively shooting.</p>
             </div>
@@ -153,7 +155,8 @@
                     (drag-to-place towers), Combat (waves active), Shop (between waves), and Win/Lose. Each state is a
                     separate class inheriting from a State base, with <code>enter()</code>, <code>exit()</code>, and
                     <code>update()</code> methods. Transitions are triggered by events (wave cleared, energy depleted,
-                    shop confirmed) and the state machine calls the appropriate lifecycle hooks.</p>
+                    shop confirmed) and the state machine calls the appropriate lifecycle hooks.
+                </p>
                 <p>Energy is managed through a single HealthComponent shared between the currency and health systems.
                     Tower placement deducts from it; passive and active upkeep drain it each tick; solar recovery adds
                     back at a rate determined by the current weather. The weather cycle transitions between Rain,
@@ -166,29 +169,11 @@
         </div>
     </section>
 
-    <section id="challenges">
-        <div class="container">
-            <h2>challenges</h2>
-            <div class="pspacing">
-                <p>The dual-purpose energy mechanic required a single source of truth that both the economy and the
-                    health system read from. Using one HealthComponent for both meant all UI, all drain calculations,
-                    and the lose condition all pointed at the same value - which eliminated sync bugs but required
-                    careful ordering of operations each tick (apply upkeep, apply recovery, check for depletion, then
-                    allow placement).</p>
-                <p>The two-track upgrade system per tower needed to be data-driven so towers could have distinct upgrade
-                    trees without duplicating logic. Each tower defines its upgrade data as a nested structure; the
-                    upgrade panel reads from it dynamically when a tower is selected.</p>
-                <p>Time management during the jam was the main regret - not enough time remained for balance passes and
-                    playtesting once core systems were in place.</p>
-            </div>
-        </div>
-    </section>
-
     <section id="takeaways">
         <div class="container">
             <h2>takeaways</h2>
             <div class="pspacing">
-                <p>The first game built with explicit state machines and component-based design rather than ad-hoc
+                <p>The first game built with explicit state machines and component-based design rather than
                     singletons. The difference in maintainability was immediately apparent. Some key takeaways:</p>
                 <ul class="arrowed-list">
                     <li>Explicit state machine pattern for game flow management across menus, gameplay phases, and
@@ -203,24 +188,24 @@
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | Tip Calculator">
     <meta property="og:description"
-        content="An ad-free Android tip calculator with four BigDecimal rounding modes, three themes, bill splitting up to 99 people, and persistent settings via DataStore - built with a fully programmatic UI.">
+        content="An ad-free Android tip calculator with four BigDecimal rounding modes, three themes, bill splitting up to 99 people, and persistent settings via DataStore. Built with a fully programmatic UI.">
     <meta property="og:image" content="https://hunter-baker.com/assets/projects/tip_calculator/tc-logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/tip-calculator.html">
@@ -29,25 +29,25 @@
 
 <body>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
+        <script src="/scripts/nav-active.js"></script>
     </div>
-</header>
-<script src="/scripts/nav-active.js"></script>
-</div>
 
     <section id="hero">
         <div class="container">
@@ -63,7 +63,7 @@
             <div class="pspacing">
                 <p>A simple, ad-free Android tip calculator built to get started with Android development. Open the app,
                     type the bill amount using the custom NumPad, and the tip and total calculate immediately using your
-                    saved settings - no extra taps required. Supports rounding modes, multiple currencies, bill
+                    saved settings. No extra taps required. Supports rounding modes, multiple currencies, bill
                     splitting among up to 99 people, and several preset themes. Works entirely offline. Available on the
                     Play Store.</p>
             </div>
@@ -78,7 +78,6 @@
                             sessions</li>
                         <li>BigDecimal: four rounding modes (UP/DOWN/DYNAMIC/NONE) for exact monetary arithmetic</li>
                         <li>Observer pattern: NumPad → TextBox → Calculator → display update chain</li>
-                        <li>ViewPropertyAnimator: hardware-accelerated 300ms slide transitions between pages</li>
                     </ul>
                 </div>
                 <div>
@@ -87,8 +86,10 @@
                         <li><a href="https://play.google.com/store/apps/details?id=com.hbtipcalc.tipcalculator"
                                 target="_blank">Play Store</a></li>
                         <li><a href="https://github.com/hutnerr/tip-calculator" target="_blank">GitHub</a></li>
-                        <li><a href="https://github.com/hutnerr/tip-calculator/releases" target="_blank">APK Download</a></li>
+                        <li><a href="https://github.com/hutnerr/tip-calculator/releases" target="_blank">APK
+                                Download</a></li>
                         <li><a href="/pages/other/tip-calculator-help.html">Help Page</a></li>
+                        <li><a href="/pages/other/tip-calculator-privacy-policy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -100,6 +101,13 @@
             <h2>showcase</h2>
             <img class="walkthrough-img hover-img sized-img" src="/assets/projects/tip_calculator/tc-banner.png"
                 alt="Tip Calculator app banner" data-lightbox>
+            <div class="screenshot-row">
+                <img src="/assets/projects/tip_calculator/tc1.jpg" alt="Tip Calculator main screen" data-lightbox>
+                <!-- <img src="/assets/projects/tip_calculator/tc2.jpg" alt="Tip Calculator settings menu" data-lightbox> -->
+                <img src="/assets/projects/tip_calculator/tc3.jpg" alt="Tip Calculator rounding options" data-lightbox>
+                <img src="/assets/projects/tip_calculator/tc4.jpg" alt="Tip Calculator bill splitting" data-lightbox>
+                <img src="/assets/projects/tip_calculator/tc5.jpg" alt="Tip Calculator theme selection" data-lightbox>
+            </div>
         </div>
     </section>
 
@@ -107,7 +115,7 @@
         <div class="container">
             <h2>how it works</h2>
             <div class="pspacing">
-                <p>The entire UI is built programmatically - no XML layouts. All views are constructed and constrained
+                <p>The entire UI is built programmatically with no XML layouts. All views are constructed and constrained
                     in Java, which made the layout logic explicit and testable but required manually managing all the
                     constraint relationships that XML would otherwise handle declaratively.</p>
                 <p>Input flows through an Observer chain: the custom NumPad fires events on each key press; a TextBox
@@ -117,12 +125,13 @@
                     observing its output without touching the UI.</p>
                 <p>Tip arithmetic uses BigDecimal throughout to avoid floating-point rounding errors on monetary values.
                     Four rounding modes are supported: UP (always rounds away from zero), DOWN (always truncates),
-                    DYNAMIC (rounds to nearest, half-up), and NONE (no rounding - exact decimal result). The selected
+                    DYNAMIC (rounds to nearest, half-up), and NONE (no rounding. exact decimal result). The selected
                     mode is applied to the final per-person amount after splitting.</p>
-                <p>Settings - last-used tip percentage, rounding mode, currency symbol, theme selection - persist across
+                <p>Settings (last-used tip percentage, rounding mode, currency symbol, theme selection) persist across
                     sessions via RxDataStore. Page transitions between the calculator view and the settings view use
                     <code>ViewPropertyAnimator</code> with hardware layer enabled: 300ms slides that compose on the GPU
-                    rather than redrawing in software.</p>
+                    rather than redrawing in software.
+                </p>
             </div>
         </div>
     </section>
@@ -165,24 +174,24 @@
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

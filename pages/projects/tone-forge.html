@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToneForge</title>
+    <title>ToneForged</title>
     <link rel="icon" href="/assets/me/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
@@ -15,12 +15,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
 
-    <meta property="og:title" content="Hunter Baker | ToneForge">
+    <meta property="og:title" content="Hunter Baker | ToneForged">
     <meta property="og:description"
-        content="A Spring Boot REST API that uses Google's Gemini model to rewrite input text in themed tones - Pirate, Medieval, Shakespeare, and Toddler - with per-IP rate limiting and Docker deployment on AWS EC2.">
+        content="A Spring Boot REST API that uses Google's Gemini model to rewrite input text in themed tones. Pirate, Medieval, Shakespeare, etc... with per-IP rate limiting and Docker deployment on AWS EC2.">
     <meta property="og:image" content="https://hunter-baker.com/assets/me/my_rat_pfp_nobg.png">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hunter-baker.com/pages/projects/tone-forge.html">
+    <meta property="og:url" content="https://hunter-baker.com/pages/projects/tone-forged.html">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
     <script>
@@ -33,29 +33,29 @@
 
 <body>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
+        <script src="/scripts/nav-active.js"></script>
     </div>
-</header>
-<script src="/scripts/nav-active.js"></script>
-</div>
 
     <section id="hero">
         <div class="container">
-            <h1>toneforge<span class="cursor"></span></h1>
+            <h1>toneforged<span class="cursor"></span></h1>
             <p style="color: var(--text-muted); font-size: 0.95rem;">$ a text lingo conversion REST API powered by
                 Gemini</p>
         </div>
@@ -65,8 +65,8 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>ToneForge is a public REST API that converts text into specific lingos using AI. Send a string and a
-                    tone name - Pirate, Medieval, Shakespeare, or Toddler - and the API returns the text rewritten in
+                <p>ToneForged is a public REST API that converts text into specific lingos using AI. Send a string and a
+                    tone name (Pirate, Medieval, Shakespeare, etc...) and the API returns the text rewritten in
                     that style using Google's Gemini model. The conversion is contextual rather than a word-swap, so the
                     result reads naturally in the target tone.</p>
                 <p>Rate limits are strict because both Gemini and the EC2 instance are on free tiers. Started as a
@@ -92,9 +92,9 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">links</h3>
                     <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/tone-forge" target="_blank">GitHub</a></li>
+                        <li><a href="https://github.com/hutnerr/tone-forged" target="_blank">GitHub</a></li>
                         <li><a href="http://52.207.146.61/api/strategies" target="_blank">Live API</a></li>
-                        <li><a href="https://hutnerr.github.io/tone-forge/" target="_blank">Demo</a></li>
+                        <li><a href="https://hutnerr.github.io/tone-forged/" target="_blank">Demo</a></li>
                     </ul>
                 </div>
             </div>
@@ -109,18 +109,21 @@
                     instruct Gemini. All tones register themselves in a static TONE_MAP keyed by name string. When a
                     <code>/api/convert</code> request arrives, the controller looks up the tone by name from the map,
                     constructs the prompt, and sends it to Gemini. This means adding a new tone requires only a new
-                    Strategy class and a map entry - no controller changes.</p>
+                    Strategy class and a map entry, no controller changes.
+                </p>
                 <p>The Gemini response goes through explicit safety checking before being returned: the code inspects
                     the finish reason and handles <code>SAFETY</code>, <code>RECITATION</code>, <code>MAX_TOKENS</code>,
                     <code>STOP</code>, and empty-response cases separately, returning an appropriate error field in the
-                    JSON response rather than letting unexpected cases propagate as 500s.</p>
+                    JSON response rather than letting unexpected cases propagate as 500s.
+                </p>
                 <p>Rate limiting is enforced by a <code>HandlerInterceptor</code> that runs before every request. It
                     stores a <code>RequestInfo</code> record (count, window start timestamp) per IP address in a
                     <code>ConcurrentHashMap</code>. On each request, it checks whether the count in the current
                     60-second window exceeds 2; if so, it returns 429 immediately. The <code>RequestInfo</code> type is
                     immutable - each update creates a new record rather than mutating in place, which avoids race
-                    conditions on the map update.</p>
-                <p>Input is capped at 5000 characters. The API is open - no authentication required.</p>
+                    conditions on the map update.
+                </p>
+                <p>Input is capped at 5000 characters. The API is open. No authentication is required.</p>
             </div>
         </div>
     </section>
@@ -129,7 +132,6 @@
         <div class="container">
             <h2>endpoints</h2>
             <div class="pspacing">
-                <p>Two open endpoints, no authentication required:</p>
                 <ul class="arrowed-list">
                     <li><strong>GET</strong> <code>/api/strategies</code>, returns a list of all available tone names
                     </li>
@@ -169,26 +171,6 @@
         </div>
     </section>
 
-    <section id="challenges">
-        <div class="container">
-            <h2>challenges</h2>
-            <div class="pspacing">
-                <p>The rate limiter design required care around concurrency. A mutable counter per IP in a
-                    <code>ConcurrentHashMap</code> has a check-then-act race: two requests arriving simultaneously could
-                    both read a count below the limit and both proceed. Using an immutable <code>RequestInfo</code>
-                    record and replacing the map entry atomically via <code>compute()</code> eliminates this race - the
-                    lambda passed to <code>compute()</code> runs with the map's internal lock held, so only one thread
-                    can update a given key at a time.</p>
-                <p>Response parsing from Gemini required handling more cases than the happy path. The API can return a
-                    valid HTTP 200 with a response that is still unusable: a safety block, a recitation block, a
-                    max-tokens truncation, or an empty candidates list. Treating all of these as a single "conversion
-                    failed" case would lose information the caller might need. The implementation maps each finish
-                    reason to a distinct error string in the response JSON, letting callers distinguish "blocked by
-                    safety filter" from "text was too long."</p>
-            </div>
-        </div>
-    </section>
-
     <section id="takeaways">
         <div class="container">
             <h2>takeaways</h2>
@@ -208,24 +190,24 @@
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

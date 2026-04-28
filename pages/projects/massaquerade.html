@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | Massaquerade">
     <meta property="og:description"
-        content="A narrative mystery game for Winter MelonJam 2025 where players swap masks to unlock dialogue options and identify the murder target at a masquerade ball - built in 72 hours in Godot 4.">
+        content="A narrative mystery game for Winter MelonJam 2025 where players must identify the murder target at a masquerade ball. Built in 72 hours in Godot 4.">
     <meta property="og:image" content="https://hunter-baker.com/assets/projects/massaquerade/massaquerade-results.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/massaquerade.html">
@@ -30,25 +30,25 @@
 
 <body>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
+        <script src="/scripts/nav-active.js"></script>
     </div>
-</header>
-<script src="/scripts/nav-active.js"></script>
-</div>
 
     <section id="hero">
         <div class="container">
@@ -64,8 +64,8 @@
             <div class="pspacing">
                 <p>Massaquerade is the third game built with a partner, for the Winter MelonJam 2025. The theme was
                     "Mask." The player attends a masquerade ball as the murderer: talk to guests, collect clues, and
-                    identify the target. Wearing different masks unlocks different personalities and dialogue options,
-                    and each new piece of information can open up branches in conversations you've already had. Once
+                    identify the traitor. Each new piece of information can open up branches in conversations you've
+                    already had. Once
                     you've decided who the target is, press M to strike.</p>
                 <p>The game ranked 36th overall out of 200 submissions, with 17th place in the Art category and 39th in
                     Gameplay.</p>
@@ -80,9 +80,6 @@
                             conditions and mutations</li>
                         <li>Flag system: conversationState (local per-dialogue) and Data.player.actionFlags (global
                             persistent)</li>
-                        <li>Suspicion tracking: global integer compared against per-dialogue thresholds</li>
-                        <li>Murder mechanic: M-key input checked in dialogue context triggers accusation resolution
-                        </li>
                     </ul>
                 </div>
                 <div>
@@ -92,7 +89,8 @@
                         <li><a href="https://hutnerr.itch.io/massaquerade" target="_blank">itch.io</a></li>
                         <li><a href="https://github.com/Rat-Haven-Studios/melon-jam-2025" target="_blank">GitHub</a>
                         </li>
-                        <li><a href="https://rathavenstudios.com/pages/games/massaquerade.html" target="_blank">RHS</a></li>
+                        <li><a href="https://rathavenstudios.com/pages/games/massaquerade.html" target="_blank">RHS</a>
+                        </li>
                         </li>
                     </ul>
                 </div>
@@ -106,7 +104,7 @@
             <div class="game-embed">
                 <div class="game-embed-placeholder" data-src="https://itch.io/embed-upload/15981388?color=282828"
                     data-width="640" data-height="380">
-                    <img src="/assets/projects/massaquerade/massaquerade-results.png" alt="Massaquerade" />
+                    <img src="https://img.itch.zone/aW1nLzI0NzcwNzM5LnBuZw==/original/MKwieg.png" alt="Massaquerade" />
                     <div class="play-overlay"><span class="play-btn">&#9654; Play</span></div>
                 </div>
             </div>
@@ -116,10 +114,26 @@
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/massaquerade/massaquerade-results.png"
-                alt="Massaquerade masquerade ball scene" data-lightbox>
-            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/massaquerade/massaquerade-results.png"
-                alt="Massaquerade jam results" data-lightbox>
+            <div class="grid grid-2">
+                <img class="walkthrough-img hover-img sized-img"
+                    src="https://img.itch.zone/aW1nLzI0NzcwNzM5LnBuZw==/original/MKwieg.png"
+                    alt="Massaquerade masquerade ball scene" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img"
+                    src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDc2MS5wbmc=/794x1000/m38khL.png"
+                    alt="Massaquerade character dialogue" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img"
+                    src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMS5wbmc=/794x1000/QEMP%2Bz.png"
+                    alt="Massaquerade character dialogue" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img"
+                    src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMi5wbmc=/794x1000/J0NcOE.png"
+                    alt="Massaquerade character dialogue" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img"
+                    src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMy5wbmc=/794x1000/EjIHFg.png"
+                    alt="Massaquerade character dialogue" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img"
+                    src="/assets/projects/massaquerade/massaquerade-results.png" alt="Massaquerade jam results"
+                    data-lightbox>
+            </div>
         </div>
     </section>
 
@@ -127,19 +141,15 @@
         <div class="container">
             <h2>how it works</h2>
             <div class="pspacing">
-                <p>Dialogue is driven entirely by JSON files - one file per character per mask. Each dialogue node
+                <p>Dialogue is driven entirely by JSON files. One file per character per mask. Each dialogue node
                     defines the display text, response options, conditions required to show the option, flags to set
                     when the option is chosen, and the next node to advance to. Conditions are evaluated against two
                     scopes: <code>conversationState</code>, a dictionary local to the active conversation that
                     accumulates flags set during the current exchange, and <code>Data.player.actionFlags</code>, the
                     global persistent flag store that persists across all conversations.</p>
                 <p>The result is that choosing a response in one conversation can set a global flag that unlocks a new
-                    branch in an entirely different character's dialogue tree - the clue chain the player follows to
-                    identify the target. Suspicion is tracked as a global integer; dialogue nodes can check it against
-                    thresholds to reveal or hide information based on how much the player has already uncovered.</p>
-                <p>Because each character has a separate dialogue file per mask, swapping masks at the in-game mask rack
-                    literally changes which dialogue tree loads for that NPC - the same character can have a completely
-                    different conversation depending on which mask the player wears.</p>
+                    branch in an entirely different character's dialogue tree. The clue chain the player follows to
+                    identify the target.</p>
             </div>
         </div>
     </section>
@@ -148,15 +158,14 @@
         <div class="container">
             <h2>challenges</h2>
             <div class="pspacing">
-                <p>Building a scalable dialogue system was the core technical challenge. A naive approach - writing
-                    dialogue state directly into scripts - would have made branching and authoring impossible to manage.
-                    The JSON tree format let dialogue content be written outside the code entirely, which was critical
-                    because in a jam the artist and programmer may not be the same person.</p>
+                <p>Building a scalable dialogue system was the core technical challenge. A naive approach, writing
+                    dialogue state directly into scripts, would have made branching and authoring impossible to manage.
+                    The JSON tree format let dialogue content be written outside the code entirely.</p>
                 <p>The two-scope flag system (local conversation vs. global) required careful design: local flags track
                     what has been said in the current exchange (useful for preventing repeat questions), while global
                     flags track what the player has learned across all interactions (useful for unlocking new branches
-                    after the fact). Getting the evaluation order right - check conditions, display options, then apply
-                    mutations - meant no flag changes could leak backward into the conditions that gated the current
+                    after the fact). Getting the evaluation order right (check conditions, display options, then apply
+                    mutations) meant no flag changes could leak backward into the conditions that gated the current
                     step.</p>
                 <p>The honest limitation of this jam was throughput. The main bottleneck was not systems but content:
                     writing enough unique, coherent dialogue for multiple characters across multiple mask variants
@@ -193,24 +202,24 @@
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>
