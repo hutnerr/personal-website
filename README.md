@@ -1,13 +1,24 @@
 Images for the RHS project card and project page as well.
 Images for the personal website project card and project page as well.
-Remove the other Git Branches
 Make the ToughCents Project Page using Instructions.md
 - Use the instructions.md, the old project page, etc...
 - Update the project navpage and index with any new skills
 - Update the card 
 - Compare to old one
-- ONLY DO AFTER I DO THE DEEP DIVE INTO THE PROJECT
+Remove the other Git Branches
 Once updated, check where I might've used the .png files and now the filepaths are broken. 
+- beastcode github repo. <-- check in the code itself as well
+- all game jam repos. make them link to rat haven studios.
+- images/gif forgotten paths github repo
+- learn more for game jam pages on linkedin
+- game pages on itchio
+- tip calculator github
+- navsys github
+- black box challenge github
+- united github
+- madzip github
+- pantry panic github
+
 
 currently at beast[code] on project redo. 
 

@@ -72,12 +72,12 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Python - Discord.py for bot framework, Aiohttp for async HTTP requests</li>
-                        <li>BeautifulSoup4 - HTML parsing of Lospec.com palette pages to extract daily palette slug and
+                        <li>Python: Discord.py for bot framework, Aiohttp for async HTTP requests</li>
+                        <li>BeautifulSoup4: HTML parsing of Lospec.com palette pages to extract daily palette slug and
                             metadata</li>
-                        <li>Per-server JSON persistence - subscription config stored in data/servers/{serverID}.json
+                        <li>Per-server JSON persistence: subscription config stored in data/servers/{serverID}.json
                         </li>
-                        <li>Polling loop - 1-minute interval checks current time against 8 AM EST delivery target</li>
+                        <li>Polling loop: 1-minute interval checks current time against 8 AM EST delivery target</li>
                     </ul>
                 </div>
                 <div>
@@ -142,7 +142,7 @@
                 <p>A small project, but it shipped and runs. The main value was building the full cycle: scraping, state
                     management, slash commands, and deployment. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>Web scraping with BeautifulSoup4 - targeting stable selectors over positional parsing</li>
+                    <li>Web scraping with BeautifulSoup4, targeting stable selectors over positional parsing</li>
                     <li>Per-server bot configuration with JSON persistence</li>
                     <li>Discord slash command registration and interaction handling with Discord.py</li>
                     <li>Edge case handling for stateful scheduled delivery (restart safety, duplicate prevention)</li>

@@ -78,15 +78,15 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Java 17, Spring Boot 4.0.5 - REST API with Spring MVC controllers and HandlerInterceptor
+                        <li>Java 17, Spring Boot 4.0.5: REST API with Spring MVC controllers and HandlerInterceptor
                         </li>
-                        <li>google-genai 1.46.0 - Google Gemini API for contextual text rewriting</li>
-                        <li>Strategy pattern + enum registry - each tone is a Strategy registered in a TONE_MAP;
+                        <li>google-genai 1.46.0: Google Gemini API for contextual text rewriting</li>
+                        <li>Strategy pattern + enum registry: each tone is a Strategy registered in a TONE_MAP;
                             selecting by name resolves to its prompt at runtime</li>
-                        <li>Rate limiter - ConcurrentHashMap + HandlerInterceptor tracking 2 requests/min per IP using
+                        <li>Rate limiter: ConcurrentHashMap + HandlerInterceptor tracking 2 requests/min per IP using
                             immutable RequestInfo records</li>
-                        <li>Docker multi-stage build - compile and package stage separate from runtime image</li>
-                        <li>AWS EC2 - public hosting</li>
+                        <li>Docker multi-stage build: compile and package stage separate from runtime image</li>
+                        <li>AWS EC2: public hosting</li>
                     </ul>
                 </div>
                 <div>
@@ -131,9 +131,9 @@
             <div class="pspacing">
                 <p>Two open endpoints, no authentication required:</p>
                 <ul class="arrowed-list">
-                    <li><strong>GET</strong> <code>/api/strategies</code> - returns a list of all available tone names
+                    <li><strong>GET</strong> <code>/api/strategies</code>, returns a list of all available tone names
                     </li>
-                    <li><strong>POST</strong> <code>/api/convert</code> - converts text to the specified tone</li>
+                    <li><strong>POST</strong> <code>/api/convert</code>, converts text to the specified tone</li>
                 </ul>
             </div>
         </div>
@@ -199,7 +199,7 @@
                     <li>Spring Boot REST API design with HandlerInterceptor for cross-cutting concerns</li>
                     <li>Strategy pattern + enum registry for extensible tone selection without controller coupling</li>
                     <li>Concurrency-safe rate limiting with ConcurrentHashMap and immutable value records</li>
-                    <li>Gemini API integration - finish reason handling for all non-happy-path response cases</li>
+                    <li>Gemini API integration, finish reason handling for all non-happy-path response cases</li>
                     <li>Docker multi-stage build for minimal runtime image size</li>
                     <li>AWS EC2 deployment and public API hosting</li>
                 </ul>

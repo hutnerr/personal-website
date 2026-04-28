@@ -74,12 +74,12 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Java 17, Swing - desktop GUI for file selection and compression statistics display</li>
-                        <li>Huffman coding - custom implementation built from scratch for lossless compression</li>
-                        <li>HashMap + PriorityQueue&lt;HuffTree&gt; - frequency table and tree construction data
+                        <li>Java 17, Swing: desktop GUI for file selection and compression statistics display</li>
+                        <li>Huffman coding: custom implementation built from scratch for lossless compression</li>
+                        <li>HashMap + PriorityQueue&lt;HuffTree&gt;: frequency table and tree construction data
                             structures</li>
-                        <li>BitSequence - custom LSB-first bit packing for compact encoded output</li>
-                        <li>Java serialization - HuffmanSave object written to .mz files to embed the tree alongside
+                        <li>BitSequence: custom LSB-first bit packing for compact encoded output</li>
+                        <li>Java serialization: HuffmanSave object written to .mz files to embed the tree alongside
                             compressed data</li>
                     </ul>
                 </div>
@@ -130,9 +130,9 @@
                 <p>Implementing Huffman coding from scratch made the algorithm concrete in a way that reading about it
                     does not. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>End-to-end Huffman coding - frequency analysis, priority-queue tree construction, and encoding
+                    <li>End-to-end Huffman coding, frequency analysis, priority-queue tree construction, and encoding
                         table derivation</li>
-                    <li>Bit-level I/O - LSB-first packing and the mechanics of reading sub-byte data from a byte stream
+                    <li>Bit-level I/O, LSB-first packing and the mechanics of reading sub-byte data from a byte stream
                     </li>
                     <li>Java serialization for self-contained binary file formats</li>
                     <li>Data structure selection: why a priority queue is the right tool for incremental tree
