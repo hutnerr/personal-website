@@ -4,15 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tough Cents</title>
+    <title>ToughCents</title>
     <link rel="icon" href="/assets/me/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
 
-    <meta property="og:title" content="Hunter Baker | Tough Cents">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-gruvbox-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    <meta property="og:title" content="Hunter Baker | ToughCents">
     <meta property="og:description"
-        content="A web app that allows you to connect your bank or upload receipts and uses AI to call you out on bad spending. Built with Next.js, Flask, PostgreSQL, Ollama for commentary, and Google Gemini for receipt OCR.">
+        content="A personal finance web app that links to your bank accounts and roasts your spending habits using a fine-tuned local LLM.">
     <meta property="og:image" content="https://hunter-baker.com/assets/projects/tough_cents/tough-cents-3.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/toughcents.html">
@@ -51,9 +55,8 @@
 
     <section id="hero">
         <div class="container">
-            <h1>tough cents<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a behavior-driven financial accountability tool
-            </p>
+            <h1>toughcents<span class="cursor"></span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">$ personal finance drill sergeant</p>
         </div>
     </section>
 
@@ -61,26 +64,34 @@
         <div class="container">
             <h2>overview</h2>
             <div class="pspacing">
-                <p>Tough Cents is a web app that uses "tough love" behavioral psychology to discourage poor spending.
-                    Unlike passive budgeting apps, it actively intervenes with humor and sharp commentary to discourage
-                    poor spending habits and create genuine accountability. Scan a receipt and Google Gemini reads the
-                    purchase details; Ollama then generates a personalized, sometimes harsh commentary based on your
-                    spending history. Because adults need discipline too.
-                </p>
-                <p>You can also link a bank account for direct transaction data, enabling more comprehensive tracking
-                    and feedback over time. The app gamifies financial discipline with a points system and push
-                    notifications.</p>
+                <p>ToughCents is a personal finance web app built around the premise that passive dashboards don't
+                    change behavior, direct accountability does. It links to real bank accounts via the Teller API,
+                    automatically imports and categorizes transactions, and runs each expense through a fine-tuned local
+                    LLM that delivers personalized spending criticism in the voice of "Sgt. Cents."</p>
+                <p>Built as a team project for CS374 at James Madison University, the app was designed end-to-end: a
+                    normalized PostgreSQL schema, a Flask REST API, SQLAlchemy ORM models, SQL analytical views, and a
+                    Next.js frontend, integrating three distinct external services for bank data, receipt parsing, and
+                    AI feedback generation.</p>
             </div>
 
-            <div style="margin-top: 24px;">
-                <h3 style="margin-bottom: 12px;">tech stack</h3>
-                <ul class="arrowed-list">
-                    <li>Next.js: frontend</li>
-                    <li>Flask: backend API</li>
-                    <li>PostgreSQL: 14+ table relational database</li>
-                    <li>Ollama: AI commentary generation</li>
-                    <li>Google Gemini: receipt OCR and parsing</li>
-                </ul>
+            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+                <div>
+                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>Python (Flask, Flask-AppBuilder, SQLAlchemy, Flask-JWT-Extended)</li>
+                        <li>PostgreSQL (13-table normalized schema with 4 analytical SQL views)</li>
+                        <li>Next.js (static export served by Flask)</li>
+                        <li>Teller API (bank account linking and real-time transaction sync via mutual TLS)</li>
+                        <li>Google Gemini 2.0 Flash (multimodal receipt OCR and structured data extraction)</li>
+                        <li>Ollama (locally-run fine-tuned LLM for AI spending feedback)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <ul class="arrowed-list">
+                        <li><a href="https://github.com/Tough-Cents" target="_blank">GitHub Organization</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -89,12 +100,99 @@
         <div class="container">
             <h2>showcase</h2>
             <img class="walkthrough-img hover-img sized-img" src="/assets/projects/tough_cents/tough-cents-3.png"
-                alt="Tough Cents App Screenshot" data-lightbox>
-            <div class="grid grid-2">
-                <img class="walkthrough-img hover-img sized-img" style="margin-top: 1rem;"
-                    src="/assets/projects/tough_cents/toughcents-1.svg" alt="Tough Cents Wireframe 1" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" style="margin-top: 1rem;"
-                    src="/assets/projects/tough_cents/toughcents-2.svg" alt="Tough Cents Wireframe 2" data-lightbox>
+                alt="ToughCents spending dashboard with category breakdown" data-lightbox>
+            <div class="grid grid-2" style="margin-top: 1rem;">
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/tough_cents/toughcents-1.svg"
+                    alt="ToughCents wireframe 1" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/tough_cents/toughcents-2.svg"
+                    alt="ToughCents wireframe 2" data-lightbox>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h2>how it works</h2>
+            <div class="pspacing">
+                <p>The backend is a Flask application backed by PostgreSQL, with a Next.js frontend built to a static
+                    <code>out/</code> directory and served directly by Flask's file routing. During development,
+                    Next.js runs on port 3000 and Flask proxies API requests via CORS; in production, Flask serves the
+                    compiled HTML and handles all <code>/api/</code> routes itself.
+                </p>
+                <p>Bank connections use the Teller API: after a user completes the Teller Connect enrollment flow in the
+                    browser, the frontend posts the access token to <code>/api/save-enrollment</code>. Flask
+                    immediately calls Teller's <code>/accounts</code> and
+                    <code>/accounts/{id}/transactions</code> endpoints using mutual TLS certificate authentication to
+                    pull the full transaction history. Because different banks report transaction amounts with opposite
+                    sign conventions, the sync pipeline samples incoming transactions to detect the bank's convention
+                    and normalizes all amounts before inserting them.
+                </p>
+                <p>Receipt scanning uses Google Gemini 2.0 Flash. The user uploads a photo of a receipt; the backend
+                    sends the raw image bytes directly to Gemini's multimodal API with a structured extraction prompt,
+                    then parses the JSON response to populate a <code>Receipt</code> record and its <code>Item</code>
+                    line items. The system attempts to match the scanned receipt to an existing imported bank
+                    transaction by merchant name, amount, and date within a +/- 1 day window before creating a new
+                    transaction record.</p>
+                <p>AI feedback is generated by a custom Ollama model (<code>toughcents:latest</code>) fine-tuned to
+                    adopt the Sgt. Cents persona. The tone is driven by the user's stored <code>Personality</code>
+                    preference (balanced, playful, formal, or unruly), which is injected into the prompt at request
+                    time. Feedback is persisted in the <code>AIFeedback</code> table and served from cache on repeat
+                    requests unless regeneration is explicitly forced.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>features</h2>
+            <ul class="arrowed-list">
+                <li>Real bank account linking via Teller API with automatic transaction import</li>
+                <li>AI-generated spending feedback via a locally-run fine-tuned Ollama model</li>
+                <li>Receipt scanning and OCR via Google Gemini 2.0 Flash</li>
+                <li>Wall of Shame feed displaying recent AI-roasted transactions</li>
+                <li>Spending category breakdown dashboard with drill-down analysis</li>
+                <li>Adjustable AI personality stored per user (balanced, playful, formal, unruly)</li>
+                <li>JWT-authenticated REST API with registration and login</li>
+                <li>Full admin data panel with CRUD via Flask-AppBuilder</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="challenges">
+        <div class="container">
+            <h2>challenges</h2>
+            <div class="pspacing">
+                <p>Normalizing transaction data across banks was the first real integration problem. The Teller API does
+                    not enforce a consistent sign convention, some institutions return debits as positive amounts,
+                    others as negative. To handle this without special-casing individual banks, the sync pipeline
+                    samples the first batch of incoming transactions: if it finds a known debit transaction type (card
+                    payment, ATM withdrawal, bank fee) with a positive amount, it flags the entire batch for sign
+                    inversion before inserting.</p>
+
+                <h3 style="margin-bottom: 12px;">bank sign convention detection</h3>
+                <pre><code class="language-python">def detect_bank_sign_convention(transactions_data: list) -> bool:
+    KNOWN_DEBIT_TYPES = {
+        'card_payment', 'atm', 'fee', 'withdrawal', 'charge',
+        'bill_payment', 'ach_debit', 'pos'
+    }
+    sample_size = min(10, len(transactions_data))
+    for tx_data in transactions_data[:sample_size]:
+        tx_type = tx_data.get('type', '').lower()
+        amount = Decimal(tx_data.get('amount', '0'))
+        if tx_type in KNOWN_DEBIT_TYPES:
+            return amount > 0  # positive debit means we need to flip
+    return False</code></pre>
+
+                <p>Pairing uploaded receipts to existing bank transactions required deciding what "match" means when two
+                    data sources are imprecise. The receipt OCR may not reproduce the exact merchant string stored in
+                    Teller's data. The matching logic keys on merchant name, absolute amount, and a +/- 1 day date
+                    window (a deliberate compromise that favors not missing valid matches over strict precision, since
+                    an unmatched receipt falls back to creating a new transaction rather than failing).</p>
+                <p>Building the AI feedback prompts without hardcoding behavior required a runtime injection pattern.
+                    The user's personality setting, first name, and transaction context are all interpolated into the
+                    prompt string at request time. The Sgt. Cents model responds to different framing language without
+                    needing separate model variants per tone, the fine-tuning established the persona while prompt
+                    structure controls the intensity.</p>
             </div>
         </div>
     </section>
@@ -103,13 +201,19 @@
         <div class="container">
             <h2>takeaways</h2>
             <div class="pspacing">
-                <p>The most challenging and rewarding part was the database design. 14+ interconnected tables covering
-                    users, transactions, receipts, categories, and feedback history. Getting the schema right upfront
-                    made everything downstream easier. Some key takeaways:</p>
+                <p>ToughCents was the first end-to-end team project integrating multiple external APIs alongside a
+                    fully designed relational schema. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>Complex relational database design, schema modeling and normalization</li>
-                    <li>Using multiple AI models for distinct purposes in one app</li>
-                    <li>Full-stack development across Next.js, Flask, and PostgreSQL</li>
+                    <li>Teller API integration, mutual TLS certificate authentication for production bank data access
+                    </li>
+                    <li>Multimodal LLM use, sending raw image bytes to Gemini for structured JSON extraction from
+                        photos</li>
+                    <li>Local LLM fine-tuning, training a custom Ollama model and controlling persona through prompt
+                        injection at runtime</li>
+                    <li>Idempotent sync patterns (SQLAlchemy's <code>session.merge()</code> for upsert behavior during
+                        repeated transaction imports)</li>
+                    <li>Relational schema design, 13-table normalized PostgreSQL schema with analytical SQL views for
+                        reporting queries</li>
                 </ul>
             </div>
         </div>
