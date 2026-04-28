@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | Solar Charged">
     <meta property="og:description"
-        content="A tower defense game for Kenny Jam 2025 built in Godot 4, where solar energy serves as both your resource pool and your health — run out and you lose.">
+        content="A tower defense game for Kenny Jam 2025 built in Godot 4, where solar energy serves as both your resource pool and your health - run out and you lose.">
     <meta property="og:image" content="https://hunter-baker.com/assets/projects/solar_charged/solar-charged-1.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/solar-charged.html">
@@ -75,14 +75,14 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Godot 4, GDScript — game engine and scripting</li>
-                        <li>State machine — explicit StateMachine + State base classes managing 5 game states</li>
-                        <li>HealthComponent — dual-purpose energy system; depletion triggers defeat, spending builds
+                        <li>Godot 4, GDScript - game engine and scripting</li>
+                        <li>State machine - explicit StateMachine + State base classes managing 5 game states</li>
+                        <li>HealthComponent - dual-purpose energy system; depletion triggers defeat, spending builds
                             towers</li>
-                        <li>Weather system — 4 weighted states (Rain 7%, Cloudy 15%, Normal 35%, Sunny 50%) affecting
+                        <li>Weather system - 4 weighted states (Rain 7%, Cloudy 15%, Normal 35%, Sunny 50%) affecting
                             energy recovery rate</li>
-                        <li>PathFollow2D — enemy movement along pre-placed paths</li>
-                        <li>Tower upgrade system — two independent upgrade tracks per tower, 3 levels each</li>
+                        <li>PathFollow2D - enemy movement along pre-placed paths</li>
+                        <li>Tower upgrade system - two independent upgrade tracks per tower, 3 levels each</li>
                     </ul>
                 </div>
                 <div>
@@ -130,7 +130,7 @@
                     place and upgrade towers, but keep in mind: the more towers you have and the more you upgrade them,
                     the more power they consume. If you run out of power, you lose.</p>
                 <p>Your power is recharged through solar energy, which is affected by the weather cycle. Keep an eye
-                    on the forecast. To open the upgrade menu, select a placed tower — you can also delete towers this
+                    on the forecast. To open the upgrade menu, select a placed tower - you can also delete towers this
                     way. Upkeep is the passive cost of having a tower on the field; this cost increases when the tower
                     is actively shooting.</p>
             </div>
@@ -172,13 +172,13 @@
             <div class="pspacing">
                 <p>The dual-purpose energy mechanic required a single source of truth that both the economy and the
                     health system read from. Using one HealthComponent for both meant all UI, all drain calculations,
-                    and the lose condition all pointed at the same value — which eliminated sync bugs but required
+                    and the lose condition all pointed at the same value - which eliminated sync bugs but required
                     careful ordering of operations each tick (apply upkeep, apply recovery, check for depletion, then
                     allow placement).</p>
                 <p>The two-track upgrade system per tower needed to be data-driven so towers could have distinct upgrade
                     trees without duplicating logic. Each tower defines its upgrade data as a nested structure; the
                     upgrade panel reads from it dynamically when a tower is selected.</p>
-                <p>Time management during the jam was the main regret — not enough time remained for balance passes and
+                <p>Time management during the jam was the main regret - not enough time remained for balance passes and
                     playtesting once core systems were in place.</p>
             </div>
         </div>
@@ -193,7 +193,7 @@
                 <ul class="arrowed-list">
                     <li>Explicit state machine pattern for game flow management across menus, gameplay phases, and
                         outcomes</li>
-                    <li>Component-based design — HealthComponent as a reusable, single-responsibility node</li>
+                    <li>Component-based design - HealthComponent as a reusable, single-responsibility node</li>
                     <li>Weighted random state transitions for weather simulation</li>
                     <li>Tower defense fundamentals: placement, upkeep, targeting, and wave spawning</li>
                     <li>Balancing resource drain and recovery rates as a design problem, not just a tuning problem</li>

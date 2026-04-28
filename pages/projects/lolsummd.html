@@ -29,25 +29,25 @@
 
 <body>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
+        <script src="/scripts/nav-active.js"></script>
     </div>
-</header>
-<script src="/scripts/nav-active.js"></script>
-</div>
 
     <section id="hero">
         <div class="container">
@@ -74,14 +74,13 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Python, Flask — backend serving templates and handling form submissions</li>
-                        <li>Redis via Upstash — serverless Redis for 24-hour mastery data caching with auto-indexed name
+                        <li>Python, Flask: backend serving templates and handling form submissions</li>
+                        <li>Redis via Upstash: serverless Redis for 24-hour mastery data caching with auto-indexed name
                             lookup</li>
-                        <li>Riot Games API — 14 regional endpoints across 4 continental platforms for summoner and
+                        <li>Riot Games API: 14 regional endpoints across 4 continental platforms for summoner and
                             mastery data</li>
-                        <li>HTML, CSS, JavaScript — frontend with clipboard paste parsing, podium widget, and JSON
-                            export</li>
-                        <li>Vercel — serverless deployment</li>
+                        <li>HTML, CSS, JavaScript: frontend</li>
+                        <li>Vercel: serverless deployment</li>
                     </ul>
                 </div>
                 <div>
@@ -115,29 +114,14 @@
                 <p>Mastery aggregation is a straightforward reduce: iterate each account's mastery list, accumulate
                     <code>{champion_id: {points: N, level: N}}</code> into a shared dictionary, and sort the result. The
                     frontend parses clipboard paste input splitting on the <code>#</code> separator and submits the
-                    account list as a form POST.</p>
+                    account list as a form POST.
+                </p>
                 <p>API responses are cached in Redis with a 24-hour TTL. Two cache key namespaces are used:
                     <code>cache:accounts:{puuid}</code> stores mastery data for a given account, and
                     <code>cache:name_index:{username}#{tag}#{region}</code> stores the resolved PUUID so repeated
                     lookups for the same summoner skip the account resolution call. Cache entries are auto-indexed on
-                    write so name-based lookups can hit the cache without re-resolving.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="challenges">
-        <div class="container">
-            <h2>challenges</h2>
-            <div class="pspacing">
-                <p>The Riot API's regional structure is its own complexity. Different data types live at different
-                    endpoint tiers — summoner identity at the continental level, mastery at the regional level — and the
-                    correct pairing depends on the region the account was created in. Mapping all 14 regions to their
-                    continental platforms and ensuring each request hit the right base URL required building a lookup
-                    table and validating it against every region.</p>
-                <p>XSS prevention was a non-obvious concern for a frontend that renders user-supplied summoner names
-                    directly into the DOM. The JavaScript escapes all user-provided strings through an
-                    <code>escHtml()</code> helper before inserting them, treating every Riot API response as untrusted
-                    input even though it comes from a controlled source.</p>
+                    write so name-based lookups can hit the cache without re-resolving.
+                </p>
             </div>
         </div>
     </section>
@@ -149,34 +133,33 @@
                 <p>Building around a rate-limited, multi-tier external API forced careful design of the caching layer
                     and request routing from the start. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>Multi-tier external API design — navigating regional and continental endpoint separation</li>
+                    <li>Multi-tier external API design - navigating regional and continental endpoint separation</li>
                     <li>Redis caching strategy with TTL and multi-namespace key design</li>
                     <li>Serverless deployment on Vercel with Flask as the backend framework</li>
-                    <li>XSS prevention for user-controlled content rendered in the DOM</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

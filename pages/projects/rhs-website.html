@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | Rat Haven Studios Website">
     <meta property="og:description"
-        content="The official site for Rat Haven Studios — a static HTML/CSS studio website with game showcases, devlogs, a workshop, and a custom GDScript syntax highlighter.">
+        content="The official site for Rat Haven Studios - a static HTML/CSS studio website with game showcases, devlogs, a workshop, and a custom GDScript syntax highlighter.">
     <meta property="og:image" content="https://hunter-baker.com/assets/me/my_rat_pfp_nobg.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/rhs-website.html">
@@ -64,7 +64,7 @@
                     2025. The site covers all studio output: game showcases with playable itch.io embeds, devlogs
                     documenting each project, a workshop section for tutorials and writeups, and individual developer
                     profiles.</p>
-                <p>Built with no frameworks and no build step — pure HTML, CSS, and JavaScript. The retro aesthetic uses
+                <p>Built with no frameworks and no build step - pure HTML, CSS, and JavaScript. The retro aesthetic uses
                     <code>Press Start 2P</code> for headings and buttons and <code>VT323</code> for body text, on a dark
                     navy palette with a blue accent.</p>
             </div>
@@ -73,10 +73,10 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>HTML/CSS/JS — no frameworks; pure hand-written markup and styles</li>
-                        <li>Press Start 2P + VT323 — Google Fonts retro pixel aesthetic</li>
-                        <li>Custom GDScript syntax highlighter — vanilla JS regex tokenizer, no external library</li>
-                        <li>GitHub Pages — static hosting</li>
+                        <li>HTML/CSS/JS - no frameworks; pure hand-written markup and styles</li>
+                        <li>Press Start 2P + VT323 - Google Fonts retro pixel aesthetic</li>
+                        <li>Custom GDScript syntax highlighter - vanilla JS regex tokenizer, no external library</li>
+                        <li>GitHub Pages - static hosting</li>
                     </ul>
                 </div>
                 <div>
@@ -101,7 +101,7 @@
                 <p>The workshop section publishes GDScript code samples, but GDScript has no Prism.js support. Rather
                     than pulling in a general syntax highlighter and registering a grammar, a custom IIFE tokenizer
                     (<code>gdscript-highlight.js</code>) was written from scratch. It runs a priority-ordered list of
-                    regex patterns — comments, strings, annotations, numbers, identifiers — over the raw
+                    regex patterns - comments, strings, annotations, numbers, identifiers - over the raw
                     <code>textContent</code> of each <code>code.language-gdscript</code> block and rewrites it with
                     <code>&lt;span class="gds-*"&gt;</code> wrappers. Keyword and built-in type lookups are
                     <code>Set</code>-based for O(1) dispatch; function detection checks whether the next non-whitespace
@@ -123,9 +123,9 @@
                 <li>Devlog archive with filter-by-type support</li>
                 <li>Workshop section for tutorials, resources, and writeups with GDScript code samples</li>
                 <li>Developer profile pages per team member</li>
-                <li>Custom GDScript syntax highlighter — written from scratch, no Prism dependency</li>
+                <li>Custom GDScript syntax highlighter - written from scratch, no Prism dependency</li>
                 <li>Multi-group AND filter bar reused across all three nav listing pages</li>
-                <li>Retro pixel aesthetic — Press Start 2P headings, VT323 body text</li>
+                <li>Retro pixel aesthetic - Press Start 2P headings, VT323 body text</li>
                 <li>Zero npm dependencies, no bundler, no runtime framework</li>
             </ul>
         </div>

@@ -17,7 +17,7 @@
 
     <meta property="og:title" content="Hunter Baker | ToneForge">
     <meta property="og:description"
-        content="A Spring Boot REST API that uses Google's Gemini model to rewrite input text in themed tones — Pirate, Medieval, Shakespeare, and Toddler — with per-IP rate limiting and Docker deployment on AWS EC2.">
+        content="A Spring Boot REST API that uses Google's Gemini model to rewrite input text in themed tones - Pirate, Medieval, Shakespeare, and Toddler - with per-IP rate limiting and Docker deployment on AWS EC2.">
     <meta property="og:image" content="https://hunter-baker.com/assets/me/my_rat_pfp_nobg.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/tone-forge.html">
@@ -66,7 +66,7 @@
             <h2>overview</h2>
             <div class="pspacing">
                 <p>ToneForge is a public REST API that converts text into specific lingos using AI. Send a string and a
-                    tone name — Pirate, Medieval, Shakespeare, or Toddler — and the API returns the text rewritten in
+                    tone name - Pirate, Medieval, Shakespeare, or Toddler - and the API returns the text rewritten in
                     that style using Google's Gemini model. The conversion is contextual rather than a word-swap, so the
                     result reads naturally in the target tone.</p>
                 <p>Rate limits are strict because both Gemini and the EC2 instance are on free tiers. Started as a
@@ -78,15 +78,15 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Java 17, Spring Boot 4.0.5 — REST API with Spring MVC controllers and HandlerInterceptor
+                        <li>Java 17, Spring Boot 4.0.5 - REST API with Spring MVC controllers and HandlerInterceptor
                         </li>
-                        <li>google-genai 1.46.0 — Google Gemini API for contextual text rewriting</li>
-                        <li>Strategy pattern + enum registry — each tone is a Strategy registered in a TONE_MAP;
+                        <li>google-genai 1.46.0 - Google Gemini API for contextual text rewriting</li>
+                        <li>Strategy pattern + enum registry - each tone is a Strategy registered in a TONE_MAP;
                             selecting by name resolves to its prompt at runtime</li>
-                        <li>Rate limiter — ConcurrentHashMap + HandlerInterceptor tracking 2 requests/min per IP using
+                        <li>Rate limiter - ConcurrentHashMap + HandlerInterceptor tracking 2 requests/min per IP using
                             immutable RequestInfo records</li>
-                        <li>Docker multi-stage build — compile and package stage separate from runtime image</li>
-                        <li>AWS EC2 — public hosting</li>
+                        <li>Docker multi-stage build - compile and package stage separate from runtime image</li>
+                        <li>AWS EC2 - public hosting</li>
                     </ul>
                 </div>
                 <div>
@@ -109,7 +109,7 @@
                     instruct Gemini. All tones register themselves in a static TONE_MAP keyed by name string. When a
                     <code>/api/convert</code> request arrives, the controller looks up the tone by name from the map,
                     constructs the prompt, and sends it to Gemini. This means adding a new tone requires only a new
-                    Strategy class and a map entry — no controller changes.</p>
+                    Strategy class and a map entry - no controller changes.</p>
                 <p>The Gemini response goes through explicit safety checking before being returned: the code inspects
                     the finish reason and handles <code>SAFETY</code>, <code>RECITATION</code>, <code>MAX_TOKENS</code>,
                     <code>STOP</code>, and empty-response cases separately, returning an appropriate error field in the
@@ -118,9 +118,9 @@
                     stores a <code>RequestInfo</code> record (count, window start timestamp) per IP address in a
                     <code>ConcurrentHashMap</code>. On each request, it checks whether the count in the current
                     60-second window exceeds 2; if so, it returns 429 immediately. The <code>RequestInfo</code> type is
-                    immutable — each update creates a new record rather than mutating in place, which avoids race
+                    immutable - each update creates a new record rather than mutating in place, which avoids race
                     conditions on the map update.</p>
-                <p>Input is capped at 5000 characters. The API is open — no authentication required.</p>
+                <p>Input is capped at 5000 characters. The API is open - no authentication required.</p>
             </div>
         </div>
     </section>
@@ -131,9 +131,9 @@
             <div class="pspacing">
                 <p>Two open endpoints, no authentication required:</p>
                 <ul class="arrowed-list">
-                    <li><strong>GET</strong> <code>/api/strategies</code> — returns a list of all available tone names
+                    <li><strong>GET</strong> <code>/api/strategies</code> - returns a list of all available tone names
                     </li>
-                    <li><strong>POST</strong> <code>/api/convert</code> — converts text to the specified tone</li>
+                    <li><strong>POST</strong> <code>/api/convert</code> - converts text to the specified tone</li>
                 </ul>
             </div>
         </div>
@@ -176,7 +176,7 @@
                 <p>The rate limiter design required care around concurrency. A mutable counter per IP in a
                     <code>ConcurrentHashMap</code> has a check-then-act race: two requests arriving simultaneously could
                     both read a count below the limit and both proceed. Using an immutable <code>RequestInfo</code>
-                    record and replacing the map entry atomically via <code>compute()</code> eliminates this race — the
+                    record and replacing the map entry atomically via <code>compute()</code> eliminates this race - the
                     lambda passed to <code>compute()</code> runs with the map's internal lock held, so only one thread
                     can update a given key at a time.</p>
                 <p>Response parsing from Gemini required handling more cases than the happy path. The API can return a
@@ -199,7 +199,7 @@
                     <li>Spring Boot REST API design with HandlerInterceptor for cross-cutting concerns</li>
                     <li>Strategy pattern + enum registry for extensible tone selection without controller coupling</li>
                     <li>Concurrency-safe rate limiting with ConcurrentHashMap and immutable value records</li>
-                    <li>Gemini API integration — finish reason handling for all non-happy-path response cases</li>
+                    <li>Gemini API integration - finish reason handling for all non-happy-path response cases</li>
                     <li>Docker multi-stage build for minimal runtime image size</li>
                     <li>AWS EC2 deployment and public API hosting</li>
                 </ul>

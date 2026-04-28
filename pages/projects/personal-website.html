@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | Personal Website">
     <meta property="og:description"
-        content="Hunter Baker's personal portfolio site — built with pure HTML, CSS, and JavaScript, featuring a custom static site builder and the Gruvbox design system.">
+        content="Hunter Baker's personal portfolio site - built with pure HTML, CSS, and JavaScript, featuring a custom static site builder and the Gruvbox design system.">
     <meta property="og:image" content="https://hunter-baker.com/assets/me/my_rat_pfp_nobg.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/personal-website.html">
@@ -64,7 +64,7 @@
                     pipeline beyond a single Python script. Pages, projects, and games are organized into a clear
                     directory hierarchy and share UI components inlined at build time.</p>
                 <p>The design is built around the Gruvbox warm color palette using CSS custom properties, with JetBrains
-                    Mono as the sole font. Every visual pattern — card hovers, button states, section layouts — is
+                    Mono as the sole font. Every visual pattern - card hovers, button states, section layouts - is
                     defined once in the design system and composed across all pages.</p>
             </div>
 
@@ -72,10 +72,10 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>HTML/CSS/JS — no frameworks; pure hand-written markup and styles</li>
-                        <li>Python — static site builder that inlines shared components at build time</li>
-                        <li>CSS custom properties — Gruvbox warm palette design system</li>
-                        <li>GitHub Pages — static hosting</li>
+                        <li>HTML/CSS/JS - no frameworks; pure hand-written markup and styles</li>
+                        <li>Python - static site builder that inlines shared components at build time</li>
+                        <li>CSS custom properties - Gruvbox warm palette design system</li>
+                        <li>GitHub Pages - static hosting</li>
                     </ul>
                 </div>
                 <div>
@@ -98,7 +98,7 @@
                     elements. Running <code>page_bldr.py</code> crawls every HTML file and replaces each placeholder
                     with the component's inlined content. The builder uses a depth-counting pass over the raw HTML
                     string to locate the matching <code>&lt;/div&gt;</code> for each placeholder before swapping it out
-                    — no DOM parser required.</p>
+                    - no DOM parser required.</p>
                 <p>This approach avoids the runtime penalty of fetch-on-load dynamic component loading without reaching
                     for a full JavaScript framework. All markup is present in the HTML file on first load.</p>
                 <p>JavaScript is used sparingly and only for behaviors CSS can't handle. <code>projects-filter.js</code>

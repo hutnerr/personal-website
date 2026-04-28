@@ -29,25 +29,25 @@
 
 <body>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
+        <script src="/scripts/nav-active.js"></script>
     </div>
-</header>
-<script src="/scripts/nav-active.js"></script>
-</div>
 
     <section id="hero">
         <div class="container">
@@ -66,23 +66,21 @@
                     displays live position on a map rendered in Swing. Setting a destination triggers route calculation
                     using either Dijkstra's or Bellman-Ford on a graph of road nodes, with automatic rerouting if the
                     current position drifts off the calculated path.</p>
-                <p>Built for CS coursework, but the scope — GPS hardware integration, real-time threading, graph
-                    pathfinding, and reroute detection — went well beyond typical academic assignments.</p>
             </div>
 
             <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Java 17, Swing — desktop GUI with live-updating map display</li>
-                        <li>jSerialComm 2.11.0 — serial port communication for USB GPS hardware</li>
-                        <li>GPGGA parsing — converts DDmm.mm NMEA format to decimal degrees</li>
-                        <li>Dijkstra's (Label Setting) — with PermanentLabelBuckets optimization using 1km-width bucket
+                        <li>Java 17, Swing: desktop GUI with live-updating map display</li>
+                        <li>jSerialComm 2.11.0: serial port communication for USB GPS hardware</li>
+                        <li>GPGGA parsing: converts DDmm.mm NMEA format to decimal degrees</li>
+                        <li>Dijkstra's (Label Setting): with PermanentLabelBuckets optimization using 1km-width bucket
                             bins</li>
-                        <li>Bellman-Ford (Label Correcting) — with early termination; supports comparison against
+                        <li>Bellman-Ford (Label Correcting): with early termination; supports comparison against
                             Dijkstra's</li>
-                        <li>SwingWorker — background GPS read thread publishes position updates to the Swing EDT</li>
-                        <li>Observer, MVC, Strategy patterns — GPS data flow, display separation, and interchangeable
+                        <li>SwingWorker: background GPS read thread publishes position updates to the Swing EDT</li>
+                        <li>Observer, MVC, Strategy patterns: GPS data flow, display separation, and interchangeable
                             routing</li>
                     </ul>
                 </div>
@@ -120,11 +118,12 @@
                     an adjacency list graph; each node is a GPS coordinate and each edge has a distance weight.</p>
                 <p>Route calculation runs the selected algorithm (Strategy pattern, swappable at runtime) from the
                     current position to the destination. The Label Setting Algorithm (Dijkstra's) uses
-                    <code>PermanentLabelBuckets</code> — buckets of 1km width — instead of a standard priority queue.
+                    <code>PermanentLabelBuckets</code>, buckets of 1km width, instead of a standard priority queue.
                     Nodes are partitioned into buckets by tentative distance and the minimum is found by scanning only
                     the current bucket, reducing overhead for dense urban graphs. The Label Correcting Algorithm
                     (Bellman-Ford) runs with early termination: if a full pass makes no relaxations, it exits before
-                    completing all iterations.</p>
+                    completing all iterations.
+                </p>
                 <p>Off-route detection uses point-to-segment distance with dot product projection to find the closest
                     point on each road segment to the current GPS position. If the nearest segment is farther than a
                     threshold, rerouting triggers. The reroute implementation pre-computes all shortest paths from the
@@ -140,7 +139,7 @@
             <div class="pspacing">
                 <p>The biggest challenge going in was that I knew nothing about GPS technology. I learned about
                     satellite receivers, NMEA sentence formats, and coordinate systems while simultaneously building the
-                    parser and integration layer — each piece of new knowledge revealed a new assumption in the code
+                    parser and integration layer, each piece of new knowledge revealed a new assumption in the code
                     that needed fixing.</p>
                 <p>Real-time performance was the central technical constraint. GPS data arrives continuously and must
                     not block the UI thread. The <code>SwingWorker</code> producer/consumer model solved this cleanly:
@@ -159,11 +158,11 @@
         <div class="container">
             <h2>takeaways</h2>
             <div class="pspacing">
-                <p>This project spanned hardware integration, real-time data processing, and algorithm implementation —
+                <p>This project spanned hardware integration, real-time data processing, and algorithm implementation,
                     a much broader scope than typical coursework. Some key takeaways:</p>
                 <ul class="arrowed-list">
                     <li>GPS hardware integration and NMEA sentence parsing from raw serial data</li>
-                    <li>Multithreaded GUI design — SwingWorker producer/consumer for smooth real-time updates</li>
+                    <li>Multithreaded GUI design - SwingWorker producer/consumer for smooth real-time updates</li>
                     <li>Dijkstra's with bucket-based priority for dense graph optimization</li>
                     <li>Bellman-Ford with early termination and its trade-offs vs. Dijkstra's</li>
                     <li>Pre-computing destination-rooted path trees for O(P) rerouting</li>
@@ -174,24 +173,24 @@
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

@@ -63,7 +63,7 @@
             <div class="pspacing">
                 <p>Pantry Panic is a group web development project. It lets you build a virtual pantry of ingredients
                     you have on hand, then searches for recipes you can actually make with them. My primary role was the
-                    backend integration — wiring up the Spoonacular API and managing data flow between the API responses
+                    backend integration - wiring up the Spoonacular API and managing data flow between the API responses
                     and the frontend state.</p>
                 <p>The project is currently non-functional because the Spoonacular API service was cancelled. The demo
                     links to a personal fork.</p>
@@ -73,13 +73,13 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>HTML, CSS, JavaScript — frontend-only single-page application</li>
-                        <li>Spoonacular API — two-stage search: findByIngredients then informationBulk for full recipe
+                        <li>HTML, CSS, JavaScript - frontend-only single-page application</li>
+                        <li>Spoonacular API - two-stage search: findByIngredients then informationBulk for full recipe
                             details</li>
-                        <li>localStorage — persists pantry items (CSV), checkbox states (JSON), and saved recipe IDs
+                        <li>localStorage - persists pantry items (CSV), checkbox states (JSON), and saved recipe IDs
                             (array)</li>
-                        <li>Blob API — pantry import/export as downloadable files</li>
-                        <li>APIACTIVE kill switch — boolean flag disables all API calls for local development without
+                        <li>Blob API - pantry import/export as downloadable files</li>
+                        <li>APIACTIVE kill switch - boolean flag disables all API calls for local development without
                             key</li>
                     </ul>
                 </div>
@@ -110,7 +110,7 @@
                 <p>Recipe search uses a two-stage API flow. The first call hits <code>findByIngredients</code> with the
                     pantry list and returns a ranked list of matching recipes along with how many ingredients each
                     recipe uses vs. misses. The second call hits <code>informationBulk</code> with the result IDs to
-                    fetch full recipe details — title, image, instructions, nutrition — for display.</p>
+                    fetch full recipe details - title, image, instructions, nutrition - for display.</p>
                 <p>Pantry state is stored in <code>localStorage</code> across three keys: <code>'pantry'</code> as a CSV
                     string of ingredient names, <code>'pantryCheckboxes'</code> as a JSON object tracking which
                     ingredients are checked for the current search, and <code>'savedRecipes'</code> as an array of
@@ -131,8 +131,8 @@
             <div class="pspacing">
                 <p>The two-stage API design was driven by Spoonacular's endpoint structure rather than preference.
                     <code>findByIngredients</code> is fast but returns minimal data; <code>informationBulk</code>
-                    returns everything but requires IDs. Coordinating the two calls — handling the case where the first
-                    returns no results, the second fails for some IDs, or the API quota is hit — required explicit error
+                    returns everything but requires IDs. Coordinating the two calls - handling the case where the first
+                    returns no results, the second fails for some IDs, or the API quota is hit - required explicit error
                     states for each stage rather than treating the whole flow as a single operation.</p>
                 <p>Working in a group on a frontend-only codebase meant merge conflicts were frequent: everyone was
                     editing the same HTML and CSS files. Establishing which person owned which file sections early would
@@ -145,14 +145,14 @@
         <div class="container">
             <h2>takeaways</h2>
             <div class="pspacing">
-                <p>First time integrating a third-party REST API — it taught a lot about the gap between reading
+                <p>First time integrating a third-party REST API - it taught a lot about the gap between reading
                     documentation and handling production edge cases. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>REST API integration with async JavaScript — fetch, promise chaining, and staged error handling
+                    <li>REST API integration with async JavaScript - fetch, promise chaining, and staged error handling
                     </li>
                     <li>localStorage as a persistence layer for frontend state across three independent keys</li>
                     <li>Blob API for client-side file import/export without a server</li>
-                    <li>Group coordination — communication prevents most merge conflicts and missed dependencies</li>
+                    <li>Group coordination - communication prevents most merge conflicts and missed dependencies</li>
                 </ul>
             </div>
         </div>

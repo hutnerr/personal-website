@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | TXTMET">
     <meta property="og:description"
-        content="A lightweight CLI tool that counts words, sentences, paragraphs, and unique words in a text file — implemented independently in both C and Rust as a language comparison exercise.">
+        content="A lightweight CLI tool that counts words, sentences, paragraphs, and unique words in a text file - implemented independently in both C and Rust as a language comparison exercise.">
     <meta property="og:image" content="https://hunter-baker.com/assets/me/my_rat_pfp_nobg.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/txtmet.html">
@@ -65,7 +65,7 @@
                     frustration with tools that are either too heavy or not flexible enough for simple counting tasks.
                 </p>
                 <p>The same utility is implemented independently in both C and Rust. The implementations are
-                    intentionally parallel — same algorithm, same metrics, two languages — making the differences in
+                    intentionally parallel - same algorithm, same metrics, two languages - making the differences in
                     idiom and safety model visible side by side.</p>
             </div>
 
@@ -73,10 +73,10 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>C (standard library, getopt) — streaming fgetc character processing with lastc state
+                        <li>C (standard library, getopt) - streaming fgetc character processing with lastc state
                             tracking</li>
-                        <li>Rust (standard library) — fs::read_to_string with in_word boolean state and match arms</li>
-                        <li>getopt — Unix-style CLI flag parsing in the C version for selecting which metrics to output
+                        <li>Rust (standard library) - fs::read_to_string with in_word boolean state and match arms</li>
+                        <li>getopt - Unix-style CLI flag parsing in the C version for selecting which metrics to output
                         </li>
                     </ul>
                 </div>
@@ -97,7 +97,7 @@
                 <p>Both implementations use the same core logic for all metrics. Word detection tracks a boolean state
                     (<code>lastc</code> in C, <code>in_word</code> in Rust): a transition from non-whitespace to
                     whitespace increments the word counter. Sentence detection counts terminal punctuation characters
-                    (<code>.</code>, <code>!</code>, <code>?</code>) — every punctuation mark is counted, so run-on
+                    (<code>.</code>, <code>!</code>, <code>?</code>) - every punctuation mark is counted, so run-on
                     sentences and ellipses are treated naively.</p>
                 <p>The C version processes the file one character at a time via <code>fgetc</code>, keeping memory usage
                     flat regardless of file size. It uses <code>getopt</code> for Unix-style flag parsing, so flags can
@@ -117,7 +117,7 @@
             <div class="pspacing">
                 <p>The main implementation challenge in C was sentence detection: a naive count of <code>.</code>
                     characters overcounts abbreviations, ellipses, and decimal numbers. The implementation counts all
-                    punctuation rather than attempting heuristic disambiguation — a deliberate simplification. Getting
+                    punctuation rather than attempting heuristic disambiguation - a deliberate simplification. Getting
                     the same behavior exactly in Rust required writing the match arm logic to match the C
                     <code>lastc</code> state machine rather than using Rust's higher-level string methods, which behave
                     slightly differently on boundary conditions.</p>
@@ -136,9 +136,9 @@
                 <p>Implementing the same utility in two languages side by side makes idiomatic differences concrete
                     rather than abstract. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>C file I/O — streaming fgetc processing and getopt flag parsing</li>
+                    <li>C file I/O - streaming fgetc processing and getopt flag parsing</li>
                     <li>Rust ownership model and pattern matching for the same byte-level logic</li>
-                    <li>State machine character processing — tracking transitions rather than scanning for delimiters
+                    <li>State machine character processing - tracking transitions rather than scanning for delimiters
                     </li>
                     <li>The practical difference in defensive boilerplate between C and Rust for the same task</li>
                 </ul>

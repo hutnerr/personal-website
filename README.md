@@ -1,3 +1,16 @@
+Images for the RHS project card and project page as well.
+Images for the personal website project card and project page as well.
+Remove the other Git Branches
+Make the ToughCents Project Page using Instructions.md
+- Use the instructions.md, the old project page, etc...
+- Update the project navpage and index with any new skills
+- Update the card 
+- Compare to old one
+- ONLY DO AFTER I DO THE DEEP DIVE INTO THE PROJECT
+Once updated, check where I might've used the .png files and now the filepaths are broken. 
+
+currently at beast[code] on project redo. 
+
 https://www.hunter-baker.com
 
 ## Overview

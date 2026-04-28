@@ -30,25 +30,25 @@
 
 <body>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Projects</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/other.html">Other</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Projects</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/other.html">Other</a></li>
+                </ul>
+            </div>
+        </header>
+        <script src="/scripts/nav-active.js"></script>
     </div>
-</header>
-<script src="/scripts/nav-active.js"></script>
-</div>
 
     <section id="hero">
         <div class="container">
@@ -75,15 +75,8 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>TypeScript 5.8.3, Obsidian API — community plugin targeting Obsidian desktop (min version
-                            0.15.0)</li>
-                        <li>esbuild 0.25.5 — bundles plugin source to a single main.js for distribution</li>
-                        <li>Monkey-patching — overrides a getter method at runtime to intercept all
-                            attachment routing</li>
-                        <li>Bottom-up folder walk — traverses ancestor directories from the active note upward to find
-                            the nearest matching rule</li>
-                        <li>Two-level caching — ruleMap and destinationCache invalidated on vault create/delete/rename
-                            events</li>
+                        <li>TypeScript: for the core logic</li>
+                        <li>Obsidian API: built for the Obsidian desktop application</li>
                     </ul>
                 </div>
                 <div>
@@ -104,7 +97,8 @@
             <img class="walkthrough-img hover-img sized-img"
                 src="/assets/projects/obsidian_attachment_placement/obs-attachment-placement-settings.png"
                 alt="Attachment Placement plugin settings panel" data-lightbox>
-            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/obsidian_attachment_placement/obs-attachment-example.png"
+            <img class="walkthrough-img hover-img sized-img"
+                src="/assets/projects/obsidian_attachment_placement/obs-attachment-example.png"
                 alt="Attachment Placement example configuration" data-lightbox>
         </div>
     </section>
@@ -118,37 +112,18 @@
                     wrapper that runs the rule-matching logic before falling back to Obsidian's default behavior if no
                     rule matches.</p>
                 <p>When an attachment is created, the plugin starts at the folder containing the active note and walks
-                    up the directory tree. At each level it checks the ruleMap — a Map from folder path to destination
-                    glob — for a matching entry. The first match determines the destination; if the root is reached with
+                    up the directory tree. At each level it checks the ruleMap, a Map from folder path to destination
+                    glob, for a matching entry. The first match determines the destination; if the root is reached with
                     no match, a configurable global default applies. This bottom-up walk means more specific rules
                     (closer to the note) take precedence over broader rules (higher in the vault).</p>
                 <p>Two caching layers avoid repeated tree walks. The ruleMap caches the parsed rule set so adding a rule
                     doesn't re-read all rules from settings on every attachment. The destinationCache maps each note
                     path to its resolved destination so consecutive attachments to the same note skip the walk entirely.
                     Both caches are invalidated on vault events (<code>create</code>, <code>delete</code>,
-                    <code>rename</code>) that could change which rule applies to a given path.</p>
-                <p>Rules are configured in a settings panel with drag-and-drop reordering and folder validation — if a
+                    <code>rename</code>) that could change which rule applies to a given path.
+                </p>
+                <p>Rules are configured in a settings panel with drag-and-drop reordering and folder validation. If a
                     rule points to a folder that doesn't exist, a Notice is shown.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="challenges">
-        <div class="container">
-            <h2>challenges</h2>
-            <div class="pspacing">
-                <p>The core implementation challenge was that Obsidian does not expose an official extension point for
-                    attachment routing. The only supported API at the time was
-                    <code>getAvailablePathForAttachments</code>, and the only way to intercept it without a
-                    framework-level hook was to replace the method on the vault instance at runtime — monkey-patching.
-                    This works reliably but is inherently fragile against Obsidian updates that change the method's
-                    signature or call semantics. Minimizing the patch surface (replacing the method rather than wrapping
-                    the entire vault class) reduces the exposure.</p>
-                <p>Cache invalidation required listening to three vault events that can change rule applicability: file
-                    creation (a new folder might need a rule), deletion (a folder a rule pointed to may no longer
-                    exist), and rename (paths in both the ruleMap and destinationCache can become stale). Handling all
-                    three cleanly while keeping the cache logic separate from the event handler wiring was the main
-                    design task.</p>
             </div>
         </div>
     </section>
@@ -160,12 +135,12 @@
                 <p>Publishing a plugin to an official community registry raised the bar on polish, documentation, and
                     correctness compared to personal-use tools. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>Obsidian plugin API — lifecycle hooks, vault events, and settings serialization</li>
+                    <li>Obsidian plugin API - lifecycle hooks, vault events, and settings serialization</li>
                     <li>Monkey-patching as a last-resort extension technique and its associated fragility trade-offs
                     </li>
                     <li>Two-level cache design with event-driven invalidation</li>
                     <li>Bottom-up tree traversal for nearest-ancestor rule matching</li>
-                    <li>Community plugin publishing standards — help documentation, settings UX, and version
+                    <li>Community plugin publishing standards - help documentation, settings UX, and version
                         compatibility</li>
                 </ul>
             </div>
@@ -173,24 +148,24 @@
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Projects</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/other.html">Other</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Projects</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/other.html">Other</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

@@ -63,7 +63,7 @@
             <div class="pspacing">
                 <p>A Discord bot that posts the daily pixel art palette from Lospec.com to any subscribed server channel
                     every morning at 8 AM EST. It's designed for pixel art communities that want a daily creative prompt
-                    delivered automatically — no manual checking, no copy-pasting links. Not affiliated with Lospec.</p>
+                    delivered automatically - no manual checking, no copy-pasting links. Not affiliated with Lospec.</p>
                 <p>Originally built for personal use and made public once it felt polished enough that others might find
                     it useful.</p>
             </div>
@@ -72,12 +72,12 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Python — Discord.py for bot framework, Aiohttp for async HTTP requests</li>
-                        <li>BeautifulSoup4 — HTML parsing of Lospec.com palette pages to extract daily palette slug and
+                        <li>Python - Discord.py for bot framework, Aiohttp for async HTTP requests</li>
+                        <li>BeautifulSoup4 - HTML parsing of Lospec.com palette pages to extract daily palette slug and
                             metadata</li>
-                        <li>Per-server JSON persistence — subscription config stored in data/servers/{serverID}.json
+                        <li>Per-server JSON persistence - subscription config stored in data/servers/{serverID}.json
                         </li>
-                        <li>Polling loop — 1-minute interval checks current time against 8 AM EST delivery target</li>
+                        <li>Polling loop - 1-minute interval checks current time against 8 AM EST delivery target</li>
                     </ul>
                 </div>
                 <div>
@@ -123,7 +123,7 @@
         <div class="container">
             <h2>challenges</h2>
             <div class="pspacing">
-                <p>Scraping Lospec requires treating the site's HTML as an external dependency — class names and
+                <p>Scraping Lospec requires treating the site's HTML as an external dependency - class names and
                     structure can change without notice. The parser targets specific CSS selectors
                     (<code>div.daily.tag</code>, <code>div.daily.palette</code>) rather than brittle positional
                     indexing, which gives some resilience to layout changes around those elements.</p>
@@ -142,7 +142,7 @@
                 <p>A small project, but it shipped and runs. The main value was building the full cycle: scraping, state
                     management, slash commands, and deployment. Some key takeaways:</p>
                 <ul class="arrowed-list">
-                    <li>Web scraping with BeautifulSoup4 — targeting stable selectors over positional parsing</li>
+                    <li>Web scraping with BeautifulSoup4 - targeting stable selectors over positional parsing</li>
                     <li>Per-server bot configuration with JSON persistence</li>
                     <li>Discord slash command registration and interaction handling with Discord.py</li>
                     <li>Edge case handling for stateful scheduled delivery (restart safety, duplicate prevention)</li>

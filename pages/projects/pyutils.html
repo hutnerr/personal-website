@@ -74,15 +74,15 @@
                 <div>
                     <h3 style="margin-bottom: 12px;">tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Python 3.8+ — colorama for terminal colors, python-dotenv for env loading, requests for HTTP
+                        <li>Python 3.8+ - colorama for terminal colors, python-dotenv for env loading, requests for HTTP
                         </li>
-                        <li>Clogger — static logger with stack frame inspection for automatic source file/line tracking
+                        <li>Clogger - static logger with stack frame inspection for automatic source file/line tracking
                         </li>
-                        <li>Clogobj — instance-based logger with module name tagging, log_errors decorator, and factory
+                        <li>Clogobj - instance-based logger with module name tagging, log_errors decorator, and factory
                             presets</li>
-                        <li>Option, Result — Rust-inspired types using a _MISSING sentinel to distinguish Some(None)
+                        <li>Option, Result - Rust-inspired types using a _MISSING sentinel to distinguish Some(None)
                             from None</li>
-                        <li>setuptools, pyproject.toml — pip-installable directly from GitHub, version 1.0.4</li>
+                        <li>setuptools, pyproject.toml - pip-installable directly from GitHub, version 1.0.4</li>
                     </ul>
                 </div>
                 <div>
@@ -99,7 +99,7 @@
         <div class="container">
             <h2>how it works</h2>
             <div class="pspacing">
-                <p>Clogger is the library's main component — a static logger that produces structured, colored output
+                <p>Clogger is the library's main component - a static logger that produces structured, colored output
                     with timestamps, log levels, and automatic source file and line number tracking. Source tracking
                     uses Python's <code>inspect</code> module to walk the call stack at log time and extract the
                     caller's filename and line number, so <code>Clogger.info("message")</code> prints the file and line
@@ -107,7 +107,7 @@
                 <p>Twelve config settings control behavior: minimum log level, color toggle, timestamp format, source
                     file display, file write mode, and more. A <code>CloggerConfig</code> object is swapped on
                     <code>Clogger.config</code> to change global behavior. <code>CloggerOverrideFactory</code> generates
-                    per-call override dicts that layer on top of the global config for a single log statement —
+                    per-call override dicts that layer on top of the global config for a single log statement -
                     <code>verbose()</code>, <code>file_only("path")</code>, <code>pretty()</code>, and
                     <code>combine()</code> for merging multiple overrides.</p>
                 <p><code>Clogobj</code> provides the same capabilities but as instances rather than a global.
@@ -131,7 +131,7 @@
             <div class="pspacing">
                 <p>The <code>_MISSING</code> sentinel pattern for <code>Option</code> required careful thought. Python's
                     <code>None</code> is the natural "no value" representation, but <code>Option.some(None)</code>
-                    should be a distinct state from <code>Option.none()</code> — the whole point of the type is to make
+                    should be a distinct state from <code>Option.none()</code> - the whole point of the type is to make
                     absence explicit. Using a private sentinel object that is never exposed outside the module means
                     there is no valid input that collides with it: <code>Option.some(None)</code> stores
                     <code>None</code> in <code>_value</code>, and <code>Option.none()</code> stores
@@ -158,7 +158,7 @@
                         logging</li>
                     <li>Sentinel object pattern to distinguish Some(None) from None in an Option type</li>
                     <li>Python package structure with pyproject.toml and direct GitHub pip installation</li>
-                    <li>API design for layered configuration — global defaults, instance overrides, and per-call
+                    <li>API design for layered configuration - global defaults, instance overrides, and per-call
                         overrides</li>
                     <li>log_errors decorator pattern for automatic exception routing through a logger instance</li>
                 </ul>
