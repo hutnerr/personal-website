@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Products</title>
     <link rel="icon" href="/assets/me/my_rat_pfp_nobg.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <script src="/scripts/projects-filter.js"></script>
 
-    <meta property="og:title" content="Hunter Baker | Projects">
+    <meta property="og:title" content="Hunter Baker | Products">
     <meta property="og:description" content="A showcase of my projects, including games, web applications, and more.">
     <meta property="og:image" content="https://hunter-baker.com/assets/me/headshot.png">
     <meta property="og:type" content="website">
@@ -29,30 +29,32 @@
 
 <body>
     <div id="header">
-        <header class="site-header">
-            <div class="container header-inner">
-                <a href="/index.html" class="site-logo">
-                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-                    hunter baker
-                </a>
-                <ul class="site-nav">
-                    <li><a href="/index.html">Home</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/projects.html">Projects</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/contact.html">Contact</a></li>
-                    <span class="nav-sep">|</span>
-                    <li><a href="/pages/nav/other.html">Other</a></li>
-                </ul>
-            </div>
-        </header>
-        <script src="/scripts/nav-active.js"></script>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="/index.html" class="site-logo">
+            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+            hunter baker
+        </a>
+        <ul class="site-nav">
+            <li><a href="/index.html">Home</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/projects.html">Products</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/other/experience.html">Experience</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/contact.html">Contact</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/other.html">Other</a></li>
+        </ul>
     </div>
+</header>
+<script src="/scripts/nav-active.js"></script>
+</div>
 
     <section id="hero">
         <div class="container">
-            <h1>projects<span class="cursor"></span></h1>
-            <p class="subtitle" style="color: var(--text-muted); font-size: 0.95rem;">$ showcases of various projects
+            <h1>products<span class="cursor"></span></h1>
+            <p class="subtitle" style="color: var(--text-muted); font-size: 0.95rem;">$ showcases of products I've built
             </p>
         </div>
     </section>
@@ -62,29 +64,20 @@
 
             <div class="filter-bar">
                 <div class="filter-group" data-param="main">
-                    <span class="filter-label">type</span>
-                    <button class="filter-btn active" data-filter="all">all</button>
-                    <button class="filter-btn" data-filter="fullstack">fullstack</button>
-                    <button class="filter-btn" data-filter="frontend">frontend</button>
-                    <button class="filter-btn" data-filter="backend">backend</button>
-                    <button class="filter-btn" data-filter="software">software</button>
-                    <button class="filter-btn" data-filter="gamedev">gamedev</button>
-                    <button class="filter-btn" data-filter="systems">systems</button>
-                </div>
-                <div class="filter-group" data-param="sub">
                     <span class="filter-label">category</span>
                     <button class="filter-btn active" data-filter="all">all</button>
-                    <button class="filter-btn" data-filter="web-app">web app</button>
-                    <button class="filter-btn" data-filter="discord-bot">discord bot</button>
-                    <button class="filter-btn" data-filter="android">android</button>
-                    <button class="filter-btn" data-filter="plugin">plugin</button>
-                    <button class="filter-btn" data-filter="tool">tool</button>
+                    <button class="filter-btn" data-filter="games">games</button>
+                    <button class="filter-btn" data-filter="web-apps">web apps</button>
+                    <button class="filter-btn" data-filter="bots">bots</button>
+                    <button class="filter-btn" data-filter="software">software & plugins</button>
+                    <button class="filter-btn" data-filter="tools">tools</button>
+                    <button class="filter-btn" data-filter="technical">technical</button>
                 </div>
             </div>
 
             <div class="grid grid-3">
 
-                <div class="card" data-tags="fullstack web-app">
+                <div class="card" data-tags="web-apps">
                     <a class="card-img" href="/pages/projects/lolsummd.html">
                         <img src="/assets/projects/lolsummd/lolsummd-preview.png" alt="LOLSUMMD">
                     </a>
@@ -106,7 +99,7 @@
                     </div>
                 </div>
 
-                <div class="card" data-tags="software tool">
+                <div class="card" data-tags="technical">
                     <a class="card-img" href="/pages/projects/navsystem.html">
                         <img src="/assets/projects/navsys/navsys.gif" alt="NavSys">
                     </a>
@@ -124,7 +117,7 @@
                     </div>
                 </div>
 
-                <div class="card" data-tags="software plugin">
+                <div class="card" data-tags="software">
                     <a class="card-img" href="/pages/projects/obsidian-attachment-plugin.html">
                         <img src="https://forum.obsidian.md/uploads/default/original/3X/a/9/a9a34885821fff8941270ccd6e2ca923c83801b2.png"
                             alt="Obsidian Attachment Placement Plugin">
@@ -145,7 +138,7 @@
                     </div>
                 </div>
 
-                <div class="card" data-tags="gamedev">
+                <div class="card" data-tags="games">
                     <a class="card-img" href="/pages/projects/forgotten-paths.html">
                         <img src="/assets/projects/forgotten_paths/fp.gif" alt="Forgotten Paths">
                     </a>
@@ -166,7 +159,7 @@
                     </div>
                 </div>
 
-                <div class="card" data-tags="backend discord-bot">
+                <div class="card" data-tags="bots">
                     <a class="card-img" href="/pages/projects/leetcode-bot.html">
                         <img src="/assets/projects/beast_code/beastcode-logo.png" alt="beast[code]">
                     </a>
@@ -189,7 +182,7 @@
                     </div>
                 </div>
 
-                <div class="card" data-tags="software android">
+                <div class="card" data-tags="software">
                     <a class="card-img" href="/pages/projects/tip-calculator.html">
                         <img src="/assets/projects/tip_calculator/tc-banner.png" alt="Tip Calculator">
                     </a>
@@ -211,48 +204,7 @@
                     </div>
                 </div>
 
-                <div class="card" data-tags="fullstack web-app">
-                    <a class="card-img" href="/pages/projects/toughcents.html">
-                        <img src="/assets/projects/tough_cents/tough-cents-3.png" alt="Tough Cents">
-                    </a>
-                    <h3><a href="/pages/projects/toughcents.html">Tough Cents</a></h3>
-                    <span class="card-subtitle">personal finance drill sergeant</span>
-                    <p>Personal finance web app that links to real bank accounts via the Teller API and roasts your
-                        spending habits using a fine-tuned local LLM. Scan receipts with Google Gemini OCR for
-                        on-the-spot commentary from Sgt. Cents.</p>
-                    <div class="card-tech">
-                        <span class="tech-tag"><i class="devicon-nextjs-plain"></i>Next.js</span>
-                        <span class="tech-tag"><i class="devicon-flask-original"></i>Flask</span>
-                        <span class="tech-tag"><i class="devicon-postgresql-plain"></i>PostgreSQL</span>
-                        <span class="tech-tag">Teller API</span>
-                        <span class="tech-tag">Ollama</span>
-                        <span class="tech-tag">Gemini</span>
-                    </div>
-                    <div class="btn-grid">
-                        <a href="/pages/projects/toughcents.html" class="btn btn-sm">Details</a>
-                        <a href="https://github.com/Tough-Cents" class="btn btn-sm" target="_blank">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="card" data-tags="software tool">
-                    <a class="card-img" href="/pages/projects/united-calculator.html">
-                        <img src="/assets/projects/united/united.png" alt="unitED Calculator">
-                    </a>
-                    <h3><a href="/pages/projects/united-calculator.html">unitED Calculator</a></h3>
-                    <span class="card-subtitle">cross-unit arithmetic</span>
-                    <p>Calculator that performs calculations across different unit types. Built among a team of 5 using
-                        Java, Git, and Agile methodologies.</p>
-                    <div class="card-tech">
-                        <span class="tech-tag"><i class="devicon-java-plain"></i>Java</span>
-                        <span class="tech-tag"><i class="devicon-git-plain"></i>Git</span>
-                    </div>
-                    <div class="btn-grid">
-                        <a href="/pages/projects/united-calculator.html" class="btn btn-sm">Details</a>
-                        <a href="https://github.com/hutnerr/united" class="btn btn-sm" target="_blank">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="card" data-tags="software tool">
+                <div class="card" data-tags="technical">
                     <a class="card-img" href="/pages/projects/black-box-challenge.html">
                         <img src="/assets/projects/black_box_challenge/blackbox-challenge.png"
                             alt="Black Box Challenge">
@@ -271,50 +223,7 @@
                     </div>
                 </div>
 
-                <div class="card" data-tags="systems">
-                    <div class="card-icon">
-                        <a href="/pages/projects/pintos.html">
-                            <i class="devicon-c-plain"></i>
-                        </a>
-                    </div>
-                    <h3><a href="/pages/projects/pintos.html">PintOS</a></h3>
-                    <span class="card-subtitle">OS internals in C</span>
-                    <p>Educational operating system used to learn OS concepts such as threading, scheduling, and file
-                        systems.</p>
-                    <div class="card-tech">
-                        <span class="tech-tag"><i class="devicon-c-plain"></i>C</span>
-                        <span class="tech-tag"><i class="devicon-linux-plain"></i>Linux</span>
-                    </div>
-                    <div class="btn-grid">
-                        <a href="/pages/projects/pintos.html" class="btn btn-sm">Details</a>
-                    </div>
-                </div>
-
-                <div class="card" data-tags="backend tool">
-                    <div class="card-icon">
-                        <a href="/pages/projects/tone-forge.html">
-                            <i class="devicon-spring-plain"></i>
-                        </a>
-                    </div>
-                    <h3><a href="/pages/projects/tone-forge.html">ToneForged</a></h3>
-                    <span class="card-subtitle">text-to-tone REST API</span>
-                    <p>A Spring Boot API that translates text into a specific lingo or "tone". Hosted on AWS and uses
-                        Gemini for translations.</p>
-                    <div class="card-tech">
-                        <span class="tech-tag"><i class="devicon-spring-plain"></i>Spring Boot</span>
-                        <span class="tech-tag"><i class="devicon-java-plain"></i>Java</span>
-                        <span class="tech-tag"><i class="devicon-docker-plain"></i>Docker</span>
-                        <span class="tech-tag"><i class="devicon-amazonwebservices-plain-wordmark"></i>AWS</span>
-                    </div>
-                    <div class="btn-grid">
-                        <a href="/pages/projects/tone-forged.html" class="btn btn-sm">Details</a>
-                        <a href="https://github.com/hutnerr/tone-forged" class="btn btn-sm" target="_blank">GitHub</a>
-                        <a href="https://hutnerr.github.io/tone-forged/" class="btn btn-sm" target="_blank">Live
-                            Demo</a>
-                    </div>
-                </div>
-
-                <div class="card" data-tags="backend discord-bot">
+                <div class="card" data-tags="bots">
                     <a class="card-img" href="/pages/projects/lospec-bot.html">
                         <img src="/assets/projects/lospec_bot/lospec-bot-ss.png" alt="Lospec Daily Bot">
                     </a>
@@ -336,23 +245,7 @@
                     </div>
                 </div>
 
-                <div class="card" data-tags="software tool">
-                    <a class="card-img" href="/pages/projects/madzip.html">
-                        <img src="/assets/projects/mad_zip/mad-zip.png" alt="MadZip">
-                    </a>
-                    <h3><a href="/pages/projects/madzip.html">MadZip</a></h3>
-                    <span class="card-subtitle">huffman file compression</span>
-                    <p>Custom file compression utility using Huffman Coding, comparable to 7-Zip and gzip.</p>
-                    <div class="card-tech">
-                        <span class="tech-tag"><i class="devicon-java-plain"></i>Java</span>
-                    </div>
-                    <div class="btn-grid">
-                        <a href="/pages/projects/madzip.html" class="btn btn-sm">Details</a>
-                        <a href="https://github.com/hutnerr/madzip" class="btn btn-sm" target="_blank">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="card" data-tags="gamedev">
+                <div class="card" data-tags="games">
                     <a class="card-img" href="/pages/projects/massaquerade.html">
                         <img src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMi5wbmc=/original/GpyIkO.png"
                             alt="Massaquerade">
@@ -375,7 +268,7 @@
                     </div>
                 </div>
 
-                <div class="card" data-tags="gamedev">
+                <div class="card" data-tags="games">
                     <a class="card-img" href="/pages/projects/solar-charged.html">
                         <img src="/assets/projects/solar_charged/solar-charged-clouds.gif" alt="Solar Charged">
                     </a>
@@ -396,49 +289,7 @@
                     </div>
                 </div>
 
-                <div class="card" data-tags="frontend web-app">
-                    <a class="card-img" href="/pages/projects/pantry-panic.html">
-                        <img src="/assets/projects/pantry_panic/pantry-panic.png" alt="Pantry Panic">
-                    </a>
-                    <h3><a href="/pages/projects/pantry-panic.html">Pantry Panic</a></h3>
-                    <span class="card-subtitle">recipe finder by ingredient</span>
-                    <p>Website that provides recipes based on the ingredients available in your pantry. Built with a
-                        partner using Git and a recipe API.</p>
-                    <div class="card-tech">
-                        <span class="tech-tag"><i class="devicon-html5-plain"></i>HTML</span>
-                        <span class="tech-tag"><i class="devicon-css3-plain"></i>CSS</span>
-                        <span class="tech-tag"><i class="devicon-javascript-plain"></i>JavaScript</span>
-                        <span class="tech-tag"><i class="devicon-git-plain"></i>Git</span>
-                    </div>
-                    <div class="btn-grid">
-                        <a href="/pages/projects/pantry-panic.html" class="btn btn-sm">Details</a>
-                        <a href="https://github.com/hutnerr/pantry-panic" class="btn btn-sm" target="_blank">GitHub</a>
-                        <a href="https://hutnerr.github.io/pantry-panic/search_by_ingredients.html" class="btn btn-sm"
-                            target="_blank">Live Demo</a>
-                    </div>
-                </div>
-
-                <div class="card" data-tags="systems">
-                    <div class="card-icon">
-                        <a href="/pages/projects/dukesh.html">
-                            <i class="devicon-c-plain"></i>
-                        </a>
-                    </div>
-                    <h3><a href="/pages/projects/dukesh.html">DukeShell</a></h3>
-                    <span class="card-subtitle">unix shell in C</span>
-                    <p>Unix-style shell with custom utilities, piping, and environment variable management.</p>
-                    <div class="card-tech">
-                        <span class="tech-tag"><i class="devicon-c-plain"></i>C</span>
-                        <span class="tech-tag"><i class="devicon-git-plain"></i>Git</span>
-                        <span class="tech-tag"><i class="devicon-linux-plain"></i>Linux</span>
-                        <span class="tech-tag"><i class="devicon-bash-plain"></i>Bash</span>
-                    </div>
-                    <div class="btn-grid">
-                        <a href="/pages/projects/dukesh.html" class="btn btn-sm">Details</a>
-                    </div>
-                </div>
-
-                <div class="card" data-tags="software tool">
+                <div class="card" data-tags="tools">
                     <div class="card-icon">
                         <a href="/pages/projects/txtmet.html">
                             <i class="devicon-c-plain"></i>
@@ -457,110 +308,29 @@
                         <a href="https://github.com/hutnerr/txtmet" class="btn btn-sm" target="_blank">GitHub</a>
                     </div>
                 </div>
-
-                <div class="card" data-tags="systems">
-                    <div class="card-icon">
-                        <a href="/pages/projects/dhcpclientserver.html">
-                            <i class="devicon-c-plain"></i>
-                        </a>
-                    </div>
-                    <h3><a href="/pages/projects/dhcpclientserver.html">DHCP Client &amp; Server</a></h3>
-                    <span class="card-subtitle">DHCP protocol implementation</span>
-                    <p>Simulates DHCP client behavior with custom BOOTP packet encoding, option parsing, and raw UDP
-                        communication.</p>
-                    <div class="card-tech">
-                        <span class="tech-tag"><i class="devicon-c-plain"></i>C</span>
-                        <span class="tech-tag"><i class="devicon-linux-plain"></i>Linux</span>
-                        <span class="tech-tag"><i class="devicon-bash-plain"></i>Bash</span>
-                    </div>
-                    <div class="btn-grid">
-                        <a href="/pages/projects/dhcpclientserver.html" class="btn btn-sm">Details</a>
-                    </div>
-                </div>
-
-                <div class="card" data-tags="software tool">
-                    <div class="card-icon">
-                        <a href="/pages/projects/pyutils.html">
-                            <i class="devicon-python-plain"></i>
-                        </a>
-                    </div>
-                    <h3><a href="/pages/projects/pyutils.html">PY Utils</a></h3>
-                    <span class="card-subtitle">personal python toolkit</span>
-                    <p>Collection of Python utilities frequently reused across projects. Includes logging, data
-                        validation, convenience functions, and more.</p>
-                    <div class="card-tech">
-                        <span class="tech-tag"><i class="devicon-python-plain"></i>Python</span>
-                    </div>
-                    <div class="btn-grid">
-                        <a href="/pages/projects/pyutils.html" class="btn btn-sm">Details</a>
-                        <a href="https://github.com/hutnerr/python-utils" class="btn btn-sm" target="_blank">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="card" data-tags="frontend web-app">
-                    <a class="card-img" href="/pages/projects/rhs-website.html">
-                        <img src="/assets/projects/rhs_website/rhs.png" alt="Rat Haven Studios Website">
-                    </a>
-                    <h3><a href="/pages/projects/rhs-website.html">Rat Haven Studios Website</a></h3>
-                    <span class="card-subtitle">rat haven studios site</span>
-                    <p>Studio website for Rat Haven Studios. Game showcases, devlogs, workshop posts, and developer
-                        profiles.</p>
-                    <div class="card-tech">
-                        <span class="tech-tag"><i class="devicon-html5-plain"></i>HTML</span>
-                        <span class="tech-tag"><i class="devicon-css3-plain"></i>CSS</span>
-                        <span class="tech-tag"><i class="devicon-javascript-plain"></i>JavaScript</span>
-                    </div>
-                    <div class="btn-grid">
-                        <a href="/pages/projects/rhs-website.html" class="btn btn-sm">Details</a>
-                        <a href="https://github.com/Rat-Haven-Studios/website" class="btn btn-sm"
-                            target="_blank">GitHub</a>
-                        <a href="https://rathavenstudios.com" class="btn btn-sm" target="_blank">Website</a>
-                    </div>
-                </div>
-
-                <div class="card" data-tags="frontend web-app">
-                    <a class="card-img" href="/pages/projects/personal-website.html">
-                        <img src="/assets/projects/personal_website/personal-website.png" alt="Personal Website">
-                    </a>
-                    <h3><a href="/pages/projects/personal-website.html">Personal Website</a></h3>
-                    <span class="card-subtitle">this site</span>
-                    <p>This site. A static portfolio built with pure HTML, CSS, and JS.</p>
-                    <div class="card-tech">
-                        <span class="tech-tag"><i class="devicon-html5-plain"></i>HTML</span>
-                        <span class="tech-tag"><i class="devicon-css3-plain"></i>CSS</span>
-                        <span class="tech-tag"><i class="devicon-javascript-plain"></i>JavaScript</span>
-                        <span class="tech-tag"><i class="devicon-python-plain"></i>Python</span>
-                    </div>
-                    <div class="btn-grid">
-                        <a href="/pages/projects/personal-website.html" class="btn btn-sm">Details</a>
-                        <a href="https://github.com/hutnerr/personal-website" class="btn btn-sm"
-                            target="_blank">GitHub</a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
     <div id="footer">
-        <footer class="site-footer">
-            <div class="container footer-inner">
-                <p>&copy; 2026 Hunter Baker</p>
-                <div class="footer-links">
-                    <a href="/pages/nav/projects.html">Projects</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/contact.html">Contact</a>
-                    <span class="nav-sep">|</span>
-                    <a href="/pages/nav/other.html">Other</a>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-                    <span class="nav-sep">|</span>
-                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </footer>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; 2026 Hunter Baker</p>
+        <div class="footer-links">
+            <a href="/pages/nav/projects.html">Products</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/contact.html">Contact</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/other.html">Other</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+            <span class="nav-sep">|</span>
+            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+        </div>
     </div>
+</footer>
+</div>
 
 </body>
 
