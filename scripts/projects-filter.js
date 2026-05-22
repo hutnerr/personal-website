@@ -18,5 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const visible = activeFilters.every(f => f === 'all' || tags.includes(f));
             card.style.display = visible ? '' : 'none';
         });
+
+        const banner = document.getElementById('game-jams-banner');
+        if (banner) banner.style.display = activeFilters.includes('games') ? '' : 'none';
     }
 });
