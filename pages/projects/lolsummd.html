@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | LOLSUMMD">
     <meta property="og:description"
-        content="A web app that aggregates champion mastery across multiple League of Legends accounts, combining points and levels per champion using the Riot API and Redis caching.">
+        content="Add up to 10 League of Legends accounts from any region and instantly see your total champion mastery across all of them in a single ranked list.">
     <meta property="og:image" content="https://hunter-baker.com/assets/projects/lolsummd/lolsummd.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/lolsummd.html">
@@ -29,63 +29,63 @@
 
 <body>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Products</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/other/experience.html">Experience</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Products</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/other/experience.html">Experience</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        <script src="/scripts/nav-active.js"></script>
     </div>
-</header>
-<script src="/scripts/nav-active.js"></script>
-</div>
 
     <section id="hero">
         <div class="container">
             <h1>lolsummd<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ aggregate League of Legends champion mastery
-                across all your accounts</p>
+            <p class="page-subtitle">$ aggregate League of Legends champion mastery across all your accounts</p>
         </div>
     </section>
 
     <section id="overview">
         <div class="container">
-            <h2>overview</h2>
-            <div class="pspacing">
-                <p>LOLSUMMD solves a specific problem for multi-account League of Legends players: champion mastery
-                    history is siloed per account, so your real total for a champion you've played across multiple
-                    accounts is invisible to the client. The app lets you add up to 10 accounts by Name#Tag, fetches
-                    mastery data for each via the Riot API, and sums points and levels per champion ID to produce a
-                    unified view.</p>
-                <p>Champions can be sorted by name, total mastery points, or combined level. The top three champions are
-                    displayed in a podium widget, and the full dataset can be exported as JSON.</p>
-                <p>Query paramters can also be used to share and pre-populate the account list. <a href="https://www.lolsummd.com/?a=T1%20OK%20GOOD%20YES~na1~na1,S8%20IS%20SO%20FUN~NA1~na1">Click here</a> to see the accounts used in the screenshots.</p>
-            </div>
-
-            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+            <h2>overview <span class="status-badge status-badge--maintained">maintained</span></h2>
+            <div class="grid grid-overview">
                 <div>
-                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <p>
+                        League of Legends players who play on multiple accounts have no built-in way to see their total
+                        champion mastery across all accounts at once.
+                    </p>
+                    <p>
+                        LOLSUMMD aggregates mastery data from up to 10
+                        accounts (any region) into a single mastery table. Try it with <a
+                            href="https://www.lolsummd.com/?a=T1%20OK%20GOOD%20YES~na1~na1,S8%20IS%20SO%20FUN~NA1~na1"
+                            target="_blank">this example link</a> to see it pre-loaded with accounts.</p>
+                    </p>
+                    <p class="text-note">Note: currently running on a development API key. Some requests may
+                        occasionally fail pending production approval from Riot.</p>
+                </div>
+                <div>
+                    <h3>tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Python, Flask: backend serving templates and handling form submissions</li>
-                        <li>Redis via Upstash: serverless Redis for 24-hour mastery data caching with auto-indexed name
-                            lookup</li>
-                        <li>Riot Games API: 14 regional endpoints across 4 continental platforms for summoner and
-                            mastery data</li>
-                        <li>HTML, CSS, JavaScript: frontend</li>
-                        <li>Vercel: serverless deployment</li>
+                        <li>Python, Flask</li>
+                        <li>Redis (response caching)</li>
+                        <li>Riot Games API</li>
+                        <li>JavaScript (vanilla), Jinja2</li>
+                        <li>Vercel</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <h3>links</h3>
                     <ul class="arrowed-list">
                         <li><a href="https://lolsummd.com" target="_blank">Live Site</a></li>
                         <li><a href="https://github.com/hutnerr/lolsummd" target="_blank">GitHub</a></li>
@@ -95,74 +95,52 @@
         </div>
     </section>
 
+    <section id="features">
+        <div class="container">
+            <h2>features</h2>
+            <ul class="arrowed-list">
+                <li>Add up to 10 accounts from any region in one session</li>
+                <li>Instantly see a combined ranked list of every champion with mastery points pooled across all accounts</li>
+                <li>Mastery level badges (highlighted at levels 5 and 7) let you spot your most-invested champions at a glance</li>
+                <li>Share your account list with one click. The link pre-loads the same accounts for anyone who opens it</li>
+                <li>Accounts are remembered in your browser so you never have to re-enter them on return visits</li>
+                <li>Paste <code>SummonerName#TAG</code> directly. The app splits it for you automatically</li>
+                <li>Region tag auto-fills to the local default if left blank</li>
+            </ul>
+        </div>
+    </section>
+
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
             <div class="grid grid-2">
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/lolsummd/lolsummd.png" alt="LOLSUMMD champion mastery aggregator screenshot" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/lolsummd/lolsummd-results.png" alt="LOLSUMMD champion mastery aggregator screenshot" data-lightbox>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-it-works">
-        <div class="container">
-            <h2>how it works</h2>
-            <div class="pspacing">
-                <p>Account lookup uses a two-stage Riot API flow. The Name#Tag pair is resolved to a PUUID via the
-                    Account API on the appropriate continental platform, then the PUUID is used to fetch per-champion
-                    mastery records from the regional endpoint. Riot exposes 14 regional APIs across 4 continental
-                    platforms (Americas, Europe, Asia, SEA), and the app maps each region to its correct pair of
-                    endpoints.</p>
-                <p>Mastery aggregation is a straightforward reduce: iterate each account's mastery list, accumulate
-                    <code>{champion_id: {points: N, level: N}}</code> into a shared dictionary, and sort the result. The
-                    frontend parses clipboard paste input splitting on the <code>#</code> separator and submits the
-                    account list as a form POST.
-                </p>
-                <p>API responses are cached in Redis with a 24-hour TTL. Two cache key namespaces are used:
-                    <code>cache:accounts:{puuid}</code> stores mastery data for a given account, and
-                    <code>cache:name_index:{username}#{tag}#{region}</code> stores the resolved PUUID so repeated
-                    lookups for the same summoner skip the account resolution call. Cache entries are auto-indexed on
-                    write so name-based lookups can hit the cache without re-resolving.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="takeaways">
-        <div class="container">
-            <h2>takeaways</h2>
-            <div class="pspacing">
-                <p>Building around a rate-limited, multi-tier external API forced careful design of the caching layer
-                    and request routing from the start. Some key takeaways:</p>
-                <ul class="arrowed-list">
-                    <li>Multi-tier external API design, navigating regional and continental endpoint separation</li>
-                    <li>Redis caching strategy with TTL and multi-namespace key design</li>
-                    <li>Serverless deployment on Vercel with Flask as the backend framework</li>
-                </ul>
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/lolsummd/lolsummd.png"
+                    alt="LOLSUMMD champion mastery aggregator" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/lolsummd/lolsummd-results.png"
+                    alt="LOLSUMMD results table" data-lightbox>
             </div>
         </div>
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Products</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/other/experience.html">Experience</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Products</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/other/experience.html">Experience</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

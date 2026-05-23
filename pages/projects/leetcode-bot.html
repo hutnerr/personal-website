@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | beast[code]">
     <meta property="og:description"
-        content="A Discord bot that tracks LeetCode submissions, scores server members by difficulty, and delivers scheduled problems via a 7×96 time-bucket scheduling grid.">
+        content="Turn your Discord study server into a structured LeetCode practice environment. Scheduled problems, a live leaderboard, and automatic solution tracking - no manual submission step.">
     <meta property="og:image" content="https://hunter-baker.com/assets/projects/beast_code/beastcode-logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/leetcode-bot.html">
@@ -52,41 +52,35 @@
     <section id="hero">
         <div class="container">
             <h1>beast[code]<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a Discord bot that tracks LeetCode progress and
-                runs server competitions</p>
+            <p class="page-subtitle">$ a Discord bot that posts LeetCode problems and server notifications</p>
         </div>
     </section>
 
     <section id="overview">
         <div class="container">
-            <h2>overview</h2>
-            <div class="pspacing">
-                <p>beast[code] is a Discord bot that turns a server into a LeetCode practice environment. Server admins
-                    configure a recurring problem schedule; users link their LeetCode accounts, submit solutions, and
-                    earn points weighted by difficulty (Easy=1, Medium=3, Hard=6). A live leaderboard tracks standings
-                    per server.</p>
-                <p>As a live service product it is continuously evolving. What started as a straightforward scheduling
-                    bot grew into a full data management system as requirements expanded to cover contest reminders,
-                    problem history, per-user submission tracking, and configurable server settings.</p>
-            </div>
-
-            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+            <h2>overview <span class="status-badge status-badge--maintained">maintained</span></h2>
+            <div class="grid grid-overview">
                 <div>
-                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <p>
+                        beast[code] is a Discord bot meant to add some friendly competition and accountability to LeetCode practice for CS students.
+                    </p>
+                    <p>
+                        It's mean features are the ability to define reoccuring problems on a schedule
+                        and a leaderboard to make progress visible and competitive. 
+                        It also posts alerts for upcoming contests and the official daily challenge, 
+                        giving server members a shared target to aim for each day.
+                    </p>
+                </div>
+                <div>
+                    <h3>tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Python: Discord.py for bot framework, Aiohttp for async HTTP</li>
-                        <li>GraphQL: 6 query types against LeetCode's API (submissions, problems, user stats, contest
-                            data)</li>
-                        <li>Mediator pattern: Synchronizer coordinates atomic updates across in-memory cache and JSON
-                            file storage</li>
-                        <li>Time-bucket scheduling: 7×96 grid (7 days × 96 fifteen-minute slots) drives all timed
-                            problem delivery</li>
-                        <li>Per-server JSON persistence: all user and server state serialized to flat files keyed by
-                            server ID</li>
+                        <li>Python (Discord.py, Aiohttp)</li>
+                        <li>GraphQL (LeetCode API)</li>
+                        <li>JSON file persistence with in-memory cache</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <h3>links</h3>
                     <ul class="arrowed-list">
                         <li><a href="https://github.com/hutnerr/leetcode-bot" target="_blank">GitHub</a></li>
                         <li><a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot"
@@ -99,77 +93,27 @@
         </div>
     </section>
 
+    <section id="features">
+        <div class="container">
+            <h2>features</h2>
+            <ul class="arrowed-list">
+                <li><strong>Scheduled problem delivery</strong> - Admins configure up to 5 recurring problems by day, time, and difficulty; the bot posts them automatically so there's always something to solve</li>
+                <li><strong>Point-based competition</strong> - Solutions are scored by difficulty (Easy · Medium · Hard) and tracked on a live server leaderboard, making progress visible and competitive</li>
+                <li><strong>Account linking</strong> - Users link their LeetCode username once; then submit with /submit to gain points</li>
+                <li><strong>Contest alerts</strong> - Get notified when upcoming LeetCode contests are about to go live, so no one misses a timed event</li>
+                <li><strong>Daily problem</strong> - Posts the official LeetCode daily challenge on demand, giving the server a shared daily target</li>
+                <li><strong>Per-server configuration</strong> - Every server gets its own schedule, leaderboard, and settings.</li>
+            </ul>
+        </div>
+    </section>
+
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/leetcode-bot.png"
-                alt="beast[code] Discord Bot Screenshot" data-lightbox>
-        </div>
-    </section>
-
-    <section id="how-it-works">
-        <div class="container">
-            <h2>how it works</h2>
-            <div class="pspacing">
-                <p>The bot uses a 7x96 time-bucket grid (seven days, each divided into 96 fifteen-minute slots) to
-                    represent the schedule. When an admin sets a problem delivery time, it is mapped to the
-                    corresponding bucket. A background loop runs every minute, checks the current time against populated
-                    buckets, and fires any due notifications. This avoids polling individual timers and makes the
-                    schedule trivially serializable.</p>
-                <p>All data lives in per-server and per-user JSON files. Fetching LeetCode data goes through 6 GraphQL
-                    query types targeting LeetCode's private API, with 3x retry logic and exponential backoff (2^attempt
-                    seconds between retries) to handle rate limits and transient failures. Problem keys are stored in
-                    the format <code>serverID::problemID</code> to namespace them across servers.</p>
-                <p>User accounts are linked by mapping Discord user IDs to LeetCode usernames. When the bot checks for
-                    new submissions, it queries the recent submission list and compares against the set of problems
-                    issued to the server, then awards points for first solves.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="challenges">
-        <div class="container">
-            <h2>challenges</h2>
-            <div class="pspacing">
-                <p>At the time of making this, it was the biggest project ever designed and worked on independently.
-                    This naturally came with a lot of unique challenges not encountered before. The project required a
-                    lot of foresight into not only what I knew I wanted to build, but also how to make it adaptable to
-                    new ideas. The design process was done in two stages: first building the backend and core, then
-                    integrating Discord.py on top. Despite best efforts, there were still gaps discovered
-                    mid-integration
-                    that required backtracking. Many instances like this reinforced the value of the planning that was
-                    done upfront, it would've been a much bigger problem without it.</p>
-                <p>The largest challenge was storage consistency. The initial approach read from and wrote to JSON files
-                    on every operation, which was slow and a concurrency hazard. I switched to an in-memory cache backed
-                    by JSON
-                    persistence, but this introduced a new problem: cache and disk could diverge if an operation failed
-                    between the two writes. The solution was a Synchronizer that wraps every state-mutating operation:
-                    it takes a <code>copy.deepcopy</code> backup of the in-memory state before any change, writes both
-                    layers, and rolls back to the backup if either step fails. This made state transitions atomic in
-                    practice.</p>
-                <p>Scheduling delivery correctly was harder than expected. The time-bucket design solved the "when to
-                    fire" problem cleanly, but getting notifications to land in the right channel, with the right
-                    problem content, for the right users, required careful coordination between server config, user
-                    config, and the LeetCode API response. I built this as a backend core first and integrated Discord
-                    second, but still found gaps mid-integration that required back-tracking and rethinking several
-                    data models.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="takeaways">
-        <div class="container">
-            <h2>takeaways</h2>
-            <div class="pspacing">
-                <p>Building and maintaining a live service product sharpened my understanding of system design,
-                    planning, and the real cost of shortcuts. Some key takeaways:</p>
-                <ul class="arrowed-list">
-                    <li>Designing and shipping a complete live service product end to end</li>
-                    <li>Cache/storage consistency as a first-class design concern, not an afterthought</li>
-                    <li>GraphQL query design and retry/backoff strategies against rate-limited APIs</li>
-                    <li>Value of upfront planning, gaps discovered mid-integration are expensive to patch</li>
-                    <li>Maintaining and iterating on a deployed product over time</li>
-                </ul>
+            <div class="grid grid-3">
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/leetcode-bot.png" alt="beast[code] Discord Bot Screenshot" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/3.png" alt="beast[code] Screenshot" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/5.png" alt="beast[code] Screenshot" data-lightbox>
             </div>
         </div>
     </section>

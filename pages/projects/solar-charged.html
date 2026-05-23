@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | Solar Charged">
     <meta property="og:description"
-        content="A tower defense game for Kenny Jam 2025 built in Godot 4, where solar energy serves as both your resource pool and your health. Run out and you lose.">
+        content="A tower defense game where energy is both your currency and your health. Place too many towers and you run out of power - and that ends the run. Built for Kenny Game Jam 2025.">
     <meta property="og:image" content="https://hunter-baker.com/assets/projects/solar_charged/solar-charged-1.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/solar-charged.html">
@@ -30,63 +30,62 @@
 
 <body>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Products</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/other/experience.html">Experience</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Products</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/other/experience.html">Experience</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        <script src="/scripts/nav-active.js"></script>
     </div>
-</header>
-<script src="/scripts/nav-active.js"></script>
-</div>
 
     <section id="hero">
         <div class="container">
             <h1>solar charged<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a resource management tower defense game where
-                energy is currency and health</p>
+            <p class="page-subtitle">$ a resource management tower defense game where energy is currency and health</p>
         </div>
     </section>
 
     <section id="overview">
         <div class="container">
-            <h2>overview</h2>
-            <div class="pspacing">
-                <p>Solar Charged is a tower defense game built with a partner for the 2025 Kenny Game Jam. The theme was
-                    "Power." Energy acts as both currency and health: you spend it to place towers, towers cost upkeep
-                    while on the field (and more while actively shooting), and solar panels recharge it over time based
-                    on weather conditions. If your energy hits zero, you lose.</p>
-                <p>Tower types include a basic shooter, a piercing laser, an area damage tower, an energy buff tower
-                    that boosts adjacent towers, and a slow tower. Each has two independent upgrade tracks with three
-                    levels each.</p>
-            </div>
-
-            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+            <h2>overview <span class="status-badge status-badge--archived">archived</span></h2>
+            <div class="grid grid-overview">
                 <div>
-                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <p>
+                        A tower defense game built with a partner for <a href="https://itch.io/jam/kenney-jam-2025" target="_blank">Kenny Game Jam 2025</a> (theme: "Power").
+                        Built by <a href="https://rathavenstudios.com" target="_blank">Rat Haven Studios</a>!
+                    </p>
+                    <p>
+                        Energy is both your currency and your health. Place too many towers and you run out of power,
+                        and you lose.
+                    </p>
+                    <p>
+                         View the rankings on the <a href="/pages/other/game-jams.html" target="_blank">Jam Page</a>.
+                    </p>
+                
+
+                </div>
+                <div>
+                    <h3>tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Godot 4, GDScript: game engine and scripting</li>
-                        <li>State machine: explicit StateMachine + State base classes managing 5 game states</li>
-                        <li>HealthComponent: dual-purpose energy system; depletion triggers defeat, spending builds
-                            towers</li>
-                        <li>Weather system: 4 weighted states (Rain 7%, Cloudy 15%, Normal 35%, Sunny 50%) affecting
-                            energy recovery rate</li>
-                        <li>PathFollow2D: enemy movement along pre-placed paths</li>
-                        <li>Tower upgrade system: two independent upgrade tracks per tower, 3 levels each</li>
+                        <li>Godot 4, GDScript</li>
+                        <li>Explicit state machine (5 game states)</li>
+                        <li>Weighted weather state transitions</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <h3>links</h3>
                     <ul class="arrowed-list">
                         <li><a href="https://itch.io/jam/kenney-jam-2025/rate/3734468" target="_blank">Game Jam Page</a>
                         </li>
@@ -95,10 +94,22 @@
                         </li>
                         <li><a href="https://rathavenstudios.com/pages/games/solar-charged.html" target="_blank">RHS</a>
                         </li>
-                        </li>
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>features</h2>
+            <ul class="arrowed-list">
+                <li>Energy doubles as your health. Spending it on towers puts you at risk; drain it completely and it's game over</li>
+                <li>A live weather cycle (Rain, Cloudy, Normal, Sunny) shifts your solar recharge rate mid-wave, forcing you to adapt on the fly</li>
+                <li>Five tower types with distinct roles: basic shooter, piercing laser, area damage, slow, and an energy booster that amplifies nearby towers</li>
+                <li>Each tower has two independent upgrade paths with three levels, letting you specialize your build </li>
+                <li>Between-wave shop phases to regroup, adjust your layout, and prepare for the next push</li>
+            </ul>
         </div>
     </section>
 
@@ -115,28 +126,20 @@
         </div>
     </section>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img"
-                src="/assets/projects/solar_charged/solar-charged-clouds.gif" alt="Solar Charged gameplay"
-                data-lightbox>
-        </div>
-    </section>
-
     <section id="how-to-play">
         <div class="container">
             <h2>how to play</h2>
             <div class="pspacing">
-                <p>The goal is to manage your power effectively while defending against waves of enemies. Strategically
-                    place and upgrade towers, but keep in mind: the more towers you have and the more you upgrade them,
-                    the more power they consume. If you run out of power, you lose.</p>
-                <p>Your power is recharged through solar energy, which is affected by the weather cycle. Keep an eye
-                    on the forecast. To open the upgrade menu, select a placed tower. You can also delete towers this
-                    way. Upkeep is the passive cost of having a tower on the field; this cost increases when the tower
-                    is actively shooting.</p>
+                <p>Manage your power effectively while defending against waves of enemies. Place and upgrade towers
+                    strategically, but the more towers you have and the more you upgrade them, the more power they
+                    consume. If you run out of power, you lose.</p>
+                <p>Power recharges through solar energy, which is affected by the weather cycle. Keep an eye on the
+                    forecast. To open the upgrade menu, select a placed tower. You can also delete towers this way.
+                    Upkeep is the passive cost of having a tower on the field; it increases when the tower is actively
+                    shooting.</p>
             </div>
-            <h3 style="margin-top: 16px; margin-bottom: 12px;">tower types</h3>
+            <br>
+            <h3>tower types</h3>
             <ul class="arrowed-list">
                 <li><strong>Orange Tower:</strong> Simple shooter</li>
                 <li><strong>Red Tower:</strong> Piercing laser</li>
@@ -147,65 +150,35 @@
         </div>
     </section>
 
-    <section id="how-it-works">
-        <div class="container">
-            <h2>how it works</h2>
-            <div class="pspacing">
-                <p>The game is divided into five explicit game states managed by a StateMachine class: MainMenu, Placing
-                    (drag-to-place towers), Combat (waves active), Shop (between waves), and Win/Lose. Each state is a
-                    separate class inheriting from a State base, with <code>enter()</code>, <code>exit()</code>, and
-                    <code>update()</code> methods. Transitions are triggered by events (wave cleared, energy depleted,
-                    shop confirmed) and the state machine calls the appropriate lifecycle hooks.
-                </p>
-                <p>Energy is managed through a single HealthComponent shared between the currency and health systems.
-                    Tower placement deducts from it; passive and active upkeep drain it each tick; solar recovery adds
-                    back at a rate determined by the current weather. The weather cycle transitions between Rain,
-                    Cloudy, Normal, and Sunny states using weighted random selection, giving Sunny the highest
-                    probability (50%) and Rain the lowest (7%). Weather state determines the per-tick energy recovery
-                    multiplier.</p>
-                <p>Enemy movement uses PathFollow2D nodes along pre-authored paths. Tower targeting logic checks enemies
-                    within range and prioritizes by progress along the path, hitting the one closest to the end.</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="takeaways">
+    <section id="showcase">
         <div class="container">
-            <h2>takeaways</h2>
-            <div class="pspacing">
-                <p>The first game built with explicit state machines and component-based design rather than
-                    singletons. The difference in maintainability was immediately apparent. Some key takeaways:</p>
-                <ul class="arrowed-list">
-                    <li>Explicit state machine pattern for game flow management across menus, gameplay phases, and
-                        outcomes</li>
-                    <li>Component-based design, HealthComponent as a reusable, single-responsibility node</li>
-                    <li>Weighted random state transitions for weather simulation</li>
-                    <li>Tower defense fundamentals: placement, upkeep, targeting, and wave spawning</li>
-                    <li>Balancing resource drain and recovery rates as a design problem, not just a tuning problem</li>
-                </ul>
-            </div>
+            <h2>showcase</h2>
+            <img class="walkthrough-img hover-img sized-img"
+                src="/assets/projects/solar_charged/solar-charged-clouds.gif" alt="Solar Charged gameplay"
+                data-lightbox>
         </div>
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Products</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/other/experience.html">Experience</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Products</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/other/experience.html">Experience</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

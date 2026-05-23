@@ -2,6 +2,48 @@
    UTILITIES
    ========================================== */
 
+.page-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.status-badge {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 8px;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+}
+
+.status-badge--active {
+  color: #b8bb26;
+  background: rgba(184, 187, 38, 0.1);
+  border-color: rgba(184, 187, 38, 0.3);
+}
+
+.status-badge--maintained {
+  color: #83a598;
+  background: rgba(131, 165, 152, 0.1);
+  border-color: rgba(131, 165, 152, 0.3);
+}
+
+.status-badge--archived {
+  color: #fe8019;
+  background: rgba(254, 128, 25, 0.1);
+  border-color: rgba(254, 128, 25, 0.3);
+}
+
+.text-note {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
 .centered {
   display: block;
   text-align: center;

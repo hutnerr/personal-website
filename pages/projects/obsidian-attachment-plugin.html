@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | Obsidian Attachment Plugin">
     <meta property="og:description"
-        content="An officially published Obsidian community plugin that intercepts attachment creation and routes files to folder-specific destinations using configurable rules.">
+        content="Define per-folder attachment placement rules for Obsidian. Pasted and dropped files land exactly where they belong - automatically. Officially published to the community plugin list.">
     <meta property="og:image"
         content="https://hunter-baker.com/assets/projects/obsidian_attachment_placement/obs-attachment-placement-settings.png">
     <meta property="og:type" content="website">
@@ -53,37 +53,37 @@
     <section id="hero">
         <div class="container">
             <h1>obsidian attachment plugin<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ rule-based attachment placement for Obsidian.md
-            </p>
+            <p class="page-subtitle">$ rule-based attachment placement for Obsidian.md</p>
         </div>
     </section>
 
     <section id="overview">
         <div class="container">
-            <h2>overview</h2>
-            <div class="pspacing">
-                <p>An officially published Obsidian community plugin that gives per-folder control over where
-                    attachments are saved. Instead of dumping all pasted or dropped files into a single global folder,
-                    you define placement rules per directory. When an attachment is created, the plugin walks up the
-                    folder tree from the active note and applies the first matching rule it finds.</p>
-                <p>Built out of personal frustration with Obsidian's single-destination attachment behavior in larger,
-                    organized vaults. Published to the community plugin list and available for installation directly
-                    from Obsidian.</p>
-            </div>
-
-            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+            <h2>overview <span class="status-badge status-badge--maintained">maintained</span></h2>
+            <div class="grid grid-overview">
                 <div>
-                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <p>
+                        Obsidian gives you one global folder for all attachments. This is fine for small vaults, but becomes painful once
+                        your vault grows into multiple structured sections. This plugin lets you define placement rules
+                        per folder so pasted and dropped files land where they belong, automatically. 
+                    </p>
+                    <p>
+                        Built out of
+                        personal frustration, published to the Obsidian community plugin list, and aimed at anyone who
+                        keeps a large structured vault.
+                    </p>
+                </div>
+                <div>
+                    <h3>tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>TypeScript: for the core logic</li>
-                        <li>Obsidian API: built for the Obsidian desktop application</li>
+                        <li>TypeScript</li>
+                        <li>Obsidian API</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <h3>links</h3>
                     <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/obsidian-attachment-placement"
-                                target="_blank">GitHub</a></li>
+                        <li><a href="https://github.com/hutnerr/obsidian-attachment-placement" target="_blank">GitHub</a></li>
                         <li><a href="/pages/other/obsidian-attachment-placement-help.html">Help Page</a></li>
                     </ul>
                 </div>
@@ -91,58 +91,25 @@
         </div>
     </section>
 
+    <section id="features">
+        <div class="container">
+            <h2>features</h2>
+            <ul class="arrowed-list">
+                <li>Define rules per folder that automatically route pasted or dropped attachments to the right destination.</li>
+                <li>Nearest-ancestor matching: rules closer to the active note take priority, so you can set broad defaults and override them in specific subfolders</li>
+                <li>Configurable global fallback for notes that don't match any rule</li>
+                <li>Drag-and-drop rule reordering in the settings panel</li>
+                <li>Installable directly from Obsidian's community plugin list.</li>
+            </ul>
+        </div>
+    </section>
+
     <section id="showcase">
         <div class="container">
             <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img"
-                src="/assets/projects/obsidian_attachment_placement/obs-attachment-placement-settings.png"
-                alt="Attachment Placement plugin settings panel" data-lightbox>
-            <img class="walkthrough-img hover-img sized-img"
-                src="/assets/projects/obsidian_attachment_placement/obs-attachment-example.png"
-                alt="Attachment Placement example configuration" data-lightbox>
-        </div>
-    </section>
-
-    <section id="how-it-works">
-        <div class="container">
-            <h2>how it works</h2>
-            <div class="pspacing">
-                <p>Obsidian exposes <code>vault.getAvailablePathForAttachments</code> as the hook point for attachment
-                    destination resolution. The plugin monkey-patches this method at load time, replacing it with a
-                    wrapper that runs the rule-matching logic before falling back to Obsidian's default behavior if no
-                    rule matches.</p>
-                <p>When an attachment is created, the plugin starts at the folder containing the active note and walks
-                    up the directory tree. At each level it checks the ruleMap, a Map from folder path to destination
-                    glob, for a matching entry. The first match determines the destination; if the root is reached with
-                    no match, a configurable global default applies. This bottom-up walk means more specific rules
-                    (closer to the note) take precedence over broader rules (higher in the vault).</p>
-                <p>Two caching layers avoid repeated tree walks. The ruleMap caches the parsed rule set so adding a rule
-                    doesn't re-read all rules from settings on every attachment. The destinationCache maps each note
-                    path to its resolved destination so consecutive attachments to the same note skip the walk entirely.
-                    Both caches are invalidated on vault events (<code>create</code>, <code>delete</code>,
-                    <code>rename</code>) that could change which rule applies to a given path.
-                </p>
-                <p>Rules are configured in a settings panel with drag-and-drop reordering and folder validation. If a
-                    rule points to a folder that doesn't exist, a Notice is shown.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="takeaways">
-        <div class="container">
-            <h2>takeaways</h2>
-            <div class="pspacing">
-                <p>Publishing a plugin to an official community registry raised the bar on polish, documentation, and
-                    correctness compared to personal-use tools. Some key takeaways:</p>
-                <ul class="arrowed-list">
-                    <li>Obsidian plugin API, lifecycle hooks, vault events, and settings serialization</li>
-                    <li>Monkey-patching as a last-resort extension technique and its associated fragility trade-offs
-                    </li>
-                    <li>Two-level cache design with event-driven invalidation</li>
-                    <li>Bottom-up tree traversal for nearest-ancestor rule matching</li>
-                    <li>Community plugin publishing standards, help documentation, settings UX, and version
-                        compatibility</li>
-                </ul>
+            <div class="grid grid-2">
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/obsidian_attachment_placement/obs-attachment-placement-settings.png" alt="Attachment Placement plugin settings panel" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/obsidian_attachment_placement/obs-attachment-example.png" alt="Attachment Placement example configuration" data-lightbox>
             </div>
         </div>
     </section>

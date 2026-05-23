@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | TXTMET">
     <meta property="og:description"
-        content="A lightweight CLI tool that counts words, sentences, paragraphs, and unique words in a text file. Implemented independently in both C and Rust as a language comparison exercise.">
+        content="A lightweight, zero-dependency CLI that counts words, characters, lines, and sentences in any text file. Pick exactly the metrics you need. Implemented independently in both C and Rust.">
     <meta property="og:image" content="https://hunter-baker.com/assets/me/my_rat_pfp_nobg.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/txtmet.html">
@@ -24,62 +24,62 @@
         gtag('js', new Date());
         gtag('config', 'G-4J8LXCJ31S');
     </script>
+    <script src="/scripts/lightbox.js"></script>
 </head>
 
 <body>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Products</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/other/experience.html">Experience</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Products</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/other/experience.html">Experience</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        <script src="/scripts/nav-active.js"></script>
     </div>
-</header>
-<script src="/scripts/nav-active.js"></script>
-</div>
 
     <section id="hero">
         <div class="container">
             <h1>txtmet<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a command-line text metric utility implemented in
-                both C and Rust</p>
+            <p class="page-subtitle">$ a command-line text metric utility implemented in both C and Rust</p>
         </div>
     </section>
 
     <section id="overview">
         <div class="container">
-            <h2>overview</h2>
-            <div class="pspacing">
-                <p>TXTMET is a lightweight CLI tool that reads a text file and outputs word count, character count, line
-                    count, sentence count, or unique word count depending on which flags are passed. Born out of
-                    frustration with tools that are either too heavy or not flexible enough for simple counting tasks.
-                    Implemented in both C and Rust.
-                </p>
-            </div>
-
-            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+            <h2>overview <span class="status-badge status-badge--archived">archived</span></h2>
+            <div class="grid grid-overview">
                 <div>
-                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <p>
+                        txtmet is a simple and lightweight way to see some metrics about plain-text files. 
+                        It lets you pick exactly which metrics to output (words, characters, lines, sentences) 
+                        and nothing else runs.
+                    </p>
+                    <p>
+                        A good fit for developers who want a fast, zero-dependency CLI
+                        and anyone learning C or Rust who wants to see the same algorithm expressed in both languages.
+                    </p>
+                </div>
+                <div>
+                    <h3>tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>C (standard library, getopt): streaming fgetc character processing with lastc state
-                            tracking</li>
-                        <li>Rust (standard library): fs::read_to_string with in_word boolean state and match arms</li>
-                        <li>getopt: Unix-style CLI flag parsing in the C version for selecting which metrics to output
-                        </li>
+                        <li>C (stdlib, getopt)</li>
+                        <li>Rust (standard library)</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <h3>links</h3>
                     <ul class="arrowed-list">
                         <li><a href="https://github.com/hutnerr/txtmet" target="_blank">GitHub</a></li>
                     </ul>
@@ -88,63 +88,45 @@
         </div>
     </section>
 
-    <section id="how-it-works">
+    <section id="features">
         <div class="container">
-            <h2>how it works</h2>
-            <div class="pspacing">
-                <p>Both implementations use the same core logic for all metrics. Word detection tracks a boolean state
-                    (<code>lastc</code> in C, <code>in_word</code> in Rust): a transition from non-whitespace to
-                    whitespace increments the word counter. Sentence detection counts terminal punctuation characters
-                    (<code>.</code>, <code>!</code>, <code>?</code>). Every punctuation mark is counted, so run-on
-                    sentences and ellipses are treated naively.</p>
-                <p>The C version processes the file one character at a time via <code>fgetc</code>, keeping memory usage
-                    flat regardless of file size. It uses <code>getopt</code> for Unix-style flag parsing, so flags can
-                    be combined freely. The Rust version reads the entire file into a string with
-                    <code>fs::read_to_string</code> and iterates over characters with <code>match</code> arms for the
-                    state transitions, relying on Rust's ownership model to guarantee the buffer is freed at scope exit.
-                </p>
-                <p>Test files include short samples and a longer text (misery.txt, 1755 words) for comparison against
-                    known counts.</p>
-            </div>
+            <h2>features</h2>
+            <ul class="arrowed-list">
+                <li>Count words, characters (with and without whitespace), lines, and sentences in any plain-text file</li>
+                <li>Mix and match metrics with simple flags. Get exactly what you need, nothing more</li>
+                <li>Combine flags freely: <code>-wl</code> gives words and lines, <code>-a</code> gives everything</li>
+                <li>Zero dependencies. Just compile and run; no runtime or package manager required</li>
+            </ul>
         </div>
     </section>
 
-    <section id="takeaways">
+    <section id="showcase">
         <div class="container">
-            <h2>takeaways</h2>
-            <div class="pspacing">
-                <p>Implementing the same utility in two languages side by side makes idiomatic differences concrete
-                    rather than abstract. Some key takeaways:</p>
-                <ul class="arrowed-list">
-                    <li>C file I/O, streaming fgetc processing and getopt flag parsing</li>
-                    <li>Rust ownership model and pattern matching for the same byte-level logic</li>
-                    <li>State machine character processing, tracking transitions rather than scanning for delimiters
-                    </li>
-                    <li>The practical difference in defensive boilerplate between C and Rust for the same task</li>
-                </ul>
-            </div>
+            <h2>showcase</h2>
+            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/txtmet/txtmet.png" alt="TXTMET demo"
+                data-lightbox>
         </div>
     </section>
 
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Products</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/other/experience.html">Experience</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Products</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/other/experience.html">Experience</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>

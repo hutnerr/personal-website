@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="Hunter Baker | Massaquerade">
     <meta property="og:description"
-        content="A narrative mystery game for Winter MelonJam 2025 where players must identify the murder target at a masquerade ball. Built in 72 hours in Godot 4.">
+        content="You're the assassin, not the detective. Talk to guests at a masquerade ball, collect clues that unlock new conversation branches, and decide who to strike. Ranked 36th out of 200 submissions.">
     <meta property="og:image" content="https://hunter-baker.com/assets/projects/massaquerade/massaquerade-results.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/massaquerade.html">
@@ -30,60 +30,60 @@
 
 <body>
     <div id="header">
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/index.html" class="site-logo">
-            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
-            hunter baker
-        </a>
-        <ul class="site-nav">
-            <li><a href="/index.html">Home</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/projects.html">Products</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/other/experience.html">Experience</a></li>
-            <span class="nav-sep">|</span>
-            <li><a href="/pages/nav/contact.html">Contact</a></li>
-        </ul>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/index.html" class="site-logo">
+                    <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+                    hunter baker
+                </a>
+                <ul class="site-nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/projects.html">Products</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/other/experience.html">Experience</a></li>
+                    <span class="nav-sep">|</span>
+                    <li><a href="/pages/nav/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        <script src="/scripts/nav-active.js"></script>
     </div>
-</header>
-<script src="/scripts/nav-active.js"></script>
-</div>
 
     <section id="hero">
         <div class="container">
             <h1>massaquerade<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a murder mystery game built in 72 hours for
-                Winter MelonJam 2025</p>
+            <p class="page-subtitle">$ a murder mystery game built in 72 hours for Winter MelonJam 2025</p>
         </div>
     </section>
 
     <section id="overview">
         <div class="container">
-            <h2>overview</h2>
-            <div class="pspacing">
-                <p>Massaquerade is the third game built with a partner, for the Winter MelonJam 2025. The theme was
-                    "Mask." The player attends a masquerade ball as the murderer: talk to guests, collect clues, and
-                    identify the traitor. Each new piece of information can open up branches in conversations you've
-                    already had. Once
-                    you've decided who the target is, press M to strike.</p>
-                <p>The game ranked 36th overall out of 200 submissions, with 17th place in the Art category and 39th in
-                    Gameplay.</p>
-            </div>
-
-            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
+            <h2>overview <span class="status-badge status-badge--archived">archived</span></h2>
+            <div class="grid grid-overview">
                 <div>
-                    <h3 style="margin-bottom: 12px;">tech stack</h3>
+                    <p>
+                        A branching narrative mystery built in 72 hours for 
+                        <a href="https://itch.io/jam/wmj2025" target="_blank">Winter MelonJam 2025</a> (theme: "Mask"). 
+                        Built by <a href="https://rathavenstudios.com" target="_blank">Rat Haven Studios</a>!
+                    </p>
+                    <p>
+                        You play as a hired hitman at the masquerade ball. Talk to guests at a masquerade ball to collect clues
+                        that unlock new conversation branches, then decide who to strike.
+                    </p>
+                    <p>
+                         View the rankings on the <a href="/pages/other/game-jams.html" target="_blank">Jam Page</a>.
+                    </p>
+                </div>
+                <div>
+                    <h3>tech stack</h3>
                     <ul class="arrowed-list">
-                        <li>Godot 4, GDScript: game engine and scripting</li>
-                        <li>JSON dialogue trees: per-character, per-mask branching dialogue with declarative flag
-                            conditions and mutations</li>
-                        <li>Flag system: conversationState (local per-dialogue) and Data.player.actionFlags (global
-                            persistent)</li>
+                        <li>Godot 4, GDScript</li>
+                        <li>JSON dialogue trees (per-character, per-mask branching)</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 style="margin-bottom: 12px;">links</h3>
+                    <h3>links</h3>
                     <ul class="arrowed-list">
                         <li><a href="https://itch.io/jam/wmj2025/rate/4155805" target="_blank">Game Jam Page</a></li>
                         <li><a href="https://hutnerr.itch.io/massaquerade" target="_blank">itch.io</a></li>
@@ -91,10 +91,20 @@
                         </li>
                         <li><a href="https://rathavenstudios.com/pages/games/massaquerade.html" target="_blank">RHS</a>
                         </li>
-                        </li>
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>features</h2>
+            <ul class="arrowed-list">
+                <li>Play through a branching narrative mystery and curated political story.</li>
+                <li>Talk to guests at a masquerade ball to collect clues that unlock new conversation branches you couldn't access before</li>
+                <li>Every clue you gather can reopen dialogue with characters you've already spoken to, rewarding thorough exploration</li>
+            </ul>
         </div>
     </section>
 
@@ -137,89 +147,25 @@
         </div>
     </section>
 
-    <section id="how-it-works">
-        <div class="container">
-            <h2>how it works</h2>
-            <div class="pspacing">
-                <p>Dialogue is driven entirely by JSON files. One file per character per mask. Each dialogue node
-                    defines the display text, response options, conditions required to show the option, flags to set
-                    when the option is chosen, and the next node to advance to. Conditions are evaluated against two
-                    scopes: <code>conversationState</code>, a dictionary local to the active conversation that
-                    accumulates flags set during the current exchange, and <code>Data.player.actionFlags</code>, the
-                    global persistent flag store that persists across all conversations.</p>
-                <p>The result is that choosing a response in one conversation can set a global flag that unlocks a new
-                    branch in an entirely different character's dialogue tree. The clue chain the player follows to
-                    identify the target.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="challenges">
-        <div class="container">
-            <h2>challenges</h2>
-            <div class="pspacing">
-                <p>Building a scalable dialogue system was the core technical challenge. A naive approach, writing
-                    dialogue state directly into scripts, would have made branching and authoring impossible to manage.
-                    The JSON tree format let dialogue content be written outside the code entirely.</p>
-                <p>The two-scope flag system (local conversation vs. global) required careful design: local flags track
-                    what has been said in the current exchange (useful for preventing repeat questions), while global
-                    flags track what the player has learned across all interactions (useful for unlocking new branches
-                    after the fact). Getting the evaluation order right (check conditions, display options, then apply
-                    mutations) meant no flag changes could leak backward into the conditions that gated the current
-                    step.</p>
-                <p>The honest limitation of this jam was throughput. The main bottleneck was not systems but content:
-                    writing enough unique, coherent dialogue for multiple characters across multiple mask variants
-                    consumed most of the 72 hours. The game systems were solid; the game was smaller than planned
-                    because writing is slow.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="takeaways">
-        <div class="container">
-            <h2>takeaways</h2>
-            <div class="pspacing">
-                <p>By far the biggest thing learned through this jam was how to build a dialogue system. We did a
-                    JSON-based system where you could define flags to set, flags to check, the next node to go to, and
-                    many other options. Not only was building this scalable system a challenge, but it was also quite
-                    difficult to try and write all the dialogue itself.</p>
-                <p>One of the main differences between this game and the previous ones is that it felt like the main
-                    limitation was how fast we could write dialogue instead of adding cooler systems and interactions.
-                    The game systems were solid; the game was smaller than planned because writing is slow. Regardless,
-                    it was a great time working on it and the result is something to be proud of.</p>
-                <p>The biggest learning was how much time narrative content takes relative to code. Systems that feel
-                    small to implement become enormous when multiplied by the number of characters, masks, and dialogue
-                    branches needed to make the mystery feel real. Some key takeaways:</p>
-                <ul class="arrowed-list">
-                    <li>JSON-driven dialogue trees, separating content from logic for scriptable narrative systems</li>
-                    <li>Two-scope flag evaluation for local conversation state vs. global persistent state</li>
-                    <li>Designing for content throughput, how much dialogue can actually be written in 72 hours</li>
-                    <li>Branching narrative design, clue chains that reward exploration without requiring a walkthrough
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
     <div id="footer">
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; 2026 Hunter Baker</p>
-        <div class="footer-links">
-            <a href="/pages/nav/projects.html">Products</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/other/experience.html">Experience</a>
-            <span class="nav-sep">|</span>
-            <a href="/pages/nav/contact.html">Contact</a>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
-            <span class="nav-sep">|</span>
-            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
-        </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; 2026 Hunter Baker</p>
+                <div class="footer-links">
+                    <a href="/pages/nav/projects.html">Products</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/other/experience.html">Experience</a>
+                    <span class="nav-sep">|</span>
+                    <a href="/pages/nav/contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+                    <span class="nav-sep">|</span>
+                    <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
 
 </html>
