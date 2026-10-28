@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeckoSketch</title>
+    <link rel="icon" href="/assets/me/my_rat_pfp_nobg.png">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/sections.css">
+    <link rel="stylesheet" href="/styles/components.css">
+
+    <meta property="og:title" content="Hunter Baker | GeckoSketch">
+    <meta property="og:description"
+        content="A desktop app for timed drawing practice using your own tagged library of reference images. Currently in beta.">
+    <meta property="og:image" content="https://hunter-baker.com/assets/projects/geckosketch/gallery.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hunter-baker.com/pages/projects/geckosketch.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J8LXCJ31S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4J8LXCJ31S');
+    </script>
+    <script src="/scripts/lightbox.js"></script>
+</head>
+
+<body>
+    <div id="header">
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="/index.html" class="site-logo">
+            <img src="/assets/me/my_rat_pfp_nobg.png" alt="" />
+            hunter baker
+        </a>
+        <ul class="site-nav">
+            <li><a href="/index.html">Home</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/projects.html">Products</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/other/experience.html">Experience</a></li>
+            <span class="nav-sep">|</span>
+            <li><a href="/pages/nav/contact.html">Contact</a></li>
+        </ul>
+    </div>
+</header>
+<script src="/scripts/nav-active.js"></script>
+</div>
+
+        <section id="hero">
+        <div class="container">
+            <h1>geckosketch<span class="cursor"></span></h1>
+            <p class="page-subtitle">$ a desktop app for timed drawing practice using your own reference library</p>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="container">
+            <h2>overview <span class="status-badge status-badge--beta">beta</span></h2>
+            <div class="grid grid-overview">
+                <div>
+                    <p>
+                        Sites like Line of Action and Quickposes are great for gesture drawing, but you're stuck
+                        practicing from their images. I wanted to practice from the references I'd actually collected,
+                        so I built a tool around that.
+                    </p>
+                    <p>
+                        GeckoSketch imports your images into a local library, lets you tag and filter them however you
+                        like, and turns any slice of that library into a timed practice session in one click. Tagging
+                        your own references takes a bit more setup than a pre-built site, but it's far more flexible.
+                    </p>
+                    <p>
+                        Everything lives in one self-contained folder, so your library is easy to back up, sync, or
+                        even keep in git across machines.
+                    </p>
+                    <p class="text-note">Note: GeckoSketch is currently in beta (v0.1.0). Expect some rough edges.</p>
+                </div>
+                <div>
+                    <h3>tech stack</h3>
+                    <ul class="arrowed-list">
+                        <li>Java 21, JavaFX</li>
+                        <li>SQLite</li>
+                        <li>Maven, jpackage</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>links</h3>
+                    <ul class="arrowed-list">
+                        <li><a href="https://github.com/hutnerr/gecko-sketch" target="_blank">GitHub</a></li>
+                        <li><a href="/assets/projects/geckosketch/GeckoSketch_v0.1.0beta-LinuxBundle.zip" download>Download (Linux)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>features</h2>
+            <ul class="arrowed-list">
+                <li><strong>Flexible sessions</strong> - chain segments together (e.g. 5 &times; 30s, then 3 &times; 2min, then 1 &times; 10min), each drawing from its own tag filter, playlist, or saved view</li>
+                <li><strong>Hierarchical tags</strong> - nest tags like <code>animal / bird</code> and filter with And, Or, and Exclude</li>
+                <li><strong>Memory drawing</strong> - study an image, draw it from memory, then compare</li>
+                <li><strong>Study aids</strong> - flip, rotate, grayscale, blur, grid overlays, and 2 to 4 tone value studies, all without touching the original</li>
+                <li><strong>One-click presets</strong> - jump straight into practice from the home page</li>
+                <li><strong>Session review</strong> - look back over every image after a session and favorite or tag the keepers</li>
+                <li><strong>Easy importing</strong> - drag and drop files, folders, or images straight from a browser, with duplicates caught automatically</li>
+                <li><strong>Gruvbox themes</strong> - light and dark modes, plus rebindable keyboard shortcuts</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="showcase">
+        <div class="container">
+            <h2>showcase</h2>
+            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/geckosketch/gallery.webp"
+                alt="GeckoSketch gallery" data-lightbox>
+            <div class="grid grid-2" style="margin-top: 1rem;">
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/geckosketch/practice.webp"
+                    alt="Practice session with timer, tags, and credit" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/geckosketch/practice-values.webp"
+                    alt="Three-tone value study" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/geckosketch/setup.webp"
+                    alt="Session setup with a three-segment queue" data-lightbox>
+                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/geckosketch/tags.webp"
+                    alt="Tag manager" data-lightbox>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer">
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; 2026 Hunter Baker</p>
+        <div class="footer-links">
+            <a href="/pages/nav/projects.html">Products</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/other/experience.html">Experience</a>
+            <span class="nav-sep">|</span>
+            <a href="/pages/nav/contact.html">Contact</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/hutnerr" target="_blank">GitHub</a>
+            <span class="nav-sep">|</span>
+            <a href="https://www.linkedin.com/in/hunter-b-baker/" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+
+</html>
