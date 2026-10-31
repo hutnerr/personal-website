@@ -1,0 +1,338 @@
+/* ==========================================
+   PROJECT SHOWCASE PAGES
+   ========================================== */
+
+/* -------------------- HERO -------------------- */
+.project-hero {
+  padding: 56px 0 32px;
+}
+
+.project-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.project-hero h1 {
+  font-size: 2.8rem;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.project-tagline {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 52ch;
+}
+
+.project-tagline::before {
+  content: '$ ';
+  color: var(--accent);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.project-tags .status-badge {
+  margin-left: 0;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background: var(--text);
+  border-color: var(--text);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.project-hero-media {
+  display: flex;
+  justify-content: center;
+}
+
+.project-hero-media img {
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-hero-media img:hover {
+  border-color: var(--accent);
+  transform: translateY(-6px);
+}
+
+/* square app-icon style art, kept smaller than full-width covers */
+.project-hero-media--icon img {
+  max-width: 290px;
+  border-radius: 28px;
+}
+
+/* -------------------- STATS STRIP -------------------- */
+.project-stats {
+  padding: 0 0 16px;
+}
+
+.project-stats .stat-row {
+  margin-top: 0;
+}
+
+/* fixed thirds so a single stat doesn't stretch across the page */
+.project-stats .stat {
+  flex: 0 1 calc((100% - 24px) / 3);
+}
+
+/* -------------------- BODY LAYOUT -------------------- */
+.project-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 48px;
+  align-items: start;
+  /* .container's margin:auto would absorb body's flex height */
+  margin: 0 auto;
+  padding-top: 16px;
+  padding-bottom: 48px;
+}
+
+.project-main section {
+  padding: 16px 0 48px;
+}
+
+.project-main p {
+  margin-bottom: 0;
+  color: var(--text);
+}
+
+/* p+p already spaces paragraphs; drop the utility's extra padding */
+.project-main .pspacing p {
+  padding-bottom: 0;
+}
+
+.project-main blockquote {
+  margin: 16px 0;
+  padding: 14px 20px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  color: var(--text);
+}
+
+.project-main p.text-note {
+  color: var(--text-muted);
+}
+
+.project-main h3 {
+  margin-bottom: 10px;
+}
+
+.project-main .grid-2 {
+  gap: 32px;
+}
+
+/* -------------------- FEATURES -------------------- */
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.feature {
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+}
+
+.project-main .feature h3 {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.feature h3::before {
+  content: '▸ ';
+  color: var(--accent);
+}
+
+.project-main .feature p {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* -------------------- SHOWCASE -------------------- */
+.project-banner {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  margin-bottom: 16px;
+  cursor: zoom-in;
+  transition: border-color 0.2s ease;
+}
+
+.project-banner:hover {
+  border-color: var(--accent);
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.project-gallery--portrait {
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+}
+
+.project-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  cursor: zoom-in;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-gallery img:hover {
+  border-color: var(--accent);
+  transform: translateY(-6px);
+}
+
+/* -------------------- SIDEBAR -------------------- */
+.project-sidebar {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.sidebar-panel {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.sidebar-panel h3 {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-panel .arrowed-list li {
+  font-size: 0.82rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 10px;
+  margin: 0 -10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--text);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-links a::after {
+  content: '→';
+  color: var(--accent);
+  transition: transform 0.15s ease;
+}
+
+.sidebar-links a[target="_blank"]::after {
+  content: '↗';
+}
+
+.sidebar-links a:hover {
+  background: var(--surface-2);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.sidebar-links a:hover::after {
+  transform: translateX(3px);
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+  .project-hero {
+    padding: 32px 0 24px;
+  }
+
+  .project-hero-inner,
+  .project-layout {
+    /* minmax(0, …) so fixed-width content (game embeds) can't widen the column */
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .project-hero-media {
+    order: -1;
+  }
+
+  .project-hero-media--icon img {
+    max-width: 180px;
+  }
+
+  .project-hero h1 {
+    font-size: 2rem;
+  }
+
+  .project-sidebar {
+    position: static;
+    padding-top: 0;
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-stats .stat {
+    flex: 1 1 140px;
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery--portrait {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

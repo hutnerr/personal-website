@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <meta property="og:title" content="Hunter Baker | Forgotten Paths">
@@ -52,48 +53,33 @@
 <script src="/scripts/nav-active.js"></script>
 </div>
 
-    <section id="hero">
-        <div class="container">
-            <h1>forgotten paths<span class="cursor"></span></h1>
-            <p class="page-subtitle">$ a looping puzzle game built in 72 hours for GMTK 2025</p>
+    <section class="project-hero">
+        <div class="container project-hero-inner">
+            <div class="project-hero-text">
+                <h1>forgotten paths<span class="cursor"></span></h1>
+                <p class="project-tagline">a looping puzzle game built in 72 hours for GMTK 2025</p>
+                <div class="project-tags">
+                    <span class="status-badge status-badge--archived">archived</span>
+                    <span class="tech-tag"><i class="devicon-godot-plain"></i>Godot</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://hutnerr.itch.io/forgotten-paths" class="btn btn-primary" target="_blank">Play on itch.io</a>
+                    <a href="https://github.com/Rat-Haven-Studios/gmtk-jam-2025" class="btn" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <div class="project-hero-media">
+                <img src="/assets/projects/forgotten_paths/fp.gif" alt="Forgotten Paths gameplay loop" data-lightbox>
+            </div>
         </div>
     </section>
 
-    <section id="overview">
+    <section class="project-stats">
         <div class="container">
-            <h2>overview <span class="status-badge status-badge--archived">archived</span></h2>
-            <div class="grid grid-overview">
-                <div>
-                    <p>
-                        A puzzle game built in 72 hours for <a href="https://itch.io/jam/gmtk-2025" target="_blank">GMTK Game Jam 2025</a> (theme: "Loop").
-                        Built by <a href="https://rathavenstudios.com" target="_blank">Rat Haven Studios</a>!
-                    </p>
-                    <p>
-                        Program a sequence of movement commands that execute on repeat.
-                        Ranked in the top 6% of 9,500+ submissions.
-                    </p>
-                    <p>
-                        View the rankings on the <a href="/pages/other/game-jams.html" target="_blank">Jam Page</a>.
-                    </p>
-                </div>
-                <div>
-                    <h3>tech stack</h3>
-                    <ul class="arrowed-list">
-                        <li>Godot 4, GDScript</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://itch.io/jam/gmtk-2025/rate/3778927" target="_blank">Game Jam Page</a></li>
-                        <li><a href="https://hutnerr.itch.io/forgotten-paths" target="_blank">itch.io</a></li>
-                        <li><a href="https://github.com/Rat-Haven-Studios/gmtk-jam-2025" target="_blank">GitHub</a></li>
-                        <li><a href="https://rathavenstudios.com/pages/games/forgotten-paths-jam.html"
-                                target="_blank">RHS</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="stat-row">
+                <div class="stat">
+                    <span class="stat-value">300+</span>
+                    <span class="stat-label">itch.io views</span>
+                </div>
                 <div class="stat">
                     <span class="stat-value" data-stat="https://img.shields.io/github/stars/Rat-Haven-Studios/gmtk-jam-2025.json">&mdash;</span>
                     <span class="stat-label"><i class="devicon-github-original"></i>github stars</span>
@@ -102,20 +88,28 @@
         </div>
     </section>
 
-    <section id="features">
-        <div class="container">
-            <h2>features</h2>
-            <ul class="arrowed-list">
-                <li>Program a sequence of movement commands that execute on repeat.</li>
-                <li>Rotation commands make multi-step sequences genuinely tricky. The same command does different things depending on which way you're facing</li>
-                <li>A hints and solutions cheat sheet on the itch.io page for players who get stuck</li>
-            </ul>
-        </div>
-    </section>
+    <div class="container project-layout">
+        <main class="project-main">
+            <section id="overview">
+                <h2>overview</h2>
+                <div>
+                    <p>A puzzle game built in 72 hours for <a href="https://itch.io/jam/gmtk-2025" target="_blank">GMTK Game Jam 2025</a> (theme: "Loop"). Built by <a href="https://rathavenstudios.com" target="_blank">Rat Haven Studios</a>!</p>
+                    <p>Program a sequence of movement commands that execute on repeat. Ranked in the top 6% of 9,500+ submissions.</p>
+                    <p>View the rankings on the <a href="/pages/other/game-jams.html" target="_blank">Jam Page</a>.</p>
+                </div>
+            </section>
 
-    <section id="play">
-        <div class="container">
-            <h2>play</h2>
+            <section id="gameplay">
+                <h2>gameplay</h2>
+                <div>
+                    <p>Rotation commands make multi-step sequences genuinely tricky: the same command does different things depending on which way you're facing.</p>
+                    <p>If you get stuck, there's a hints and solutions cheat sheet on the itch.io page.</p>
+                </div>
+            </section>
+
+            <section id="play">
+                <h2>play</h2>
+
             <div class="game-embed">
                 <div class="game-embed-placeholder" data-src="https://itch.io/embed-upload/14538857?color=282828"
                     data-width="640" data-height="380">
@@ -123,25 +117,37 @@
                     <div class="play-overlay"><span class="play-btn">&#9654; Play</span></div>
                 </div>
             </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <div class="grid grid-2">
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/forgotten_paths/fp.gif"
-                    alt="Forgotten Paths gameplay loop" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/forgotten_paths/fp2.png"
-                    alt="Forgotten Paths level screenshot" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/forgotten_paths/fp4.png"
-                    alt="Forgotten Paths puzzle screenshot" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img"
-                    src="/assets/projects/forgotten_paths/forgotten-paths-results.png" alt="Forgotten Paths jam results"
-                    data-lightbox>
+            <section id="showcase">
+                <h2>showcase</h2>
+                <div class="project-gallery">
+                    <img src="/assets/projects/forgotten_paths/fp.gif" alt="Forgotten Paths gameplay loop" data-lightbox>
+                    <img src="/assets/projects/forgotten_paths/fp2.png" alt="Forgotten Paths level screenshot" data-lightbox>
+                    <img src="/assets/projects/forgotten_paths/fp4.png" alt="Forgotten Paths puzzle screenshot" data-lightbox>
+                    <img src="/assets/projects/forgotten_paths/forgotten-paths-results.png" alt="Forgotten Paths jam results" data-lightbox>
+                </div>
+            </section>
+        </main>
+
+        <aside class="project-sidebar">
+            <div class="sidebar-panel">
+                <h3>links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="https://itch.io/jam/gmtk-2025/rate/3778927" target="_blank">Game Jam Page</a></li>
+                    <li><a href="https://hutnerr.itch.io/forgotten-paths" target="_blank">itch.io</a></li>
+                    <li><a href="https://github.com/Rat-Haven-Studios/gmtk-jam-2025" target="_blank">GitHub</a></li>
+                    <li><a href="https://rathavenstudios.com/pages/games/forgotten-paths-jam.html" target="_blank">RHS</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
+            <div class="sidebar-panel">
+                <h3>tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>Godot 4, GDScript</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <div id="footer">
 <footer class="site-footer">

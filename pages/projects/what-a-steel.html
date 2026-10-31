@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
 
     <meta property="og:title" content="Hunter Baker | What a STEEL!">
     <meta property="og:description"
@@ -50,52 +51,51 @@
 <script src="/scripts/nav-active.js"></script>
 </div>
 
-    <section id="hero">
-        <div class="container">
-            <h1>what a steel!<span class="cursor"></span></h1>
-            <p class="page-subtitle">$ a cyborg roguelike about fighting through arenas and buying upgrades you can't trust</p>
+    <section class="project-hero">
+        <div class="container project-hero-inner">
+            <div class="project-hero-text">
+                <h1>what a steel!<span class="cursor"></span></h1>
+                <p class="project-tagline">a cyborg roguelike about fighting through arenas and buying upgrades you can't trust</p>
+                <div class="project-tags">
+                    <span class="status-badge status-badge--archived">archived</span>
+                    <span class="tech-tag"><i class="devicon-godot-plain"></i>Godot</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://hutnerr.itch.io/what-a-steel" class="btn btn-primary" target="_blank">Play on itch.io</a>
+                    <a href="https://itch.io/jam/brackeys-16/rate/4951326" class="btn" target="_blank">Game Jam Page</a>
+                </div>
+            </div>
+            <div class="project-hero-media">
+                <img src="/assets/projects/what_a_steel/cover.png" alt="What a STEEL! cover art" data-lightbox>
+            </div>
         </div>
     </section>
 
-    <section id="overview">
+    <section class="project-stats">
         <div class="container">
-            <h2>overview <span class="status-badge status-badge--archived">archived</span></h2>
-            <div class="grid grid-overview">
-                <div>
-                    <p>
-                        A cyborg roguelike built for <a href="https://itch.io/jam/brackeys-16" target="_blank">Brackeys Game Jam 2026.2</a> (theme: "Trust No One").
-                        Built by <a href="https://rathavenstudios.com" target="_blank">Rat Haven Studios</a>!
-                    </p>
-                    <p>
-                        You're a cyborg robot fighter struggling to keep up with the technological advances, the only
-                        augments you can get come from sketchy dealers. Beware, they don't always tell the truth...
-                    </p>
-                    <p>
-                        View the rankings on the <a href="/pages/other/game-jams.html" target="_blank">Jam Page</a>.
-                    </p>
-                </div>
-                <div>
-                    <h3>tech stack</h3>
-                    <ul class="arrowed-list">
-                        <li>Godot 4, GDScript</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://itch.io/jam/brackeys-16/rate/4951326" target="_blank">Game Jam Page</a></li>
-                        <li><a href="https://hutnerr.itch.io/what-a-steel" target="_blank">itch.io</a></li>
-                        <li><a href="https://rathavenstudios.com/pages/games/what-a-steel.html"
-                                target="_blank">RHS</a></li>
-                    </ul>
+            <div class="stat-row">
+                <div class="stat">
+                    <span class="stat-value">50+</span>
+                    <span class="stat-label">itch.io views</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="play">
-        <div class="container">
-            <h2>play</h2>
+    <div class="container project-layout">
+        <main class="project-main">
+            <section id="overview">
+                <h2>overview</h2>
+                <div>
+                    <p>A cyborg roguelike built for <a href="https://itch.io/jam/brackeys-16" target="_blank">Brackeys Game Jam 2026.2</a> (theme: "Trust No One"). Built by <a href="https://rathavenstudios.com" target="_blank">Rat Haven Studios</a>!</p>
+                    <p>You're a cyborg robot fighter struggling to keep up with the technological advances, the only augments you can get come from sketchy dealers. Beware, they don't always tell the truth...</p>
+                    <p>View the rankings on the <a href="/pages/other/game-jams.html" target="_blank">Jam Page</a>.</p>
+                </div>
+            </section>
+
+            <section id="play">
+                <h2>play</h2>
+
             <div class="game-embed">
                 <div class="game-embed-placeholder" data-src="https://itch.io/embed-upload/19024847?color=282828"
                     data-width="640" data-height="380">
@@ -103,12 +103,11 @@
                     <div class="play-overlay"><span class="play-btn">&#9654; Play</span></div>
                 </div>
             </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="how-to-play">
-        <div class="container">
-            <h2>how to play</h2>
+            <section id="how-to-play">
+                <h2>how to play</h2>
+
             <div class="grid grid-2">
                 <div>
                     <h3>controls</h3>
@@ -134,24 +133,36 @@
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <div class="grid grid-2">
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/what_a_steel/screenshot-1.png"
-                    alt="What a STEEL! gameplay" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/what_a_steel/screenshot-2.png"
-                    alt="What a STEEL! shop screenshot" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/what_a_steel/screenshot-3.png"
-                    alt="What a STEEL! combat screenshot" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/what_a_steel/screenshot-4.png"
-                    alt="What a STEEL! journal screenshot" data-lightbox>
+            <section id="showcase">
+                <h2>showcase</h2>
+                <div class="project-gallery">
+                    <img src="/assets/projects/what_a_steel/screenshot-1.png" alt="What a STEEL! gameplay" data-lightbox>
+                    <img src="/assets/projects/what_a_steel/screenshot-2.png" alt="What a STEEL! shop screenshot" data-lightbox>
+                    <img src="/assets/projects/what_a_steel/screenshot-3.png" alt="What a STEEL! combat screenshot" data-lightbox>
+                    <img src="/assets/projects/what_a_steel/screenshot-4.png" alt="What a STEEL! journal screenshot" data-lightbox>
+                </div>
+            </section>
+        </main>
+
+        <aside class="project-sidebar">
+            <div class="sidebar-panel">
+                <h3>links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="https://itch.io/jam/brackeys-16/rate/4951326" target="_blank">Game Jam Page</a></li>
+                    <li><a href="https://hutnerr.itch.io/what-a-steel" target="_blank">itch.io</a></li>
+                    <li><a href="https://rathavenstudios.com/pages/games/what-a-steel.html" target="_blank">RHS</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
+            <div class="sidebar-panel">
+                <h3>tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>Godot 4, GDScript</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <div id="footer">
 <footer class="site-footer">

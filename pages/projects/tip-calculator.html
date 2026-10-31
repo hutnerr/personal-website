@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <meta property="og:title" content="Hunter Baker | Tip Calculator">
@@ -51,52 +52,30 @@
 <script src="/scripts/nav-active.js"></script>
 </div>
 
-    <section id="hero">
-        <div class="container">
-            <h1>tip calculator<span class="cursor"></span></h1>
-            <p class="page-subtitle">$ an ad-free Android tip calculator with rounding modes and bill splitting</p>
+    <section class="project-hero">
+        <div class="container project-hero-inner">
+            <div class="project-hero-text">
+                <h1>tip calculator<span class="cursor"></span></h1>
+                <p class="project-tagline">an ad-free Android tip calculator with rounding modes and bill splitting</p>
+                <div class="project-tags">
+                    <span class="status-badge status-badge--maintained">maintained</span>
+                    <span class="tech-tag"><i class="devicon-java-plain"></i>Java</span>
+                    <span class="tech-tag"><i class="devicon-android-plain"></i>Android</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://play.google.com/store/apps/details?id=com.hbtipcalc.tipcalculator" class="btn btn-primary"
+                        target="_blank">Get it on Play Store</a>
+                    <a href="https://github.com/hutnerr/tip-calculator" class="btn" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <div class="project-hero-media project-hero-media--icon">
+                <img src="/assets/projects/tip_calculator/tc-logo.png" alt="Tip Calculator app icon" data-lightbox>
+            </div>
         </div>
     </section>
 
-    <section id="overview">
+    <section class="project-stats">
         <div class="container">
-            <h2>overview <span class="status-badge status-badge--maintained">maintained</span></h2>
-            <div class="grid grid-overview">
-                <div>
-                    <p>
-                        I initially made this as a way to learn Android development and see how I liked it,
-                        but after researching the competition, I realized that most tip calculators are 
-                        plastered with ads and have horrible UX. I figured I could do it better.
-                    </p>
-                    <p>
-                        This Calculator is designed to be fast and be easy to use. It's as simple as opening the app
-                        and typing in the bill amount. The tip and total calculate immediately using your saved settings.
-                    </p>
-                    <p>
-                        It is pretty configurable (see features section below) and has multiple themes to keep everyone happy.
-                    </p>
-                </div>
-                <div>
-                    <h3>tech stack</h3>
-                    <ul class="arrowed-list">
-                        <li>Java, Android SDK</li>
-                        <li>DataStore (RxDataStore)</li>
-                        <li>BigDecimal (exact monetary arithmetic)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://play.google.com/store/apps/details?id=com.hbtipcalc.tipcalculator"
-                                target="_blank">Play Store</a></li>
-                        <li><a href="https://github.com/hutnerr/tip-calculator" target="_blank">GitHub</a></li>
-                        <li><a href="https://github.com/hutnerr/tip-calculator/releases" target="_blank">APK
-                                Download</a></li>
-                        <li><a href="/pages/other/tip-calculator-help.html">Help Page</a></li>
-                        <li><a href="/pages/other/tip-calculator-privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="stat-row">
                 <div class="stat">
                     <span class="stat-value">100+</span>
@@ -114,37 +93,101 @@
         </div>
     </section>
 
-    <section id="features">
-        <div class="container">
-            <h2>features</h2>
-            <ul class="arrowed-list">
-                <li><strong>Zero ads, completely free</strong> - no ads, no paywalls, no in-app purchases</li>
-                <li><strong>Four rounding modes</strong> - always up, always down, nearest cent, or exact. Useful when rounding direction matters for expense reports or group fairness</li>
-                <li><strong>Bill splitting</strong> - split among up to 99 people and see exactly what each person owes</li>
-                <li><strong>Persistent settings</strong> - remembers your preferred tip %, currency, theme, and rounding mode between sessions so you never reconfigure it</li>
-                <li><strong>Multiple themes</strong> - several preset color themes including Gruvbox and Dracula</li>
-                <li><strong>Works offline</strong> - no internet connection required, ever</li>
-                <li><strong>Custom numpad</strong> - standard or inverted layout, whichever feels natural</li>
-                <li><strong>Input Types</strong> - choose between a slider or quick buttons for tip percent selection</li>
-            </ul>
-        </div>
-    </section>
+    <div class="container project-layout">
+        <main class="project-main">
+            <section id="overview">
+                <h2>overview</h2>
+                <div>
+                    <p>
+                        I initially made this as a way to learn Android development and see how I liked it,
+                        but after researching the competition, I realized that most tip calculators are
+                        plastered with ads and have horrible UX.
+                    </p>
+                    <blockquote>I figured I could do it better.</blockquote>
+                    <p>
+                        This Calculator is designed to be fast and be easy to use. It's as simple as opening the app
+                        and typing in the bill amount. The tip and total calculate immediately using your saved settings.
+                    </p>
+                    <p>
+                        It is pretty configurable (see features section below) and has multiple themes to keep everyone happy.
+                    </p>
+                </div>
+            </section>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/tip_calculator/tc-banner.png"
-                alt="Tip Calculator app banner" data-lightbox>
-            <div class="screenshot-row">
-                <img src="/assets/projects/tip_calculator/tc1.jpg" alt="Tip Calculator screenshot" data-lightbox>
-                <img src="/assets/projects/tip_calculator/tc2.jpg" alt="Tip Calculator screenshot" data-lightbox>
-                <img src="/assets/projects/tip_calculator/tc3.jpg" alt="Tip Calculator screenshot" data-lightbox>
-                <img src="/assets/projects/tip_calculator/tc4.jpg" alt="Tip Calculator screenshot" data-lightbox>
-                <img src="/assets/projects/tip_calculator/tc5.jpg" alt="Tip Calculator screenshot" data-lightbox>
-                <img src="/assets/projects/tip_calculator/tc6.jpg" alt="Tip Calculator screenshot" data-lightbox>
+            <section id="features">
+                <h2>features</h2>
+                <div class="feature-list">
+                    <div class="feature">
+                        <h3>Zero ads, completely free</h3>
+                        <p>No ads, no paywalls, no in-app purchases.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Four rounding modes</h3>
+                        <p>Always up, always down, nearest cent, or exact. Useful when rounding direction matters for expense reports or group fairness.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Bill splitting</h3>
+                        <p>Split among up to 99 people and see exactly what each person owes.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Persistent settings</h3>
+                        <p>Remembers your preferred tip %, currency, theme, and rounding mode between sessions so you never reconfigure it.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Multiple themes</h3>
+                        <p>Several preset color themes including Gruvbox and Dracula.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Works offline</h3>
+                        <p>No internet connection required, ever.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Custom numpad</h3>
+                        <p>Standard or inverted layout, whichever feels natural.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Input types</h3>
+                        <p>Choose between a slider or quick buttons for tip percent selection.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="showcase">
+                <h2>showcase</h2>
+                <img class="project-banner" src="/assets/projects/tip_calculator/tc-banner.png"
+                    alt="Tip Calculator app banner" data-lightbox>
+                <div class="project-gallery project-gallery--portrait">
+                    <img src="/assets/projects/tip_calculator/tc1.jpg" alt="Tip Calculator screenshot" data-lightbox>
+                    <img src="/assets/projects/tip_calculator/tc2.jpg" alt="Tip Calculator screenshot" data-lightbox>
+                    <img src="/assets/projects/tip_calculator/tc3.jpg" alt="Tip Calculator screenshot" data-lightbox>
+                    <img src="/assets/projects/tip_calculator/tc4.jpg" alt="Tip Calculator screenshot" data-lightbox>
+                    <img src="/assets/projects/tip_calculator/tc5.jpg" alt="Tip Calculator screenshot" data-lightbox>
+                    <img src="/assets/projects/tip_calculator/tc6.jpg" alt="Tip Calculator screenshot" data-lightbox>
+                </div>
+            </section>
+        </main>
+
+        <aside class="project-sidebar">
+            <div class="sidebar-panel">
+                <h3>links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hbtipcalc.tipcalculator" target="_blank">Play Store</a></li>
+                    <li><a href="https://github.com/hutnerr/tip-calculator" target="_blank">GitHub</a></li>
+                    <li><a href="https://github.com/hutnerr/tip-calculator/releases" target="_blank">APK Download</a></li>
+                    <li><a href="/pages/other/tip-calculator-help.html">Help Page</a></li>
+                    <li><a href="/pages/other/tip-calculator-privacy-policy.html">Privacy Policy</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
+            <div class="sidebar-panel">
+                <h3>tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>Java, Android SDK</li>
+                    <li>DataStore (RxDataStore)</li>
+                    <li>BigDecimal (exact monetary arithmetic)</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <div id="footer">
 <footer class="site-footer">

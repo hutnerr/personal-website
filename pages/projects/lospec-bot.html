@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <meta property="og:title" content="Hunter Baker | Lospec Daily Bot">
@@ -51,47 +52,29 @@
 <script src="/scripts/nav-active.js"></script>
 </div>
 
-    <section id="hero">
-        <div class="container">
-            <h1>lospec daily bot<span class="cursor"></span></h1>
-            <p class="page-subtitle">$ daily pixel art palette posts from <a href="https://lospec.com" target="_blank">Lospec</a> to your Discord server</p>
+    <section class="project-hero">
+        <div class="container project-hero-inner">
+            <div class="project-hero-text">
+                <h1>lospec daily bot<span class="cursor"></span></h1>
+                <p class="project-tagline">daily pixel art palette posts from <a href="https://lospec.com" target="_blank">Lospec</a> to your Discord server</p>
+                <div class="project-tags">
+                    <span class="status-badge status-badge--maintained">maintained</span>
+                    <span class="tech-tag"><i class="devicon-python-plain"></i>Python</span>
+                    <span class="tech-tag"><i class="devicon-raspberrypi-plain"></i>Raspberry Pi</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1457439367500009597&amp;permissions=2147485696&amp;integration_type=0&amp;scope=bot" class="btn btn-primary" target="_blank">Add to Server</a>
+                    <a href="https://github.com/hutnerr/lospec-daily-bot" class="btn" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <div class="project-hero-media">
+                <img src="/assets/projects/lospec_bot/lospec-bot-ss.png" alt="Lospec Daily Bot Discord post" data-lightbox>
+            </div>
         </div>
     </section>
 
-    <section id="overview">
+    <section class="project-stats">
         <div class="container">
-            <h2>overview <span class="status-badge status-badge--maintained">maintained</span></h2>
-            <div class="grid grid-overview">
-                <div>
-                    <p>
-                        This bot was built for <a href="https://rathavenstudios.com" target="_blank">Rat Haven Studios</a> to improve pixel art skills.
-                    <p>
-                        It posts the <a href="https://lospec.com/dailies" target="_blank">Lospec Daily</a> to a set discord channel every morning at 8 AM EST, 
-                        giving artists a regular prompt and palette to practice with. 
-                    </p>
-                    <p>
-                        Not affiliated with Lospec.
-                    </p>
-                </div>
-                <div>
-                    <h3>tech stack</h3>
-                    <ul class="arrowed-list">
-                        <li>Python</li>
-                        <li>Discord.py</li>
-                        <li>Aiohttp (async HTTP)</li>
-                        <li>BeautifulSoup4 (HTML scraping)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/lospec-daily-bot" target="_blank">GitHub</a></li>
-                        <li><a href="https://discord.com/oauth2/authorize?client_id=1457439367500009597&permissions=2147485696&integration_type=0&scope=bot"
-                                target="_blank">Add to Server</a></li>
-                        <li><a href="https://top.gg/bot/1457439367500009597" target="_blank">Top.gg</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="stat-row">
                 <div class="stat">
                     <span class="stat-value" data-stat="https://img.shields.io/github/stars/hutnerr/lospec-daily-bot.json">&mdash;</span>
@@ -101,26 +84,51 @@
         </div>
     </section>
 
-    <section id="features">
-        <div class="container">
-            <h2>features</h2>
-            <ul class="arrowed-list">
-                <li>Automatically posts Lospec's daily pixel art palette and prompt to your server every morning at 8 AM EST</li>
-                <li>Set it up once with a single slash command. No ongoing maintenance needed</li>
-                <li>Enable or disable automatic posting at any time without losing your channel configuration</li>
-                <li>Check the current daily palette on demand with <code>/getdailydata</code>, outside of the scheduled post</li>
-                <li>Per-server configuration. Each server controls its own channel and settings independently</li>
-            </ul>
-        </div>
-    </section>
+    <div class="container project-layout">
+        <main class="project-main">
+            <section id="overview">
+                <h2>overview</h2>
+                <div>
+                    <p>This bot was built for <a href="https://rathavenstudios.com" target="_blank">Rat Haven Studios</a> to improve pixel art skills.</p>
+                    <p>It posts the <a href="https://lospec.com/dailies" target="_blank">Lospec Daily</a> to a set discord channel every morning at 8 AM EST, giving artists a regular prompt and palette to practice with.</p>
+                    <p class="text-note">Not affiliated with Lospec.</p>
+                </div>
+            </section>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/lospec_bot/lospec-bot-ss.png"
-                alt="Lospec Daily Bot Discord screenshot" data-lightbox>
-        </div>
-    </section>
+            <section id="how-it-works">
+                <h2>how it works</h2>
+                <div>
+                    <p>Set it up once with a single slash command and the bot posts Lospec's daily pixel art palette and prompt to your channel every morning at 8 AM EST. No ongoing maintenance needed.</p>
+                    <p>Automatic posting can be enabled or disabled at any time without losing your channel configuration, and <code>/getdailydata</code> shows the current daily palette on demand, outside of the scheduled post. Each server controls its own channel and settings independently.</p>
+                </div>
+            </section>
+
+            <section id="showcase">
+                <h2>showcase</h2>
+                <img class="project-banner" src="/assets/projects/lospec_bot/lospec-bot-ss.png" alt="Lospec Daily Bot Discord screenshot" style="max-width: 570px;" data-lightbox>
+            </section>
+        </main>
+
+        <aside class="project-sidebar">
+            <div class="sidebar-panel">
+                <h3>links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="https://github.com/hutnerr/lospec-daily-bot" target="_blank">GitHub</a></li>
+                    <li><a href="https://discord.com/oauth2/authorize?client_id=1457439367500009597&amp;permissions=2147485696&amp;integration_type=0&amp;scope=bot" target="_blank">Add to Server</a></li>
+                    <li><a href="https://top.gg/bot/1457439367500009597" target="_blank">Top.gg</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-panel">
+                <h3>tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>Python</li>
+                    <li>Discord.py</li>
+                    <li>Aiohttp (async HTTP)</li>
+                    <li>BeautifulSoup4 (HTML scraping)</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <div id="footer">
 <footer class="site-footer">

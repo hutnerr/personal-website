@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <meta property="og:title" content="Hunter Baker | Navigation System">
@@ -51,49 +52,28 @@
 <script src="/scripts/nav-active.js"></script>
 </div>
 
-    <section id="hero">
-        <div class="container">
-            <h1>navigation system<span class="cursor"></span></h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">$ a real-time GPS navigation system with two
-                routing algorithms</p>
+    <section class="project-hero">
+        <div class="container project-hero-inner">
+            <div class="project-hero-text">
+                <h1>navigation system<span class="cursor"></span></h1>
+                <p class="project-tagline">a real-time GPS navigation system with two routing algorithms</p>
+                <div class="project-tags">
+                    <span class="tech-tag"><i class="devicon-java-plain"></i>Java</span>
+                    <span class="tech-tag">Swing</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/hutnerr/navsys" class="btn btn-primary" target="_blank">View on GitHub</a>
+                    <a href="/assets/projects/navsys/navsystemdesign.svg" class="btn">Design Doc</a>
+                </div>
+            </div>
+            <div class="project-hero-media">
+                <img src="/assets/projects/navsys/navsys.gif" alt="NavSys real-time navigation demo" data-lightbox>
+            </div>
         </div>
     </section>
 
-    <section id="overview">
+    <section class="project-stats">
         <div class="container">
-            <h2>overview</h2>
-            <div class="pspacing">
-                <p>NavSys is a Java desktop application that turns a USB satellite receiver into a working navigation
-                    system. It reads raw NMEA GPGGA sentences from the serial port, parses the coordinate data, and
-                    displays live position on a map rendered in Swing. Setting a destination triggers route calculation
-                    using either Dijkstra's or Bellman-Ford on a graph of road nodes, with automatic rerouting if the
-                    current position drifts off the calculated path.</p>
-            </div>
-
-            <div class="grid grid-2" style="margin-top: 24px; gap: 32px;">
-                <div>
-                    <h3 style="margin-bottom: 12px;">tech stack</h3>
-                    <ul class="arrowed-list">
-                        <li>Java 17, Swing: desktop GUI with live-updating map display</li>
-                        <li>jSerialComm 2.11.0: serial port communication for USB GPS hardware</li>
-                        <li>GPGGA parsing: converts DDmm.mm NMEA format to decimal degrees</li>
-                        <li>Dijkstra's (Label Setting): with PermanentLabelBuckets optimization using 1km-width bucket
-                            bins</li>
-                        <li>Bellman-Ford (Label Correcting): with early termination; supports comparison against
-                            Dijkstra's</li>
-                        <li>SwingWorker: background GPS read thread publishes position updates to the Swing EDT</li>
-                        <li>Observer, MVC, Strategy patterns: GPS data flow, display separation, and interchangeable
-                            routing</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 style="margin-bottom: 12px;">links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/navsys" target="_blank">GitHub</a></li>
-                        <li><a href="/assets/projects/navsys/navsystemdesign.svg">Design Doc</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="stat-row">
                 <div class="stat">
                     <span class="stat-value" data-stat="https://img.shields.io/github/stars/hutnerr/navsys.json">&mdash;</span>
@@ -103,19 +83,24 @@
         </div>
     </section>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/navsys/navsys.gif"
-                alt="NavSys real-time navigation demo" data-lightbox>
-            <img class="walkthrough-img hover-img sized-img" style="background-color: white; margin-top: 1rem;"
-                src="/assets/projects/navsys/navsystemdesign.svg" alt="NavSys system design document" data-lightbox>
-        </div>
-    </section>
+    <div class="container project-layout">
+        <main class="project-main">
+            <section id="overview">
+                <h2>overview</h2>
+                <div>
+                    <p>NavSys is a Java desktop application that turns a USB satellite receiver into a working navigation system. It reads raw NMEA GPGGA sentences from the serial port, parses the coordinate data, and displays live position on a map rendered in Swing. Setting a destination triggers route calculation using either Dijkstra's or Bellman-Ford on a graph of road nodes, with automatic rerouting if the current position drifts off the calculated path.</p>
+                </div>
+            </section>
 
-    <section id="how-it-works">
-        <div class="container">
-            <h2>how it works</h2>
+            <section id="showcase">
+                <h2>showcase</h2>
+                <img class="project-banner" src="/assets/projects/navsys/navsys.gif" alt="NavSys real-time navigation demo" data-lightbox>
+                <img class="project-banner" src="/assets/projects/navsys/navsystemdesign.svg" alt="NavSys system design document" style="background-color: white;" data-lightbox>
+            </section>
+
+            <section id="how-it-works">
+                <h2>how it works</h2>
+
             <div class="pspacing">
                 <p>GPS data arrives continuously on the serial port via jSerialComm. A <code>GPSReaderTask</code>
                     extends <code>SwingWorker</code>, running the read loop on a background thread and publishing parsed
@@ -138,12 +123,11 @@
                     destination rather than the source, so any new source position finds its path in O(P) time (path
                     length) rather than rerunning the full algorithm.</p>
             </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="challenges">
-        <div class="container">
-            <h2>challenges</h2>
+            <section id="challenges">
+                <h2>challenges</h2>
+
             <div class="pspacing">
                 <p>The biggest challenge going in was that I knew nothing about GPS technology. I learned about
                     satellite receivers, NMEA sentence formats, and coordinate systems while simultaneously building the
@@ -159,12 +143,11 @@
                     Pre-computing the all-shortest-paths tree from the destination inverts the direction and makes
                     rerouting a simple lookup regardless of where the current position is.</p>
             </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="takeaways">
-        <div class="container">
-            <h2>takeaways</h2>
+            <section id="takeaways">
+                <h2>takeaways</h2>
+
             <div class="pspacing">
                 <p>This project spanned hardware integration, real-time data processing, and algorithm implementation,
                     a much broader scope than typical coursework. Some key takeaways:</p>
@@ -177,8 +160,31 @@
                     <li>MVC, Observer, and Strategy patterns applied to a real-time system</li>
                 </ul>
             </div>
-        </div>
-    </section>
+            </section>
+        </main>
+
+        <aside class="project-sidebar">
+            <div class="sidebar-panel">
+                <h3>links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="https://github.com/hutnerr/navsys" target="_blank">GitHub</a></li>
+                    <li><a href="/assets/projects/navsys/navsystemdesign.svg">Design Doc</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-panel">
+                <h3>tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>Java 17, Swing: desktop GUI with live-updating map display</li>
+                    <li>jSerialComm 2.11.0: serial port communication for USB GPS hardware</li>
+                    <li>GPGGA parsing: converts DDmm.mm NMEA format to decimal degrees</li>
+                    <li>Dijkstra's (Label Setting): with PermanentLabelBuckets optimization using 1km-width bucket bins</li>
+                    <li>Bellman-Ford (Label Correcting): with early termination; supports comparison against Dijkstra's</li>
+                    <li>SwingWorker: background GPS read thread publishes position updates to the Swing EDT</li>
+                    <li>Observer, MVC, Strategy patterns: GPS data flow, display separation, and interchangeable routing</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <div id="footer">
 <footer class="site-footer">

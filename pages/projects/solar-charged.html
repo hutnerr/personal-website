@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <meta property="og:title" content="Hunter Baker | Solar Charged">
@@ -52,54 +53,33 @@
 <script src="/scripts/nav-active.js"></script>
 </div>
 
-    <section id="hero">
-        <div class="container">
-            <h1>solar charged<span class="cursor"></span></h1>
-            <p class="page-subtitle">$ a resource management tower defense game where energy is currency and health</p>
+    <section class="project-hero">
+        <div class="container project-hero-inner">
+            <div class="project-hero-text">
+                <h1>solar charged<span class="cursor"></span></h1>
+                <p class="project-tagline">a resource management tower defense game where energy is currency and health</p>
+                <div class="project-tags">
+                    <span class="status-badge status-badge--archived">archived</span>
+                    <span class="tech-tag"><i class="devicon-godot-plain"></i>Godot</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://hutnerr.itch.io/solarcharged" class="btn btn-primary" target="_blank">Play on itch.io</a>
+                    <a href="https://github.com/Rat-Haven-Studios/kenny-jam-2025" class="btn" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <div class="project-hero-media">
+                <img src="/assets/projects/solar_charged/solar-charged-clouds.gif" alt="Solar Charged gameplay" data-lightbox>
+            </div>
         </div>
     </section>
 
-    <section id="overview">
+    <section class="project-stats">
         <div class="container">
-            <h2>overview <span class="status-badge status-badge--archived">archived</span></h2>
-            <div class="grid grid-overview">
-                <div>
-                    <p>
-                        A tower defense game built with a partner for <a href="https://itch.io/jam/kenney-jam-2025" target="_blank">Kenny Game Jam 2025</a> (theme: "Power").
-                        Built by <a href="https://rathavenstudios.com" target="_blank">Rat Haven Studios</a>!
-                    </p>
-                    <p>
-                        Energy is both your currency and your health. Place too many towers and you run out of power,
-                        and you lose.
-                    </p>
-                    <p>
-                         View the rankings on the <a href="/pages/other/game-jams.html" target="_blank">Jam Page</a>.
-                    </p>
-                
-
-                </div>
-                <div>
-                    <h3>tech stack</h3>
-                    <ul class="arrowed-list">
-                        <li>Godot 4, GDScript</li>
-                        <li>Explicit state machine (5 game states)</li>
-                        <li>Weighted weather state transitions</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://itch.io/jam/kenney-jam-2025/rate/3734468" target="_blank">Game Jam Page</a>
-                        </li>
-                        <li><a href="https://hutnerr.itch.io/solarcharged" target="_blank">itch.io</a></li>
-                        <li><a href="https://github.com/Rat-Haven-Studios/kenny-jam-2025" target="_blank">GitHub</a>
-                        </li>
-                        <li><a href="https://rathavenstudios.com/pages/games/solar-charged.html" target="_blank">RHS</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
             <div class="stat-row">
+                <div class="stat">
+                    <span class="stat-value">150+</span>
+                    <span class="stat-label">itch.io views</span>
+                </div>
                 <div class="stat">
                     <span class="stat-value" data-stat="https://img.shields.io/github/stars/Rat-Haven-Studios/kenny-jam-2025.json">&mdash;</span>
                     <span class="stat-label"><i class="devicon-github-original"></i>github stars</span>
@@ -108,22 +88,46 @@
         </div>
     </section>
 
-    <section id="features">
-        <div class="container">
-            <h2>features</h2>
-            <ul class="arrowed-list">
-                <li>Energy doubles as your health. Spending it on towers puts you at risk; drain it completely and it's game over</li>
-                <li>A live weather cycle (Rain, Cloudy, Normal, Sunny) shifts your solar recharge rate mid-wave, forcing you to adapt on the fly</li>
-                <li>Five tower types with distinct roles: basic shooter, piercing laser, area damage, slow, and an energy booster that amplifies nearby towers</li>
-                <li>Each tower has two independent upgrade paths with three levels, letting you specialize your build </li>
-                <li>Between-wave shop phases to regroup, adjust your layout, and prepare for the next push</li>
-            </ul>
-        </div>
-    </section>
+    <div class="container project-layout">
+        <main class="project-main">
+            <section id="overview">
+                <h2>overview</h2>
+                <div>
+                    <p>A tower defense game built with a partner for <a href="https://itch.io/jam/kenney-jam-2025" target="_blank">Kenny Game Jam 2025</a> (theme: "Power"). Built by <a href="https://rathavenstudios.com" target="_blank">Rat Haven Studios</a>!</p>
+                    <p>Energy is both your currency and your health. Place too many towers and you run out of power, and you lose.</p>
+                    <p>View the rankings on the <a href="/pages/other/game-jams.html" target="_blank">Jam Page</a>.</p>
+                </div>
+            </section>
 
-    <section id="play">
-        <div class="container">
-            <h2>play</h2>
+            <section id="features">
+                <h2>features</h2>
+                <div class="feature-list">
+                    <div class="feature">
+                        <h3>Energy is health</h3>
+                        <p>Energy doubles as your health. Spending it on towers puts you at risk; drain it completely and it's game over.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Live weather cycle</h3>
+                        <p>A live weather cycle (Rain, Cloudy, Normal, Sunny) shifts your solar recharge rate mid-wave, forcing you to adapt on the fly.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Five tower types</h3>
+                        <p>Five tower types with distinct roles: basic shooter, piercing laser, area damage, slow, and an energy booster that amplifies nearby towers.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Upgrade paths</h3>
+                        <p>Each tower has two independent upgrade paths with three levels, letting you specialize your build.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Shop phases</h3>
+                        <p>Between-wave shop phases to regroup, adjust your layout, and prepare for the next push.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="play">
+                <h2>play</h2>
+
             <div class="game-embed">
                 <div class="game-embed-placeholder" data-src="https://itch.io/embed-upload/14352782?color=282828"
                     data-width="640" data-height="380">
@@ -131,12 +135,11 @@
                     <div class="play-overlay"><span class="play-btn">&#9654; Play</span></div>
                 </div>
             </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="how-to-play">
-        <div class="container">
-            <h2>how to play</h2>
+            <section id="how-to-play">
+                <h2>how to play</h2>
+
             <div class="pspacing">
                 <p>Manage your power effectively while defending against waves of enemies. Place and upgrade towers
                     strategically, but the more towers you have and the more you upgrade them, the more power they
@@ -155,18 +158,34 @@
                 <li><strong>Blue Tower:</strong> Slows down enemies by a percent</li>
                 <li><strong>Grey Tower:</strong> Deals constant damage in its radius</li>
             </ul>
-        </div>
-    </section>
+            </section>
 
+            <section id="showcase">
+                <h2>showcase</h2>
+                <img class="project-banner" src="/assets/projects/solar_charged/solar-charged-clouds.gif" alt="Solar Charged gameplay" data-lightbox>
+            </section>
+        </main>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img"
-                src="/assets/projects/solar_charged/solar-charged-clouds.gif" alt="Solar Charged gameplay"
-                data-lightbox>
-        </div>
-    </section>
+        <aside class="project-sidebar">
+            <div class="sidebar-panel">
+                <h3>links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="https://itch.io/jam/kenney-jam-2025/rate/3734468" target="_blank">Game Jam Page</a></li>
+                    <li><a href="https://hutnerr.itch.io/solarcharged" target="_blank">itch.io</a></li>
+                    <li><a href="https://github.com/Rat-Haven-Studios/kenny-jam-2025" target="_blank">GitHub</a></li>
+                    <li><a href="https://rathavenstudios.com/pages/games/solar-charged.html" target="_blank">RHS</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-panel">
+                <h3>tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>Godot 4, GDScript</li>
+                    <li>Explicit state machine (5 game states)</li>
+                    <li>Weighted weather state transitions</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <div id="footer">
 <footer class="site-footer">

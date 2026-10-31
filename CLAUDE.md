@@ -31,12 +31,14 @@ There is no dev server, test suite, or linter. Development is: edit files → ru
 **Styling:** `styles/styles.css` defines the global design system (CSS variables, typography). Other CSS files are scoped by concern: `components.css`, `sections.css`, and per-page files under `styles/pages/`. Active per-page CSS files:
 - `styles/pages/homepage.css` - home page only
 - `styles/pages/contact-page.css` - contact page
+- `styles/pages/project-page.css` - project showcase pages (`pages/projects/`)
 
 **JavaScript:**
 - `scripts/nav-active.js` - highlights active nav link based on current URL path
 - `scripts/projects-filter.js` - filters the projects grid using `data-category` attributes
 - `scripts/lightbox.js` - image lightbox on click
 - `scripts/game-embed.js` - lazy-loads itch.io game embeds on click
+- `scripts/project-stats.js` - fills `[data-stat]` elements with live values from shields.io JSON endpoints (GitHub stars, downloads)
 
 ## Design System
 
@@ -65,7 +67,7 @@ Background: `body::before` CSS mask using `/assets/background/topography.svg` �
 
 ## Page Conventions
 
-**Hero section:** All sub-pages use a simple hero - `h1` + optional `p` directly inside `.container`, no wrapper divs:
+**Hero section:** All sub-pages except project pages use a simple hero - `h1` + optional `p` directly inside `.container`, no wrapper divs:
 ```html
 <section id="hero">
     <div class="container">
@@ -78,11 +80,16 @@ The `#hero > .container > h1` selector in `sections.css` centers this automatica
 
 **Section titles:** All lowercase (e.g. `<h2>overview</h2>`, not `Overview`).
 
-**Project pages** use a vertical layout:
-- Hero with title + tagline
-- Overview section with description paragraphs, tech stack as `.grid-2` lists, and link buttons
-- Additional sections as needed (e.g. features, usage)
-- Links use `.btn.btn-background` class: `<a href="..." class="btn btn-background" target="_blank">Label</a>`
+**Project pages** (`pages/projects/`, styled by `styles/pages/project-page.css`; use `tip-calculator.html` as the reference):
+- `section.project-hero`: two columns. Left has `h1` + cursor, `p.project-tagline` (CSS adds the `$ `), `.project-tags` (status badge + `.tech-tag`s), and `.project-actions` with 1-2 buttons (first is `.btn.btn-primary`). Right has `.project-hero-media` with the cover image; add `--icon` for square logos.
+- `section.project-stats` (optional): `.stat-row` of `.stat` tiles. Tiles are static (no hover) and a third of the width each. Live values use `data-stat="https://img.shields.io/....json"`.
+- `.container.project-layout`: `main.project-main` + `aside.project-sidebar`
+  - Main sections each have a plain lowercase `h2`. Order: `#overview` (paragraphs, optional `<blockquote>`, `p.text-note` for muted notes), then `#features`, `#play`, `#how-to-play`, `#showcase`, and any write-up sections (`#how-it-works`, `#challenges`, `#takeaways`).
+  - Features: `.feature-list` of static `.feature` cards, each an `h3` (CSS adds `▸`) + `p`. No numbers and no hover.
+  - Only use feature cards when a project has several distinct features worth listing. Otherwise write a plain text section (e.g. `#gameplay`, `#usage`, `#how-it-works`).
+  - Showcase: `img.project-banner` for a single wide image; `.project-gallery` (2 columns) for screenshots; add `--portrait` for phone screenshots.
+  - Sidebar: a `links` panel (`ul.sidebar-links`; external links get `target="_blank"` and show ↗) and a `tech stack` panel (`.arrowed-list`).
+- Body text in the main column uses `--text`; feature descriptions and notes use `--text-muted`.
 
 **Help/walkthrough pages** use `.walkthrough-step` and `.walkthrough-img` from `components.css`:
 - `.walkthrough-step` - bordered section for each step (border-bottom between steps, none on last)

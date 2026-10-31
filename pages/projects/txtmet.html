@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <meta property="og:title" content="Hunter Baker | TXTMET">
@@ -51,42 +52,28 @@
 <script src="/scripts/nav-active.js"></script>
 </div>
 
-    <section id="hero">
-        <div class="container">
-            <h1>txtmet<span class="cursor"></span></h1>
-            <p class="page-subtitle">$ a command-line text metric utility implemented in both C and Rust</p>
+    <section class="project-hero">
+        <div class="container project-hero-inner">
+            <div class="project-hero-text">
+                <h1>txtmet<span class="cursor"></span></h1>
+                <p class="project-tagline">a command-line text metric utility implemented in both C and Rust</p>
+                <div class="project-tags">
+                    <span class="status-badge status-badge--archived">archived</span>
+                    <span class="tech-tag"><i class="devicon-c-plain"></i>C</span>
+                    <span class="tech-tag"><i class="devicon-rust-plain"></i>Rust</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/hutnerr/txtmet" class="btn btn-primary" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <div class="project-hero-media">
+                <img src="/assets/projects/txtmet/txtmet.png" alt="txtmet terminal output" data-lightbox>
+            </div>
         </div>
     </section>
 
-    <section id="overview">
+    <section class="project-stats">
         <div class="container">
-            <h2>overview <span class="status-badge status-badge--archived">archived</span></h2>
-            <div class="grid grid-overview">
-                <div>
-                    <p>
-                        txtmet is a simple and lightweight way to see some metrics about plain-text files. 
-                        It lets you pick exactly which metrics to output (words, characters, lines, sentences) 
-                        and nothing else runs.
-                    </p>
-                    <p>
-                        A good fit for developers who want a fast, zero-dependency CLI
-                        and anyone learning C or Rust who wants to see the same algorithm expressed in both languages.
-                    </p>
-                </div>
-                <div>
-                    <h3>tech stack</h3>
-                    <ul class="arrowed-list">
-                        <li>C (stdlib, getopt)</li>
-                        <li>Rust (standard library)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/txtmet" target="_blank">GitHub</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="stat-row">
                 <div class="stat">
                     <span class="stat-value" data-stat="https://img.shields.io/github/stars/hutnerr/txtmet.json">&mdash;</span>
@@ -96,25 +83,47 @@
         </div>
     </section>
 
-    <section id="features">
-        <div class="container">
-            <h2>features</h2>
-            <ul class="arrowed-list">
-                <li>Count words, characters (with and without whitespace), lines, and sentences in any plain-text file</li>
-                <li>Mix and match metrics with simple flags. Get exactly what you need, nothing more</li>
-                <li>Combine flags freely: <code>-wl</code> gives words and lines, <code>-a</code> gives everything</li>
-                <li>Zero dependencies. Just compile and run; no runtime or package manager required</li>
-            </ul>
-        </div>
-    </section>
+    <div class="container project-layout">
+        <main class="project-main">
+            <section id="overview">
+                <h2>overview</h2>
+                <div>
+                    <p>txtmet is a simple and lightweight way to see some metrics about plain-text files. It lets you pick exactly which metrics to output (words, characters, lines, sentences) and nothing else runs.</p>
+                    <p>A good fit for developers who want a fast, zero-dependency CLI and anyone learning C or Rust who wants to see the same algorithm expressed in both languages.</p>
+                </div>
+            </section>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/txtmet/txtmet.png" alt="TXTMET demo"
-                data-lightbox>
-        </div>
-    </section>
+            <section id="usage">
+                <h2>usage</h2>
+                <div>
+                    <p>Count words, characters (with and without whitespace), lines, and sentences in any plain-text file.</p>
+                    <p>Pick exactly the metrics you need with simple flags and combine them freely: <code>-wl</code> gives words and lines, <code>-a</code> gives everything.</p>
+                    <p>Zero dependencies. Just compile and run; no runtime or package manager required.</p>
+                </div>
+            </section>
+
+            <section id="showcase">
+                <h2>showcase</h2>
+                <img class="project-banner" src="/assets/projects/txtmet/txtmet.png" alt="TXTMET demo" data-lightbox>
+            </section>
+        </main>
+
+        <aside class="project-sidebar">
+            <div class="sidebar-panel">
+                <h3>links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="https://github.com/hutnerr/txtmet" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-panel">
+                <h3>tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>C (stdlib, getopt)</li>
+                    <li>Rust (standard library)</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <div id="footer">
 <footer class="site-footer">

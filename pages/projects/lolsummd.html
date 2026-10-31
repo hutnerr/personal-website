@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <meta property="og:title" content="Hunter Baker | LOLSUMMD">
@@ -51,49 +52,31 @@
 <script src="/scripts/nav-active.js"></script>
 </div>
 
-    <section id="hero">
-        <div class="container">
-            <h1>lolsummd<span class="cursor"></span></h1>
-            <p class="page-subtitle">$ aggregate League of Legends champion mastery across all your accounts</p>
+    <section class="project-hero">
+        <div class="container project-hero-inner">
+            <div class="project-hero-text">
+                <h1>lolsummd<span class="cursor"></span></h1>
+                <p class="project-tagline">aggregate League of Legends champion mastery across all your accounts</p>
+                <div class="project-tags">
+                    <span class="status-badge status-badge--maintained">maintained</span>
+                    <span class="tech-tag"><i class="devicon-python-plain"></i>Python</span>
+                    <span class="tech-tag"><i class="devicon-flask-plain"></i>Flask</span>
+                    <span class="tech-tag"><i class="devicon-redis-plain"></i>Redis</span>
+                    <span class="tech-tag"><i class="devicon-vercel-plain"></i>Vercel</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://lolsummd.com" class="btn btn-primary" target="_blank">Open Live Site</a>
+                    <a href="https://github.com/hutnerr/lolsummd" class="btn" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <div class="project-hero-media">
+                <img src="/assets/projects/lolsummd/lolsummd-preview.png" alt="LOLSUMMD mastery leaderboard" data-lightbox>
+            </div>
         </div>
     </section>
 
-    <section id="overview">
+    <section class="project-stats">
         <div class="container">
-            <h2>overview <span class="status-badge status-badge--maintained">maintained</span></h2>
-            <div class="grid grid-overview">
-                <div>
-                    <p>
-                        League of Legends players who play on multiple accounts have no built-in way to see their total
-                        champion mastery across all accounts at once.
-                    </p>
-                    <p>
-                        LOLSUMMD aggregates mastery data from up to 10
-                        accounts (any region) into a single mastery table. Try it with <a
-                            href="https://www.lolsummd.com/?a=T1%20OK%20GOOD%20YES~na1~na1,S8%20IS%20SO%20FUN~NA1~na1"
-                            target="_blank">this example link</a> to see it pre-loaded with accounts.</p>
-                    </p>
-                    <p class="text-note">Note: currently running on a development API key. Some requests may
-                        occasionally fail pending production approval from Riot.</p>
-                </div>
-                <div>
-                    <h3>tech stack</h3>
-                    <ul class="arrowed-list">
-                        <li>Python, Flask</li>
-                        <li>Redis (response caching)</li>
-                        <li>Riot Games API</li>
-                        <li>JavaScript (vanilla), Jinja2</li>
-                        <li>Vercel</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://lolsummd.com" target="_blank">Live Site</a></li>
-                        <li><a href="https://github.com/hutnerr/lolsummd" target="_blank">GitHub</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="stat-row">
                 <div class="stat">
                     <span class="stat-value" data-stat="https://img.shields.io/github/stars/hutnerr/lolsummd.json">&mdash;</span>
@@ -103,32 +86,80 @@
         </div>
     </section>
 
-    <section id="features">
-        <div class="container">
-            <h2>features</h2>
-            <ul class="arrowed-list">
-                <li>Add up to 10 accounts from any region in one session</li>
-                <li>Instantly see a combined ranked list of every champion with mastery points pooled across all accounts</li>
-                <li>Mastery level badges (highlighted at levels 5 and 7) let you spot your most-invested champions at a glance</li>
-                <li>Share your account list with one click. The link pre-loads the same accounts for anyone who opens it</li>
-                <li>Accounts are remembered in your browser so you never have to re-enter them on return visits</li>
-                <li>Paste <code>SummonerName#TAG</code> directly. The app splits it for you automatically</li>
-                <li>Region tag auto-fills to the local default if left blank</li>
-            </ul>
-        </div>
-    </section>
+    <div class="container project-layout">
+        <main class="project-main">
+            <section id="overview">
+                <h2>overview</h2>
+                <div>
+                    <p>League of Legends players who play on multiple accounts have no built-in way to see their total champion mastery across all accounts at once.</p>
+                    <p>LOLSUMMD aggregates mastery data from up to 10 accounts (any region) into a single mastery table. Try it with <a href="https://www.lolsummd.com/?a=T1%20OK%20GOOD%20YES~na1~na1,S8%20IS%20SO%20FUN~NA1~na1" target="_blank">this example link</a> to see it pre-loaded with accounts.</p>
+                    <p class="text-note">Note: currently running on a development API key. Some requests may occasionally fail pending production approval from Riot.</p>
+                </div>
+            </section>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <div class="grid grid-2">
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/lolsummd/lolsummd.png"
-                    alt="LOLSUMMD champion mastery aggregator" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/lolsummd/lolsummd-results.png"
-                    alt="LOLSUMMD results table" data-lightbox>
+            <section id="features">
+                <h2>features</h2>
+                <div class="feature-list">
+                    <div class="feature">
+                        <h3>Multi-account</h3>
+                        <p>Add up to 10 accounts from any region in one session.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Combined mastery</h3>
+                        <p>Instantly see a combined ranked list of every champion with mastery points pooled across all accounts.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Mastery badges</h3>
+                        <p>Mastery level badges (highlighted at levels 5 and 7) let you spot your most-invested champions at a glance.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Shareable links</h3>
+                        <p>Share your account list with one click. The link pre-loads the same accounts for anyone who opens it.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Remembered accounts</h3>
+                        <p>Accounts are remembered in your browser so you never have to re-enter them on return visits.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Riot ID pasting</h3>
+                        <p>Paste <code>SummonerName#TAG</code> directly. The app splits it for you automatically.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Region auto-fill</h3>
+                        <p>Region tag auto-fills to the local default if left blank.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="showcase">
+                <h2>showcase</h2>
+                <div class="project-gallery">
+                    <img src="/assets/projects/lolsummd/lolsummd.png" alt="LOLSUMMD champion mastery aggregator" data-lightbox>
+                    <img src="/assets/projects/lolsummd/lolsummd-results.png" alt="LOLSUMMD results table" data-lightbox>
+                </div>
+            </section>
+        </main>
+
+        <aside class="project-sidebar">
+            <div class="sidebar-panel">
+                <h3>links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="https://lolsummd.com" target="_blank">Live Site</a></li>
+                    <li><a href="https://github.com/hutnerr/lolsummd" target="_blank">GitHub</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
+            <div class="sidebar-panel">
+                <h3>tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>Python, Flask</li>
+                    <li>Redis (response caching)</li>
+                    <li>Riot Games API</li>
+                    <li>JavaScript (vanilla), Jinja2</li>
+                    <li>Vercel</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <div id="footer">
 <footer class="site-footer">

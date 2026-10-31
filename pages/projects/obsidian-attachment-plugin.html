@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <meta property="og:title" content="Hunter Baker | Obsidian Attachment Plugin">
@@ -52,45 +53,29 @@
 <script src="/scripts/nav-active.js"></script>
 </div>
 
-    <section id="hero">
-        <div class="container">
-            <h1>obsidian attachment plugin<span class="cursor"></span></h1>
-            <p class="page-subtitle">$ rule-based attachment placement for Obsidian.md</p>
+    <section class="project-hero">
+        <div class="container project-hero-inner">
+            <div class="project-hero-text">
+                <h1>obsidian attachment plugin<span class="cursor"></span></h1>
+                <p class="project-tagline">rule-based attachment placement for Obsidian.md</p>
+                <div class="project-tags">
+                    <span class="status-badge status-badge--maintained">maintained</span>
+                    <span class="tech-tag"><i class="devicon-typescript-plain"></i>TypeScript</span>
+                    <span class="tech-tag"><i class="devicon-javascript-plain"></i>JavaScript</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://community.obsidian.md/plugins/attachment-placement" class="btn btn-primary" target="_blank">Get the Plugin</a>
+                    <a href="https://github.com/hutnerr/obsidian-attachment-placement" class="btn" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <div class="project-hero-media project-hero-media--icon">
+                <img src="https://forum.obsidian.md/uploads/default/original/3X/a/9/a9a34885821fff8941270ccd6e2ca923c83801b2.png" alt="Obsidian logo" data-lightbox>
+            </div>
         </div>
     </section>
 
-    <section id="overview">
+    <section class="project-stats">
         <div class="container">
-            <h2>overview <span class="status-badge status-badge--maintained">maintained</span></h2>
-            <div class="grid grid-overview">
-                <div>
-                    <p>
-                        Obsidian gives you one global folder for all attachments. This is fine for small vaults, but becomes painful once
-                        your vault grows into multiple structured sections. This plugin lets you define placement rules
-                        per folder so pasted and dropped files land where they belong, automatically. 
-                    </p>
-                    <p>
-                        Built out of
-                        personal frustration, published to the Obsidian community plugin list, and aimed at anyone who
-                        keeps a large structured vault.
-                    </p>
-                </div>
-                <div>
-                    <h3>tech stack</h3>
-                    <ul class="arrowed-list">
-                        <li>TypeScript</li>
-                        <li>Obsidian API</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://community.obsidian.md/plugins/attachment-placement" target="_blank">Plugin Page</a></li>
-                        <li><a href="https://github.com/hutnerr/obsidian-attachment-placement" target="_blank">GitHub</a></li>
-                        <li><a href="/pages/other/obsidian-attachment-placement-help.html">Help Page</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="stat-row">
                 <div class="stat">
                     <span class="stat-value" data-stat="https://img.shields.io/badge/dynamic/json.json?label=downloads&amp;query=%24%5B%22attachment-placement%22%5D.downloads&amp;url=https%3A%2F%2Fraw.githubusercontent.com%2Fobsidianmd%2Fobsidian-releases%2Fmaster%2Fcommunity-plugin-stats.json">&mdash;</span>
@@ -104,28 +89,69 @@
         </div>
     </section>
 
-    <section id="features">
-        <div class="container">
-            <h2>features</h2>
-            <ul class="arrowed-list">
-                <li>Define rules per folder that automatically route pasted or dropped attachments to the right destination.</li>
-                <li>Nearest-ancestor matching: rules closer to the active note take priority, so you can set broad defaults and override them in specific subfolders</li>
-                <li>Configurable global fallback for notes that don't match any rule</li>
-                <li>Drag-and-drop rule reordering in the settings panel</li>
-                <li>Installable directly from Obsidian's community plugin list.</li>
-            </ul>
-        </div>
-    </section>
+    <div class="container project-layout">
+        <main class="project-main">
+            <section id="overview">
+                <h2>overview</h2>
+                <div>
+                    <p>Obsidian gives you one global folder for all attachments. This is fine for small vaults, but becomes painful once your vault grows into multiple structured sections. This plugin lets you define placement rules per folder so pasted and dropped files land where they belong, automatically.</p>
+                    <p>Built out of personal frustration, published to the Obsidian community plugin list, and aimed at anyone who keeps a large structured vault.</p>
+                </div>
+            </section>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <div class="grid grid-2">
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/obsidian_attachment_placement/obs-attachment-placement-settings.png" alt="Attachment Placement plugin settings panel" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/obsidian_attachment_placement/obs-attachment-example.png" alt="Attachment Placement example configuration" data-lightbox>
+            <section id="features">
+                <h2>features</h2>
+                <div class="feature-list">
+                    <div class="feature">
+                        <h3>Per-folder rules</h3>
+                        <p>Define rules per folder that automatically route pasted or dropped attachments to the right destination.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Nearest-ancestor matching</h3>
+                        <p>Rules closer to the active note take priority, so you can set broad defaults and override them in specific subfolders.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Global fallback</h3>
+                        <p>Configurable global fallback for notes that don't match any rule.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Rule reordering</h3>
+                        <p>Drag-and-drop rule reordering in the settings panel.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Community install</h3>
+                        <p>Installable directly from Obsidian's community plugin list.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="showcase">
+                <h2>showcase</h2>
+                <div class="project-gallery">
+                    <img src="/assets/projects/obsidian_attachment_placement/obs-attachment-placement-settings.png" alt="Attachment Placement plugin settings panel" data-lightbox>
+                    <img src="/assets/projects/obsidian_attachment_placement/obs-attachment-example.png" alt="Attachment Placement example configuration" data-lightbox>
+                </div>
+            </section>
+        </main>
+
+        <aside class="project-sidebar">
+            <div class="sidebar-panel">
+                <h3>links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="https://community.obsidian.md/plugins/attachment-placement" target="_blank">Plugin Page</a></li>
+                    <li><a href="https://github.com/hutnerr/obsidian-attachment-placement" target="_blank">GitHub</a></li>
+                    <li><a href="/pages/other/obsidian-attachment-placement-help.html">Help Page</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
+            <div class="sidebar-panel">
+                <h3>tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>TypeScript</li>
+                    <li>Obsidian API</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <div id="footer">
 <footer class="site-footer">

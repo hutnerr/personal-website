@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <meta property="og:title" content="Hunter Baker | Gesturtle">
     <meta property="og:description"
-        content="A desktop app for timed drawing practice using your own tagged library of reference images. Currently in beta.">
+        content="A desktop app for timed drawing practice using your own tagged library of reference images.">
     <meta property="og:image" content="https://hunter-baker.com/assets/projects/gesturtle/gallery.webp">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hunter-baker.com/pages/projects/gesturtle.html">
@@ -51,50 +52,31 @@
 <script src="/scripts/nav-active.js"></script>
 </div>
 
-        <section id="hero">
-        <div class="container">
-            <h1>gesturtle<span class="cursor"></span></h1>
-            <p class="page-subtitle">$ a desktop app for timed drawing practice using your own reference library</p>
+    <section class="project-hero">
+        <div class="container project-hero-inner">
+            <div class="project-hero-text">
+                <h1>gesturtle<span class="cursor"></span></h1>
+                <p class="project-tagline">a desktop app for timed drawing practice using your own reference library</p>
+                <div class="project-tags">
+                    <span class="status-badge status-badge--maintained">maintained</span>
+                    <span class="tech-tag"><i class="devicon-java-plain"></i>Java</span>
+                    <span class="tech-tag">JavaFX</span>
+                    <span class="tech-tag"><i class="devicon-sqlite-plain"></i>SQLite</span>
+                    <span class="tech-tag"><i class="devicon-maven-plain"></i>Maven</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/hutnerr/gesturtle/releases" class="btn btn-primary" target="_blank">Download</a>
+                    <a href="https://github.com/hutnerr/gesturtle" class="btn" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <div class="project-hero-media">
+                <img src="/assets/projects/gesturtle/gallery.webp" alt="Gesturtle gallery" data-lightbox>
+            </div>
         </div>
     </section>
 
-    <section id="overview">
+    <section class="project-stats">
         <div class="container">
-            <h2>overview <span class="status-badge status-badge--beta">beta</span></h2>
-            <div class="grid grid-overview">
-                <div>
-                    <p>
-                        Sites like Line of Action and Quickposes are great for gesture drawing, but you're stuck
-                        practicing from their images. I wanted to practice from the references I'd actually collected,
-                        so I built a tool around that.
-                    </p>
-                    <p>
-                        Gesturtle imports your images into a local library, lets you tag and filter them however you
-                        like, and turns any slice of that library into a timed practice session in one click. Tagging
-                        your own references takes a bit more setup than a pre-built site, but it's far more flexible.
-                    </p>
-                    <p>
-                        Everything lives in one self-contained folder, so your library is easy to back up, sync, or
-                        even keep in git across machines.
-                    </p>
-                    <p class="text-note">Note: Gesturtle is currently in beta (v0.1.0). Expect some rough edges.</p>
-                </div>
-                <div>
-                    <h3>tech stack</h3>
-                    <ul class="arrowed-list">
-                        <li>Java 21, JavaFX</li>
-                        <li>SQLite</li>
-                        <li>Maven, jpackage</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/gesturtle" target="_blank">GitHub</a></li>
-                        <li><a href="/assets/projects/gesturtle/GeckoSketch_v0.1.0beta-LinuxBundle.zip" download>Download (Linux)</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="stat-row">
                 <div class="stat">
                     <span class="stat-value" data-stat="https://img.shields.io/github/stars/hutnerr/gesturtle.json">&mdash;</span>
@@ -104,41 +86,86 @@
         </div>
     </section>
 
-    <section id="features">
-        <div class="container">
-            <h2>features</h2>
-            <ul class="arrowed-list">
-                <li><strong>Flexible sessions</strong> - chain segments together (e.g. 5 &times; 30s, then 3 &times; 2min, then 1 &times; 10min), each drawing from its own tag filter, playlist, or saved view</li>
-                <li><strong>Hierarchical tags</strong> - nest tags like <code>animal / bird</code> and filter with And, Or, and Exclude</li>
-                <li><strong>Memory drawing</strong> - study an image, draw it from memory, then compare</li>
-                <li><strong>Study aids</strong> - flip, rotate, grayscale, blur, grid overlays, and 2 to 4 tone value studies, all without touching the original</li>
-                <li><strong>One-click presets</strong> - jump straight into practice from the home page</li>
-                <li><strong>Session review</strong> - look back over every image after a session and favorite or tag the keepers</li>
-                <li><strong>Easy importing</strong> - drag and drop files, folders, or images straight from a browser, with duplicates caught automatically</li>
-                <li><strong>Gruvbox themes</strong> - light and dark modes, plus rebindable keyboard shortcuts</li>
-            </ul>
-        </div>
-    </section>
+    <div class="container project-layout">
+        <main class="project-main">
+            <section id="overview">
+                <h2>overview</h2>
+                <div>
+                    <p>Sites like Line of Action and Quickposes are great for gesture drawing, but you're stuck practicing from their images. I wanted to practice from the references I'd actually collected, so I built a tool around that.</p>
+                    <p>Gesturtle imports your images into a local library, lets you tag and filter them however you like, and turns any slice of that library into a timed practice session in one click. Tagging your own references takes a bit more setup than a pre-built site, but it's far more flexible.</p>
+                    <p>Everything lives in one self-contained folder, so your library is easy to back up, sync, or even keep in git across machines.</p>
+                </div>
+            </section>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <img class="walkthrough-img hover-img sized-img" src="/assets/projects/gesturtle/gallery.webp"
-                alt="Gesturtle gallery" data-lightbox>
-            <div class="grid grid-2" style="margin-top: 1rem;">
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/gesturtle/practice.webp"
-                    alt="Practice session with timer, tags, and credit" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/gesturtle/practice-values.webp"
-                    alt="Three-tone value study" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/gesturtle/setup.webp"
-                    alt="Session setup with a three-segment queue" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/gesturtle/tags.webp"
-                    alt="Tag manager" data-lightbox>
+            <section id="features">
+                <h2>features</h2>
+                <div class="feature-list">
+                    <div class="feature">
+                        <h3>Flexible sessions</h3>
+                        <p>Chain segments together (e.g. 5 &times; 30s, then 3 &times; 2min, then 1 &times; 10min), each drawing from its own tag filter, playlist, or saved view.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Hierarchical tags</h3>
+                        <p>Nest tags like <code>animal / bird</code> and filter with And, Or, and Exclude.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Memory drawing</h3>
+                        <p>Study an image, draw it from memory, then compare.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Study aids</h3>
+                        <p>Flip, rotate, grayscale, blur, grid overlays, and 2 to 4 tone value studies, all without touching the original.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>One-click presets</h3>
+                        <p>Jump straight into practice from the home page.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Session review</h3>
+                        <p>Look back over every image after a session and favorite or tag the keepers.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Easy importing</h3>
+                        <p>Drag and drop files, folders, or images straight from a browser, with duplicates caught automatically.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Gruvbox themes</h3>
+                        <p>Light and dark modes, plus rebindable keyboard shortcuts.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="showcase">
+                <h2>showcase</h2>
+                <img class="project-banner" src="/assets/projects/gesturtle/gallery.webp" alt="Gesturtle gallery" data-lightbox>
+                <div class="project-gallery">
+                    <img src="/assets/projects/gesturtle/practice.webp" alt="Practice session with timer, tags, and credit" data-lightbox>
+                    <img src="/assets/projects/gesturtle/practice-values.webp" alt="Three-tone value study" data-lightbox>
+                    <img src="/assets/projects/gesturtle/setup.webp" alt="Session setup with a three-segment queue" data-lightbox>
+                    <img src="/assets/projects/gesturtle/tags.webp" alt="Tag manager" data-lightbox>
+                </div>
+            </section>
+        </main>
+
+        <aside class="project-sidebar">
+            <div class="sidebar-panel">
+                <h3>links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="https://github.com/hutnerr/gesturtle" target="_blank">GitHub</a></li>
+                    <li><a href="https://github.com/hutnerr/gesturtle/releases" target="_blank">Releases</a></li>
+                    <li><a href="/assets/projects/gesturtle/gesturtle-example-library.zip" download>Example Library</a></li>
+                </ul>
             </div>
-            <p style="margin-top: 1.5rem;">Want to try it without building a library first? Grab the example library and open it in Gesturtle.</p>
-            <a href="/assets/projects/gesturtle/gesturtle-example-library.zip" class="btn btn-background" download>Download Example Library</a>
-        </div>
-    </section>
+            <div class="sidebar-panel">
+                <h3>tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>Java 21, JavaFX</li>
+                    <li>SQLite</li>
+                    <li>Maven, jpackage</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <div id="footer">
 <footer class="site-footer">

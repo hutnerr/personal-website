@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <meta property="og:title" content="Hunter Baker | beast[code]">
@@ -51,47 +52,30 @@
 <script src="/scripts/nav-active.js"></script>
 </div>
 
-    <section id="hero">
-        <div class="container">
-            <h1>beast[code]<span class="cursor"></span></h1>
-            <p class="page-subtitle">$ a Discord bot that posts LeetCode problems and server notifications</p>
+    <section class="project-hero">
+        <div class="container project-hero-inner">
+            <div class="project-hero-text">
+                <h1>beast[code]<span class="cursor"></span></h1>
+                <p class="project-tagline">a Discord bot that posts LeetCode problems and server notifications</p>
+                <div class="project-tags">
+                    <span class="status-badge status-badge--maintained">maintained</span>
+                    <span class="tech-tag"><i class="devicon-python-plain"></i>Python</span>
+                    <span class="tech-tag"><i class="devicon-graphql-plain"></i>GraphQL</span>
+                    <span class="tech-tag"><i class="devicon-raspberrypi-plain"></i>Raspberry Pi</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&amp;permissions=2147616768&amp;integration_type=0&amp;scope=bot" class="btn btn-primary" target="_blank">Add to Server</a>
+                    <a href="https://github.com/hutnerr/leetcode-bot" class="btn" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <div class="project-hero-media project-hero-media--icon">
+                <img src="/assets/projects/beast_code/beastcode-logo.png" alt="beast[code] logo" data-lightbox>
+            </div>
         </div>
     </section>
 
-    <section id="overview">
+    <section class="project-stats">
         <div class="container">
-            <h2>overview <span class="status-badge status-badge--maintained">maintained</span></h2>
-            <div class="grid grid-overview">
-                <div>
-                    <p>
-                        beast[code] is a Discord bot meant to add some friendly competition and accountability to LeetCode practice for CS students.
-                    </p>
-                    <p>
-                        It's mean features are the ability to define reoccuring problems on a schedule
-                        and a leaderboard to make progress visible and competitive. 
-                        It also posts alerts for upcoming contests and the official daily challenge, 
-                        giving server members a shared target to aim for each day.
-                    </p>
-                </div>
-                <div>
-                    <h3>tech stack</h3>
-                    <ul class="arrowed-list">
-                        <li>Python (Discord.py, Aiohttp)</li>
-                        <li>GraphQL (LeetCode API)</li>
-                        <li>JSON file persistence with in-memory cache</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://github.com/hutnerr/leetcode-bot" target="_blank">GitHub</a></li>
-                        <li><a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&permissions=2147616768&integration_type=0&scope=bot"
-                                target="_blank">Add to Server</a></li>
-                        <li><a href="https://top.gg/bot/1392738606120173719" target="_blank">Top.gg</a></li>
-                        <li><a href="/pages/other/beastcode-help.html">Help Page</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="stat-row">
                 <div class="stat">
                     <span class="stat-value" data-stat="https://img.shields.io/github/stars/hutnerr/leetcode-bot.json">&mdash;</span>
@@ -101,30 +85,76 @@
         </div>
     </section>
 
-    <section id="features">
-        <div class="container">
-            <h2>features</h2>
-            <ul class="arrowed-list">
-                <li><strong>Scheduled problem delivery</strong> - Admins configure up to 5 recurring problems by day, time, and difficulty; the bot posts them automatically so there's always something to solve</li>
-                <li><strong>Point-based competition</strong> - Solutions are scored by difficulty (Easy · Medium · Hard) and tracked on a live server leaderboard, making progress visible and competitive</li>
-                <li><strong>Account linking</strong> - Users link their LeetCode username once; then submit with /submit to gain points</li>
-                <li><strong>Contest alerts</strong> - Get notified when upcoming LeetCode contests are about to go live, so no one misses a timed event</li>
-                <li><strong>Daily problem</strong> - Posts the official LeetCode daily challenge on demand, giving the server a shared daily target</li>
-                <li><strong>Per-server configuration</strong> - Every server gets its own schedule, leaderboard, and settings.</li>
-            </ul>
-        </div>
-    </section>
+    <div class="container project-layout">
+        <main class="project-main">
+            <section id="overview">
+                <h2>overview</h2>
+                <div>
+                    <p>beast[code] is a Discord bot meant to add some friendly competition and accountability to LeetCode practice for CS students.</p>
+                    <p>It's mean features are the ability to define reoccuring problems on a schedule and a leaderboard to make progress visible and competitive. It also posts alerts for upcoming contests and the official daily challenge, giving server members a shared target to aim for each day.</p>
+                </div>
+            </section>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <div class="grid grid-3">
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/leetcode-bot.png" alt="beast[code] Discord Bot Screenshot" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/3.png" alt="beast[code] Screenshot" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img" src="/assets/projects/beast_code/5.png" alt="beast[code] Screenshot" data-lightbox>
+            <section id="features">
+                <h2>features</h2>
+                <div class="feature-list">
+                    <div class="feature">
+                        <h3>Scheduled problem delivery</h3>
+                        <p>Admins configure up to 5 recurring problems by day, time, and difficulty; the bot posts them automatically so there's always something to solve.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Point-based competition</h3>
+                        <p>Solutions are scored by difficulty (Easy · Medium · Hard) and tracked on a live server leaderboard, making progress visible and competitive.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Account linking</h3>
+                        <p>Users link their LeetCode username once; then submit with /submit to gain points.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Contest alerts</h3>
+                        <p>Get notified when upcoming LeetCode contests are about to go live, so no one misses a timed event.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Daily problem</h3>
+                        <p>Posts the official LeetCode daily challenge on demand, giving the server a shared daily target.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Per-server configuration</h3>
+                        <p>Every server gets its own schedule, leaderboard, and settings.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="showcase">
+                <h2>showcase</h2>
+                <div class="project-gallery">
+                    <img src="/assets/projects/beast_code/leetcode-bot.png" alt="beast[code] Discord Bot Screenshot" data-lightbox>
+                    <img src="/assets/projects/beast_code/3.png" alt="beast[code] Screenshot" data-lightbox>
+                    <img src="/assets/projects/beast_code/5.png" alt="beast[code] Screenshot" data-lightbox>
+                </div>
+            </section>
+        </main>
+
+        <aside class="project-sidebar">
+            <div class="sidebar-panel">
+                <h3>links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="https://github.com/hutnerr/leetcode-bot" target="_blank">GitHub</a></li>
+                    <li><a href="https://discord.com/oauth2/authorize?client_id=1392738606120173719&amp;permissions=2147616768&amp;integration_type=0&amp;scope=bot" target="_blank">Add to Server</a></li>
+                    <li><a href="https://top.gg/bot/1392738606120173719" target="_blank">Top.gg</a></li>
+                    <li><a href="/pages/other/beastcode-help.html">Help Page</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
+            <div class="sidebar-panel">
+                <h3>tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>Python (Discord.py, Aiohttp)</li>
+                    <li>GraphQL (LeetCode API)</li>
+                    <li>JSON file persistence with in-memory cache</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <div id="footer">
 <footer class="site-footer">

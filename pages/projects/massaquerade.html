@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/sections.css">
     <link rel="stylesheet" href="/styles/components.css">
+    <link rel="stylesheet" href="/styles/pages/project-page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <meta property="og:title" content="Hunter Baker | Massaquerade">
@@ -52,51 +53,33 @@
 <script src="/scripts/nav-active.js"></script>
 </div>
 
-    <section id="hero">
-        <div class="container">
-            <h1>massaquerade<span class="cursor"></span></h1>
-            <p class="page-subtitle">$ a murder mystery game built in 72 hours for Winter MelonJam 2025</p>
+    <section class="project-hero">
+        <div class="container project-hero-inner">
+            <div class="project-hero-text">
+                <h1>massaquerade<span class="cursor"></span></h1>
+                <p class="project-tagline">a murder mystery game built in 72 hours for Winter MelonJam 2025</p>
+                <div class="project-tags">
+                    <span class="status-badge status-badge--archived">archived</span>
+                    <span class="tech-tag"><i class="devicon-godot-plain"></i>Godot</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://hutnerr.itch.io/massaquerade" class="btn btn-primary" target="_blank">Play on itch.io</a>
+                    <a href="https://github.com/Rat-Haven-Studios/melon-jam-2025" class="btn" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            <div class="project-hero-media">
+                <img src="/assets/projects/massaquerade/massaquerade.gif" alt="Massaquerade character dialogue" data-lightbox>
+            </div>
         </div>
     </section>
 
-    <section id="overview">
+    <section class="project-stats">
         <div class="container">
-            <h2>overview <span class="status-badge status-badge--archived">archived</span></h2>
-            <div class="grid grid-overview">
-                <div>
-                    <p>
-                        A branching narrative mystery built in 72 hours for 
-                        <a href="https://itch.io/jam/wmj2025" target="_blank">Winter MelonJam 2025</a> (theme: "Mask"). 
-                        Built by <a href="https://rathavenstudios.com" target="_blank">Rat Haven Studios</a>!
-                    </p>
-                    <p>
-                        You play as a hired hitman at the masquerade ball. Talk to guests at a masquerade ball to collect clues
-                        that unlock new conversation branches, then decide who to strike.
-                    </p>
-                    <p>
-                         View the rankings on the <a href="/pages/other/game-jams.html" target="_blank">Jam Page</a>.
-                    </p>
-                </div>
-                <div>
-                    <h3>tech stack</h3>
-                    <ul class="arrowed-list">
-                        <li>Godot 4, GDScript</li>
-                        <li>JSON dialogue trees (per-character, per-mask branching)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>links</h3>
-                    <ul class="arrowed-list">
-                        <li><a href="https://itch.io/jam/wmj2025/rate/4155805" target="_blank">Game Jam Page</a></li>
-                        <li><a href="https://hutnerr.itch.io/massaquerade" target="_blank">itch.io</a></li>
-                        <li><a href="https://github.com/Rat-Haven-Studios/melon-jam-2025" target="_blank">GitHub</a>
-                        </li>
-                        <li><a href="https://rathavenstudios.com/pages/games/massaquerade.html" target="_blank">RHS</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
             <div class="stat-row">
+                <div class="stat">
+                    <span class="stat-value">125+</span>
+                    <span class="stat-label">itch.io views</span>
+                </div>
                 <div class="stat">
                     <span class="stat-value" data-stat="https://img.shields.io/github/stars/Rat-Haven-Studios/melon-jam-2025.json">&mdash;</span>
                     <span class="stat-label"><i class="devicon-github-original"></i>github stars</span>
@@ -105,20 +88,28 @@
         </div>
     </section>
 
-    <section id="features">
-        <div class="container">
-            <h2>features</h2>
-            <ul class="arrowed-list">
-                <li>Play through a branching narrative mystery and curated political story.</li>
-                <li>Talk to guests at a masquerade ball to collect clues that unlock new conversation branches you couldn't access before</li>
-                <li>Every clue you gather can reopen dialogue with characters you've already spoken to, rewarding thorough exploration</li>
-            </ul>
-        </div>
-    </section>
+    <div class="container project-layout">
+        <main class="project-main">
+            <section id="overview">
+                <h2>overview</h2>
+                <div>
+                    <p>A branching narrative mystery built in 72 hours for <a href="https://itch.io/jam/wmj2025" target="_blank">Winter MelonJam 2025</a> (theme: "Mask"). Built by <a href="https://rathavenstudios.com" target="_blank">Rat Haven Studios</a>!</p>
+                    <p>You play as a hired hitman at the masquerade ball. Talk to guests at a masquerade ball to collect clues that unlock new conversation branches, then decide who to strike.</p>
+                    <p>View the rankings on the <a href="/pages/other/game-jams.html" target="_blank">Jam Page</a>.</p>
+                </div>
+            </section>
 
-    <section id="play">
-        <div class="container">
-            <h2>play</h2>
+            <section id="gameplay">
+                <h2>gameplay</h2>
+                <div>
+                    <p>Play through a branching narrative mystery and curated political story. Clues you collect from guests unlock conversation branches you couldn't access before.</p>
+                    <p>Every clue you gather can reopen dialogue with characters you've already spoken to, rewarding thorough exploration.</p>
+                </div>
+            </section>
+
+            <section id="play">
+                <h2>play</h2>
+
             <div class="game-embed">
                 <div class="game-embed-placeholder" data-src="https://itch.io/embed-upload/15981388?color=282828"
                     data-width="640" data-height="380">
@@ -126,34 +117,40 @@
                     <div class="play-overlay"><span class="play-btn">&#9654; Play</span></div>
                 </div>
             </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="showcase">
-        <div class="container">
-            <h2>showcase</h2>
-            <div class="grid grid-2">
-                <img class="walkthrough-img hover-img sized-img"
-                    src="https://img.itch.zone/aW1nLzI0NzcwNzM5LnBuZw==/original/MKwieg.png"
-                    alt="Massaquerade masquerade ball scene" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img"
-                    src="/assets/projects/massaquerade/massaquerade.gif"
-                    alt="Massaquerade character dialogue" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img"
-                    src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDc2MS5wbmc=/794x1000/m38khL.png"
-                    alt="Massaquerade character dialogue" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img"
-                    src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMS5wbmc=/794x1000/QEMP%2Bz.png"
-                    alt="Massaquerade character dialogue" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img"
-                    src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMy5wbmc=/794x1000/EjIHFg.png"
-                    alt="Massaquerade character dialogue" data-lightbox>
-                <img class="walkthrough-img hover-img sized-img"
-                    src="/assets/projects/massaquerade/massaquerade-results.png" alt="Massaquerade jam results"
-                    data-lightbox>
+            <section id="showcase">
+                <h2>showcase</h2>
+                <div class="project-gallery">
+                    <img src="https://img.itch.zone/aW1nLzI0NzcwNzM5LnBuZw==/original/MKwieg.png" alt="Massaquerade masquerade ball scene" data-lightbox>
+                    <img src="/assets/projects/massaquerade/massaquerade.gif" alt="Massaquerade character dialogue" data-lightbox>
+                    <img src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDc2MS5wbmc=/794x1000/m38khL.png" alt="Massaquerade character dialogue" data-lightbox>
+                    <img src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMS5wbmc=/794x1000/QEMP%2Bz.png" alt="Massaquerade character dialogue" data-lightbox>
+                    <img src="https://img.itch.zone/aW1hZ2UvNDE1NTgwNS8yNDc3MDYwMy5wbmc=/794x1000/EjIHFg.png" alt="Massaquerade character dialogue" data-lightbox>
+                    <img src="/assets/projects/massaquerade/massaquerade-results.png" alt="Massaquerade jam results" data-lightbox>
+                </div>
+            </section>
+        </main>
+
+        <aside class="project-sidebar">
+            <div class="sidebar-panel">
+                <h3>links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="https://itch.io/jam/wmj2025/rate/4155805" target="_blank">Game Jam Page</a></li>
+                    <li><a href="https://hutnerr.itch.io/massaquerade" target="_blank">itch.io</a></li>
+                    <li><a href="https://github.com/Rat-Haven-Studios/melon-jam-2025" target="_blank">GitHub</a></li>
+                    <li><a href="https://rathavenstudios.com/pages/games/massaquerade.html" target="_blank">RHS</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
+            <div class="sidebar-panel">
+                <h3>tech stack</h3>
+                <ul class="arrowed-list">
+                    <li>Godot 4, GDScript</li>
+                    <li>JSON dialogue trees (per-character, per-mask branching)</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
     <div id="footer">
 <footer class="site-footer">
