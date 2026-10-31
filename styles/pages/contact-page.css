@@ -13,12 +13,16 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  max-width: 640px;
-  margin: 0 auto;
   background: var(--surface);
   border: 2px solid var(--border);
   border-radius: 12px;
   padding: 2rem;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
 }
 
 .contact-form-group {
@@ -95,4 +99,9 @@
   transform: translateY(-3px);
   background-color: var(--text);
   border-color: var(--text);
+}
+@media (max-width: 768px) {
+  .contact-form-row {
+    grid-template-columns: 1fr;
+  }
 }
