@@ -44,6 +44,12 @@
   border-color: rgba(250, 189, 47, 0.3);
 }
 
+.status-badge--blocked {
+  color: #fb4934;
+  background: rgba(251, 73, 52, 0.1);
+  border-color: rgba(251, 73, 52, 0.3);
+}
+
 .text-note {
   margin-top: 8px;
   color: var(--text-muted);

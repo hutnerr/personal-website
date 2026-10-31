@@ -280,6 +280,7 @@ a:hover {
 }
 
 .card-img {
+  position: relative;
   display: block;
   height: 180px;
   overflow: hidden;
@@ -423,28 +424,77 @@ a:hover {
 
 /* -------------------- FILTER -------------------- */
 .filter-bar {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  flex-direction: column;
+  gap: 12px;
   margin-bottom: 24px;
 }
 
 .filter-group {
-  display: flex;
+  display: grid;
+  grid-template-columns: 80px 1fr;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+}
+
+/* keep the first row's buttons clear of the absolutely placed count */
+.filter-group:first-child {
+  padding-right: 120px;
+}
+
+.filter-options {
+  display: flex;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
 .filter-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
   text-transform: lowercase;
   letter-spacing: 0.04em;
 }
 
+.filter-label::before {
+  content: '▸ ';
+  color: var(--accent);
+}
+
+.filter-count {
+  position: absolute;
+  top: 6px;
+  right: 0;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.filter-empty {
+  margin-bottom: 24px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+/* same hues as the .status-badge--* variants in components.css */
+.status-dot--active { background: #b8bb26; }
+.status-dot--maintained { background: #83a598; }
+.status-dot--archived { background: #fe8019; }
+.status-dot--beta { background: #fabd2f; }
+.status-dot--blocked { background: #fb4934; }
+
 .filter-btn {
+  display: inline-flex;
+  align-items: center;
   background: var(--bg);
   border: 2px solid var(--border);
   color: var(--text-muted);
@@ -713,11 +763,56 @@ img[data-lightbox] {
 }
 
 .lightbox-overlay img {
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 80vw;
+  max-height: 85vh;
   object-fit: contain;
   border: 2px solid var(--border);
   border-radius: 8px;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 64px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--accent);
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.lightbox-nav:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.lightbox-prev {
+  left: 24px;
+}
+
+.lightbox-next {
+  right: 24px;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.lightbox-overlay.single .lightbox-nav,
+.lightbox-overlay.single .lightbox-counter {
+  display: none;
 }
 
 /* -------------------- MOBILE -------------------- */
@@ -755,5 +850,49 @@ img[data-lightbox] {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .lightbox-overlay img {
+    max-width: 92vw;
+  }
+
+  .lightbox-nav {
+    width: 36px;
+    height: 52px;
+    font-size: 1.6rem;
+  }
+
+  .lightbox-prev {
+    left: 8px;
+  }
+
+  .lightbox-next {
+    right: 8px;
+  }
+}
+
+/* status badge pinned to the card image; solid bg so it reads over any picture */
+.card-img .status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  margin-left: 0;
+  background: var(--bg);
+}
+
+@media (max-width: 768px) {
+  .filter-group {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .filter-group:first-child {
+    padding-right: 0;
+  }
+
+  .filter-count {
+    position: static;
   }
 }

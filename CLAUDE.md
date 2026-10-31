@@ -35,8 +35,8 @@ There is no dev server, test suite, or linter. Development is: edit files → ru
 
 **JavaScript:**
 - `scripts/nav-active.js` - highlights active nav link based on current URL path
-- `scripts/projects-filter.js` - filters the projects grid using `data-category` attributes
-- `scripts/lightbox.js` - image lightbox on click
+- `scripts/projects-filter.js` - filters the projects grid by category (`data-tags` on each card) and status (read from the card's `.status-badge--*`); shows a "showing X of Y" count and an empty-state message
+- `scripts/lightbox.js` - image lightbox for `img[data-lightbox]`; images in the same `<section>` form a sequence navigable with the side buttons or ←/→ (also `<`/`>`)
 - `scripts/game-embed.js` - lazy-loads itch.io game embeds on click
 - `scripts/project-stats.js` - fills `[data-stat]` elements with live values from shields.io JSON endpoints (GitHub stars, downloads)
 

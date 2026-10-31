@@ -61,27 +61,44 @@
         <div class="container">
 
             <div class="filter-bar">
-                <div class="filter-group" data-param="main">
+                <div class="filter-group">
                     <span class="filter-label">category</span>
-                    <button class="filter-btn active" data-filter="all">all</button>
-                    <button class="filter-btn" data-filter="games">games</button>
-                    <button class="filter-btn" data-filter="web-apps">web apps</button>
-                    <button class="filter-btn" data-filter="bots">bots</button>
-                    <button class="filter-btn" data-filter="software">software & plugins</button>
-                    <button class="filter-btn" data-filter="tools">tools</button>
-                    <button class="filter-btn" data-filter="technical">technical</button>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">all</button>
+                        <button class="filter-btn" data-filter="games">games</button>
+                        <button class="filter-btn" data-filter="web-apps">web apps</button>
+                        <button class="filter-btn" data-filter="bots">bots</button>
+                        <button class="filter-btn" data-filter="software">software & plugins</button>
+                        <button class="filter-btn" data-filter="tools">tools</button>
+                        <button class="filter-btn" data-filter="technical">technical</button>
+                    </div>
                 </div>
+                <div class="filter-group">
+                    <span class="filter-label">status</span>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">all</button>
+                        <button class="filter-btn" data-filter="active"><span class="status-dot status-dot--active"></span>active</button>
+                        <button class="filter-btn" data-filter="beta"><span class="status-dot status-dot--beta"></span>beta</button>
+                        <button class="filter-btn" data-filter="maintained"><span class="status-dot status-dot--maintained"></span>maintained</button>
+                        <button class="filter-btn" data-filter="blocked"><span class="status-dot status-dot--blocked"></span>blocked</button>
+                        <button class="filter-btn" data-filter="archived"><span class="status-dot status-dot--archived"></span>archived</button>
+                    </div>
+                </div>
+                <span class="filter-count" id="filter-count"></span>
             </div>
 
             <div id="game-jams-banner" style="display:none; margin: 16px 0; padding: 12px 18px; background: var(--surface); border: 2px solid var(--border); border-radius: 12px; font-size: 0.875rem; color: var(--text-muted);">
                 Interested in the full game jam history? View the <a href="/pages/other/game-jams.html">game jams page</a>.
             </div>
 
+            <p class="filter-empty" id="filter-empty" hidden>no products match these filters.</p>
+
             <div class="grid grid-3">
 
                 <div class="card" data-tags="software">
                     <a class="card-img" href="/pages/projects/gesturtle.html">
                         <img src="/assets/projects/gesturtle/gallery.webp" alt="Gesturtle">
+                        <span class="status-badge status-badge--maintained">maintained</span>
                     </a>
                     <h3><a href="/pages/projects/gesturtle.html">Gesturtle</a></h3>
                     <span class="card-subtitle">drawing practice desktop app</span>
@@ -102,6 +119,7 @@
                 <div class="card" data-tags="web-apps">
                     <a class="card-img" href="/pages/projects/lolsummd.html">
                         <img src="/assets/projects/lolsummd/lolsummd-preview.png" alt="LOLSUMMD">
+                        <span class="status-badge status-badge--blocked">blocked</span>
                     </a>
                     <h3><a href="/pages/projects/lolsummd.html">LOLSUMMD</a></h3>
                     <span class="card-subtitle">multi-account mastery tracker</span>
@@ -124,6 +142,7 @@
                     <a class="card-img" href="/pages/projects/obsidian-attachment-plugin.html">
                         <img src="https://forum.obsidian.md/uploads/default/original/3X/a/9/a9a34885821fff8941270ccd6e2ca923c83801b2.png"
                             alt="Obsidian Attachment Placement Plugin">
+                        <span class="status-badge status-badge--maintained">maintained</span>
                     </a>
                     <h3><a href="/pages/projects/obsidian-attachment-plugin.html">Obsidian Attachment Plugin</a></h3>
                     <span class="card-subtitle">smart attachment routing</span>
@@ -145,6 +164,7 @@
                 <div class="card" data-tags="games">
                     <a class="card-img" href="/pages/projects/forgotten-paths.html">
                         <img src="/assets/projects/forgotten_paths/fp.gif" alt="Forgotten Paths">
+                        <span class="status-badge status-badge--archived">archived</span>
                     </a>
                     <h3><a href="/pages/projects/forgotten-paths.html">Forgotten Paths</a></h3>
                     <span class="card-subtitle">puzzle game · game jam</span>
@@ -164,6 +184,7 @@
                 <div class="card" data-tags="bots">
                     <a class="card-img" href="/pages/projects/leetcode-bot.html">
                         <img src="/assets/projects/beast_code/beastcode-logo.png" alt="beast[code]">
+                        <span class="status-badge status-badge--maintained">maintained</span>
                     </a>
                     <h3><a href="/pages/projects/leetcode-bot.html">beast[code]</a></h3>
                     <span class="card-subtitle">LeetCode practice bot</span>
@@ -186,6 +207,7 @@
                 <div class="card" data-tags="software">
                     <a class="card-img" href="/pages/projects/tip-calculator.html">
                         <img src="/assets/projects/tip_calculator/tc-banner.png" alt="Tip Calculator">
+                        <span class="status-badge status-badge--maintained">maintained</span>
                     </a>
                     <h3><a href="/pages/projects/tip-calculator.html">Tip Calculator</a></h3>
                     <span class="card-subtitle">ad-free tip app for android</span>
@@ -208,6 +230,7 @@
                 <div class="card" data-tags="bots">
                     <a class="card-img" href="/pages/projects/lospec-bot.html">
                         <img src="/assets/projects/lospec_bot/lospec-bot-ss.png" alt="Lospec Daily Bot">
+                        <span class="status-badge status-badge--maintained">maintained</span>
                     </a>
                     <h3><a href="/pages/projects/lospec-bot.html">Lospec Daily Bot</a></h3>
                     <span class="card-subtitle">daily pixel art prompt bot</span>
@@ -228,6 +251,7 @@
                 <div class="card" data-tags="games">
                     <a class="card-img" href="/pages/projects/massaquerade.html">
                         <img src="/assets/projects/massaquerade/massaquerade.gif" alt="Massaquerade">
+                        <span class="status-badge status-badge--archived">archived</span>
                     </a>
                     <h3><a href="/pages/projects/massaquerade.html">Massaquerade</a></h3>
                     <span class="card-subtitle">murder mystery · game jam</span>
@@ -248,6 +272,7 @@
                 <div class="card" data-tags="games">
                     <a class="card-img" href="/pages/projects/solar-charged.html">
                         <img src="/assets/projects/solar_charged/solar-charged-clouds.gif" alt="Solar Charged">
+                        <span class="status-badge status-badge--archived">archived</span>
                     </a>
                     <h3><a href="/pages/projects/solar-charged.html">Solar Charged</a></h3>
                     <span class="card-subtitle">tower defense · game jam</span>
@@ -268,6 +293,7 @@
                 <div class="card" data-tags="games">
                     <a class="card-img" href="/pages/projects/delta-t.html">
                         <img src="/assets/projects/delta_t/cover.png" alt="Delta T">
+                        <span class="status-badge status-badge--archived">archived</span>
                     </a>
                     <h3><a href="/pages/projects/delta-t.html">Delta T</a></h3>
                     <span class="card-subtitle">story puzzle · game jam</span>
@@ -286,6 +312,7 @@
                 <div class="card" data-tags="games">
                     <a class="card-img" href="/pages/projects/what-a-steel.html">
                         <img src="/assets/projects/what_a_steel/cover.png" alt="What a STEEL!">
+                        <span class="status-badge status-badge--archived">archived</span>
                     </a>
                     <h3><a href="/pages/projects/what-a-steel.html">What a STEEL!</a></h3>
                     <span class="card-subtitle">cyborg roguelike · game jam</span>
@@ -309,6 +336,7 @@
                     </div> -->
                     <a class="card-img" href="/pages/projects/txtmet.html">
                         <img src="/assets/projects/txtmet/txtmet.png" alt="TXTMET">
+                        <span class="status-badge status-badge--archived">archived</span>
                     </a>
                     <h3><a href="/pages/projects/txtmet.html">TXTMET</a></h3>
                     <span class="card-subtitle">text metrics in C &amp; Rust</span>
@@ -327,6 +355,7 @@
                 <div class="card" data-tags="technical">
                     <a class="card-img" href="/pages/projects/navsystem.html">
                         <img src="/assets/projects/navsys/navsys.gif" alt="NavSys">
+                        <span class="status-badge status-badge--archived">archived</span>
                     </a>
                     <h3><a href="/pages/projects/navsystem.html">NavSys</a></h3>
                     <span class="card-subtitle">real-time GPS navigation app</span>
@@ -346,6 +375,7 @@
                     <a class="card-img" href="/pages/projects/black-box-challenge.html">
                         <img src="/assets/projects/black_box_challenge/blackbox-challenge.png"
                             alt="Black Box Challenge">
+                        <span class="status-badge status-badge--archived">archived</span>
                     </a>
                     <h3><a href="/pages/projects/black-box-challenge.html">Black Box Challenge</a></h3>
                     <span class="card-subtitle">terminal function puzzle</span>
