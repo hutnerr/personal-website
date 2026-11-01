@@ -91,9 +91,10 @@
             <section id="overview">
                 <h2>overview</h2>
                 <div>
-                    <p>Sites like Line of Action and Quickposes are great for gesture drawing, but you're stuck practicing from their images. I wanted to practice from the references I'd actually collected, so I built a tool around that.</p>
+                    <p>Sites like <a href="https://line-of-action.com/practice-tools/app/figure-drawing" target="_blank">Line of Action</a> and <a href="https://quickposes.com/en" target="_blank">Quickposes</a> are great for gesture drawing, but you're stuck practicing from their images. I wanted to practice from the references I'd actually collected, so I built a tool around that.</p>
                     <p>Gesturtle imports your images into a local library, lets you tag and filter them however you like, and turns any slice of that library into a timed practice session in one click. Tagging your own references takes a bit more setup than a pre-built site, but it's far more flexible.</p>
-                    <p>Everything lives in one self-contained folder, so your library is easy to back up, sync, or even keep in git across machines.</p>
+                    <p>On first launch, pick (or create) a folder for your library. Then import a few images or a whole folder, tag them, and hit <strong>Start practice</strong> on a home preset or build a session on the Practice page.</p>
+                    <p>To try it without your own images, download the <a href="/assets/projects/gesturtle/gesturtle-example-library.zip" download>example library</a> and open it through <strong>Settings &rsaquo; Backup &rsaquo; Import archive&hellip;</strong></p>
                 </div>
             </section>
 
@@ -105,8 +106,8 @@
                         <p>Chain segments together (e.g. 5 &times; 30s, then 3 &times; 2min, then 1 &times; 10min), each drawing from its own tag filter, playlist, or saved view.</p>
                     </div>
                     <div class="feature">
-                        <h3>Hierarchical tags</h3>
-                        <p>Nest tags like <code>animal / bird</code> and filter with And, Or, and Exclude.</p>
+                        <h3>Ramping timers</h3>
+                        <p>Times that grow across a segment, say from 30 seconds to 5 minutes.</p>
                     </div>
                     <div class="feature">
                         <h3>Memory drawing</h3>
@@ -114,35 +115,50 @@
                     </div>
                     <div class="feature">
                         <h3>Study aids</h3>
-                        <p>Flip, rotate, grayscale, blur, grid overlays, and 2 to 4 tone value studies, all without touching the original.</p>
+                        <p>Flip, rotate, zoom, grayscale, blur, grid, invert, brightness and contrast, and 2 to 4 tone value studies, all without touching the original.</p>
                     </div>
                     <div class="feature">
                         <h3>One-click presets</h3>
-                        <p>Jump straight into practice from the home page.</p>
+                        <p>Jump straight into practice from the home page, and resume interrupted sessions.</p>
                     </div>
                     <div class="feature">
                         <h3>Session review</h3>
                         <p>Look back over every image after a session and favorite or tag the keepers.</p>
                     </div>
                     <div class="feature">
-                        <h3>Easy importing</h3>
-                        <p>Drag and drop files, folders, or images straight from a browser, with duplicates caught automatically.</p>
+                        <h3>Hierarchical tags</h3>
+                        <p>Nest tags like <code>animal / bird</code> and filter with And, Or, and Exclude, saved as reusable views.</p>
                     </div>
                     <div class="feature">
-                        <h3>Gruvbox themes</h3>
-                        <p>Light and dark modes, plus rebindable keyboard shortcuts.</p>
+                        <h3>Playlists</h3>
+                        <p>Hand-picked sets of images, with bulk tagging, favoriting, and removal.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Image details</h3>
+                        <p>Credit, notes, seen counts, and a &ldquo;not seen in N days&rdquo; filter.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Easy importing</h3>
+                        <p>Drag and drop or paste files, folders, or images straight from a browser, with duplicates caught by content.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Git-friendly library</h3>
+                        <p>The library is one self-contained folder that can be a git repo. Gesturtle writes the <code>.gitignore</code>, and edits to different images or tags merge on their own.</p>
                     </div>
                 </div>
             </section>
 
             <section id="showcase">
                 <h2>showcase</h2>
-                <img class="project-banner" src="/assets/projects/gesturtle/gallery.webp" alt="Gesturtle gallery" data-lightbox>
                 <div class="project-gallery">
                     <img src="/assets/projects/gesturtle/practice.webp" alt="Practice session with timer, tags, and credit" data-lightbox>
                     <img src="/assets/projects/gesturtle/practice-values.webp" alt="Three-tone value study" data-lightbox>
+                    <img src="/assets/projects/gesturtle/home.webp" alt="Home page presets" data-lightbox>
                     <img src="/assets/projects/gesturtle/setup.webp" alt="Session setup with a three-segment queue" data-lightbox>
+                    <img src="/assets/projects/gesturtle/review.webp" alt="Session review" data-lightbox>
+                    <img src="/assets/projects/gesturtle/detail.webp" alt="Image detail with tags, credit, and notes" data-lightbox>
                     <img src="/assets/projects/gesturtle/tags.webp" alt="Tag manager" data-lightbox>
+                    <img src="/assets/projects/gesturtle/playlists.webp" alt="Playlists" data-lightbox>
                 </div>
             </section>
         </main>
@@ -153,7 +169,7 @@
                 <ul class="sidebar-links">
                     <li><a href="https://github.com/hutnerr/gesturtle" target="_blank">GitHub</a></li>
                     <li><a href="https://github.com/hutnerr/gesturtle/releases" target="_blank">Releases</a></li>
-                    <li><a href="/assets/projects/gesturtle/gesturtle-example-library.zip" download>Example Library</a></li>
+                    <li><a href="/assets/projects/gesturtle/gesturtle-example-library.zip" download>Download Example Library</a></li>
                 </ul>
             </div>
             <div class="sidebar-panel">
