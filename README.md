@@ -1,11 +1,7 @@
-https://www.hunter-baker.com
-
 ## Overview
-This repository contains the source code for my personal portfolio website.  
-It showcases my projects, experience, and other professional information.
+This repository contains the source code for my personal portfolio website. It showcases my projects, experience, and other professional information.
 
-<br>
-
+## Links
 <table>
   <tr>
     <th>Page</th>
@@ -37,8 +33,7 @@ It showcases my projects, experience, and other professional information.
   </tr>
 </table>
 
-## License
+## License & Credits
 © 2026 Hunter Baker. All rights reserved.
 
-The source code for this website is provided for reference only.
-Content, design, and branding may not be reused without permission.
+The source code for this website is provided for reference only. Content, design, and branding may not be reused without permission.
